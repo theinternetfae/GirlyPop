@@ -6,7 +6,7 @@ const nextButton = document.querySelector('.nextButton');
 
 let search = document.getElementById("search-go");
 
-
+//Testing code commit
 
 function showSlide(index) {
     currentIndex = (index + totalSlides) % totalSlides;
