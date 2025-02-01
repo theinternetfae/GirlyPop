@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFFFFF;
+}
+
+/* NAVIGATION CODE */
+
+nav {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background-color: #7E1037;
+ color: #FFFFFF;    
+ position: sticky;
+ top: 0;
+ z-index: 999;
+}
+
+nav img {
+    height: 65px;
+    width: 140px;
+    padding-left: 10px;
+}
+
+nav .search-container {
+    background-color: #C14E76;
+    padding: 3px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+nav .search-container #search-input{
+    width: 500px;
+    padding: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: inherit;
+    font-weight: 600; 
+    color: white;   
+}
+
+nav .search-container #search-input::placeholder{
+    color: #FFFFFF;
+    opacity: 0.8; 
+}
+
+nav .search-container #search-input:focus{
+    border: none;
+    outline: none;
+}
+
+nav .search-container .demacation {
+    content: "";
+    border: 1px solid white;
+    height: 40px;
+    padding: 0;
+    
+}
+
+nav .search-container button {
+    font-size: 16px;
+    border: 1px solid #C14E76;
+    background-color: #C14E76;
+    color: white;
+    border-radius: 5px; 
+    cursor: pointer;
+    height: 40px;
+    width: 40px; 
+    transition: .5s ease;
+}
+
+nav .search-container button:hover {
+    color: #7E1037;
+}
+
+nav .navigations ul {
+    display: flex;
+    gap: 70px;
+    padding-right: 20px;
+    list-style: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: large;
+}
+
+nav .navigations ul li{
+    padding: 10px;
+    width: 70px;
+    text-align: center;
+    border-radius: 15px;
+    transition: .5s ease;
+}
+
+nav .navigations ul li:hover{
+    background-color: #C14E76;
+}
+
+/* EXPLORE BAR CODE */
+
+.explore-bar {
+    margin: 20px 0px 0 10px;
+    background-color: #7E1037;
+    padding: 15px;
+    width: 160px;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.explore-bar select {
+    background-color: #7E1037;
+    color: #FFFFFF;
+    border: none;
+    padding: 0;
+    font-weight: 550;
+    cursor: pointer;
+}
+
+.explore-bar select:focus {
+    border: none;
+    outline: none;
+}
+
+/* IMAGE SLIDER CODE */
+
+.image-box {
+    margin-top: 20px;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.image-box .slider-container {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.image-box .slider-container .bi {
+    color: #7E1037;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.image-box .slider-container button {
+    height: 30px;
+    width: 30px;
+    border: none;
+}
+
+.image-box .slider-container .overlay {
+    color: #FFFFFF;
+    position: relative;
+    font-size: 30px;
+}
+
+.image-box .slider-container .overlay .the-overlay {
+    position: absolute;
+    z-index: 1;
+    height: 530px;
+    width: 770px;
+    background-color: black;
+    opacity: 0.6;   
+}
+
+.image-box .slider-container .overlay h1 {
+    position: absolute;
+    z-index: 99;
+    height: 530px;
+    width: 765px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
+
+.image-box .slider-container .overlay p {
+    position: absolute;
+    z-index: 99;
+    width: 765px;
+    display: flex;
+    justify-content: center;
+    top: 300px;
+    text-decoration: underline;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+.image-box .slider-container .image-slider {
+    display: flex;
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+    aspect-ratio: 16/11;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    border-radius: 0.5rem;
+}
+
+
+.image-box .slider-container .image-slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+}
+ 
+/* FOOTER CODE */
+
+.image-box .slider-container .image-slider::-webkit-scrollbar {
+    display: none;
+}
+
+footer {
+    bottom: 0;
+    background-color: #7E1037;
+    color: #FFFFFF;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-weight: 800;
+    padding-top: 15px;
+}
