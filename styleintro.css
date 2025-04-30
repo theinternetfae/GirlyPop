@@ -197,32 +197,41 @@ nav .navigations ul li:hover{
     cursor: pointer;
 }
 
-
-.image-box .slider-container .image-slider {
-    display: flex;
+.slider-wrapper {
+    width: 300px; /* Width of one image */
+    overflow: hidden;
     position: relative;
-    max-width: 48rem;
-    margin: 0 auto;
-    aspect-ratio: 16/11;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
-    border-radius: 0.5rem;
 }
-
-
-.image-box .slider-container .image-slider img {
-    flex: 1 0 100%;
-    scroll-snap-align: start;
+  
+.image-slider {
+    display: flex;
+    width: calc(300px * 5); /* total width = 5 slides */
+    animation: slide 10s infinite steps(5); /* 5 steps, 1 per slide */
 }
- 
+  
+.slide {
+    width: 300px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+  
+@keyframes slide {
+    from {
+    transform: translateX(0);
+    }
+    to {
+    transform: translateX(-1200px); /* 4 * 300px = shift to show last image */
+    }
+}
+  
+
 /* FOOTER CODE */
 
 .image-box .slider-container .image-slider::-webkit-scrollbar {
     display: none;
 }
+
+
 
 footer {
     bottom: 0;

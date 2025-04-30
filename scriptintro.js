@@ -1,113 +1,69 @@
-let currentIndex = 0;
+const backward = document.querySelector('.prev-button');
+const forward = document.querySelector('.next-button');
 const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
-const prevButton = document.querySelector('.prevButton');
-const nextButton = document.querySelector('.nextButton');
 
-let search = document.getElementById("search-go");
+const array = [];
 
-//Testing code commit
+slides.forEach(slide => {
+    array.push(slide);
+})
 
-function showSlide(index) {
-    currentIndex = (index + totalSlides) % totalSlides;
-    for (let i = 0; i < totalSlides; i++) {
-        slides[i].style.transform = `translateX(${(i - currentIndex) * 100}%)`;
-    }
+
+function rotateSlide() {
+    array.push(array.shift());
+
+    console.log(array); 
 }
 
-prevButton.addEventListener('click', () => {
-    showSlide(currentIndex - 1);
-});
 
-nextButton.addEventListener('click', () => {
-    console.log('clicked');
-    showSlide(currentIndex + 1);
-});
+//HTML
+{/* <div class="slider-container">
+  <div class="slider-track">
+    <div class="slide">Slide 1</div>
+    <div class="slide">Slide 2</div>
+    <div class="slide">Slide 3</div>
+  </div>
+</div>
 
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowLeft') {
-        showSlide(currentIndex - 1);
-    } else if (event.key === 'ArrowRight') {
-        showSlide(currentIndex + 1);
-    }
-});
+<button id="next">Next</button>
+<button id="prev">Prev</button> */}
 
-showSlide(currentIndex);
+//CSS
+// .slider-container {
+//     width: 300px;
+//     overflow: hidden;
+//     position: relative;
+//   }
+  
+//   .slider-track {
+//     display: flex;
+//     transition: transform 0.5s ease;
+//   }
+  
+//   .slide {
+//     min-width: 300px;
+//     flex-shrink: 0;
+//     text-align: center;
+//     padding: 40px;
+//     background: lightgray;
+//     border: 1px solid #ccc;
+//   }
+  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//JAVASCRIPT
+// const track = document.querySelector('.slider-track');
+// const next = document.getElementById('next');
+// const prev = document.getElementById('prev');
 
 // let currentIndex = 0;
-// const slides = document.querySelectorAll('.slide');
-// const totalSlides = slides.length;
-// const prevButton = document.querySelector('.prevButton');
-// const nextButton = document.querySelector('.nextButton');
+// const slideWidth = 300; // Must match CSS width
 
-// let search = document.getElementById("search-go");
-
-
-
-// function showSlide(index) {
-//     currentIndex = (index + totalSlides) % totalSlides;
-//     for (let i = 0; i < totalSlides; i++) {
-//         slides[i].style.transform = `translateX(${(i - currentIndex) * 100}%)`;
-//     }
-// }
-
-// prevButton.addEventListener('click', () => {
-//     showSlide(currentIndex - 1);
+// next.addEventListener('click', () => {
+//   currentIndex++;
+//   track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
 // });
 
-// nextButton.addEventListener('click', () => {
-//     console.log('clicked');
-//     showSlide(currentIndex + 1);
+// prev.addEventListener('click', () => {
+//   currentIndex = Math.max(0, currentIndex - 1); // Prevent going below 0
+//   track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
 // });
-
-// document.addEventListener('keydown', (event) => {
-//     if (event.key === 'ArrowLeft') {
-//         showSlide(currentIndex - 1);
-//     } else if (event.key === 'ArrowRight') {
-//         showSlide(currentIndex + 1);
-//     }
-// });
-
-// showSlide(currentIndex);
