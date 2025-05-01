@@ -1,69 +1,90 @@
-const backward = document.querySelector('.prev-button');
-const forward = document.querySelector('.next-button');
-const slides = document.querySelectorAll('.slide');
 
-const array = [];
+//NAVIGATION TOGGLE
+function onOff(button) {
+  const active = button;
+  const prev = document.querySelector('.nav-active');
+  
+  if (prev) {
+    prev.classList.remove('nav-active');
+  }
 
-slides.forEach(slide => {
-    array.push(slide);
+  active.classList.add('nav-active');
+
+}
+
+const buttonOne = document.querySelector('.nav-one');
+const buttonTwo = document.querySelector('.nav-two');
+const buttonThree = document.querySelector('.nav-three');
+
+buttonOne.addEventListener('click', () => {
+  onOff(buttonOne);
+})
+
+buttonTwo.addEventListener('click', () => {
+  onOff(buttonTwo);
+})
+
+buttonThree.addEventListener('click', () => {
+  onOff(buttonThree);
 })
 
 
-function rotateSlide() {
-    array.push(array.shift());
 
-    console.log(array); 
+//SLIDER JS
+
+let currentIndex = 0;
+const sliderTrack = document.querySelector('.image-slider');
+const slideWidth = 700; 
+const wardrobe = document.querySelector('.wardrobe');
+const totalSlides = document.querySelectorAll('.slide').length;
+
+function goToSlide(index) {
+  sliderTrack.style.transform = `translateX(-${slideWidth * index}px)`;
+
+  if(index === 0){
+    wardrobe.innerHTML = 'Tops';
+    wardrobe.href = 'tops.html'
+  } else if (index === 1) {
+    wardrobe.innerHTML = 'Bottoms';
+    wardrobe.href = 'bottoms.html'
+  } else if (index === 2) {
+    wardrobe.innerHTML = 'Dresses';
+    wardrobe.href = 'dresses.html'
+  } else if (index === 3) {
+    wardrobe.innerHTML = 'Shoes';
+    wardrobe.href = 'shoes.html'
+  } else if (index === 4) {
+    wardrobe.innerHTML = 'Accessories';
+    wardrobe.href = 'accessories.html'
+  }
 }
 
+const prev = document.querySelector('.prev-button');
+const next = document.querySelector('.next-button');
 
-//HTML
-{/* <div class="slider-container">
-  <div class="slider-track">
-    <div class="slide">Slide 1</div>
-    <div class="slide">Slide 2</div>
-    <div class="slide">Slide 3</div>
-  </div>
-</div>
+prev.addEventListener('click', () => {
+  PrevSlide();
+})
 
-<button id="next">Next</button>
-<button id="prev">Prev</button> */}
+next.addEventListener('click', () => {
+  nextSlide();
+})
 
-//CSS
-// .slider-container {
-//     width: 300px;
-//     overflow: hidden;
-//     position: relative;
-//   }
-  
-//   .slider-track {
-//     display: flex;
-//     transition: transform 0.5s ease;
-//   }
-  
-//   .slide {
-//     min-width: 300px;
-//     flex-shrink: 0;
-//     text-align: center;
-//     padding: 40px;
-//     background: lightgray;
-//     border: 1px solid #ccc;
-//   }
-  
+function nextSlide() {
+  if (currentIndex < totalSlides - 1) {
+    currentIndex++;
+    goToSlide(currentIndex);
+  }
+}
 
-//JAVASCRIPT
-// const track = document.querySelector('.slider-track');
-// const next = document.getElementById('next');
-// const prev = document.getElementById('prev');
+function PrevSlide() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    goToSlide(currentIndex);
+  }
+}
 
-// let currentIndex = 0;
-// const slideWidth = 300; // Must match CSS width
-
-// next.addEventListener('click', () => {
-//   currentIndex++;
-//   track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
-// });
-
-// prev.addEventListener('click', () => {
-//   currentIndex = Math.max(0, currentIndex - 1); // Prevent going below 0
-//   track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
-// });
+// setInterval(() => {
+//   currentIndex = (currentIndex + 1) % totalSlides; 
+//   goToSlide(currentIndex);
+// }, 2000);

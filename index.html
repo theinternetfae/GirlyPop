@@ -11,60 +11,65 @@
 <body>
 
     <nav>
-        <img src="images/New GirlyPop logo.png" alt="GirlyPop logo">
+        <img src="images/New GirlyPop logo.png" alt="GirlyPop logo" class="logo">
         <div class="search-container">
             <i class="bi bi-search-heart"></i>
             <input type="text" id="search-input" placeholder="Looking for...">
             <div class="demacation"></div>
-            <button type="submit" id="search-go">Go</button>
+            <button type="submit" id="search-go">Seek</button>
         </div>
         <div class="navigations">
             <ul>
-                <li>Sell</li>
-                <li>Sign In</li>
-                <li>Log In</li>
+                <li class="nav-one">Sell</li>
+                <li class="nav-two">Sign In</li>
+                <li class="nav-three nav-active">Home</li>
             </ul>
         </div>
     </nav>
 
-    <section class="explore-bar">
-        <label for="exploreOptions">Explore</label>
-        <select name="explore" id="exploreOptions">
-            <option value="explore-option" selected hidden></option>
-            <option value="explore-option" class="option">Tops</option>
-            <option value="explore-option" class="option">Bottoms</option>
-            <option value="explore-option" class="option">Dresses</option>
-            <option value="explore-option" class="option">Outerwear</option>
-            <option value="explore-option" class="option">Shoes</option>
-            <option value="explore-option" class="option">Accessories</option>
-        </select>
-    </section>
-
-    <section class="image-box">
-        <div class="slider-container">
-            <button class="prev-button"><i class="bi bi-caret-left-square-fill"></i></button>
-            <div class="overlay">
-                <div class="overlay-text">
-                    <h1>ALL THINGS WOMENS WEARS</h1>
-                    <p>Tops</p>
+    <div class="page-wrapper">
+        <main class="content">
+            <section class="explore-bar">
+                <label for="exploreOptions">Explore</label>
+                <select name="explore" id="exploreOptions">
+                    <option value="explore-option" selected hidden></option>
+                    <option value="explore-option" class="option">Tops</option>
+                    <option value="explore-option" class="option">Bottoms</option>
+                    <option value="explore-option" class="option">Dresses</option>
+                    <option value="explore-option" class="option">Outerwear</option>
+                    <option value="explore-option" class="option">Shoes</option>
+                    <option value="explore-option" class="option">Accessories</option>
+                </select>
+            </section>
+        
+            <section class="image-box">
+                <div class="slider-container">
+                    <button class="prev-button arrow-btn"><i class="bi bi-caret-left-square-fill"></i></button>
+                    <div class="overlay">
+                        <div class="overlay-text">
+                            <h1>ALL THINGS WOMENS WEARS</h1>
+                            <p><a class="wardrobe" href="tops.html">Tops </a> </p>
+                        </div>
+                        <div class="the-overlay"></div>
+                        <div class="image-slider">
+                            <img src="images/Tops.jpeg" alt="Tops" class="slide"/>
+                            <img src="images/Bottoms.jpeg" alt="Bottoms" class="slide" />
+                            <img src="images/Dresses.jpeg" alt="Outerwear" class="slide"/>
+                            <img src="images/Shoes.jpeg" alt="Shoes" class="slide" />
+                            <img src="images/Accessories.jpeg" alt="Accessories" class="slide" />
+                        </div>
+                    </div>
+                    <button class="next-button arrow-btn"><i class="bi bi-caret-right-square-fill"></i></button>
                 </div>
-                <div class="the-overlay"></div>
-                <div class="image-slider">
-                    <img src="images/Tops.jpeg" alt="Tops" class="slide" />
-                    <img src="images/Bottoms.jpeg" alt="Bottoms" class="slide" />
-                    <img src="images/Dresses.jpeg" alt="Outerwear" class="slide"/>
-                    <img src="images/Shoes.jpeg" alt="Shoes" class="slide" />
-                    <img src="images/Accessories.jpeg" alt="Accessories" class="slide" />
-                </div>
-            </div>
-            <button class="next-button"><i class="bi bi-caret-right-square-fill"></i></button>
-        </div>
-    </section>
-
-    <footer>
-        <p>ALL RIGHTS RESERVED</p>
-    </footer>
-
+            </section>
+        </main>
+    
+        <footer>
+            <p>ALL RIGHTS RESERVED</p>
+        </footer>
+    
+    </div>
+    
     <script src="scriptintro.js"></script>
 </body>
 
