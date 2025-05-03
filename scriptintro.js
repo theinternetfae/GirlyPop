@@ -34,57 +34,39 @@ buttonThree.addEventListener('click', () => {
 
 let currentIndex = 0;
 const sliderTrack = document.querySelector('.image-slider');
-const slideWidth = 700; 
+const firstChild = sliderTrack.children[0];
+const clonedSlide = firstChild.cloneNode(true);
+sliderTrack.appendChild(clonedSlide)
+const slideWidth = 1511; 
 const wardrobe = document.querySelector('.wardrobe');
 const totalSlides = document.querySelectorAll('.slide').length;
 
-function goToSlide(index) {
-  sliderTrack.style.transform = `translateX(-${slideWidth * index}px)`;
+setInterval(() => {
+  currentIndex++;
+  console.log(currentIndex);
+  sliderTrack.style.transition = 'transform 0.5s ease';
+  sliderTrack.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
 
-  if(index === 0){
+  if (currentIndex === totalSlides - 1) {
+    setTimeout(() => {
+      sliderTrack.style.transition = 'none';
+      sliderTrack.style.transform = 'translateX(0px)';
+      currentIndex = 0;
+    }, 1000)
+  }
+
+  if(currentIndex === 0){
     wardrobe.innerHTML = 'Tops';
-    wardrobe.href = 'tops.html'
-  } else if (index === 1) {
+  } else if (currentIndex === 1) {
     wardrobe.innerHTML = 'Bottoms';
-    wardrobe.href = 'bottoms.html'
-  } else if (index === 2) {
+  } else if (currentIndex === 2) {
     wardrobe.innerHTML = 'Dresses';
-    wardrobe.href = 'dresses.html'
-  } else if (index === 3) {
+  } else if (currentIndex === 3) {
     wardrobe.innerHTML = 'Shoes';
-    wardrobe.href = 'shoes.html'
-  } else if (index === 4) {
+  } else if (currentIndex === 4) {
     wardrobe.innerHTML = 'Accessories';
-    wardrobe.href = 'accessories.html'
+  } else {
+    wardrobe.innerHTML = 'Tops';
   }
-}
 
-const prev = document.querySelector('.prev-button');
-const next = document.querySelector('.next-button');
-
-prev.addEventListener('click', () => {
-  PrevSlide();
-})
-
-next.addEventListener('click', () => {
-  nextSlide();
-})
-
-function nextSlide() {
-  if (currentIndex < totalSlides - 1) {
-    currentIndex++;
-    goToSlide(currentIndex);
-  }
-}
-
-function PrevSlide() {
-  if (currentIndex > 0) {
-    currentIndex--;
-    goToSlide(currentIndex);
-  }
-}
-
-// setInterval(() => {
-//   currentIndex = (currentIndex + 1) % totalSlides; 
-//   goToSlide(currentIndex);
-// }, 2000);
+}, 3000)

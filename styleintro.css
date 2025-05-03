@@ -2,6 +2,10 @@
 /* font-family: "Noto Sans", sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
 /* font-family: "Vollkorn", serif; */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/* font-family: "Playfair Display", serif; */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+/* font-family: "Space Grotesk", sans-serif; */
 
 * {
     margin: 0;
@@ -11,7 +15,7 @@
 body {
     height: 100%;
 }
-
+ 
 .page-wrapper {
     display: flex;
     flex-direction: column;
@@ -21,15 +25,18 @@ body {
 .content {
     flex: 1;
 }
-/*NAVIGATION-BAR CODE BELOW*/
+
+/* NAVIGATION-BAR CODE BELOW */
 
 nav {
     display: flex;
-    background: #7E1037;
+    width: 99vw;
+    background: #7e1036;
     align-items: center;
     gap: 80px;
     top: 0;
     position: sticky;
+    z-index: 9999;
 }
 
 .logo {
@@ -122,112 +129,43 @@ button[type=submit]:hover {
     background: #c14e76c7;
 }
 
-/*EXPLORE BAR CODE BELOW*/
-
-.explore-bar {
-    background: #7e1036;
-    margin: 20px 0px 0px 10px;
-    width: 150px;
-    padding: 10px;
-    color: white;
-    border-radius: 5px;
-}
-
-select {    
-    background: transparent;
-    outline: none;
-    border: none;   
-    color: white;
-}
-
-option {
-    background: #7E1037;
-    color: white;
-}
-
-option:checked {
-    outline: none;
-    border: none;
-    background: white;
-    color: #7E1037;
-}
-
-
-/*IMAGE-BOX CODE BELOW*/
+/*IMAGE BOX CODE*/
 
 .image-box {
-    width: 700px;
-    margin: 20px auto auto auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slider-container {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-.overlay {
-    width: 700px;
-    height: 550px;
+    border: 1px solid black;
+    width: 1511px;
+    height: 100vh;
     overflow: hidden;
-    box-shadow: -2px 2px 5px 1px rgba(128, 128, 128, 0.627);
+}
+
+.image-slider {
+    display: flex;
+    width: calc(1511px * 6);
+}
+
+.slide {
+    width: 1511px;
+    height: 1000px;
+}
+
+.overlay-text {
+    position: absolute;
+    width: 97%;
+    display: flex;
+    flex-direction: column;
+    padding: 250px 0px 0px 30px;
+    color: white;
+    z-index: 2;
+    font-size: 65px;
+    font-family: "Space Grotesk", sans-serif;
 }
 
 .the-overlay {
     position: absolute;
     z-index: 1;
-    height: 550px;
-    width: 700px;
-    background: #000000b9;
-    border-radius: 2px;
-    border: 1px solid rgba(128, 128, 128, 0.627);
-}
-
-.overlay-text {
-    position: absolute;
-    color: white;
-    z-index: 2;
-    width: 700px;
-    height: 500px;
-    font-size: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.wardrobe {
-    color: white;
-}
-
-.wardrobe:visited {
-    color: white;
-}
-
-.image-slider {
-    display: flex;
-    transition: transform .4s ease;
-    width: calc(700px * 5);
-}
-
-.image-slider img {
-    width: 700px;
-    height: 550px;
-}
-
-.arrow-btn {
-    font-size: 25px;
-    background: transparent;
-    color: #7E1037;
-    outline: none;
-    border: none;
-}
-
-.arrow-btn:active {
-    transform: scale(0.85);
+    width: 1511px;
+    height: 100vh;
+    background: #23232397;
 }
 
 
@@ -237,65 +175,10 @@ footer {
     background: #7E1037;
     color: white;
     text-align: center;
-    padding: 20px;    
+    padding: 10px;    
+    z-index: 9999;
+    position: fixed;
+    width: 99vw;
+    bottom: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .slider-wrapper {
-    width: 300px; Width of one image
-    overflow: hidden;
-    position: relative;
-}
-  
-.image-slider {
-    display: flex;
-    width: calc(300px * 5); total width = 5 slides
-    animation: slide 10s infinite steps(5); 5 steps, 1 per slide
-}
-  
-.slide {
-    width: 300px;
-    flex-shrink: 0;
-    object-fit: cover;
-}
-  
-@keyframes slide {
-    from {
-    transform: translateX(0);
-    }
-    to {
-    transform: translateX(-1200px); 4 * 300px = shift to show last image
-    }
-} */
