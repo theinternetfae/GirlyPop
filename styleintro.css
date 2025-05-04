@@ -140,7 +140,7 @@ button[type=submit]:hover {
 
 .image-slider {
     display: flex;
-    width: calc(1511px * 6);
+    width: calc(1511px * 7);
 }
 
 .slide {
@@ -158,6 +158,36 @@ button[type=submit]:hover {
     z-index: 2;
     font-size: 65px;
     font-family: "Space Grotesk", sans-serif;
+}
+
+.overlay-text h1 {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.overlay-text p {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;   
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }   
+    to {
+        width: 100%;
+    }
 }
 
 .the-overlay {

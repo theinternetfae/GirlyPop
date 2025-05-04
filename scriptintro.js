@@ -32,14 +32,22 @@ buttonThree.addEventListener('click', () => {
 
 //SLIDER JS
 
-let currentIndex = 0;
+let currentIndex = -1;
 const sliderTrack = document.querySelector('.image-slider');
 const firstChild = sliderTrack.children[0];
 const clonedSlide = firstChild.cloneNode(true);
 sliderTrack.appendChild(clonedSlide)
 const slideWidth = 1511; 
-const wardrobe = document.querySelector('.wardrobe');
 const totalSlides = document.querySelectorAll('.slide').length;
+
+
+const wardrobe = document.querySelector('.wardrobe');
+function setWardrobeText(text) {
+  wardrobe.innerHTML = text;
+  wardrobe.style.animation = 'none'; 
+  wardrobe.offsetHeight;
+  wardrobe.style.animation = 'typing 1.5s steps(20, end) forwards';
+}
 
 setInterval(() => {
   currentIndex++;
@@ -55,18 +63,16 @@ setInterval(() => {
     }, 1000)
   }
 
-  if(currentIndex === 0){
-    wardrobe.innerHTML = 'Tops';
-  } else if (currentIndex === 1) {
-    wardrobe.innerHTML = 'Bottoms';
-  } else if (currentIndex === 2) {
-    wardrobe.innerHTML = 'Dresses';
-  } else if (currentIndex === 3) {
-    wardrobe.innerHTML = 'Shoes';
-  } else if (currentIndex === 4) {
-    wardrobe.innerHTML = 'Accessories';
-  } else {
-    wardrobe.innerHTML = 'Tops';
-  }
+    if (currentIndex === 1) {
+      setWardrobeText('Bottoms');
+    } else if (currentIndex === 2) {
+      setWardrobeText('Dresses');
+    } else if (currentIndex === 3) {
+      setWardrobeText('Shoes');
+    } else if (currentIndex === 4) {
+      setWardrobeText('Accessories');
+    } else {
+      setWardrobeText('Tops');
+    }
 
 }, 3000)
