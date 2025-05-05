@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+/* font-family: "Lexend Deca", sans-serif; */
+
+* {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+
+/*NAVIGATION CODE BELOW*/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    top: 0;
+    position: sticky;
+    z-index: 9999;
+    background: white;
+}
+
+nav img {
+    height: 70px;
+    width: 150px;
+}
+
+.aboutg {
+    display: flex;
+    gap: 50px;
+    color: #7e1036;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.aboutg p {
+    cursor: pointer;
+}
+
+.signing {
+    display: flex;
+    gap: 20px;
+}
+
+.signing button {
+    padding: 10px;
+    width: 80px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.signing button:active {
+    transform: scale(0.85);
+}
+
+.sign-up {
+    background: #c14e76;
+    font-weight: 600;
+    color: white;
+}
+
+.sign-in {
+    background: #7e1036;
+    font-weight: 600;
+    color: white;
+}
+
+/*SECTION 1 CODE*/
+
+.intro {
+    height: 400px;
+    background-image: url(images/medium-shot-friends-having-fun-party.jpg);
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    display: flex; 
+    justify-content: center;
+    align-items: center;   
+}
+
+.intro-bar {
+    background: rgba(255, 255, 255, 0.608);
+    backdrop-filter: blur(5px);
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.intro-bar h1 {
+    margin-bottom: 10px;
+    color: #7e1036;
+}
+
+.intro-bar p {
+    margin-bottom: 30px;
+    color: #7e1036;
+}
+
+.intro-bar .search {
+    background: #c14e76e0;
+    width: 80%;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;    
+    color: white;
+}
+
+.intro-bar .search input{
+    width: 80%;    
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.intro-bar .search input::placeholder {
+    color: rgba(255, 255, 255, 0.881);
+}
+
+.intro-bar .search .bi-arrow-right:hover {
+    color: #7e1036;
+}
+
+.intro-bar .search .bi-arrow-right:active {
+    transform: scale(0.85);
+}
+
+/*SECTION 2 CODE*/
+
+.featured {
+    margin: 20px 20px 20px 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.featured h3 {
+    color: #7e1036;
+}
+
+.featured-products {
+    height: 200px;
+    display: flex;
+    gap: 20px;
+    /* animation: slideLeft 60s ease infinite; */
+}
+
+/* @keyframes slideLeft {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+} */
+
+.f-product {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.f-product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.description {
+    position: absolute;
+    width: 278px;
+    height: 55px;
+    margin-top: 145px;
+    background: white;
+    color: #7e1036;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.description h4 {
+    padding: 5px 0px 5px 10px;
+}
+
+.description p {
+    padding: 0px 0px 0px 10px;
+}
+
+
+
+/*SECTION 3 CODE*/
+
+.testimonials {
+    border: 1px solid black;
+    margin-top: 30px;
+    background: #E7E7E7;
+    padding: 20px;
+}
+
+.testimonials h3 {
+    margin: 0px 0px 10px 10px;
+    color: #7e1036;
+}
+
+.block-holder {
+    margin-left: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.testimonial-block {
+    border: 1px solid black;
+    height: 150px;
+    width: 600px;
+    background: white;
+    color: #7e1036;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+}
