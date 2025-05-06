@@ -24,6 +24,11 @@ nav {
     background: white;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 nav img {
     height: 70px;
     width: 150px;

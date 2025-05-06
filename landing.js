@@ -20,37 +20,9 @@ cart.forEach((cartBtn) => {
     })
 })
 
-// //NAVIGATION TOGGLE
-// function onOff(button) {
-//   const active = button;
-//   const prev = document.querySelector('.nav-active');
-  
-//   if (prev) {
-//     prev.classList.remove('nav-active');
-//   }
+const featured = document.querySelector('.featured-products');
 
-//   active.classList.add('nav-active');
-
-// }
-
-// const buttonOne = document.querySelector('.nav-one');
-// const buttonTwo = document.querySelector('.nav-two');
-// const buttonThree = document.querySelector('.nav-three');
-
-// buttonOne.addEventListener('click', () => {
-//   onOff(buttonOne);
-// })
-
-// buttonTwo.addEventListener('click', () => {
-//   onOff(buttonTwo);
-// })
-
-// buttonThree.addEventListener('click', () => {
-//   onOff(buttonThree);
-// })
-
-
-
+console.log(featured);
 // //SLIDER JS
 
 // let currentIndex = -1;
