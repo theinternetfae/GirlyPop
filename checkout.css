@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    top: 0;
+    position: sticky;
+    z-index: 9999;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+nav img {
+    height: 70px;
+    width: 150px;
+}
+
+.search-bar {
+    display: flex;
+    background: #7e1036ee;
+    color: white;
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+
+.search-bar input {
+    width: 90%;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 15px;
+}
+
+.search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.808);
+}
+
+.search-bar p {
+    cursor: pointer;
+}
+
+.search-bar p:active {
+    transform: scale(0.85);
+}
+
+.move {
+    height: 40px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.move .bi {
+    cursor: pointer;
+    font-size: 20px;
+    color: #7e1036ee;
+    padding: 5px;
+    width: 50px;
+    border: none;
+    background: transparent;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.move .bi-filled {
+    background: #7e1036ee;
+    color: white;
+}
+
+.cart-info {
+    border: 1px solid black;
+    margin: 70px 150px 0px 150px;
+    display: flex;
+}

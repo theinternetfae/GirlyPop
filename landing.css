@@ -65,6 +65,7 @@ nav img {
     left: 1px;
     color: #7e1036;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .signing .bi {
