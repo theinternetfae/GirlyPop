@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+/* font-family: "Lexend Deca", sans-serif; */
+
 * {
     margin: 0;
 }
 
 body {
     height: 100vh;
+    font-family: "Lexend Deca", sans-serif;
+    background: #F2F3F4;
     font-family: "Lexend Deca", sans-serif;
 }
 
@@ -82,7 +87,161 @@ nav img {
 }
 
 .cart-info {
-    border: 1px solid black;
-    margin: 70px 150px 0px 150px;
+    margin: 70px 50px 0px 50px;
     display: flex;
+    gap: 20px;
+}
+
+.the-cart {
+    width: 60%;
+}
+
+.the-cart-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.the-cart-text span {
+    font-weight: 600;
+}
+
+.the-cart-items {
+    margin-top: 30px;
+}
+
+.header {
+    background: white;
+    padding: 20px;
+    display: flex;
+    gap: 40px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    font-weight: 600;
+    color: #7e1036ee;
+}
+
+.header p {
+    width: 50%;
+}
+
+.cart-item {
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 0 10px #696969;
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.cart-item .product {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.product-info p {
+    font-size: 13px;
+    color: #696969;
+    margin-bottom: 2px;
+}
+
+.product-info h3 {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.others {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item .product img {
+    height: 170px;
+    width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.others p {
+    width: 20%;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+.the-receipt {
+    width: 40%;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.user-location {
+    margin-top: 20px;
+}
+
+.the-location {
+    padding: 10px;
+}
+
+.the-location select {
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    background: #69696949;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.the-location input {
+    height: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    margin-bottom: 20px
+}
+
+.the-location button {
+    background: #000000;
+    color: white;
+    border-radius: 10px;
+    align-self: center;
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.the-location button:active {
+    transform: scale(0.95);
+}
+
+.demarcation {
+    border: 1px solid rgba(0, 0, 0, 0.503);
+    margin-top: 40px;
+}
+
+.the-total {
+    margin-top: 20px;
+    padding: 10px;
+    background: #c14e7683;
+    border-radius: 10px;
 }
