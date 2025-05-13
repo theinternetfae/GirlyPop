@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - GirlyPop</title>
+    <title>Your Checkout - GirlyPop</title>
     <link rel="stylesheet" href="checkout.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
 </head>
 <body>
     <nav>
         <img src="images/GirlyPop white background.png" alt="logo">
+        <select name="categories" id="">
+            <option value="" selected hidden>Categories</option>
+            <option value="">Tops</option>
+            <option value="">Bottoms</option>
+            <option value="">Accessories</option>
+            <option value="">Dresses</option>
+            <option value="">Outerwear</option>
+        </select>
         <div class="search-bar">
             <i class="bi bi-search-heart"></i>
             <input type="text" placeholder="Search...">
             <p>GO</p>
         </div>
         <div class="move">
-            <button class="bi moves bi-house"></button>
+            <a href="home.html"><button class="bi moves bi-house"></button></a>
             <button class="bi moves bi-bag bi-filled"></button>
             <button class="bi moves bi-person"></button>
         </div>
@@ -46,7 +54,7 @@
                     <div class="cart-item">
 
                         <div class="product">
-                            <img src="images/Strawberry shoes.jpeg" alt="">
+                            <img src="images/shoes/Strawberry shoes.jpeg" alt="">
                             <div class="product-info">
                                 <h3>Strawberry kitten heels</h3>
                                 <p>Status: Damaged</p>
@@ -66,7 +74,7 @@
                     <div class="cart-item">
 
                         <div class="product">
-                            <img src="images/Red dress.jpeg" alt="">
+                            <img src="images/dresses/Red dress.jpeg" alt="">
                             <div class="product-info">
                                 <h3>Little red dress</h3>
                                 <p>Status: Perfect</p>
@@ -86,7 +94,7 @@
                     <div class="cart-item">
 
                         <div class="product">
-                            <img src="images/pink shoes.jpeg" alt="">
+                            <img src="images/shoes/pink shoes.jpeg" alt="">
                             <div class="product-info">
                                 <h3>Y2K pink wedges</h3>
                                 <p>Status: Perfect</p>
