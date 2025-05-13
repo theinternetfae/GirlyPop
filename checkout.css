@@ -179,13 +179,9 @@ nav img {
 
 
 
-
-
-
-
-
 .the-receipt {
     width: 40%;
+    height: 50%;
     background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -228,6 +224,7 @@ nav img {
     width: 100%;
     outline: none;
     border: none;
+    cursor: pointer;
 }
 
 .the-location button:active {
@@ -236,7 +233,7 @@ nav img {
 
 .demarcation {
     border: 1px solid rgba(0, 0, 0, 0.503);
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .the-total {
@@ -244,4 +241,30 @@ nav img {
     padding: 10px;
     background: #c14e7683;
     border-radius: 10px;
+}
+
+.the-total .total-price {
+    font-weight: 600;
+}
+
+.checkout-product {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.checkout-btn {
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #7e1036ee;
+    color: white;
+    cursor: pointer;
+}
+
+.checkout-btn:active {
+    transform: scale(0.95);
 }
