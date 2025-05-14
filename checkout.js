@@ -11,3 +11,17 @@ moves.forEach((move) => {
     })
 })
 
+const productPage = document.querySelector('.product-page');
+const products = document.querySelectorAll('.for-you-product img');
+const back = document.querySelector('.bi-x-lg');
+
+products.forEach((product) => {
+    product.addEventListener('click', () => {
+    productPage.style.display = 'block';
+    })
+})
+
+back.addEventListener('click', () => {
+    productPage.style.display = 'none';
+})
+

@@ -218,7 +218,6 @@ nav img {
     height: 55px;
     margin-top: 145px;
     background: white;
-    color: #7e1036;
     border-radius: 0px 0px 10px 10px;
     display: flex;
     align-items: center;
@@ -251,6 +250,7 @@ nav img {
 
 .description p {
     padding: 0px 0px 0px 10px;
+    color: #7e1036;
 }
 
 
