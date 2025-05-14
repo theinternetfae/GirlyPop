@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Checkout - GirlyPop</title>
-    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="css files/checkout.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
 </head>
 <body>
@@ -24,9 +24,12 @@
             <p>GO</p>
         </div>
         <div class="move">
-            <a href="home.html"><button class="bi moves bi-house"></button></a>
-            <button class="bi moves bi-bag bi-filled"></button>
-            <button class="bi moves bi-person"></button>
+            <a href="home.html"><button class="bi no moves bi-house"></button></a>
+            <div class="cart-count"><a href="checkout.html">
+                <p>3</p>
+                <button class="bi moves bi-bag bi-filled"></button>
+            </a></div>
+            <button class="bi moves no bi-person"></button>
         </div>
     </nav>
 
@@ -185,6 +188,6 @@
 
     </section>
 
-    <script src="checkout.js"></script>
+    <script type="module" src="js files/checkout.js"></script>
 </body>
 </html>

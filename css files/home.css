@@ -80,7 +80,7 @@ nav img {
 
 .move .bi {
     cursor: pointer;
-    font-size: 20px;
+    font-size: 22px;
     color: #7e1036ee;
     padding: 5px;
     width: 50px;
@@ -93,6 +93,19 @@ nav img {
 .move .bi-filled {
     background: #7e1036ee;
     color: white;
+}
+
+.cart-count p {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    top: 28px;
+    left: 1390.5px;
+    color: #7e1036;
+    font-weight: 600;
+    font-size: 12.5px;
+    cursor: pointer;
 }
 
 /*FEATURED PRODUCTS SECTION*/
@@ -407,45 +420,6 @@ nav img {
     gap: 15px;
     padding: 15px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*FOOTER CODE*/
 

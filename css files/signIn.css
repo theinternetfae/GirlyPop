@@ -14,7 +14,7 @@ body {
 
 .form {
     width: 50%;
-    background: #c14e76e0;
+    background: #7e1036;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -23,7 +23,7 @@ body {
 
 .welcome {
     width: 50%;
-    background-image: url(images/medium-shot-woman-wearing-hat.jpg);
+    background-image: url(../images/medium-shot-woman-wearing-hat.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -42,9 +42,9 @@ form {
 
 form h2 {
     text-align: center;
-    margin-top: 40px;
+    margin: 60px 0px 40px 0px;
     font-size: 40px;
-    color: #c14e76e0;
+    color: #7e1036;
 }
 
 form .text {
@@ -57,13 +57,9 @@ form .text {
     border: none;
 }
 
-form .checknews {
-    border: 1px solid black;
+.pass-redirect {
     margin-top: 30px;
-    height: 10px;
-    width: 10px;
-    margin-left: 2px;
-    accent-color: #c14e76e0;
+    text-align: end;
     cursor: pointer;
 }
 
@@ -73,7 +69,7 @@ form .checknews {
     border-radius: 10px;
     outline: none;
     border: none;
-    background: #c14e76e0;
+    background: #7e1036;
     color: white;
     font-weight: 600;
     cursor: pointer;
@@ -91,17 +87,17 @@ form .checknews {
 }
 
 .somewhere .button {
-    background: #7e1036;
+    background: #c14e76e0;
     color: white;
     padding: 10px;
     border-radius: 5px;
-    outline: none;
     font-size: 13.5px;
+    outline: none;
     width: 150px;
     border: none;
     font-weight: 600;
-    cursor: pointer;
     text-align: center;
+    cursor: pointer;
 }
 
 .somewhere .button:active {
@@ -110,17 +106,19 @@ form .checknews {
 
 .contact {
     display: flex;
-    margin-top: 50px;
+    margin-top: 90px;
     gap: 15px;
     justify-content: center;
 }
 
 .contact .bi {
     cursor: pointer;
-    color: #c14e76e0;
+    color: #7e1036;
 }
 
 a {
     text-decoration: none;
     color: white;
 }
+
+/*Please design a cart screen for the GirlyPop brand, showing what items are in the cart and the total amount of all items in a receipt-like section of it's own using #7e1036 and #c14e76e0*/

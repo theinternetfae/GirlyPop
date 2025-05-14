@@ -80,7 +80,7 @@ nav img {
 
 .move .bi {
     cursor: pointer;
-    font-size: 20px;
+    font-size: 22px;
     color: #7e1036ee;
     padding: 5px;
     width: 50px;
@@ -88,6 +88,20 @@ nav img {
     background: transparent;
     text-align: center;
     border-radius: 5px;
+}
+
+
+.cart-count p {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    top: 28px;
+    font-size: 12.5px;
+    left: 1390.5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .move .bi-filled {
