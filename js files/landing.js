@@ -1,3 +1,3 @@
-import { updateCart } from "../checkout";
+import { updateCart } from "./checkout.js";
 
-updateCart;
+updateCart();

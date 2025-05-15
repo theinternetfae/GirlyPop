@@ -22,35 +22,24 @@ export function updateCart() {
     })
 }
 
-const moves = document.querySelectorAll('.moves');
-const white = document.querySelector('.cart-count p')
+export function navToggle() {
+    const moves = document.querySelectorAll('.moves');
+    const white = document.querySelector('.cart-count p')
 
-moves.forEach((move) => {
+    moves.forEach((move) => {
 
-    move.addEventListener('click', () => {
-        
-        moves.forEach((m) => m.classList.remove('bi-filled'));
+        move.addEventListener('click', () => {
+            
+            moves.forEach((m) => m.classList.remove('bi-filled'));
 
-        move.classList.add('bi-filled');
+            move.classList.add('bi-filled');
 
-        if(move.classList.contains('no')) {
-            white.style.color = '#7e1036ee';
-        }
-  
+            if(move.classList.contains('no')) {
+                white.style.color = '#7e1036ee';
+            }
+    
+        })
     })
-})
+}
 
-const productPage = document.querySelector('.product-page');
-const products = document.querySelectorAll('.for-you-product img');
-const back = document.querySelector('.bi-x-lg');
-
-products.forEach((product) => {
-    product.addEventListener('click', () => {
-    productPage.style.display = 'block';
-    })
-})
-
-back.addEventListener('click', () => {
-    productPage.style.display = 'none';
-})
-
+navToggle();

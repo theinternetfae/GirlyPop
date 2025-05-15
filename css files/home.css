@@ -6,7 +6,7 @@
 }
 
 body {
-    height: 100vh;
+    height: 100%;
     font-family: "Lexend Deca", sans-serif;
     background: #F2F3F4;
     font-family: "Lexend Deca", sans-serif;
@@ -100,7 +100,7 @@ nav img {
     width: 25px;
     height: 25px;
     text-align: center;
-    top: 28px;
+    top: 30px;
     left: 1390.5px;
     color: #7e1036;
     font-weight: 600;

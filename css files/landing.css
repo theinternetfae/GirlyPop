@@ -6,7 +6,7 @@
 }
 
 body {
-    height: 100vh;
+    height: 100%;
     font-family: "Lexend Deca", sans-serif;
 }
 
@@ -176,6 +176,8 @@ nav img {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    overflow: hidden;
+    position: relative;
 }
 
 .featured h3 {
@@ -184,19 +186,21 @@ nav img {
 
 .featured-products {
     height: 200px;
+    width: calc(300 * 5);
     display: flex;
     gap: 20px;
-    /* animation: slideLeft 60s ease infinite; */
+    border: 1px solid black;
+    /* animation: slideLeft 40s ease infinite; */
 }
 
-/* @keyframes slideLeft {
+@keyframes slideLeft {
     from {
         transform: translateX(0%);
     }
     to {
-        transform: translateX(100%);
+        transform: translateX(-100%);
     }
-} */
+}
 
 .f-product {
     width: 300px;
