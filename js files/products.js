@@ -239,7 +239,7 @@ export const products = [
     },
     {
         id: "24b6fc6f-327a-4ec4-896f-486349e85a3d",
-        image: "images/shoes/strawberry-shoes.jpeg",
+        image: "images/shoes/pink-shoes.jpeg",
         name: "Strawberry heels",
         seller: "Seller 1",
         rating: {
@@ -248,10 +248,10 @@ export const products = [
         },
         priceCents: 4050,
         keywords: [
+        "wedges",
         "heels",
-        "strawberry",
-        "kitten",
-        "patterned"
+        "beach",
+        "pink"
         ]
     },
     {
