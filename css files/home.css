@@ -211,8 +211,11 @@ nav img {
     width: 300px;
     margin-top: 30px;
     border-radius: 10px;
-    cursor: pointer;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.pop-up h4 {
+    cursor: pointer;
 }
 
 .for-you-product img {

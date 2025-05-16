@@ -10,34 +10,39 @@ products.forEach(product => {
     forYou.innerHTML += `
         <div class="for-you-product">
             <div class="description-for-you">
-                <div>
-                    <h4 >${product.name}</h4>
+                <div class="pop-up">
+                    <h4>${product.name}</h4>
                     <p>$${(product.priceCents / 100).toFixed(2)}</p>    
                 </div>
                 <i class="bi bi-cart2 cart-track"></i>
             </div>
             <img src="${product.image}" alt="" class="products">
         </div>`;
-})
+});
 
+popUpScreen();
 
 const productPage = document.querySelector('.product-page');
-const productsImages = document.querySelectorAll('.for-you-product img');
-const popUp = document.querySelector('.product-details')
+const popUp = document.querySelector('.product-details');
 
+function popUpScreen() {
+    const productsPopUps = document.querySelectorAll('.pop-up'); 
 
-productsImages.forEach((productImage) => {
-    productImage.addEventListener('click', () => {
-    productPage.style.display = 'block';
-    popUp.innerHTML = `<i class="bi bi-x-lg"></i>
+    productsPopUps.forEach((productPopUp, index) => {
+        productPopUp.addEventListener('click', () => {
+
+            const product = products[index]; 
+
+            productPage.style.display = 'block';
+            popUp.innerHTML = `<i class="bi bi-x-lg"></i>
                 <div class="showing-details">
                 <div class="img-box">
-                    <img src="${productImage.src}" alt="">
+                    <img src="${product.image}" alt="">
                 </div>
                 <div class="product-details-box">
                     <div class="details-intro">
-                        <h1>Jean halter dress</h1>
-                        <h2>$50.50</h2>
+                        <h1>${product.name}</h1>
+                        <h2>$${(product.priceCents / 100).toFixed(2)}</h2>
                     </div>
 
                     <div class="popup-desc">
@@ -106,5 +111,6 @@ productsImages.forEach((productImage) => {
         back.addEventListener('click', () => {
         productPage.style.display = 'none';
         });
-    })
-})
+        });
+    });
+}
