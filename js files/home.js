@@ -1,7 +1,6 @@
 import { updateCart, navToggle } from "./checkout.js";
 import { products } from "./products.js";
 
-updateCart();
 navToggle();
 
 const forYou = document.querySelector('.for-you-products');
@@ -114,3 +113,5 @@ function popUpScreen() {
         });
     });
 }
+
+updateCart();

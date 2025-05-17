@@ -1,6 +1,9 @@
+const cartStorage = [];
+
 export function updateCart() {
     const cart = document.querySelectorAll('.cart-track');
     const cartCount = document.querySelector('.cart-count p');
+    const theCart = document.querySelector('.cart-items');
     let cartCounting = 0;
 
     cart.forEach((cartBtn) => {
@@ -17,9 +20,27 @@ export function updateCart() {
                 cartCount.innerHTML = cartCounting;
             }
 
-            console.log('clicked');
+            theCart.innerHTML += `<div class="cart-item">
+                        <div class="product">
+                            <img src="images/shoes/Strawberry shoes.jpeg" alt="">
+                            <div class="product-info">
+                                <h3>Strawberry kitten heels</h3>
+                                <p>Status: Damaged</p>
+                                <p>Size: Medium</p>
+                                <p>Location: Austen, Texas</p>
+                            </div>
+                        </div>
+    
+                        <div class="others">
+                            <p>$20.50</p>
+                            <p>$5.40</p>
+                            <p>$25.90</p>
+                        </div>
+    
+                    </div>`
         })
     })
+
 }
 
 export function navToggle() {
@@ -43,3 +64,5 @@ export function navToggle() {
 }
 
 navToggle();
+
+
