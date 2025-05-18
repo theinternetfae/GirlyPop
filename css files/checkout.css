@@ -131,6 +131,8 @@ nav img {
 
 .the-cart-items {
     margin-top: 30px;
+    width: 100%;
+    position: relative;
 }
 
 .header {
@@ -164,6 +166,19 @@ nav img {
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+.cart-item .bi-x-lg {
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    margin-right: 10px;
+    color: #7e1036ee;
+    cursor: pointer;
+}
+
+.cart-item .bi-x-lg:active {
+    transform: scale(0.85);
 }
 
 .product-info p {
