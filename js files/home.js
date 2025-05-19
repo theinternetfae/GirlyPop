@@ -23,11 +23,11 @@ products.forEach(product => {
 
 export function addToCart() {
     const addBtn = document.querySelectorAll('.cart-tack');
-    const productId = addBtn.dataset.productId;
     const cartItemCont = document.querySelector('.cart-items');
 
     addBtn.forEach(btn => {
         btn.addEventListener('click', () => {
+            const productId = btn.dataset.productId;
             cartStorage.push(productId)
 
             cartStorage.forEach(item => {
@@ -59,8 +59,6 @@ export function addToCart() {
         saveCartStorage();
     })
 }
-
-
 
 
 popUpScreen();
