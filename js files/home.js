@@ -1,5 +1,6 @@
 import { updateCart, navToggle } from "./checkout.js";
 import { products } from "./products.js";
+import { cartStorage, saveCartStorage} from "./cart.js";
 
 navToggle();
 
@@ -18,6 +19,49 @@ products.forEach(product => {
             <img src="${product.image}" alt="" class="products">
         </div>`;
 });
+
+
+export function addToCart() {
+    const addBtn = document.querySelectorAll('.cart-tack');
+    const productId = addBtn.dataset.productId;
+    const cartItemCont = document.querySelector('.cart-items');
+
+    addBtn.forEach(btn => {
+        btn.addEventListener('click', () => {
+            cartStorage.push(productId)
+
+            cartStorage.forEach(item => {
+            cartItemCont.innerHTML += `<div class="cart-item">
+
+                        <i class="bi bi-x-lg"></i>
+
+                        <div class="product">
+                            <img src="${item.image}" alt="">
+                            <div class="product-info">
+                                <h3>${item.name}</h3>
+                                <p>Status: Damaged</p>
+                                <p>Size: Medium</p>
+                                <p>Location: Austen, Texas</p>
+                            </div>
+                        </div>
+
+                        <div class="others">
+                            <p class="price">$${(item.priceCents / 100).toFixed(2)}</p>
+                            <p class="delivery">$5.40</p>
+                            <p class="total">$25.90</p>
+                        </div>
+        
+                    </div>`
+            })
+
+        })
+
+        saveCartStorage();
+    })
+}
+
+
+
 
 popUpScreen();
 
@@ -105,11 +149,11 @@ function popUpScreen() {
                 </div>
             </div>`;
 
-        const back = document.querySelector('.bi-x-lg');
+            const back = document.querySelector('.bi-x-lg');
 
-        back.addEventListener('click', () => {
-        productPage.style.display = 'none';
-        });
+            back.addEventListener('click', () => {
+            productPage.style.display = 'none';
+            });
         });
     });
 }

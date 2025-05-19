@@ -1,13 +1,5 @@
-export const cartStorage = JSON.parse(localStorage.getItem('cartStorage')) || [ ];
+export let cartStorage = JSON.parse(localStorage.getItem('cartStorage')) || [ ];
 
-export function saveToStorage() {
+export function saveCartStorage() {
     localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
-};
-
-export function addToCart(productId) {
-    cartStorage.push({
-        productId       
-    })
-
-    saveToStorage();
 }

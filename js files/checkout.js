@@ -1,77 +1,26 @@
-const cartStorage = [];
+import { addToCart } from "./home.js";
 
 export function updateCart() {
     const cart = document.querySelectorAll('.cart-track');
     const cartCount = document.querySelector('.cart-count p');
-    const theCart = document.querySelector('.cart-items');
     let cartCounting = 0;
 
     cart.forEach((cartBtn) => {
         cartBtn.addEventListener('click', () => {
             if(cartBtn.classList.contains('bi-cart2')){
-
-                const { productId } = cartBtn.dataset;
-
                 cartBtn.classList.remove('bi-cart2');
                 cartBtn.classList.add('bi-cart-check');
                 cartCounting++;
-                cartCount.innerHTML = cartCounting;    
-
-                
-                addToCart(productId);
-
-                cartStorage.forEach((item) => {
-                    theCart += `<div class="cart-item">
-
-                        <i class="bi bi-x-lg"></i>
-
-                        <div class="product">
-                            <img src="${item.image}" alt="">
-                            <div class="product-info">
-                                <h3>${item.name}</h3>
-                                <p>Status: Damaged</p>
-                                <p>Size: Medium</p>
-                                <p>Location: Austen, Texas</p>
-                            </div>
-                        </div>
-
-                        <div class="others">
-                            <p class="price">$${(item.priceCents / 100).toFixed(2)}</p>
-                            <p class="delivery">$5.40</p>
-                            <p class="total">$25.90</p>
-                        </div>
-        
-                    </div>`
-                })
-
+                cartCount.innerHTML = cartCounting;   
+                addToCart(); 
             } else if(cartBtn.classList.contains('bi-cart-check')) {
                 cartBtn.classList.remove('bi-cart-check');
                 cartBtn.classList.add('bi-cart2');
                 cartCounting--;
                 cartCount.innerHTML = cartCounting;
             }
-
-            theCart.innerHTML += `<div class="cart-item">
-                        <div class="product">
-                            <img src="images/shoes/Strawberry shoes.jpeg" alt="">
-                            <div class="product-info">
-                                <h3>Strawberry kitten heels</h3>
-                                <p>Status: Damaged</p>
-                                <p>Size: Medium</p>
-                                <p>Location: Austen, Texas</p>
-                            </div>
-                        </div>
-    
-                        <div class="others">
-                            <p>$20.50</p>
-                            <p>$5.40</p>
-                            <p>$25.90</p>
-                        </div>
-    
-                    </div>`
         })
     })
-
 }
 
 export function navToggle() {
