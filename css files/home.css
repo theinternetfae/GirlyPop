@@ -174,6 +174,8 @@ nav img {
     background: #FFFFFF;
     font-weight: 600;
     border-radius: 0px 0px 10px 0px;
+    outline: none;
+    border: none;
 }
 
 .description h4 {
@@ -239,17 +241,18 @@ nav img {
 }
 
 .description-for-you .bi-cart2 {
-    padding: 15px;
+    padding: 16px;
     font-size: 20px;
     background: #7e1036;
     color: white;
     font-weight: 600;
     border-radius: 0px 0px 10px 0px;
     cursor: pointer;
+    border: none;
 }
 
 .description-for-you .bi-cart-check {
-    padding: 15px;
+    padding: 16px;
     font-size: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
     color: #7e1036;
@@ -257,6 +260,7 @@ nav img {
     font-weight: 600;
     border-radius: 0px 0px 10px 0px;
     cursor: pointer;
+    border: none;
 }
 
 .description-for-you h4 {

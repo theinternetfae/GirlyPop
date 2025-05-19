@@ -13,7 +13,7 @@ products.forEach(product => {
                     <h4>${product.name}</h4>
                     <p>$${(product.priceCents / 100).toFixed(2)}</p>    
                 </div>
-                <i class="bi bi-cart2 cart-track"></i>
+                <button class="bi-cart2 cart-track" data-product-id="${product.id}"></button>
             </div>
             <img src="${product.image}" alt="" class="products">
         </div>`;

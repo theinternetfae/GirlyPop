@@ -9,10 +9,41 @@ export function updateCart() {
     cart.forEach((cartBtn) => {
         cartBtn.addEventListener('click', () => {
             if(cartBtn.classList.contains('bi-cart2')){
+
+                const { productId } = cartBtn.dataset;
+
                 cartBtn.classList.remove('bi-cart2');
                 cartBtn.classList.add('bi-cart-check');
                 cartCounting++;
                 cartCount.innerHTML = cartCounting;    
+
+                
+                addToCart(productId);
+
+                cartStorage.forEach((item) => {
+                    theCart += `<div class="cart-item">
+
+                        <i class="bi bi-x-lg"></i>
+
+                        <div class="product">
+                            <img src="${item.image}" alt="">
+                            <div class="product-info">
+                                <h3>${item.name}</h3>
+                                <p>Status: Damaged</p>
+                                <p>Size: Medium</p>
+                                <p>Location: Austen, Texas</p>
+                            </div>
+                        </div>
+
+                        <div class="others">
+                            <p class="price">$${(item.priceCents / 100).toFixed(2)}</p>
+                            <p class="delivery">$5.40</p>
+                            <p class="total">$25.90</p>
+                        </div>
+        
+                    </div>`
+                })
+
             } else if(cartBtn.classList.contains('bi-cart-check')) {
                 cartBtn.classList.remove('bi-cart-check');
                 cartBtn.classList.add('bi-cart2');
@@ -64,5 +95,3 @@ export function navToggle() {
 }
 
 navToggle();
-
-
