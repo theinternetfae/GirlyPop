@@ -11,7 +11,8 @@ export function updateCart() {
                 cartBtn.classList.remove('bi-cart2');
                 cartBtn.classList.add('bi-cart-check');
                 cartCounting++;
-                cartCount.innerHTML = cartCounting;    
+                cartCount.innerHTML = cartCounting;
+                addToCart(cartBtn)
             } else if(cartBtn.classList.contains('bi-cart-check')) {
                 cartBtn.classList.remove('bi-cart-check');
                 cartBtn.classList.add('bi-cart2');
@@ -20,9 +21,6 @@ export function updateCart() {
             }
         })
     })
-
-    
-    addToCart();
 }
 
 export function navToggle() {

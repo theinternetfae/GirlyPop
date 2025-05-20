@@ -255,7 +255,7 @@ export const products = [
         ]
     },
     {
-        id: "10b6fc6f-327a-4ec4-896f-486349e85a3d",
+        id: "25b6fc6f-327a-4ec4-896f-486349e85a3d",
         image: "images/dresses/red-dress.jpeg",
         name: "Little red dress",
         seller: "Seller 1",

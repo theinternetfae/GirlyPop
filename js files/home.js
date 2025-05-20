@@ -20,44 +20,48 @@ products.forEach(product => {
         </div>`;
 });
 
+export function addToCart(btn) {
+    //  const cartItemCont = document.querySelector('.cart-items');
+        const productId = btn.dataset.productId;
+        let matching;
 
-export function addToCart() {
-    const addBtn = document.querySelectorAll('.cart-tack');
-    const cartItemCont = document.querySelector('.cart-items');
-
-    addBtn.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const productId = btn.dataset.productId;
-            cartStorage.push(productId)
-
-            cartStorage.forEach(item => {
-            cartItemCont.innerHTML += `<div class="cart-item">
-
-                        <i class="bi bi-x-lg"></i>
-
-                        <div class="product">
-                            <img src="${item.image}" alt="">
-                            <div class="product-info">
-                                <h3>${item.name}</h3>
-                                <p>Status: Damaged</p>
-                                <p>Size: Medium</p>
-                                <p>Location: Austen, Texas</p>
-                            </div>
-                        </div>
-
-                        <div class="others">
-                            <p class="price">$${(item.priceCents / 100).toFixed(2)}</p>
-                            <p class="delivery">$5.40</p>
-                            <p class="total">$25.90</p>
-                        </div>
-        
-                    </div>`
-            })
-
+        products.forEach((product) => {
+            if (productId === product.id) {
+                matching = product;
+            }
         })
 
-        saveCartStorage();
-    })
+        cartStorage.push(matching);
+        console.log(cartStorage);
+
+
+        //TO:DO; I THINK THE PROBLEM HAS TO DO WITH HOW CART-STORAGE IS BEING CALLED? HONESTLY MY GEE.... TRY CONSOLE LOGGING TO SEE. ALSO, TRY CALLING THE CART ITEMS IN A FUNCTION AND IMPORTING IT HERE TOO. GOOD LUCK <3
+
+        // cartStorage.forEach(item => {
+        // cartItemCont.innerHTML += `<div class="cart-item">
+
+        //             <i class="bi bi-x-lg"></i>
+
+        //             <div class="product">
+        //                 <img src="${item.image}" alt="">
+        //                 <div class="product-info">
+        //                     <h3>${item.name}</h3>
+        //                     <p>Status: Damaged</p>
+        //                     <p>Size: Medium</p>
+        //                     <p>Location: Austen, Texas</p>
+        //                 </div>
+        //             </div>
+
+        //             <div class="others">
+        //                 <p class="price">$${(item.priceCents / 100).toFixed(2)}</p>
+        //                 <p class="delivery">$5.40</p>
+        //                 <p class="total">$25.90</p>
+        //             </div>
+    
+        //         </div>`
+        // })
+
+    // saveCartStorage();
 }
 
 
