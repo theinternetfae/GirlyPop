@@ -1,4 +1,4 @@
-import { updateCart, navToggle } from "./checkout.js";
+import { updateCart, navToggle, cartShow } from "./checkout.js";
 import { products } from "./products.js";
 import { cartStorage, saveCartStorage} from "./cart.js";
 
@@ -21,7 +21,6 @@ products.forEach(product => {
 });
 
 export function addToCart(btn) {
-    //  const cartItemCont = document.querySelector('.cart-items');
         const productId = btn.dataset.productId;
         let matching;
 
@@ -36,34 +35,24 @@ export function addToCart(btn) {
 
 
         //TO:DO; I THINK THE PROBLEM HAS TO DO WITH HOW CART-STORAGE IS BEING CALLED? HONESTLY MY GEE.... TRY CONSOLE LOGGING TO SEE. ALSO, TRY CALLING THE CART ITEMS IN A FUNCTION AND IMPORTING IT HERE TOO. GOOD LUCK <3
-
-        // cartStorage.forEach(item => {
-        // cartItemCont.innerHTML += `<div class="cart-item">
-
-        //             <i class="bi bi-x-lg"></i>
-
-        //             <div class="product">
-        //                 <img src="${item.image}" alt="">
-        //                 <div class="product-info">
-        //                     <h3>${item.name}</h3>
-        //                     <p>Status: Damaged</p>
-        //                     <p>Size: Medium</p>
-        //                     <p>Location: Austen, Texas</p>
-        //                 </div>
-        //             </div>
-
-        //             <div class="others">
-        //                 <p class="price">$${(item.priceCents / 100).toFixed(2)}</p>
-        //                 <p class="delivery">$5.40</p>
-        //                 <p class="total">$25.90</p>
-        //             </div>
-    
-        //         </div>`
-        // })
-
-    // saveCartStorage();
+    cartShow();
+    saveCartStorage();
 }
 
+export function removeFromCart(btn) {
+
+    const productId = btn.dataset.productId;
+    const indexToRemove = cartStorage.findIndex((item) => productId === item.id);
+
+    if (indexToRemove !== -1) {
+        cartStorage.splice(indexToRemove, 1);
+    }
+
+    console.log(cartStorage);
+
+    cartShow();
+    saveCartStorage();
+}
 
 popUpScreen();
 

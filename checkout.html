@@ -1,156 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Checkout - GirlyPop</title>
-    <link rel="stylesheet" href="css files/checkout.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
-</head>
-<body>
-    <nav>
-        <a href="landing.html"><img src="images/GirlyPop white background.png" alt="logo"></a>
-        <select name="categories" id="">
-            <option value="" selected hidden>Categories</option>
-            <option value="">Tops</option>
-            <option value="">Bottoms</option>
-            <option value="">Accessories</option>
-            <option value="">Dresses</option>
-            <option value="">Outerwear</option>
-        </select>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Checkout - GirlyPop</title>
+        <link rel="stylesheet" href="css files/checkout.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
+    </head>
+    <body>
+        <nav>
+            <a href="landing.html"><img src="images/GirlyPop white background.png" alt="logo"></a>
+            <select name="categories" id="">
+                <option value="" selected hidden>Categories</option>
+                <option value="">Tops</option>
+                <option value="">Bottoms</option>
+                <option value="">Accessories</option>
+                <option value="">Dresses</option>
+                <option value="">Outerwear</option>
+            </select>
 
-        <div class="search-bar">
-            <i class="bi bi-search-heart"></i>
-            <input type="text" placeholder="Search...">
-            <p>GO</p>
-        </div>
-        <div class="move">
-            <a href="home.html"><button class="bi no moves bi-house"></button></a>
-            <div class="cart-count"><a href="checkout.html">
-                <p>0</p>
-                <button class="bi moves bi-bag bi-filled"></button>
-            </a></div>
-            <button class="bi moves no bi-person"></button>
-        </div>
-    </nav>
-
-    <section class="cart-info">
-        
-        
-        <div class="the-cart">
-            <div class="the-cart-text">
-                <h2>Your Cart</h2>
-                <p><span>0 items</span> in your cart</p>
+            <div class="search-bar">
+                <i class="bi bi-search-heart"></i>
+                <input type="text" placeholder="Search...">
+                <p>GO</p>
             </div>
+            <div class="move">
+                <a href="home.html"><button class="bi no moves bi-house"></button></a>
+                <div class="cart-count"><a href="checkout.html">
+                    <p>0</p>
+                    <button class="bi moves bi-bag bi-filled"></button>
+                </a></div>
+                <button class="bi moves no bi-person"></button>
+            </div>
+        </nav>
 
-            <div class="the-cart-items">
-                <div class="header">
-                    <p>Product</p>
-                    <div class="others">
-                        <p>Price</p>
-                        <p>Delivery</p>
-                        <p>Total</p>    
-                    </div>
+        <section class="cart-info">
+            
+            
+            <div class="the-cart">
+                <div class="the-cart-text">
+                    <h2>Your Cart</h2>
+                    <p><span>0 items</span> in your cart</p>
                 </div>
 
-
-                <div class="cart-items">
-                    <div class="cart-item">
-
-                        <i class="bi bi-x-lg"></i>
-
-                        <div class="product">
-                            <img src="images/shoes/Strawberry shoes.jpeg" alt="">
-                            <div class="product-info">
-                                <h3>Strawberry kitten heels</h3>
-                                <p>Status: Damaged</p>
-                                <p>Size: Medium</p>
-                                <p>Location: Austen, Texas</p>
-                            </div>
-                        </div>
-
+                <div class="the-cart-items">
+                    <div class="header">
+                        <p>Product</p>
                         <div class="others">
-                            <p class="price">$20.50</p>
-                            <p class="delivery">$5.40</p>
-                            <p class="total">$25.90</p>
+                            <p>Price</p>
+                            <p>Delivery</p>
+                            <p>Total</p>    
                         </div>
+                    </div>
+
+
+                    <div class="items-container">
+
+                    </div>
+                    
+                </div>
+            </div>
+
+
+            <div class="the-receipt">
+                <div class="the-location">
+                    <h2>Your Location</h2>
+                    <div class="user-location">
+                        <select name="country" id="country">
+                            <option value="placeholder" selected hidden>Country</option>
+                            <option value="">Nigeria</option>
+                            <option value="">Japan</option>
+                            <option value="">Canada</option>
+                            <option value="">Germany</option>
+                            <option value="">Egypt</option>
+                            <option value="">Norway</option>
+                        </select>
+                        
+                        <select name="country" id="country">
+                            <option value="placeholder" selected hidden>State</option>
+                            <option value="">Delta</option>
+                            <option value="">Tokyo Metropolis</option>
+                            <option value="">Ontario</option>
+                            <option value="">Berlin</option>
+                            <option value="">Cairo Governate</option>
+                            <option value="">Oslo</option>
+                        </select>
         
+                        <select name="country" id="country">
+                            <option value="placeholder" selected hidden>City</option>
+                            <option value="">Warri</option>
+                            <option value="">Tokyo</option>
+                            <option value="">Toronto</option>
+                            <option value="">Berlin</option>
+                            <option value="">Cairo</option>
+                            <option value="">Oslo</option>
+                        </select>
+        
+                        <input type="text" placeholder="ZIP code"><br>
+        
+                        <button>Update</button>
                     </div>
                 </div>
-                
-            </div>
-        </div>
 
-
-        <div class="the-receipt">
-            <div class="the-location">
-                <h2>Your Location</h2>
-                <div class="user-location">
-                    <select name="country" id="country">
-                        <option value="placeholder" selected hidden>Country</option>
-                        <option value="">Nigeria</option>
-                        <option value="">Japan</option>
-                        <option value="">Canada</option>
-                        <option value="">Germany</option>
-                        <option value="">Egypt</option>
-                        <option value="">Norway</option>
-                    </select>
-                    
-                    <select name="country" id="country">
-                        <option value="placeholder" selected hidden>State</option>
-                        <option value="">Delta</option>
-                        <option value="">Tokyo Metropolis</option>
-                        <option value="">Ontario</option>
-                        <option value="">Berlin</option>
-                        <option value="">Cairo Governate</option>
-                        <option value="">Oslo</option>
-                    </select>
-    
-                    <select name="country" id="country">
-                        <option value="placeholder" selected hidden>City</option>
-                        <option value="">Warri</option>
-                        <option value="">Tokyo</option>
-                        <option value="">Toronto</option>
-                        <option value="">Berlin</option>
-                        <option value="">Cairo</option>
-                        <option value="">Oslo</option>
-                    </select>
-    
-                    <input type="text" placeholder="ZIP code"><br>
-    
-                    <button>Update</button>
-                </div>
-            </div>
-
-            <div class="demarcation"></div>
-
-            <div class="the-total">
-                <h2>Your Total</h2>
-                <div class="checkout-product">
-                    <p>Strawberry kitten heels</p>
-                    <p>$25.90</p>
-                </div>
-                <div class="checkout-product">
-                    <p>Little red dress</p>
-                    <p>$21.50</p>
-                </div>
-                <div class="checkout-product">
-                    <p>Y2K pink wedges</p>
-                    <p>$35.70</p>
-                </div>
                 <div class="demarcation"></div>
-                <div class="checkout-product total-price">
-                    <p>TOTAL</p>
-                    <p>$83.10</p>
+
+                <div class="the-total">
+                    <h2>Your Total</h2>
+                    <div class="checkout-product">
+                        <p>Strawberry kitten heels</p>
+                        <p>$25.90</p>
+                    </div>
+                    <div class="checkout-product">
+                        <p>Little red dress</p>
+                        <p>$21.50</p>
+                    </div>
+                    <div class="checkout-product">
+                        <p>Y2K pink wedges</p>
+                        <p>$35.70</p>
+                    </div>
+                    <div class="demarcation"></div>
+                    <div class="checkout-product total-price">
+                        <p>TOTAL</p>
+                        <p>$83.10</p>
+                    </div>
                 </div>
+
+                <button class="checkout-btn">Checkout</button>
             </div>
 
-            <button class="checkout-btn">Checkout</button>
-        </div>
 
-
-    </section>
-
-    <script type="module" src="js files/checkout.js"></script>
-</body>
+        </section>
+    
+        <script type="module" src="js files/checkout.js"></script>
+    </body>
 </html>
