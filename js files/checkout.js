@@ -1,6 +1,6 @@
 import { addToCart, removeFromCart } from "./home.js";
-import { saveCartButtonState, getSavedCartButtonState } from "./utils.js";
-import { cartStorage } from "./cart.js";
+import { saveCartButtonState, getSavedCartButtonState,} from "./utils.js";
+
 
 export function updateCart() {
     const cart = document.querySelectorAll('.cart-track');
@@ -52,35 +52,6 @@ export function updateCart() {
     })
 }
 
-export function cartShow() {
-    const itemsContainer = document.querySelector('.items-container');
-
-    console.log(itemsContainer);
-    cartStorage.forEach(item => {
-        itemsContainer.innerHTML += `<div class="cart-item">
-
-            <i class="bi bi-x-lg"></i>
-
-            <div class="product">
-                <img src="${item.image}" alt="">
-                <div class="product-info">
-                    <h3>${item.name}</h3>
-                    <p>Status: Damaged</p>
-                    <p>Size: Medium</p>
-                    <p>Location: Austen, Texas</p>
-                </div>
-            </div>
-
-            <div class="others">
-                <p class="price">${item.priceCents}</p>
-                <p class="delivery">$5.40</p>
-                <p class="total">$25.90</p>
-            </div>
-
-            </div>`;
-    })
-}
-
 export function navToggle() {
     const moves = document.querySelectorAll('.moves');
     const white = document.querySelector('.cart-count p')
@@ -100,8 +71,6 @@ export function navToggle() {
         })
     })
 }
-
-
 
 
 navToggle();
