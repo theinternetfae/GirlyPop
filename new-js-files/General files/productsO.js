@@ -203,8 +203,25 @@ export const products = [
         "summer"
         ]
     },
-    {
+        {
         id: "22b6fc6f-327a-4ec4-896f-486349e85a3d",
+        image: "images/tops/patterned-purple-top.jpeg",
+        name: "Purple patterned top",
+        seller: "Seller 1",
+        rating: {
+        stars: 3.5,
+        count: 127
+        },
+        priceCents: 5075,
+        keywords: [
+        "crop",
+        "top",
+        "purple",
+        "mesh"
+        ]
+    },
+    {
+        id: "23b6fc6f-327a-4ec4-896f-486349e85a3d",
         image: "images/dresses/patchwork-dress.jpeg",
         name: "Patchwork dress",
         seller: "Seller 1",
@@ -220,8 +237,25 @@ export const products = [
         "patterned"
         ]
     },
+        {
+        id: "24b6fc6f-327a-4ec4-896f-486349e85a3d",
+        image: "images/tops/black-goth-blouse.jpeg",
+        name: "Black goth blouse",
+        seller: "Seller 1",
+        rating: {
+        stars: 5.0,
+        count: 127
+        },
+        priceCents: 3595,
+        keywords: [
+        "goth",
+        "blouse",
+        "cut-out",
+        "black"
+        ]
+    },
     {
-        id: "23b6fc6f-327a-4ec4-896f-486349e85a3d",
+        id: "25b6fc6f-327a-4ec4-896f-486349e85a3d",
         image: "images/bottoms/summer-cotton-skirt.jpeg",
         name: "Summer cotton skirt",
         seller: "Seller 1",
@@ -237,8 +271,25 @@ export const products = [
         "short"
         ]
     },
+        {
+        id: "26b6fc6f-327a-4ec4-896f-486349e85a3d",
+        image: "images/tops/leopard-print-nightset.jpeg",
+        name: "Leopard print nightset",
+        seller: "Seller 1",
+        rating: {
+        stars: 4.5,
+        count: 127
+        },
+        priceCents: 5000,
+        keywords: [
+        "leopard",
+        "nightset",
+        "print",
+        "sleep"
+        ]
+    },
     {
-        id: "24b6fc6f-327a-4ec4-896f-486349e85a3d",
+        id: "27b6fc6f-327a-4ec4-896f-486349e85a3d",
         image: "images/shoes/pink-shoes.jpeg",
         name: "Strawberry heels",
         seller: "Seller 1",
@@ -255,7 +306,41 @@ export const products = [
         ]
     },
     {
-        id: "25b6fc6f-327a-4ec4-896f-486349e85a3d",
+        id: "28b6fc6f-327a-4ec4-896f-486349e85a3d",
+        image: "images/accessories/dragonfly-pendant.jpeg",
+        name: "Dragon fly pendant",
+        seller: "Seller 1",
+        rating: {
+        stars: 4.5,
+        count: 127
+        },
+        priceCents: 1550,
+        keywords: [
+        "pendant",
+        "dragon fly",
+        "accessory",
+        "unique"
+        ]
+    },
+    {
+        id: "29b6fc6f-327a-4ec4-896f-486349e85a3d",
+        image: "images/shoes/pink-wedges.jpeg",
+        name: "Pink wedges",
+        seller: "Seller 1",
+        rating: {
+        stars: 4.0,
+        count: 127
+        },
+        priceCents: 4095,
+        keywords: [
+        "wedges",
+        "pink",
+        "2000's",
+        "summer"
+        ]
+    },
+    {
+        id: "30b6fc6f-327a-4ec4-896f-486349e85a3d",
         image: "images/dresses/red-dress.jpeg",
         name: "Little red dress",
         seller: "Seller 1",
@@ -269,6 +354,57 @@ export const products = [
         "dress",
         "knit",
         "crochet"
+        ]
+    },
+        {
+        id: "31b6fc6f-327a-4ec4-896f-486349e85a3d",
+        image: "images/bottoms/Y2k-bottoms.jpeg",
+        name: "Low-rise jeans",
+        seller: "Seller 1",
+        rating: {
+        stars: 4.5,
+        count: 127
+        },
+        priceCents: 10010,
+        keywords: [
+        "low-rise",
+        "Y2k",
+        "jeans",
+        "light"
+        ]
+    },
+    {
+        id: "32b6fc6f-327a-4ec4-896f-486349e85a3d",
+        image: "images/accessories/leather-jacket.jpeg",
+        name: "Leather biker jacket",
+        seller: "Seller 1",
+        rating: {
+        stars: 5.0,
+        count: 127
+        },
+        priceCents: 15015,
+        keywords: [
+        "leather",
+        "jacket",
+        "biker",
+        "big"
+        ]
+    },
+        {
+        id: "33b6fc6f-327a-4ec4-896f-486349e85a3d",
+        image: "images/accessories/bag.jpeg",
+        name: "Gyaru bag",
+        seller: "Seller 1",
+        rating: {
+        stars: 4.0,
+        count: 127
+        },
+        priceCents: 12025,
+        keywords: [
+        "bag",
+        "gyaru",
+        "hyper-femme",
+        "pink"
         ]
     },
 ]
