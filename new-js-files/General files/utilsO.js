@@ -8,16 +8,13 @@ function featuredGenerator(arr, count) {
 
 export function featuredProducts() {
     const featuredP = document.querySelector('.featured-products');
-
     const randomProducts = featuredGenerator(products, 5);
-
-    console.log(randomProducts);
 
     randomProducts.forEach(rItem => {
         featuredP.innerHTML +=`<div class="f-product">
                 <div class="description">
                     <div class="description-text">
-                        <h4>${rItem.name}</h4>
+                        <h4 data-product-id="${rItem.id}">${rItem.name}</h4>
                         <p>$${(rItem.priceCents / 100).toFixed(2)}</p>    
                     </div>
                     <i class="bi bi-cart2 cart-track"></i>
@@ -25,9 +22,7 @@ export function featuredProducts() {
                 <img src="${rItem.image}" alt="top">
             </div>`
     })
-
 }
-
 
 export function updateCartCount() {
     const addBtn = document.querySelectorAll('.cart-track');
