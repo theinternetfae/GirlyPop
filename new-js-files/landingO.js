@@ -1,3 +1,3 @@
-import { updateCartCount } from "./utilsO.js";
+import { updateCartCount } from "./General files/utilsO.js";
 
 updateCartCount();

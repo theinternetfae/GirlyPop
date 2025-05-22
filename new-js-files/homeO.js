@@ -1,5 +1,5 @@
-import { products } from "./productsO.js";
-import { updateCartCount } from "./utilsO.js";
+import { products } from "./General files/productsO.js";
+import { updateCartCount } from "./General files/utilsO.js";
 
 const forYou = document.querySelector('.for-you-products');
 
