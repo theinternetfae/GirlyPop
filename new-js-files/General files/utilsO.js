@@ -1,5 +1,5 @@
 import { products } from "./productsO.js";
-import { cartCountStorage } from "./storageO.js";
+import { cartCountStorage, cartStorageDisplay } from "./storageO.js";
 
 function featuredGenerator(arr, count) {
     const shuffled = [...arr].sort(() => 0.5 - Math.random());
@@ -33,12 +33,24 @@ export function updateCartCount() {
     addBtn.forEach(btn => {
 
         btn.addEventListener('click', () => {  
-
+            const btnId = btn.dataset.productId;
+            let cartStorage = cartStorageDisplay();
+            
             if (btn.classList.contains('bi-cart2')) {
                 btn.classList.remove('bi-cart2');
                 btn.classList.add('bi-cart-check');
                 cartCount++;
                 cartCountText.textContent = cartCount;
+
+                products.forEach(product => {
+                    if (btnId === product.id) {
+                    cartStorage.push(product);
+                    localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
+                    }
+                })
+
+                    console.log(cartStorage);
+                
             } else if (btn.classList.contains('bi-cart-check')) {
                 btn.classList.remove('bi-cart-check');
                 btn.classList.add('bi-cart2');
@@ -56,3 +68,4 @@ export function updateCartCount() {
 export function getCartCount() {
     return parseInt(localStorage.getItem('cartCount')) || 0;
 }
+

@@ -5,3 +5,13 @@ export function cartCountStorage() {
 
     return cartCount;
 }
+
+export function cartStorageDisplay() {
+    let cartStorage = JSON.parse(localStorage.getItem('cartStorage')) || [];
+
+    localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
+
+    return cartStorage;
+}
+
+localStorage.clear();
