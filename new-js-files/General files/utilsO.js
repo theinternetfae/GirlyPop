@@ -42,6 +42,7 @@ export function updateCartCount() {
                 cartCount++;
                 cartCountText.textContent = cartCount;
 
+
                 products.forEach(product => {
                     if (btnId === product.id) {
                     cartStorage.push(product);
@@ -49,13 +50,18 @@ export function updateCartCount() {
                     }
                 })
 
-                    console.log(cartStorage);
+                console.log(cartStorage);
                 
             } else if (btn.classList.contains('bi-cart-check')) {
                 btn.classList.remove('bi-cart-check');
                 btn.classList.add('bi-cart2');
                 cartCount--;
                 cartCountText.textContent = cartCount;
+
+                cartStorage = cartStorage.filter(item => item.id !== btnId);
+                localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
+
+                console.log(cartStorage);
             }
 
             cartCountText.textContent = cartCount;
