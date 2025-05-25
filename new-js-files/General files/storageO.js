@@ -14,4 +14,4 @@ export function cartStorageDisplay() {
     return cartStorage;
 }
 
-localStorage.clear();
+// localStorage.clear();

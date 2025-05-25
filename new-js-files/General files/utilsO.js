@@ -75,3 +75,6 @@ export function getCartCount() {
     return parseInt(localStorage.getItem('cartCount')) || 0;
 }
 
+export function getCartStorage() {
+    return JSON.parse(localStorage.getItem('cartStorage')) || [];
+}
