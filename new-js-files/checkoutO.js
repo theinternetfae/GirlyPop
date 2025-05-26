@@ -8,7 +8,7 @@ pageCartCount.textContent = `${cartCount} item${cartCount === 1 ? '' : 's'}`;
 
 const cartStorage = getCartStorage();
 const itemsContainer = document.querySelector('.items-container');
-const theTotal = document.querySelector('.the-total');
+const theTotal = document.querySelector('.checkout-products');
 
     cartStorage.forEach(item => {
         itemsContainer.innerHTML += `<div class="cart-item">
@@ -31,15 +31,15 @@ const theTotal = document.querySelector('.the-total');
                 <p class="total">$25.90</p>
             </div>
 
-            </div>`;
-    });
-
-    // function calculatingTotal() {
-    //     theTotal.innerHTML += `<div class="checkout-product">
-    //         <p>${item.name}</p>
-    //         <p>$${(item.priceCents / 100).toFixed(2)}</p>
-    //     </div>`
-    // }
-
-        
+        </div>`;
     
+        const delivery = document.querySelector('.delivery').textContent;
+        const deliveryPrice = Number(delivery.replace('$', '')) * 100;
+        const priceProduct = document.querySelector('.total');
+        priceProduct.innerHTML = `$${((deliveryPrice + item.priceCents) / 100).toFixed(2)}`;
+
+        theTotal.innerHTML += `<div class="checkout-product">
+            <p>${item.name}</p>
+            <p>${priceProduct.textContent}</p>
+        </div>`;
+});
