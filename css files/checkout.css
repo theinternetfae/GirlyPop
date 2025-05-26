@@ -202,6 +202,7 @@ nav img {
 .cart-item .product img {
     height: 170px;
     width: 150px;
+    object-fit: cover;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
