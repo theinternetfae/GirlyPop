@@ -349,6 +349,17 @@ nav img {
     cursor: pointer;
 }
 
+.product-details button .bi-checked-bag{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
+    color: #7e1036;
+    background: #FFFFFF;
+    font-weight: 600;
+    border-radius: 0px 0px 10px 0px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
 .product-details button .bi-bag {
     margin-right: 5px;
 }

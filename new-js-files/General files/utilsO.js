@@ -1,5 +1,5 @@
 import { products } from "./productsO.js";
-import { cartCountStorage, cartStorageDisplay } from "./storageO.js";
+import { cartCountStorage, cartStorageDisplay, getSavedCartButtonState, saveCartButtonState } from "./storageO.js";
 
 function featuredGenerator(arr, count) {
     const shuffled = [...arr].sort(() => 0.5 - Math.random());
@@ -29,6 +29,21 @@ export function updateCartCount() {
     let cartCount = cartCountStorage();
     const cartCountText = document.querySelector('.cart-count p');
     cartCountText.textContent = cartCount;
+    let addedToCartIds = getSavedCartButtonState();
+
+    addBtn.forEach(btn => {
+        const btnId = btn.dataset.productId;
+        
+        if (addedToCartIds.includes(btnId)) {
+            btn.classList.remove('bi-cart2');
+            btn.classList.add('bi-cart-check');
+        } else {
+            btn.classList.remove('bi-cart-check');
+            btn.classList.add('bi-cart2');
+        }
+    })
+
+    cartCountText.textContent = cartCount;
 
     addBtn.forEach(btn => {
 
@@ -49,9 +64,12 @@ export function updateCartCount() {
                     localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
                     }
                 })
+      
+                if (!addedToCartIds.includes(btnId)) {
+                    addedToCartIds.push(btnId);
+                    saveCartButtonState(addedToCartIds);
+                }
 
-                console.log(cartStorage);
-                
             } else if (btn.classList.contains('bi-cart-check')) {
                 btn.classList.remove('bi-cart-check');
                 btn.classList.add('bi-cart2');
@@ -61,7 +79,8 @@ export function updateCartCount() {
                 cartStorage = cartStorage.filter(item => item.id !== btnId);
                 localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
 
-                console.log(cartStorage);
+                addedToCartIds = addedToCartIds.filter(id => id !== btnId);
+                saveCartButtonState(addedToCartIds);
             }
 
             cartCountText.textContent = cartCount;
@@ -78,3 +97,4 @@ export function getCartCount() {
 export function getCartStorage() {
     return JSON.parse(localStorage.getItem('cartStorage')) || [];
 }
+
