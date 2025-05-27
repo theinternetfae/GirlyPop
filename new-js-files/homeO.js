@@ -118,7 +118,6 @@ popUp.forEach((pop, index) => {
 });
 
 
-
 const featuredPop = document.querySelectorAll('.description-text h4');
 const featuredArray = [];
 

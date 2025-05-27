@@ -17,7 +17,7 @@ export function featuredProducts() {
                         <h4 data-product-id="${rItem.id}">${rItem.name}</h4>
                         <p>$${(rItem.priceCents / 100).toFixed(2)}</p>    
                     </div>
-                    <i class="bi bi-cart2 cart-track"></i>
+                    <button class="bi bi-cart2 cart-track" data-product-id="${rItem.id}"></button>
                 </div>
                 <img src="${rItem.image}" alt="top">
             </div>`
@@ -27,9 +27,9 @@ export function featuredProducts() {
 export function updateCartCount() {
     const addBtn = document.querySelectorAll('.cart-track');
     let cartCount = cartCountStorage();
+    let addedToCartIds = getSavedCartButtonState();
     const cartCountText = document.querySelector('.cart-count p');
     cartCountText.textContent = cartCount;
-    let addedToCartIds = getSavedCartButtonState();
 
     addBtn.forEach(btn => {
         const btnId = btn.dataset.productId;
@@ -41,53 +41,45 @@ export function updateCartCount() {
             btn.classList.remove('bi-cart-check');
             btn.classList.add('bi-cart2');
         }
-    })
 
-    cartCountText.textContent = cartCount;
-
-    addBtn.forEach(btn => {
-
-        btn.addEventListener('click', () => {  
-            const btnId = btn.dataset.productId;
+        btn.onclick = () => {  
+            const allMatchingIds = document.querySelectorAll(`.cart-track[data-product-id="${btnId}"]`);
             let cartStorage = cartStorageDisplay();
             
-            if (btn.classList.contains('bi-cart2')) {
-                btn.classList.remove('bi-cart2');
-                btn.classList.add('bi-cart-check');
-                cartCount++;
-                cartCountText.textContent = cartCount;
+            if(addedToCartIds.includes(btnId)) {
 
+                allMatchingIds.forEach(b => {
+                    b.classList.remove('bi-cart-check');
+                    b.classList.add('bi-cart2');
+                });
+                
+                addedToCartIds = addedToCartIds.filter(id => id !== btnId);
+                cartStorage = cartStorage.filter(item => item.id !== btnId);
+                cartCount--;
+                
+            } else {
+                allMatchingIds.forEach(b => {
+                    b.classList.remove('bi-cart2');
+                    b.classList.add('bi-cart-check');
+                });
 
-                products.forEach(product => {
-                    if (btnId === product.id) {
+                addedToCartIds.push(btnId);
+                const product = products.find(p => p.id === btnId);
+                if (product) {
                     cartStorage.push(product);
-                    localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
-                    }
-                })
-      
-                if (!addedToCartIds.includes(btnId)) {
-                    addedToCartIds.push(btnId);
-                    saveCartButtonState(addedToCartIds);
                 }
 
-            } else if (btn.classList.contains('bi-cart-check')) {
-                btn.classList.remove('bi-cart-check');
-                btn.classList.add('bi-cart2');
-                cartCount--;
-                cartCountText.textContent = cartCount;
-
-                cartStorage = cartStorage.filter(item => item.id !== btnId);
-                localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
-
-                addedToCartIds = addedToCartIds.filter(id => id !== btnId);
-                saveCartButtonState(addedToCartIds);
+                cartCount++;
             }
 
-            cartCountText.textContent = cartCount;
+            saveCartButtonState(addedToCartIds);
+            localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
             localStorage.setItem('cartCount', cartCount);
-
-        });
+            cartCountText.textContent = cartCount;
+        };
     });
+
+    cartCountText.textContent = cartCount;
 }
 
 export function getCartCount() {
@@ -98,3 +90,25 @@ export function getCartStorage() {
     return JSON.parse(localStorage.getItem('cartStorage')) || [];
 }
 
+// export function navToggle() {
+//     const moves = document.querySelectorAll('.moves');
+//     const white = document.querySelector('.cart-count p')
+
+//     moves.forEach((move) => {
+
+//         move.addEventListener('click', () => {
+            
+//             moves.forEach((m) => m.classList.remove('bi-filled'));
+
+//             move.classList.add('bi-filled');
+
+//             if(move.classList.contains('no')) {
+//                 white.style.color = '#7e1036ee';
+//             }
+    
+//         })
+//     })
+// }
+
+
+// navToggle();
