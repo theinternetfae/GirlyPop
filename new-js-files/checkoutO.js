@@ -1,5 +1,5 @@
 import { products } from "./General files/productsO.js";
-import { getCartCount, getCartStorage } from "./General files/utilsO.js";
+import { getCartCount, getCartStorage, deleteFromCart } from "./General files/utilsO.js";
 
 const cartCount = getCartCount();
 const cartCountText = document.querySelector('.cart-count p');
@@ -7,13 +7,15 @@ const pageCartCount = document.querySelector('.the-cart-text span');
 cartCountText.textContent = cartCount;
 pageCartCount.textContent = `${cartCount} item${cartCount === 1 ? '' : 's'}`;
 
-const cartStorage = getCartStorage();
-const itemsContainer = document.querySelector('.items-container');
+function renderCart() {
+    const cartStorage = getCartStorage();
+    const itemsContainer = document.querySelector('.items-container');
+    itemsContainer.innerHTML = '';
 
     cartStorage.forEach(item => {
         itemsContainer.innerHTML += `<div class="cart-item">
 
-            <i class="bi bi-x-lg"></i>
+            <i class="bi bi-x-lg delete-button" data-product-id="${item.id}"></i>
 
             <div class="product">
                 <img src="${item.image}" alt="">
@@ -32,32 +34,46 @@ const itemsContainer = document.querySelector('.items-container');
             </div>
 
         </div>`;
-
     });
 
+    const deleteItemBtn = document.querySelectorAll('.delete-button');
 
-    const delivery = document.querySelector('.delivery').textContent;
+    deleteItemBtn.forEach(deleteBtn => {
+        deleteBtn.addEventListener('click', () => {
+            deleteFromCart(deleteBtn, pageCartCount);
+            renderCart();
+        });
+    });
+
+    console.log(cartStorage);
+    totalProducts();
+}
+
+renderCart();
+
+
+function totalProducts() {
+    const delivery = '$5.40';
     const deliveryPrice = Number(delivery.replace('$', '')) * 100;
     const productTotal = document.querySelectorAll('.total');
     const theTotal = document.querySelector('.checkout-products');
     let testThree = 0;
-    
+    theTotal.innerHTML = '';
+
     productTotal.forEach(total => {
 
         const productTotalId = total.dataset.productId;
-    
+
         products.forEach(product => {
 
             if (productTotalId === product.id){
-   
                 total.innerHTML = `$${((deliveryPrice + product.priceCents) / 100).toFixed(2)}`;
-            
+
                 theTotal.innerHTML += `<div class="checkout-product">
                 <p>${product.name}</p>
                 <p>${total.textContent}</p>
                 </div>`;
-
-            }
+            };
 
         });
 
@@ -65,5 +81,6 @@ const itemsContainer = document.querySelector('.items-container');
         const testTwo = Number(test.replace('$', '')) * 100;
         testThree += testTwo;
         document.querySelector('.overall-total').textContent = `$${(testThree / 100).toFixed(2)}`;
-
+        //FIX THE EMPTY CART OVERALL TOTAL PRICE TO '$0.00;
     });
+}

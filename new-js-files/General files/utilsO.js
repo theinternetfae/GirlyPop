@@ -76,10 +76,33 @@ export function updateCartCount() {
             localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
             localStorage.setItem('cartCount', cartCount);
             cartCountText.textContent = cartCount;
+            console.log(cartStorage);
         };
     });
 
     cartCountText.textContent = cartCount;
+}
+
+export function deleteFromCart(uiDelete, newCartCount) {
+    let cartCount = cartCountStorage();
+    let addedToCartIds = getSavedCartButtonState();
+    const cartCountText = document.querySelector('.cart-count p');
+    cartCountText.textContent = cartCount;
+
+    const uiDeleteId = uiDelete.dataset.productId;
+    const updatedCart = getCartStorage().filter(item => item.id !== uiDeleteId);
+    if (addedToCartIds.includes(uiDeleteId)) {
+        uiDelete.classList.remove('bi-cart-check');
+        uiDelete.classList.add('bi-cart2');
+        cartCount--;
+        addedToCartIds = addedToCartIds.filter(id => id !== uiDeleteId);
+    }
+
+    saveCartButtonState(addedToCartIds);
+    localStorage.setItem('cartStorage', JSON.stringify(updatedCart));
+    localStorage.setItem('cartCount', cartCount);
+    cartCountText.textContent = cartCount;
+    newCartCount.textContent = `${cartCount} item${cartCount === 1 ? '' : 's'}`;
 }
 
 export function getCartCount() {
@@ -90,25 +113,25 @@ export function getCartStorage() {
     return JSON.parse(localStorage.getItem('cartStorage')) || [];
 }
 
-// export function navToggle() {
-//     const moves = document.querySelectorAll('.moves');
-//     const white = document.querySelector('.cart-count p')
+export function navToggle() {
+    const moves = document.querySelectorAll('.moves');
+    const white = document.querySelector('.cart-count p')
 
-//     moves.forEach((move) => {
+    moves.forEach((move) => {
 
-//         move.addEventListener('click', () => {
+        move.addEventListener('click', () => {
             
-//             moves.forEach((m) => m.classList.remove('bi-filled'));
+            moves.forEach((m) => m.classList.remove('bi-filled'));
 
-//             move.classList.add('bi-filled');
+            move.classList.add('bi-filled');
 
-//             if(move.classList.contains('no')) {
-//                 white.style.color = '#7e1036ee';
-//             }
+            if(move.classList.contains('no')) {
+                white.style.color = '#7e1036ee';
+            }
     
-//         })
-//     })
-// }
+        })
+    })
+}
 
 
-// navToggle();
+navToggle();

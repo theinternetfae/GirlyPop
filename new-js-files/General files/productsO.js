@@ -87,7 +87,7 @@ export const products = [
     {
         id: "15b6fc6f-338a-4ec4-896f-486349e85a3d",
         image: "images/tops/crochet-halter-top.jpeg",
-        name: "crochet-halter-top",
+        name: "Crochet halter-top",
         seller: "Seller 2",
         rating: {
         stars: 5,
