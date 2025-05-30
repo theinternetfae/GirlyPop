@@ -81,6 +81,10 @@ function totalProducts() {
         const testTwo = Number(test.replace('$', '')) * 100;
         testThree += testTwo;
         document.querySelector('.overall-total').textContent = `$${(testThree / 100).toFixed(2)}`;
-        //FIX THE EMPTY CART OVERALL TOTAL PRICE TO '$0.00;
     });
+
+    const cartStorage = getCartStorage();
+        if (cartStorage.length === 0) {
+            document.querySelector('.overall-total').textContent = '$0.00';
+        };
 }

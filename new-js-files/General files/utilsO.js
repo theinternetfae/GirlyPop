@@ -76,7 +76,71 @@ export function updateCartCount() {
             localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
             localStorage.setItem('cartCount', cartCount);
             cartCountText.textContent = cartCount;
-            console.log(cartStorage);
+        };
+    });
+
+    cartCountText.textContent = cartCount;
+}
+
+export function updateCartShove() {
+    const shoving = document.querySelectorAll('.shoving');
+    let cartCount = cartCountStorage();
+    let addedToCartIds = getSavedCartButtonState();
+    const cartCountText = document.querySelector('.cart-count p');
+    cartCountText.textContent = cartCount;
+
+    shoving.forEach(shovBtn => {
+        const shovId = shovBtn.dataset.productId;
+
+        if (addedToCartIds.includes(shovId)) {
+            shovBtn.classList.remove('shove');
+            shovBtn.classList.add('shoved');
+            shovBtn.textContent = 'Shoved in bag';
+        } else {
+            shovBtn.classList.remove('shoved');
+            shovBtn.classList.add('shove');
+            shovBtn.textContent = 'Shove in bag';
+        }
+
+        shovBtn.onclick = () => {
+            const allMatchingIdsShovIds = document.querySelectorAll(`.shoving[data-product-id="${shovId}"]`);
+            let cartStorage = cartStorageDisplay();
+
+            if(addedToCartIds.includes(shovId)) {
+
+                allMatchingIdsShovIds.forEach(a => {
+                    a.classList.remove('shoved');
+                    a.classList.add('shove');
+                    shovBtn.textContent = 'Shove in bag';
+                });
+
+                addedToCartIds = addedToCartIds.filter(id => id !== shovId);
+                cartStorage = cartStorage.filter(item => item.id !== shovId);
+                cartCount--;
+
+            } else {
+
+                allMatchingIdsShovIds.forEach(a => {
+                    a.classList.remove('shove');
+                    a.classList.add('shoved');
+                    shovBtn.textContent = 'Shoved in bag';
+                })
+
+                addedToCartIds.push(shovId);
+                const product = products.find(p => p.id === shovId);
+                if (product) {
+                    cartStorage.push(product);
+                }
+
+                cartCount++;
+            }
+
+            saveCartButtonState(addedToCartIds);
+            localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
+            localStorage.setItem('cartCount', cartCount);
+            cartCountText.textContent = cartCount;
+        
+            updateCartCount();
         };
     });
 
@@ -103,6 +167,7 @@ export function deleteFromCart(uiDelete, newCartCount) {
     localStorage.setItem('cartCount', cartCount);
     cartCountText.textContent = cartCount;
     newCartCount.textContent = `${cartCount} item${cartCount === 1 ? '' : 's'}`;
+
 }
 
 export function getCartCount() {

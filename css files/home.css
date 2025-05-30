@@ -342,7 +342,7 @@ nav img {
     gap: 25px;
 }
 
-.product-details-box button {
+.product-details-box .shove {
     background: #7e1036;
     color: white;
     padding: 5px;
@@ -352,19 +352,17 @@ nav img {
     cursor: pointer;
 }
 
-.product-details button .bi-checked-bag{
+.product-details-box .shoved{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
     color: #7e1036;
     background: #FFFFFF;
+    padding: 5px;
+    cursor: pointer;
     font-weight: 600;
     border-radius: 0px 0px 10px 0px;
     outline: none;
     border: none;
     border-radius: 10px;
-}
-
-.product-details button .bi-bag {
-    margin-right: 5px;
 }
 
 .details-intro {
