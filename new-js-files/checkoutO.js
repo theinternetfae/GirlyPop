@@ -1,5 +1,6 @@
 import { products } from "./General files/productsO.js";
 import { getCartCount, getCartStorage, deleteFromCart } from "./General files/utilsO.js";
+// import { Country, State, City } from "country-state-city";
 
 const cartCount = getCartCount();
 const cartCountText = document.querySelector('.cart-count p');
@@ -17,20 +18,23 @@ function renderCart() {
 
             <i class="bi bi-x-lg delete-button" data-product-id="${item.id}"></i>
 
-            <div class="product">
-                <img src="${item.image}" alt="">
-                <div class="product-info">
-                    <h3>${item.name}</h3>
-                    <p>Status: Perfect</p>
-                    <p>Size: Medium</p>
-                    <p>Location: Austen, Texas</p>
+            <div class=cart-items-display>
+                <div class="product">
+                    <img src="${item.image}" alt="">
+                    <div class="product-info">
+                        <h3>${item.name}</h3>
+                        <p>Status: Perfect</p>
+                        <p>Size: Medium</p>
+                        <p>Location: Austen, Texas</p>
+                        <p class="delivery-date">Delivery Date: August 20th</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="others">
-                <p class="price">$${(item.priceCents / 100).toFixed(2)}</p>
-                <p class="delivery">$5.40</p>
-                <p class="total" data-product-id="${item.id}">$25.90</p>
+                <div class="others">
+                    <p class="price">$${(item.priceCents / 100).toFixed(2)}</p>
+                    <p class="delivery">$5.40</p>
+                    <p class="total" data-product-id="${item.id}">$25.90</p>
+                </div>
             </div>
 
         </div>`;

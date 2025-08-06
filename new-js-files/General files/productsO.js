@@ -365,7 +365,7 @@ export const products = [
         stars: 4.5,
         count: 127
         },
-        priceCents: 10010,
+        priceCents: 7510,
         keywords: [
         "low-rise",
         "Y2k",
@@ -382,7 +382,7 @@ export const products = [
         stars: 5.0,
         count: 127
         },
-        priceCents: 15015,
+        priceCents: 10015,
         keywords: [
         "leather",
         "jacket",

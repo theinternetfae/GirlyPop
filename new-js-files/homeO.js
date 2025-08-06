@@ -145,7 +145,7 @@ featuredPop.forEach((pop, index) => {
                         <p>I thrifted this dress a while ago for myself, but forgot that the body doesn't come with the dress lol... Anyways, It's up for sale now! It's in perfect condition, I only tried it on a few times, the price is NON-NEGOTIOABLE. I'm sorry but I got it for a pretty penny too so this is the lowest I can go on this.</p>
                     </div>
 
-                    <button><i class="bi bi-bag"></i>Shove in bag</button>
+                    <button class="shoving shove shoved" data-product-id="${featuredIndex.id}">Shove in bag</button>
 
                     <div class="buyer-info">
                         <p>~ ThatGirlRae</p>
@@ -206,6 +206,8 @@ featuredPop.forEach((pop, index) => {
             back.addEventListener('click', () => {
                 popUpPage.style.display = 'none';
             });
+
+            updateCartShove();
         
     })
 
