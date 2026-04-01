@@ -8,6 +8,7 @@
 body {
     height: 100%;
     font-family: "Lexend Deca", sans-serif;
+    background: #FAF9F6;
 }
 
 
@@ -17,16 +18,28 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 20px;
-    top: 0;
+    padding: 0px 20px 0px 20px;
     position: sticky;
-    z-index: 9999;
+    height: 10vh;
+    top: 0;    
     background: white;
+    z-index: 50;
 }
 
-a {
+nav .navigations-link {
+    border: 5px solid transparent;
     text-decoration: none;
-    color: white;
+    transition: .3s ease;
+    color: #c14e76;
+    height: 40px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .navigations-link:hover {
+    color: #7e1036;
 }
 
 nav img {
@@ -34,28 +47,224 @@ nav img {
     width: 150px;
 }
 
-.aboutg {
+nav .navigations {
     display: flex;
-    gap: 50px;
-    color: #7e1036;
-    font-weight: 600;
-    font-size: 18px;
-}
-
-.aboutg a {
-    cursor: pointer;
+    gap: 70px;
     color: #7e1036;
 }
 
-.aboutg p {
-    cursor: pointer;
-}
-
-.signing {
+nav .user-decision {
     display: flex;
-    align-items: center;
     gap: 20px;
 }
+
+nav .user-decision button {
+    display: flex;
+    height: 40px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    transition: .3s ease;
+    cursor: pointer;
+    border: 2px solid #7e1036;
+}
+
+nav .user-decision .button-one {
+    background: #7e1036;
+    color: white;
+}
+
+nav .user-decision .button-two {
+    color: #7e1036;
+}
+
+nav .user-decision button:active {
+    scale: 0.90;
+}
+
+/* nav .cart-display {
+    width: 140px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+nav .cart-display .cart-count {
+    position: relative; 
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    transition: .3s ease;
+    color: #7e1036;
+}
+
+nav .cart-display .cart-count:hover {
+    color: #c14e76;
+}
+
+nav .cart-display .cart-count p {
+    position: absolute;
+    top: 8px;
+} 
+
+nav .cart-display .cart-count .bi-bag {
+    font-size: 25px;
+}  */
+
+
+
+/*SECTION 1 CODE BELOW*/
+
+.intro-landing {
+    height: 90vh;
+    padding: 20px;
+    display: flex;
+}
+
+.intro-landing .intro-box {
+    width: 50%;
+    padding: 20px;
+}
+
+.intro-landing .intro-box-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    gap: 25px;
+}
+
+.intro-landing .intro-box-one h1 {
+    font-size: 40px;
+    width: 500px;
+}
+
+.intro-landing .intro-box-one p {
+    font-size: 15px;
+}
+
+.intro-landing .intro-decision {
+    display: flex;
+    gap: 30px;
+}
+
+.intro-landing .intro-decision button {
+    display: flex;
+    height: 40px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    transition: .3s ease;
+    cursor: pointer;
+    border: 2px solid #7e1036;
+    box-shadow: 0 0 2px grey;
+}
+
+.intro-landing .intro-decision .button-one {
+    background: #7e1036;
+    color: white;
+}
+
+.intro-landing .intro-decision .button-two {
+    color: #7e1036;
+}
+
+.intro-landing .intro-decision button:active {
+    scale: 0.90;
+}
+
+.intro-landing .intro-box-two {
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.intro-landing .intro-box-two div {
+    position: absolute;
+    width: 80%;
+    height: 600px;
+    border-radius: 100%;
+    box-shadow: 0 0 2px grey;
+    background: linear-gradient(to bottom, #7e1036, #c14e76);
+}
+
+.intro-landing .intro-box-two img {
+    height: 600px;
+    z-index: 20;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 
 .cart-count {
     position: relative;
@@ -90,8 +299,21 @@ nav img {
 
 .signing button:active {
     transform: scale(0.85);
-}
+} */
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 .sign-up {
     background: #c14e76;
     font-weight: 600;
@@ -102,10 +324,10 @@ nav img {
     background: #7e1036;
     font-weight: 600;
     color: white;
-}
+} */
 
 /*SECTION 1 CODE*/
-
+/* 
 .intro {
     height: 400px;
     background-image: url(../images/medium-shot-friends-having-fun-party.jpg);
@@ -171,11 +393,11 @@ nav img {
 
 .intro-bar .search .bi-arrow-right:active {
     transform: scale(0.85);
-}
+} */
 
 /*SECTION 2 CODE*/
 
-.featured {
+/* .featured {
     margin: 20px 20px 20px 20px;
     padding: 10px;
     display: flex;
@@ -194,7 +416,6 @@ nav img {
     width: calc(300 * 5);
     display: flex;
     gap: 20px;
-    /* animation: slideLeft 40s ease infinite; */
 }
 
 @keyframes slideLeft {
@@ -265,12 +486,12 @@ nav img {
     padding: 0px 0px 0px 10px;
     color: #7e1036;
 }
-
+ */
 
 
 /*SECTION 3 CODE*/
 
-.testimonials {
+/* .testimonials {
     margin-top: 30px;
     background: #E7E7E7;
     padding: 20px;
@@ -299,10 +520,10 @@ nav img {
     flex-direction: column;
     gap: 20px;
     padding: 15px;
-}
+} */
 
 /*FOOTER CODE BELOW*/
-
+/* 
 footer {
     background: #7e1036;
     color: white;
@@ -322,4 +543,4 @@ footer {
 
 .contact .bi {
     cursor: pointer;
-}
+} */

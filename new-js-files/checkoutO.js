@@ -88,7 +88,8 @@ function totalProducts() {
     });
 
     const cartStorage = getCartStorage();
-        if (cartStorage.length === 0) {
-            document.querySelector('.overall-total').textContent = '$0.00';
-        };
+    
+    if (cartStorage.length === 0) {
+        document.querySelector('.overall-total').textContent = '$0.00';
+    };
 }
