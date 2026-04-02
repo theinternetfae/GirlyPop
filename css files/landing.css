@@ -9,6 +9,7 @@ body {
     height: 100%;
     font-family: "Lexend Deca", sans-serif;
     background: #FAF9F6;
+    cursor: default;
 }
 
 
@@ -189,13 +190,14 @@ nav .cart-display .cart-count .bi-bag {
     justify-content: center;
 }
 
-.intro-landing .intro-box-two div {
+.intro-landing .intro-box-two .design-circle {
     position: absolute;
     width: 80%;
     height: 600px;
     border-radius: 100%;
     box-shadow: 0 0 2px grey;
     background: linear-gradient(to bottom, #7e1036, #c14e76);
+    -webkit-background-composite: linear-gradient(to bottom, #7e1036, #c14e76);
 }
 
 .intro-landing .intro-box-two img {
@@ -203,11 +205,49 @@ nav .cart-display .cart-count .bi-bag {
     z-index: 20;
 }
 
+.intro-landing .intro-box-two .design-writeup {
+    position: absolute;
+    width: 80%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    z-index: 30;
+}
 
+.intro-landing .intro-box-two .design-writeup div {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    margin: 25px 70px 0px 70px;
+}
 
+.intro-landing .intro-box-two .design-writeup div:nth-child(1) {
+    margin-top: 70px;
+}
 
+.intro-landing .intro-box-two .design-writeup .off {
+    justify-content: end;    
+}
 
+.intro-landing .intro-box-two .design-writeup div p {
+    box-shadow: 0 8px 32px 0 #c14e76;
+    padding: 10px;
+    width: 80px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #7e1036;
+    text-align: center;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.596);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(10px);
+    margin-left: 30px;
+    transition: .3s ease;
+}
 
+.intro-landing .intro-box-two .design-writeup div p:hover {
+    transform: translateY(-10px);
+}
 
 
 
