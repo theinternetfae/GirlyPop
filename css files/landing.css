@@ -87,35 +87,7 @@ nav .user-decision button:active {
     scale: 0.90;
 }
 
-/* nav .cart-display {
-    width: 140px;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-}
 
-nav .cart-display .cart-count {
-    position: relative; 
-    width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    transition: .3s ease;
-    color: #7e1036;
-}
-
-nav .cart-display .cart-count:hover {
-    color: #c14e76;
-}
-
-nav .cart-display .cart-count p {
-    position: absolute;
-    top: 8px;
-} 
-
-nav .cart-display .cart-count .bi-bag {
-    font-size: 25px;
-}  */
 
 
 
@@ -123,13 +95,13 @@ nav .cart-display .cart-count .bi-bag {
 
 .intro-landing {
     height: 90vh;
-    padding: 20px;
+    padding: 20px 20px 20px 20px;
     display: flex;
 }
 
 .intro-landing .intro-box {
     width: 50%;
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
 }
 
 .intro-landing .intro-box-one {
@@ -252,8 +224,54 @@ nav .cart-display .cart-count .bi-bag {
 
 
 
+/*SECTION TWO*/
+.features-landing {
+    height: 90vh;
+}
 
+.features-landing .testimonial-sect {
+    height: 20%;
+    overflow-x: auto;
+    background: #7e1036;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
 
+.features-landing .testimonial-sect::-webkit-scrollbar {
+    display: none;
+}
+
+.features-landing .testimonial-sect .testimonial-cont {
+    display: flex;
+    gap: 22px;
+    animation: spin 20s infinite linear;
+    padding-right: 18px;
+}
+
+@keyframes spin {
+    from {translate: 0;}
+    to {translate: -100%;}
+}
+
+.features-landing .testimonial-sect:hover .testimonial-cont {
+    animation-play-state: paused!important;
+}
+
+.features-landing .testimonial-sect .testimonial-cont .testimonial-block {
+    height: 100px;
+    width: 440px;
+    flex-shrink: 0;
+    background: white;
+    color: #7e1036;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
 
 
 

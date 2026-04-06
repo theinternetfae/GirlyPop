@@ -1,4 +1,4 @@
 import { updateCartCount, featuredProducts } from "./General files/utilsO.js";
 
-featuredProducts();
-updateCartCount();
+// featuredProducts();
+// updateCartCount();
