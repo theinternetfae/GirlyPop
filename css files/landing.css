@@ -288,12 +288,6 @@ nav .user-decision button:active {
     width: 50%;
 }
 
-
-
-
-
-
-
 .features-landing .features-cont .aesthetics-cont {
     display: flex;
     align-items: center;
@@ -304,7 +298,7 @@ nav .user-decision button:active {
     position: relative;
     height: 95%;
     width: 90%;
-    border-radius: 10px;
+    border-radius: 20px;
     display: grid;
     align-items: center;
     grid-template-columns: 50% 50%;
@@ -332,7 +326,7 @@ nav .user-decision button:active {
 }
 
 .features-landing .features-cont .aesthetics-cont span:nth-child(1) {
-    border-radius: 10px 0 0 0;
+    border-radius: 50px 0 0 0;
     background: #8B43FF;
 }
 
@@ -359,7 +353,7 @@ nav .user-decision button:active {
 }
 
 .features-landing .features-cont .aesthetics-cont span:nth-child(4) {
-    border-radius: 0 0 10px 0;
+    border-radius: 0 0 50px 0;
     background: #E91E63;
 }
 
@@ -459,6 +453,15 @@ nav .user-decision button:active {
 
 
 
+/* SECTION 3 */
+.userexp-landing {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    padding: 0 20px 0 20px;
+}
 
 /* .features-landing .testimonial-sect {
     height: 20%;
