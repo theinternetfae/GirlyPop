@@ -636,8 +636,8 @@ footer {
     display: flex;
     flex-direction: column;
     background: white;
-    transition: 5s ease-in-out;
-    animation: slide .4s linear;
+    transition: .5s ease-in-out;
+    transform: translateX(200px);
 }
 
 .alert .bi {
@@ -653,12 +653,6 @@ footer {
     transform: scale(0.90);
 }
 
-@keyframes slide {
-    0% {
-        transform: translateX(200px);;
-    }
-
-    100% {
-        transform: translateX(0);
-    }
+.out {
+    transform: translateX(0);
 }
