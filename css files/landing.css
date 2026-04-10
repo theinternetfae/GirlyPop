@@ -10,6 +10,8 @@ body {
     font-family: "Lexend Deca", sans-serif;
     background: #FAF9F6;
     cursor: default;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -611,4 +613,52 @@ footer {
 
 .contact .bi {
     cursor: pointer;
+}
+
+/*ALERT*/
+
+.alert { 
+    position: fixed;
+    margin-top: 100px;
+    align-self: flex-end;
+    z-index: 80;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.alert-cont {
+    border: 4px solid #7e1036;
+    padding: 10px;
+    border-radius: 10px;
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    transition: 5s ease-in-out;
+    animation: slide .4s linear;
+}
+
+.alert .bi {
+    width: 15px;
+    cursor: pointer;
+    align-self: end;
+    font-weight: 900;
+    color: #7e1036;
+    text-align: end;
+}
+
+.alert .bi:active {
+    transform: scale(0.90);
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(200px);;
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
