@@ -665,6 +665,40 @@ footer {
     transform: translateX(0);
 }
 
+.small-nav-cont.show {
+    display: block !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*MEDIA QUERIES*/
 
@@ -701,26 +735,31 @@ footer {
     nav .small-screen-nav {
         display: block;
         position: relative;
-        color: #7e1036;
+        color: #c14e76;
         font-weight: 700;
     }
 
-    nav .small-screen-nav .navigations-link {
+    nav .small-screen-nav .small-nav-cont {
+        display: none;
+    }
+
+    nav .small-screen-nav .small-navigations-link {
         position: absolute;
         left: -72px;
-        top: 40px;
+        top: 38px;
         padding: 10px;
         border: 2px solid #7e1036;
-        display: flex;
         height: 70px;
+        width: 80px;
+        display: flex;
+        flex-direction: column;
         justify-content: space-around;
         gap: 5px;
         background: white;
         font-size: 14px;
-        flex-direction: column;
     }
 
-    nav .small-screen-nav .navigations-link span {
+    nav .small-screen-nav .small-navigations-link span {
         border-bottom: 2px solid #7e1036;
         width: 100%;
         text-align: center;

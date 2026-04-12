@@ -33,5 +33,14 @@ function automaticClear() {
     
         return () => clearTimeout(timer);
     }
+
 }
 
+const burger = document.querySelector(".burger");
+const smallNavs = document.querySelector(".small-nav-cont");
+
+burger.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("Burger clicked!");
+    smallNavs.classList.toggle('show');
+})
