@@ -239,6 +239,7 @@ nav .small-screen-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 90vh;
     padding: 0 20px 0 20px;
 }
@@ -793,7 +794,7 @@ footer {
     }
 
     .intro-landing .intro-box-one p {
-        font-size: 10px;
+        font-size: 12px;
         text-align: center;
     }
 
@@ -1119,6 +1120,219 @@ footer {
 
     .features-landing .features-cont .features-box .features .feature-dets .feature-words p:nth-child(2) {
         font-size: 12px;
+    }
+
+
+
+
+    .userexp-landing {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 90vh;
+        padding: 0 20px 0 20px;
+    }
+
+    .userexp-landing h2 {
+        padding-top: 20px;
+        font-size: 20px;
+    }
+
+    .userexp-landing .buysell-cont {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .userexp-landing .buysell-cont .buyer-seller {
+        position: relative;
+        width: 80%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        border-radius: 15px;
+        background: linear-gradient(to bottom, #7e1036, #c14e76);
+    }
+
+    .userexp-landing .buysell-cont .buyer-seller img {
+        height: 160px;
+    }
+
+    .userexp-landing .buysell-cont .buyer-seller .entails {
+        position: absolute;
+        width: 100%;
+        height: 100%;    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .userexp-landing .buysell-cont .buyer-seller .entails h3 {
+        text-align: center;
+        margin-top: 2px;
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.596);
+        backdrop-filter: blur(2px);
+        color: #7e1036;
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.37);
+    }
+
+    .userexp-landing .buysell-cont .buyer-seller .entails .entails-words {
+        height: 60%;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 5px;
+    }
+
+    .userexp-landing .buysell-cont .buyer-seller .entails .entails-words div {
+        width: 100%;
+    }
+
+    .userexp-landing .buysell-cont .buyer-seller .entails .entails-words div p{
+        width: 100px;
+        text-align: center;
+        border-radius: 10px;
+        padding: 5px;
+        font-size: 12px;
+        font-weight: 600;
+        background: rgba(255, 255, 255, 0.596);
+        backdrop-filter: blur(2px);
+        color: #7e1036;
+    }
+
+    .userexp-landing .buysell-cont .buyer-seller .entails .entails-words .end  {
+        display: flex;
+        justify-content: end;
+    }
+
+    .userexp-landing .testimonial-sect {
+        width: 100%;
+        height: 20%;
+        background: #7e1036;
+        overflow-x: auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .userexp-landing .testimonial-sect::-webkit-scrollbar {
+        display: none;
+    }
+
+    .userexp-landing .testimonial-sect .testimonial-cont {
+        display: flex;
+        gap: 22px;
+        animation: spin 30s infinite linear;
+        padding-right: 22px;
+    }
+
+    @keyframes spin {
+        from {translate: 0;}
+        to {translate: -100%;}
+    }
+
+    .userexp-landing .testimonial-sect:hover .testimonial-cont {
+        animation-play-state: paused!important;
+    }
+
+    .userexp-landing .testimonial-sect .testimonial-cont .testimonial-block {
+        height: 80px;
+        width: 200px;
+        flex-shrink: 0;
+        background: white;
+        color: #7e1036;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        display: flex;
+        font-size: 12px;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+    }
+
+
+
+
+    /*FOOTER CODE BELOW*/
+    
+    footer {
+        background: #7e1036;
+        color: white;
+        display: flex;
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        gap: 20px;
+        font-size: 12px;
+        bottom: 0;    
+    }
+
+    .contact {
+        display: flex;
+        gap: 15px;
+    }
+
+    .contact .bi {
+        cursor: pointer;
+    }
+
+    /*ALERT*/
+
+    .alert { 
+        border: 2px solid black;
+    }
+
+    .alert-cont {
+        position: fixed;
+        margin-top: 200px;
+        align-self: flex-end;
+        z-index: 80;
+        width: 35%;
+        border: 4px solid #7e1036;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        font-size: 12px;
+        flex-direction: column;
+        background: white;
+        transition: .5s ease-in-out;
+        transform: translateX(200px);
+    }
+
+    .alert .bi {
+        width: 15px;
+        cursor: pointer;
+        align-self: end;
+        font-weight: 900;
+        color: #7e1036;
+        text-align: end;
+    }
+
+    .alert .bi:active {
+        transform: scale(0.90);
+    }
+
+    .out {
+        transform: translateX(0);
+    }
+
+    .small-nav-cont.show {
+        display: block !important;
     }
 
 }
