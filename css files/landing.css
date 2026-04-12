@@ -627,29 +627,26 @@ footer {
 /*ALERT*/
 
 .alert { 
+    border: 2px solid black;
+}
+
+.alert-cont {
     position: fixed;
     margin-top: 100px;
     align-self: flex-end;
     z-index: 80;
-    width: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
-
-.alert-cont {
+    width: 15%;
     border: 4px solid #7e1036;
     padding: 10px;
     border-radius: 10px;
-    width: 170px;
     display: flex;
     flex-direction: column;
     background: white;
     transition: .5s ease-in-out;
-    transform: translateX(200px);
+    transform: translateX(270px);
 }
 
-.alert .bi {
+.alert-cont .bi {
     width: 15px;
     cursor: pointer;
     align-self: end;
@@ -900,11 +897,11 @@ footer {
         flex-direction: column;
         align-items: center;
         height: 90vh;
-        padding: 0 20px 0 20px;
+        padding: 0 20px 20px 20px;
     }
 
     .features-landing h2 {
-        padding-top: 10px;
+        padding-top: 20px;
         font-size: 20px;
     }
 
@@ -1323,7 +1320,7 @@ footer {
         text-align: end;
     }
 
-    .alert .bi:active {
+    .alert-cont .bi:active {
         transform: scale(0.90);
     }
 
