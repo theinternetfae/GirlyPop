@@ -889,7 +889,256 @@ footer {
         transition: .3s ease;
     }
 
+
+
+
+
+    
+    .features-landing {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 90vh;
+        padding: 0 20px 0 20px;
+    }
+
+    .features-landing h2 {
+        padding-top: 10px;
+        font-size: 20px;
+    }
+
+    .features-landing .landing-search {
+        border: 2px solid #7e1036;
+        display: flex;
+        background: white;
+        justify-content: space-around;
+        align-items: center;
+        width: 300px;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+
+    .features-landing .landing-search input {
+        width: 90%;
+        height: 20px;
+        border-radius: 20px;
+        border: none;
+        font-size: 14px;
+        padding: 2px;
+    }
+
+    .features-landing .landing-search input:focus {
+        outline: none;
+    }
+
+    .features-landing .landing-search .bi {
+        color: #7e1036;
+        margin-right: 5px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    .features-landing .landing-search .bi:active {
+        scale: 0.90;
+    }
+
+    .features-landing .features-cont {
+        width: 100%;
+        height: 80%;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .features-landing .features-cont div {
+        width: 100%;
+        height: 50%;
+    }
+
+    .features-landing .features-cont .aesthetics-cont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .features-landing .features-cont .aesthetics-cont .aesthetics-grid {
+        position: relative;
+        height: 95%;
+        width: 90%;
+        border-radius: 20px;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 50% 50%;
+    }
+
+    .features-landing .features-cont .aesthetics-cont .aesthetics-grid:hover .star {
+        transform: rotate(360deg);
+    }
+
+    .features-landing .features-cont .aesthetics-cont .aesthetics-grid:hover span {
+        filter: grayscale(1);
+    }
+
+    .features-landing .features-cont .aesthetics-cont span {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        transition: .3s ease;
+    }
+
+    .features-landing .features-cont .aesthetics-cont span img {
+        height: 100px;
+    }
+
+    .features-landing .features-cont .aesthetics-cont span:nth-child(1) {
+        border-radius: 50px 0 0 0;
+        background: #8B43FF;
+    }
+
+    .features-landing .features-cont .aesthetics-cont span:nth-child(1):hover {
+        filter: grayscale(0);
+    }
+
+    .features-landing .features-cont .aesthetics-cont span:nth-child(2) {
+        border-radius: 0 10px 0 0;
+        background: #FFD500;
+    }
+
+    .features-landing .features-cont .aesthetics-cont span:nth-child(2):hover {
+        filter: grayscale(0);
+    }
+
+    .features-landing .features-cont .aesthetics-cont span:nth-child(3) {
+        border-radius: 0 0 0 10px;
+        background: #477023;
+    }
+
+    .features-landing .features-cont .aesthetics-cont span:nth-child(3):hover {
+        filter: grayscale(0);
+    }
+
+    .features-landing .features-cont .aesthetics-cont span:nth-child(4) {
+        border-radius: 0 0 50px 0;
+        background: #E91E63;
+    }
+
+    .features-landing .features-cont .aesthetics-cont span:nth-child(4):hover {
+        filter: grayscale(0);
+    }
+
+    .features-landing .features-cont .aesthetics-cont span:nth-child(5) {
+        background: none;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        height: 8%;
+    }
+
+    .features-landing .features-cont .aesthetics-cont span:nth-child(5) .star {
+        font-size: 80px;
+        color: white;
+        transition: 2s ease-in-out;
+    }
+
+
+
+
+    .features-landing .features-cont .features-box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .features-landing .features-cont .features-box h3 {
+        font-size: 18px;
+    }
+
+    .features-landing .features-cont .features-box h3 span {
+        color: #7e1036;
+    }
+
+    .features-landing .features-cont .features-box .features {
+        height: 90%;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .features-landing .features-cont .features-box .features .feature-dets {
+        width: 100%;
+        height: 20%;
+        display: flex; 
+        gap: 5px;
+        padding: 5px;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .features-landing .features-cont .features-box .features .feature-dets .label-bi{
+        width: 12%;
+        color: white;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80%;
+        border-radius: 100%;
+    }
+
+    .features-landing .features-cont .features-box .features .feature-dets:nth-child(1) .label-bi{
+        background: #8B43FF;
+    }
+
+    .features-landing .features-cont .features-box .features .feature-dets:nth-child(2) .label-bi{
+        background: #FFD500;
+    }
+
+    .features-landing .features-cont .features-box .features .feature-dets:nth-child(3) .label-bi{
+        background: #477023;
+    }
+
+    .features-landing .features-cont .features-box .features .feature-dets:nth-child(4) .label-bi{
+        background: #E91E63;
+    }
+
+    .features-landing .features-cont .features-box .features .feature-dets .feature-words {
+        width: 100%;
+        height: 100%;
+    }
+
+    .features-landing .features-cont .features-box .features .feature-dets .feature-words p:nth-child(1) {
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .features-landing .features-cont .features-box .features .feature-dets .feature-words p:nth-child(2) {
+        font-size: 12px;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 640px) {
     .container {
