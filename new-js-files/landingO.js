@@ -3,8 +3,6 @@ import { updateCartCount, featuredProducts } from "./General files/utilsO.js";
 // featuredProducts();
 // updateCartCount();
 
-
-
 const burger = document.querySelector(".burger");
 const smallNavs = document.querySelector(".small-nav-cont");
 
