@@ -626,10 +626,6 @@ footer {
 
 /*ALERT*/
 
-.alert { 
-    border: 2px solid black;
-}
-
 .alert-cont {
     position: fixed;
     margin-top: 100px;
@@ -701,6 +697,7 @@ footer {
 /*MEDIA QUERIES*/
 
 @media (max-width: 540px) {
+    
     .container {
         max-width: 540px;
     }
@@ -1292,10 +1289,6 @@ footer {
     }
 
     /*ALERT*/
-
-    .alert { 
-        border: 2px solid black;
-    }
 
     .alert-cont {
         position: fixed;
@@ -1952,10 +1945,6 @@ footer {
     }
 
     /*ALERT*/
-
-    .alert { 
-        border: 2px solid black;
-    }
 
     .alert-cont {
         position: fixed;
@@ -2623,10 +2612,6 @@ footer {
     }
 
     /*ALERT*/
-
-    .alert { 
-        border: 2px solid black;
-    }
 
     .alert-cont {
         position: fixed;
