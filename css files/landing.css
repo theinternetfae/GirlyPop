@@ -691,6 +691,7 @@ footer {
     
     .container {
         max-width: 540px;
+        margin-bottom: 10px;
     }
 
     nav {
@@ -755,10 +756,8 @@ footer {
         height: 90vh;
         padding: 20px 20px 20px 20px;
         display: flex;
-        border: 2px solid black;
         flex-direction: column;
         align-items: center;
-        gap: 7px;
     }
 
     .intro-landing .intro-box {
@@ -770,7 +769,7 @@ footer {
     .intro-landing .intro-box-one {
         display: flex;
         flex-direction: column;
-        justify-content: center; 
+        justify-content: center;
     }
 
     .intro-landing .intro-box-one h1 {
@@ -805,6 +804,7 @@ footer {
         cursor: pointer;
         border: 2px solid #7e1036;
         box-shadow: 0 0 2px grey;
+        margin-bottom: 10px;
     }
 
     .intro-landing .intro-decision .button-one {
@@ -1038,6 +1038,7 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 10px;
+        margin-top: 10px;
     }
 
     .features-landing .features-cont .features-box h3 {
