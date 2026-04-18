@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 /* font-family: "Lexend Deca", sans-serif; */
 
+:root {
+    color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    nav .logo-box {
+        background-image: url("../images/white-logo.png");
+    }
+}
+
 * {
     margin: 0;
 }
@@ -8,7 +18,7 @@
 body {
     height: 100%;
     font-family: "Lexend Deca", sans-serif;
-    background: #FAF9F6;
+    background: light-dark(#FAF9F6, #171717);
     cursor: default;
     display: flex;
     flex-direction: column;
@@ -25,15 +35,30 @@ nav {
     position: sticky;
     height: 10vh;
     top: 0;    
-    background: white;
+    background: light-dark(white, #7e1036);
     z-index: 50;
+}
+
+nav .logo-box {
+    width: 150px;
+    height: 80%;
+    background-image: url(../images/pink-logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@media (prefers-color-scheme: dark) {
+    nav .logo-box {
+        background-image: url("../images/white-logo.png");
+    }
 }
 
 nav .navigations-link {
     border: 5px solid transparent;
     text-decoration: none;
     transition: .3s ease;
-    color: #c14e76;
+    color: light-dark(#c14e76, white);
     height: 40px;
     width: 80px;
     display: flex;
@@ -42,7 +67,7 @@ nav .navigations-link {
 }
 
 nav .navigations-link:hover {
-    color: #7e1036;
+    color: light-dark(#7e1036, #c14e76);
 }
 
 nav img {
@@ -73,16 +98,16 @@ nav .user-decision button {
     border: none;
     transition: .3s ease;
     cursor: pointer;
-    border: 2px solid #7e1036;
-}
+    border: 2px solid light-dark(#7e1036, white);}
 
 nav .user-decision .button-one {
-    background: #7e1036;
-    color: white;
+    background: light-dark(#7e1036, white);
+    color: light-dark(white, #7e1036);
 }
 
 nav .user-decision .button-two {
-    color: #7e1036;
+    background: transparent;
+    color: light-dark(#7e1036, white);
 }
 
 nav .user-decision button:active {
@@ -148,17 +173,18 @@ nav .small-screen-nav {
     border: none;
     transition: .3s ease;
     cursor: pointer;
-    border: 2px solid #7e1036;
+    border: 2px solid light-dark(#7e1036, white);
     box-shadow: 0 0 2px grey;
 }
 
 .intro-landing .intro-decision .button-one {
-    background: #7e1036;
-    color: white;
+    background: light-dark(#7e1036, white);
+    color: light-dark(white, #7e1036);
 }
 
 .intro-landing .intro-decision .button-two {
-    color: #7e1036;
+    background: transparent;
+    color: light-dark(#7e1036, white);
 }
 
 .intro-landing .intro-decision button:active {
@@ -177,7 +203,6 @@ nav .small-screen-nav {
     width: 80%;
     height: 600px;
     border-radius: 100%;
-    box-shadow: 0 0 2px grey;
     background: linear-gradient(to bottom, #7e1036, #c14e76);
     -webkit-background-composite: linear-gradient(to bottom, #7e1036, #c14e76);
 }
@@ -212,7 +237,6 @@ nav .small-screen-nav {
 }
 
 .intro-landing .intro-box-two .design-writeup div p {
-    box-shadow: 0 8px 32px 0 #c14e76;
     padding: 10px;
     width: 80px;
     font-size: 18px;
@@ -249,9 +273,9 @@ nav .small-screen-nav {
 }
 
 .features-landing .landing-search {
-    border: 2px solid #7e1036;
+    border: 2px solid light-dark(#7e1036, white);
     display: flex;
-    background: white;
+    background: light-dark(white, #171717);
     justify-content: space-around;
     align-items: center;
     width: 500px;
@@ -266,6 +290,7 @@ nav .small-screen-nav {
     border: none;
     font-size: 16px;
     padding: 2px;
+    background: transparent;
 }
 
 .features-landing .landing-search input:focus {
@@ -273,7 +298,7 @@ nav .small-screen-nav {
 }
 
 .features-landing .landing-search .bi {
-    color: #7e1036;
+    color: light-dark(#7e1036, #c14e76);
     margin-right: 5px;
     cursor: pointer;
     font-size: 20px;
@@ -402,7 +427,7 @@ nav .small-screen-nav {
 }
 
 .features-landing .features-cont .features-box h3 span {
-    color: #7e1036;
+    color: light-dark(#7e1036, #c14e76);
 }
 
 .features-landing .features-cont .features-box .features {
@@ -632,6 +657,7 @@ footer {
     align-self: flex-end;
     z-index: 80;
     width: 15%;
+    color: #7e1036;
     border: 4px solid #7e1036;
     padding: 10px;
     border-radius: 10px;
@@ -647,7 +673,6 @@ footer {
     cursor: pointer;
     align-self: end;
     font-weight: 900;
-    color: #7e1036;
     text-align: end;
 }
 
@@ -702,13 +727,24 @@ footer {
         position: sticky;
         height: 8vh;
         top: 0;    
-        background: white;
+        background: light-dark(white, #7e1036);
         z-index: 50;
     }
 
-    nav img {
-        height: 50px;
-        width: 110px;
+    
+    nav .logo-box {
+        width: 100px;
+        height: 80%;
+        background-image: url(../images/pink-logo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        nav .logo-box {
+            background-image: url("../images/white-logo.png");
+        }
     }
 
     nav .navigations {
@@ -722,7 +758,7 @@ footer {
     nav .small-screen-nav {
         display: block;
         position: relative;
-        color: #c14e76;
+        color: light-dark(#c14e76, white);
         font-weight: 700;
     }
 
@@ -735,19 +771,19 @@ footer {
         left: -72px;
         top: 38px;
         padding: 10px;
-        border: 2px solid #7e1036;
+        border: 2px solid light-dark(#7e1036, white);
         height: 70px;
         width: 80px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         gap: 5px;
-        background: white;
+        background: light-dark(white, #171717);
         font-size: 14px;
     }
 
     nav .small-screen-nav .small-navigations-link span {
-        border-bottom: 2px solid #7e1036;
+        border-bottom: 2px solid light-dark(#7e1036, white);
         width: 100%;
         text-align: center;
     }
@@ -802,18 +838,19 @@ footer {
         border: none;
         transition: .3s ease;
         cursor: pointer;
-        border: 2px solid #7e1036;
+        border: 2px solid light-dark(#7e1036, white);
         box-shadow: 0 0 2px grey;
         margin-bottom: 10px;
     }
 
     .intro-landing .intro-decision .button-one {
-        background: #7e1036;
-        color: white;
+        background: light-dark(#7e1036, white);
+        color: light-dark(white, #7e1036);
     }
 
     .intro-landing .intro-decision .button-two {
-        color: #7e1036;
+        color: light-dark(#7e1036, white);
+        background: transparent;
     }
 
     .intro-landing .intro-box-two {
@@ -828,7 +865,6 @@ footer {
         width: 80%;
         height: 80%;
         border-radius: 100%;
-        box-shadow: 0 0 2px grey;
         background: linear-gradient(to bottom, #7e1036, #c14e76);
         -webkit-background-composite: linear-gradient(to bottom, #7e1036, #c14e76);
     }
@@ -893,9 +929,9 @@ footer {
     }
 
     .features-landing .landing-search {
-        border: 2px solid #7e1036;
+        border: 2px solid light-dark(#7e1036, white);
+        background: #171717;
         display: flex;
-        background: white;
         justify-content: space-around;
         align-items: center;
         width: 300px;
@@ -905,6 +941,7 @@ footer {
 
     .features-landing .landing-search input {
         width: 90%;
+        background: transparent;
         height: 20px;
         border-radius: 20px;
         border: none;
@@ -917,7 +954,7 @@ footer {
     }
 
     .features-landing .landing-search .bi {
-        color: #7e1036;
+        color: light-dark(#7e1036, #c14e76);
         margin-right: 5px;
         cursor: pointer;
         font-size: 18px;
@@ -1048,7 +1085,7 @@ footer {
     }
 
     .features-landing .features-cont .features-box h3 span {
-        color: #7e1036;
+        color: light-dark(#7e1036, #c14e76);
     }
 
     .features-landing .features-cont .features-box .features {
@@ -1299,6 +1336,7 @@ footer {
         width: 35%;
         border: 4px solid #7e1036;
         padding: 10px;
+        color: #7e1036;
         border-radius: 10px;
         display: flex;
         font-size: 12px;
@@ -1313,7 +1351,6 @@ footer {
         cursor: pointer;
         align-self: end;
         font-weight: 900;
-        color: #7e1036;
         text-align: end;
     }
 
@@ -1345,7 +1382,7 @@ footer {
         position: sticky;
         height: 10vh;
         top: 0;    
-        background: white;
+        background: light-dark(white, #7e1036);
         z-index: 50;
     }
 
@@ -1353,7 +1390,7 @@ footer {
         border: 5px solid transparent;
         text-decoration: none;
         transition: .3s ease;
-        color: #c14e76;
+        color: light-dark(#c14e76, white);
         height: 40px;
         width: 80px;
         display: flex;
@@ -1362,7 +1399,7 @@ footer {
     }
 
     nav .navigations-link:hover {
-        color: #7e1036;
+        color: light-dark(#7e1036, #c14e76);
     }
 
     nav img {
@@ -1393,16 +1430,17 @@ footer {
         border: none;
         transition: .3s ease;
         cursor: pointer;
-        border: 2px solid #7e1036;
+        border: 2px solid light-dark(#7e1036, white);
     }
 
     nav .user-decision .button-one {
-        background: #7e1036;
-        color: white;
+        background: light-dark(#7e1036, white);
+        color: light-dark(white, #7e1036);
     }
 
     nav .user-decision .button-two {
-        color: #7e1036;
+        color: light-dark(#7e1036, white);
+        background: transparent;
     }
 
     nav .user-decision button:active {
@@ -1464,17 +1502,18 @@ footer {
         border: none;
         transition: .3s ease;
         cursor: pointer;
-        border: 2px solid #7e1036;
+        border: 2px solid light-dark(#7e1036, white);
         box-shadow: 0 0 2px grey;
     }
 
     .intro-landing .intro-decision .button-one {
-        background: #7e1036;
-        color: white;
+        background: light-dark(#7e1036, white);
+        color: light-dark(white, #7e1036);
     }
 
     .intro-landing .intro-decision .button-two {
-        color: #7e1036;
+        color: light-dark(#7e1036, white);
+        background: transparent;
     }
 
     .intro-landing .intro-decision button:active {
@@ -1565,9 +1604,9 @@ footer {
     }
 
     .features-landing .landing-search {
-        border: 2px solid #7e1036;
+        border: 2px solid light-dark(#7e1036, white);
         display: flex;
-        background: white;
+        background: transparent;
         justify-content: space-around;
         align-items: center;
         width: 500px;
@@ -1580,6 +1619,7 @@ footer {
         height: 30px;
         border-radius: 20px;
         border: none;
+        background: transparent;
         font-size: 16px;
         padding: 2px;
     }
@@ -1589,7 +1629,7 @@ footer {
     }
 
     .features-landing .landing-search .bi {
-        color: #7e1036;
+        color: light-dark(#7e1036, #c14e76);
         margin-right: 5px;
         cursor: pointer;
         font-size: 20px;
@@ -1721,7 +1761,7 @@ footer {
     }
 
     .features-landing .features-cont .features-box h3 span {
-        color: #7e1036;
+        color: light-dark(#7e1036, #c14e76);
     }
 
     .features-landing .features-cont .features-box .features {
@@ -1949,7 +1989,7 @@ footer {
 
     .alert-cont {
         position: fixed;
-        margin-top: 120px;
+        margin-top: 150px;
         align-self: flex-end;
         z-index: 80;
         width: 25%;
@@ -2000,7 +2040,7 @@ footer {
         position: sticky;
         height: 10vh;
         top: 0;    
-        background: white;
+        background: light-dark(white, #7e1036);
         z-index: 50;
     }
 
@@ -2008,7 +2048,7 @@ footer {
         border: 5px solid transparent;
         text-decoration: none;
         transition: .3s ease;
-        color: #c14e76;
+        color: light-dark(#c14e76, white);
         height: 40px;
         width: 80px;
         display: flex;
@@ -2017,7 +2057,7 @@ footer {
     }
 
     nav .navigations-link:hover {
-        color: #7e1036;
+        color: light-dark(#7e1036, #c14e76);
     }
 
     nav img {
@@ -2048,16 +2088,17 @@ footer {
         border: none;
         transition: .3s ease;
         cursor: pointer;
-        border: 2px solid #7e1036;
+        border: 2px solid light-dark(#7e1036, white);
     }
 
     nav .user-decision .button-one {
-        background: #7e1036;
-        color: white;
+        background: light-dark(#7e1036, white);
+        color: light-dark(white, #7e1036);
     }
 
     nav .user-decision .button-two {
-        color: #7e1036;
+        color: light-dark(#7e1036, white);
+        background: transparent;
     }
 
     nav .user-decision button:active {
@@ -2067,14 +2108,6 @@ footer {
     nav .small-screen-nav {
         display: none;
     }
-
-
-    /* 
-
-    .container {
-        border: 2px solid red;
-    }
-    */
 
     /*SECTION 1 CODE BELOW*/
 
@@ -2130,17 +2163,18 @@ footer {
         border: none;
         transition: .3s ease;
         cursor: pointer;
-        border: 2px solid #7e1036;
+        border: 2px solid light-dark(#7e1036, white);
         box-shadow: 0 0 2px grey;
     }
 
     .intro-landing .intro-decision .button-one {
-        background: #7e1036;
-        color: white;
+        background: light-dark(#7e1036, white);
+        color: light-dark(white, #7e1036);
     }
 
     .intro-landing .intro-decision .button-two {
-        color: #7e1036;
+        color: light-dark(#7e1036, white);
+        background: transparent;
     }
 
     .intro-landing .intro-decision button:active {
@@ -2233,9 +2267,9 @@ footer {
     }
 
     .features-landing .landing-search {
-        border: 2px solid #7e1036;
+        border: 2px solid light-dark(#7e1036, white);
         display: flex;
-        background: white;
+        background: transparent;
         justify-content: space-around;
         align-items: center;
         width: 500px;
@@ -2248,6 +2282,7 @@ footer {
         height: 30px;
         border-radius: 20px;
         border: none;
+        background: transparent;
         font-size: 16px;
         padding: 2px;
     }
@@ -2257,7 +2292,7 @@ footer {
     }
 
     .features-landing .landing-search .bi {
-        color: #7e1036;
+        color: light-dark(#7e1036, #c14e76);
         margin-right: 5px;
         cursor: pointer;
         font-size: 20px;
@@ -2389,15 +2424,15 @@ footer {
     }
 
     .features-landing .features-cont .features-box h3 span {
-        color: #7e1036;
+        color: light-dark(#7e1036, #c14e76);
     }
 
     .features-landing .features-cont .features-box .features {
-    height: 90%;
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
+        height: 90%;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
     }
 
     .features-landing .features-cont .features-box .features .feature-dets {
