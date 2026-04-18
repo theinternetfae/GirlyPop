@@ -758,12 +758,12 @@ footer {
         border: 2px solid black;
         flex-direction: column;
         align-items: center;
+        gap: 7px;
     }
 
     .intro-landing .intro-box {
         width: 90%;
         height: 50%;
-        border: 2px solid black;
         padding: 20px 20px 0px 20px;
     }
 
@@ -788,7 +788,6 @@ footer {
     .intro-landing .intro-decision {
         display: flex;
         gap: 30px;
-        border: 2px solid black;
     }
 
     .intro-landing .intro-decision button {
@@ -1212,7 +1211,7 @@ footer {
         width: 100%;
         height: 20%;
         background: #7e1036;
-        overflow-x: auto;
+        overflow: hidden;
         padding: 20px;
         display: flex;
         align-items: center;
@@ -1224,14 +1223,20 @@ footer {
 
     .userexp-landing .testimonial-sect .testimonial-cont {
         display: flex;
+        width: max-content;
         gap: 22px;
         animation: spin 30s infinite linear;
         padding-right: 22px;
     }
 
     @keyframes spin {
-        from {translate: 0;}
-        to {translate: -100%;}
+        from {
+            transform: translateX(0);
+        }
+        
+        to {
+            transform: translateX(-100%);
+        }
     }
 
     .userexp-landing .testimonial-sect:hover .testimonial-cont {
@@ -1239,7 +1244,8 @@ footer {
     }
 
     .userexp-landing .testimonial-sect .testimonial-cont .testimonial-block {
-        height: 80px;
+        min-height: 80px;
+        height: auto;
         width: 200px;
         flex-shrink: 0;
         background: white;
