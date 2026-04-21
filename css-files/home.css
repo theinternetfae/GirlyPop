@@ -8,10 +8,95 @@
 body {
     height: 100%;
     font-family: "Lexend Deca", sans-serif;
-    background: #F2F3F4;
+    background: #FAF9F6;
 }
 
 nav {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+nav .logo-box {
+    width: 20%;
+    height: 80%;
+    background-image: url(../images/pink-logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;   
+}
+
+nav .search-bar {
+    width: 60%;
+    height: 60%;
+    padding: 5px;
+    border-radius: 10px;
+    background: #7e1036;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+}
+
+nav .search-bar input {
+    background: transparent;
+    width: 80%;
+    height: 100%;
+    font-size: 12px;
+    border: none;
+    color: white;
+}
+
+nav .search-bar input:focus {
+    outline: none;
+}
+
+nav .search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.808);
+}
+
+nav .search-bar .bi-search-heart {
+    font-size: 16px;
+    color: white;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+}
+
+nav .search-bar .bi-search-heart:active {
+    transform: scale(.90);
+}
+
+nav .navigations {
+    display: none;
+}
+
+nav .navigations-sm {
+    width: 10%;
+    height: 60%;
+    color: #7e1036;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+nav .navigations-sm:active {
+    transform: scale(.90);
+}
+
+
+/* nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -105,11 +190,11 @@ nav img {
     font-weight: 600;
     font-size: 12.5px;
     cursor: pointer;
-}
+} */
 
 /*FEATURED PRODUCTS SECTION*/
 
-.featured {
+/* .featured {
     margin: 20px 20px 20px 20px;
     padding: 10px;
     display: flex;
@@ -188,11 +273,11 @@ nav img {
     padding: 0px 0px 0px 10px;
     color: #7e1036;
 }
-
+ */
 
 /*FOR YOU SECTION*/
 
-.for-you {
+/* .for-you {
     margin: 20px 20px 20px 20px;
     padding: 10px;
     display: flex;
@@ -272,11 +357,11 @@ nav img {
 .description-for-you p {
     padding: 0px 0px 0px 10px;
    color: #7e1036;
-}
+} */
 
 /*PRODUCT PAGE POP-UP*/
 
-.product-page {
+/* .product-page {
     position: fixed; 
     top: 0;
     left: 0;    
@@ -442,10 +527,10 @@ nav img {
     flex-direction: column;
     gap: 15px;
     padding: 15px;
-}
+} */
 
 /*FOOTER CODE*/
-
+/* 
 footer {
     background: #7e1036;
     color: white;
@@ -465,4 +550,4 @@ footer {
 
 .contact .bi {
     cursor: pointer;
-}
+} */

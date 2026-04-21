@@ -298,7 +298,7 @@ nav .small-screen-nav {
 }
 
 .features-landing .landing-search .bi {
-    color: light-dark(#7e1036, #c14e76);
+    color: light-dark(#7e1036, white);
     margin-right: 5px;
     cursor: pointer;
     font-size: 20px;
