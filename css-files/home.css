@@ -86,15 +86,50 @@ nav .navigations-sm {
     color: #7e1036;
     font-size: 16px;
     display: flex;
+    flex-direction: column;
+    position: relative;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 }
 
-nav .navigations-sm:active {
+nav .burger:active {
     transform: scale(.90);
 }
 
+nav .navigations-sm .navs-sm {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: -92px;
+    flex-direction: column;
+    height: 90px;
+    background: white;
+    border-radius: 0px 0px 0 10px;
+    width: 135px;
+    font-size: 14px;
+    align-items: center;
+    justify-content: space-around;
+    border-left: 2px solid #7e1036;
+    border-bottom: 2px solid #7e1036;
+}
+
+.navs-sm.show {
+    display: block !important;
+}
+
+nav .navigations-sm .navs-sm .bi-filled {
+    background: #7e1036;
+    color: white;
+}
+
+nav .navigations-sm .navs-sm p {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    padding: 5px;
+    justify-content: center;
+}
 
 /* nav {
     display: flex;
@@ -592,7 +627,7 @@ footer {
         background: transparent;
         width: 80%;
         height: 100%;
-        font-size: 12px;
+        font-size: 16px;
         border: none;
         color: white;
     }
@@ -637,6 +672,40 @@ footer {
 
     nav .navigations-sm:active {
         transform: scale(.90);
+    }
+
+    nav .navigations-sm .navs-sm {
+        display: none;
+        position: absolute;
+        top: 46px;
+        left: -80px;
+        flex-direction: column;
+        height: 90px;
+        background: white;
+        border-radius: 0px 0px 0 10px;
+        width: 140px;
+        font-size: 16px;
+        align-items: center;
+        justify-content: space-around;
+        border-left: 2px solid #7e1036;
+        border-bottom: 2px solid #7e1036;
+    }
+
+    .navs-sm.show {
+        display: block !important;
+    }
+
+    nav .navigations-sm .navs-sm .bi-filled {
+        background: #7e1036;
+        color: white;
+    }
+
+    nav .navigations-sm .navs-sm p {
+        display: flex;
+        gap: 5px;
+        width: 100%;
+        padding: 5px;
+        justify-content: center;
     }
 
 }
@@ -741,6 +810,11 @@ footer {
         font-size: 11px;
         height: 100%;
         width: 100%;
+    }
+
+    nav .navigations .bi-filled {
+        background: #7e1036ee;
+        color: white;
     }
 
     nav .navigations-sm {
