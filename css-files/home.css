@@ -24,7 +24,7 @@ nav {
 }
 
 nav .logo-box {
-    width: 20%;
+    width: 80px;
     height: 80%;
     background-image: url(../images/pink-logo.png);
     background-repeat: no-repeat;
@@ -551,3 +551,200 @@ footer {
 .contact .bi {
     cursor: pointer;
 } */
+
+
+@media (min-width: 768px) {
+
+    nav {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    nav .logo-box {
+        width: 110px;
+        height: 80%;
+        background-image: url(../images/pink-logo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;   
+    }
+
+    nav .search-bar {
+        width: 60%;
+        height: 60%;
+        padding: 5px;
+        border-radius: 10px;
+        background: #7e1036;
+        display: flex;
+        align-items: center;
+        color: white;
+        justify-content: space-between;
+    }
+
+    nav .search-bar input {
+        background: transparent;
+        width: 80%;
+        height: 100%;
+        font-size: 12px;
+        border: none;
+        color: white;
+    }
+
+    nav .search-bar input:focus {
+        outline: none;
+    }
+
+    nav .search-bar input::placeholder {
+        color: rgba(255, 255, 255, 0.808);
+    }
+
+    nav .search-bar .bi-search-heart {
+        font-size: 20px;
+        color: white;
+        width: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    nav .search-bar .bi-search-heart:active {
+        transform: scale(.90);
+    }
+
+    nav .navigations {
+        display: none;
+    }
+
+    nav .navigations-sm {
+        width: 10%;
+        height: 60%;
+        color: #7e1036;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    nav .navigations-sm:active {
+        transform: scale(.90);
+    }
+
+}
+
+@media (min-width: 1024px) {
+ 
+    nav {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        padding: 0 10px;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    nav .logo-box {
+        width: 145px;
+        height: 80%;
+        background-image: url(../images/pink-logo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;   
+    }
+
+    nav .search-bar {
+        width: 60%;
+        height: 60%;
+        padding: 5px;
+        padding: 0 10px;
+        border-radius: 10px;
+        background: #7e1036;
+        display: flex;
+        align-items: center;
+        color: white;
+        justify-content: space-between;
+    }
+
+    nav .search-bar input {
+        background: transparent;
+        width: 80%;
+        height: 100%;
+        font-size: 14px;
+        border: none;
+        color: white;
+    }
+
+    nav .search-bar input:focus {
+        outline: none;
+    }
+
+    nav .search-bar input::placeholder {
+        color: rgba(255, 255, 255, 0.808);
+    }
+
+    nav .search-bar .bi-search-heart {
+        font-size: 20px;
+        color: white;
+        width: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    nav .search-bar .bi-search-heart:active {
+        transform: scale(.90);
+    }
+
+    nav .navigations {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 15%;
+        height: 80%;
+    }
+
+    nav .navigations button {
+        height: 40px;
+        width: 50px;
+        background: white;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #7e1036;
+        border: none;
+        cursor: pointer;
+        position: relative;
+    }
+
+    nav .navigations button p {
+        position: absolute;
+        top: 2px; 
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        height: 100%;
+        width: 100%;
+    }
+
+    nav .navigations-sm {
+        display: none;
+    }
+
+}
