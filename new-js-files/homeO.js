@@ -10,6 +10,45 @@ burger.addEventListener("click", (e) => {
     navsSm.classList.toggle('show');
 })
 
+const categoryIndicator = document.querySelector(".category-indicator");
+const categories = document.querySelector(".categories");
+const indicatorStat = document.querySelector(".indicator-stat");
+
+categoryIndicator.addEventListener("click", () => {
+    
+    if (categoryTitle.innerHTML !== "Sort") {
+        categoryTitle.innerHTML = "Sort";
+        indicatorStat.classList.remove('bi-x');
+        indicatorStat.classList.add('bi-arrow-right-short');
+    } else {
+        categories.classList.toggle('show');
+        if (indicatorStat.classList.contains('bi-arrow-right-short')) {
+            indicatorStat.classList.remove('bi-arrow-right-short');
+            indicatorStat.classList.add('bi-arrow-left-short');
+        } else {
+            indicatorStat.classList.remove('bi-arrow-left-short');
+            indicatorStat.classList.add('bi-arrow-right-short');    
+        }
+    }
+
+})
+
+
+const category = document.querySelectorAll(".category");
+const categoryTitle = document.querySelector(".category-title");
+
+category.forEach(c => {
+    
+    c.addEventListener('click', () => {
+        categories.classList.toggle('show');
+        categoryTitle.innerHTML = c.innerHTML;
+        indicatorStat.classList.remove('bi-arrow-left-short');
+        indicatorStat.classList.add('bi-x'); 
+    })
+
+})
+
+
 
 // featuredProducts();
 
