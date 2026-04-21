@@ -13,7 +13,7 @@ export function featuredProducts() {
     randomProducts.forEach(rItem => {
         featuredP.innerHTML +=`<div class="f-product">
                 <div class="description">
-                    <div class="description-text">
+xx                    <div class="description-text">
                         <h4 data-product-id="${rItem.id}">${rItem.name}</h4>
                         <p>$${(rItem.priceCents / 100).toFixed(2)}</p>    
                     </div>
