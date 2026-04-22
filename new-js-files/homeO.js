@@ -100,6 +100,26 @@ function renderFeatured() {
 renderFeatured();
 
 
+// FOR YOU PRODUCTS
+function renderProducts() {
+    const productsCont = document.querySelector(".grid-cont");
+
+    products.forEach(p => {
+        productsCont.innerHTML += `<div class="your-product" data-product-id="${p.id}">
+            <img src="${p.image}" alt="">
+            <div class="prod-summ">
+                <div>
+                    <h4>${truncateText(p.name)}</h4>
+                    <p>$${(p.priceCents / 100).toFixed(2)}</p>
+                </div>
+                <div class="bi-cart2"></div>
+                </div>
+            </div>
+        `
+    })
+}
+
+renderProducts()
 
 
 
