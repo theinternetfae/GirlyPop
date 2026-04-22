@@ -5,7 +5,7 @@ export const products = [
         name: "Babydoll wrap top",
         seller: "Seller 1",
         rating: {
-        stars: 4.5,
+        stars: 5,
         count: 127
         },
         priceCents: 2095,
@@ -107,7 +107,7 @@ export const products = [
         name: "Flower wedges",
         seller: "Seller 1",
         rating: {
-        stars: 4.5,
+        stars: 5,
         count: 127
         },
         priceCents: 12030,
@@ -141,7 +141,7 @@ export const products = [
         name: "Summer booty shorts",
         seller: "Seller 1",
         rating: {
-        stars: 4.5,
+        stars: 5,
         count: 127
         },
         priceCents: 2750,
@@ -192,7 +192,7 @@ export const products = [
         name: "Steve Madden shoes",
         seller: "Seller 1",
         rating: {
-        stars: 4.5,
+        stars: 5,
         count: 127
         },
         priceCents: 4095,
@@ -243,7 +243,7 @@ export const products = [
         name: "Black goth blouse",
         seller: "Seller 1",
         rating: {
-        stars: 5.0,
+        stars: 5,
         count: 127
         },
         priceCents: 3595,
@@ -277,7 +277,7 @@ export const products = [
         name: "Leopard print nightset",
         seller: "Seller 1",
         rating: {
-        stars: 4.5,
+        stars: 5,
         count: 127
         },
         priceCents: 5000,
@@ -294,7 +294,7 @@ export const products = [
         name: "Strawberry heels",
         seller: "Seller 1",
         rating: {
-        stars: 4.5,
+        stars: 5,
         count: 127
         },
         priceCents: 4050,
@@ -311,7 +311,7 @@ export const products = [
         name: "Dragon-fly pendant",
         seller: "Seller 1",
         rating: {
-        stars: 4.5,
+        stars: 5,
         count: 127
         },
         priceCents: 1550,
@@ -345,7 +345,7 @@ export const products = [
         name: "Little red dress",
         seller: "Seller 1",
         rating: {
-        stars: 4.5,
+        stars: 5,
         count: 127
         },
         priceCents: 3095,
@@ -362,7 +362,7 @@ export const products = [
         name: "Low-rise jeans",
         seller: "Seller 1",
         rating: {
-        stars: 4.5,
+        stars: 5,
         count: 127
         },
         priceCents: 7510,
@@ -379,7 +379,7 @@ export const products = [
         name: "Leather biker jacket",
         seller: "Seller 1",
         rating: {
-        stars: 5.0,
+        stars: 4.5,
         count: 127
         },
         priceCents: 10015,

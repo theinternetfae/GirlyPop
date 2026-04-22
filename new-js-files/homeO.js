@@ -1,6 +1,8 @@
 import { products } from "./General files/productsO.js";
-import { updateCartCount, featuredProducts, updateCartShove } from "./General files/utilsO.js";
+// import { updateCartCount, featuredProducts, updateCartShove } from "./General files/utilsO.js";
 
+
+// TOGGLE CATEGORY LOGIC
 const burger = document.querySelector(".burger");
 const navsSm = document.querySelector(".navs-sm");
 
@@ -47,6 +49,74 @@ category.forEach(c => {
     })
 
 })
+
+
+// FEATURED PRODUCTS LOGIC
+
+// function featuredGenerator(arr, count) {
+//     const shuffled = [...arr].sort(() => 0.5 - Math.random());
+//     return shuffled.slice(0, count);
+// }
+
+function featuredGenerator() {
+    const eligible = products.filter(p => p.rating.stars === 5);
+    const shuffled = eligible.sort(() => 0.5 - Math.random());
+    console.log(shuffled.slice(0, 5));
+    return shuffled.slice(0, 5);
+}
+
+const featureContainer = document.querySelector(".scroll-cont")
+const extraFeatureCont = document.querySelector(".extra-scroll-cont"); 
+
+function renderFeatured() {
+    const featuredProducts = featuredGenerator();
+    featuredProducts.forEach(f => {
+        featureContainer.innerHTML += `<div class="f-product" data-product-id="${f.id}">
+                <img src="${f.image}" alt="">
+                <div class="prod-summ">
+                    <div>
+                        <h4>${f.name}</h4>
+                        <p>$${(f.priceCents / 100).toFixed(2)}</p>
+                    </div>
+                    <div class="bi-cart2"></div>
+                </div>
+            </div>
+        `
+    })
+
+    featuredProducts.forEach(f => {
+        extraFeatureCont.innerHTML += `<div class="f-product" data-product-id="${f.id}">
+            <img src="${f.image}" alt="">
+            <div class="prod-summ">
+                <div>
+                    <h4>${f.name}</h4>
+                    <p>$${(f.priceCents / 100).toFixed(2)}</p>
+                </div>
+                <div class="bi-cart2"></div>
+            </div>
+        </div>
+        `
+    })      
+
+}
+
+renderFeatured();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

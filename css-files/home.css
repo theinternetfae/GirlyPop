@@ -216,14 +216,20 @@ nav .navigations-sm .navs-sm p {
     width: 100%;
     margin-top: 20px;
     padding: 5px;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.featured .featured-products::-webkit-scrollbar {
+    display: none;
 }
 
 .featured .featured-products .scroll-cont {
     display: flex;
     height: 100%;
-    width: max-content;
     gap: 10px;
+    padding-right: 10px;
     animation: back-forth 30s infinite linear;
 }
 
@@ -235,6 +241,10 @@ nav .navigations-sm .navs-sm p {
     100% {
         transform: translateX(-100%);
     }
+}
+
+.featured .featured-products:hover .scroll-cont {
+    animation-play-state: paused!important;
 }
 
 .featured .featured-products .f-product {
@@ -883,14 +893,15 @@ footer {
         width: 100%;
         margin-top: 30px;
         padding: 5px;
+        display: flex;
         overflow: hidden;
     }
 
     .featured .featured-products .scroll-cont {
         display: flex;
         height: 100%;
-        width: max-content;
         gap: 10px;
+        padding-right: 10px;
         animation: back-forth 10s infinite linear;
     }
 
@@ -906,7 +917,7 @@ footer {
 
     .featured .featured-products .f-product {
         height: 100%;
-        width: 24%;
+        width: 200px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -1168,6 +1179,10 @@ footer {
         justify-content: space-between;
         gap: 10px;
         animation: none;
+    }
+
+    .featured .featured-products .extra-scroll-cont {
+        display: none;
     }
 
     .featured .featured-products .f-product {
