@@ -902,7 +902,7 @@ footer {
         height: 100%;
         gap: 10px;
         padding-right: 10px;
-        animation: back-forth 10s infinite linear;
+        animation: back-forth 20s infinite linear;
     }
 
     @keyframes back-forth {

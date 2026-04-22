@@ -1,28 +1,18 @@
 // import { products } from "./productsO.js";
 // import { cartCountStorage, cartStorageDisplay, getSavedCartButtonState, saveCartButtonState } from "./storageO.js";
 
-// function featuredGenerator(arr, count) {
-//     const shuffled = [...arr].sort(() => 0.5 - Math.random());
-//     return shuffled.slice(0, count);
-// }
+export function truncateText(words, count = 2) {
+    const textArray = words.split(' ', count);
+    const newText = textArray.join(' ');
 
-// export function featuredProducts() {
-//     const featuredP = document.querySelector('.featured-products');
-//     const randomProducts = featuredGenerator(products, 5);
+    const isTruncated = words.split(' ').length > count; 
+    
+    return `${newText}${isTruncated ? '...' : ''}`;
+}
 
-//     randomProducts.forEach(rItem => {
-//         featuredP.innerHTML +=`<div class="f-product">
-//                 <div class="description">
-// xx                    <div class="description-text">
-//                         <h4 data-product-id="${rItem.id}">${rItem.name}</h4>
-//                         <p>$${(rItem.priceCents / 100).toFixed(2)}</p>    
-//                     </div>
-//                     <button class="bi bi-cart2 cart-track" data-product-id="${rItem.id}"></button>
-//                 </div>
-//                 <img src="${rItem.image}" alt="top">
-//             </div>`
-//     })
-// }
+
+
+
 
 // export function updateCartCount() {
 //     const addBtn = document.querySelectorAll('.cart-track');

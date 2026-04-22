@@ -1,4 +1,5 @@
 import { products } from "./General files/productsO.js";
+import { truncateText } from "./General files/utilsO.js";
 // import { updateCartCount, featuredProducts, updateCartShove } from "./General files/utilsO.js";
 
 
@@ -51,12 +52,8 @@ category.forEach(c => {
 })
 
 
-// FEATURED PRODUCTS LOGIC
 
-// function featuredGenerator(arr, count) {
-//     const shuffled = [...arr].sort(() => 0.5 - Math.random());
-//     return shuffled.slice(0, count);
-// }
+// FEATURED PRODUCTS LOGIC
 
 function featuredGenerator() {
     const eligible = products.filter(p => p.rating.stars === 5);
@@ -75,7 +72,7 @@ function renderFeatured() {
                 <img src="${f.image}" alt="">
                 <div class="prod-summ">
                     <div>
-                        <h4>${f.name}</h4>
+                        <h4>${truncateText(f.name)}</h4>
                         <p>$${(f.priceCents / 100).toFixed(2)}</p>
                     </div>
                     <div class="bi-cart2"></div>
@@ -89,7 +86,7 @@ function renderFeatured() {
             <img src="${f.image}" alt="">
             <div class="prod-summ">
                 <div>
-                    <h4>${f.name}</h4>
+                    <h4>${truncateText(f.name)}</h4>
                     <p>$${(f.priceCents / 100).toFixed(2)}</p>
                 </div>
                 <div class="bi-cart2"></div>
