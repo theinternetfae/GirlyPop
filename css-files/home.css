@@ -258,6 +258,7 @@ nav .navigations-sm .navs-sm p {
 .featured .featured-products .f-product img {
     width: 100%;
     height: 100%;
+    cursor: pointer;
     object-position: center;
     border-radius: 10px;
     object-fit: cover;
@@ -421,188 +422,39 @@ footer {
 
 
 
-
-
-    /* position: absolute;
-    width: 275px;
-    height: 55px;
-    margin-top: 145px;
-    background: white;
-    border-radius: 0px 0px 10px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: .3s ease; */
-
-/*
-/*FEATURED PRODUCTS SECTION*/
-
-/* .featured {
-    margin: 20px 20px 20px 20px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.featured h3 {
-    color: #7e1036;
-    margin-bottom: 20px;
-}
-
-.featured-products {
-    height: 200px;
-    display: flex;
-    gap: 20px;
-}
-
-.f-product {
-    width: 300px;
-    height: 200px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-}
-
-.f-product img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.description {
-    position: absolute;
-    width: 275px;
-    height: 55px;
-    margin-top: 145px;
-    background: white;
-    border-radius: 0px 0px 10px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: .3s ease;
-}
-
-.description .bi-cart2 {
-    padding: 16px;
-    font-size: 20px;
-    background: #7e1036;
-    color: white;
-    font-weight: 600;
-    border-radius: 0px 0px 10px 0px;
-    border: none;
-    cursor: pointer;
-}
-
-.description .bi-cart-check {
-    padding: 16px;
-    font-size: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
-    color: #7e1036;
-    background: #FFFFFF;
-    font-weight: 600;
-    border-radius: 0px 0px 10px 0px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-}
-
-.description h4 {
-    padding: 5px 0px 5px 10px;
-}
-
-.description p {
-    padding: 0px 0px 0px 10px;
-    color: #7e1036;
-}
- */
-
-/*FOR YOU SECTION*/
-
-/* .for-you {
-    margin: 20px 20px 20px 20px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.for-you h3 {
-    color: #7e1036;
-}
-
-.for-you-products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.for-you-product {
-    height: 300px;
-    width: 300px;
-    margin-top: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-.pop-up h4 {
-    cursor: pointer;
-}
-
-.for-you-product img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.description-for-you {
-    position: absolute;
-    width: 300px;
-    height: 55px;
-    margin-top: 247px;
-    background: white;
-    border-radius: 0px 0px 10px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: .3s ease;
-}
-
-.description-for-you .bi-cart2 {
-    padding: 16px;
-    font-size: 20px;
-    background: #7e1036;
-    color: white;
-    font-weight: 600;
-    border-radius: 0px 0px 10px 0px;
-    cursor: pointer;
-    border: none;
-}
-
-.description-for-you .bi-cart-check {
-    padding: 16px;
-    font-size: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
-    color: #7e1036;
-    background: #FFFFFF;
-    font-weight: 600;
-    border-radius: 0px 0px 10px 0px;
-    cursor: pointer;
-    border: none;
-}
-
-.description-for-you h4 {
-    padding: 5px 0px 5px 10px;
-}
-
-.description-for-you p {
-    padding: 0px 0px 0px 10px;
-   color: #7e1036;
-} */
-
 /*PRODUCT PAGE POP-UP*/
+
+.product-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 60;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.423);
+    backdrop-filter: blur(5px);
+    display: none;
+}
+
+.product-page.show {
+    display: block;
+}
+
+.product-page .product-details {
+    border: 2px solid #7e1036;
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    bottom: 0;
+    border-radius: 15px 15px 0 0;
+    background: white;
+    transition: 2s ease-in;
+    transform: translateY(900px);
+}
+
+.product-page .product-details.slide-in {
+    transform: translateY(0);
+}
 
 /* .product-page {
     position: fixed; 

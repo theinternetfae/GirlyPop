@@ -69,7 +69,7 @@ function renderFeatured() {
     const featuredProducts = featuredGenerator();
     featuredProducts.forEach(f => {
         featureContainer.innerHTML += `<div class="f-product" data-product-id="${f.id}">
-                <img src="${f.image}" alt="">
+                <img src="${f.image}" class="detail-show" alt="">
                 <div class="prod-summ">
                     <div>
                         <h4>${truncateText(f.name)}</h4>
@@ -83,7 +83,7 @@ function renderFeatured() {
 
     featuredProducts.forEach(f => {
         extraFeatureCont.innerHTML += `<div class="f-product" data-product-id="${f.id}">
-            <img src="${f.image}" alt="">
+            <img src="${f.image}" class="detail-show" alt="">
             <div class="prod-summ">
                 <div>
                     <h4>${truncateText(f.name)}</h4>
@@ -106,7 +106,7 @@ function renderProducts() {
 
     products.forEach(p => {
         productsCont.innerHTML += `<div class="your-product" data-product-id="${p.id}">
-            <img src="${p.image}" alt="">
+            <img src="${p.image}" class="detail-show" alt="">
             <div class="prod-summ">
                 <div>
                     <h4>${truncateText(p.name)}</h4>
@@ -124,8 +124,24 @@ renderProducts()
 
 
 
+const productPage = document.querySelector('.product-page');
+const productDetails = document.querySelector('.product-details');
 
+const detailToggle = document.querySelectorAll('.detail-show');
 
+detailToggle.forEach(d => {
+  
+    d.addEventListener("click", () => {
+        
+        productPage.classList.add('show');
+    
+        setTimeout(() => {
+            productDetails.classList.add('slide-in');
+        }, 10)
+  
+    })
+
+})
 
 
 
