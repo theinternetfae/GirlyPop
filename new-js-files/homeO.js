@@ -217,14 +217,14 @@ closeDetail.addEventListener('click', () => {
 
             //         <div class="buyer-info">
             //             <p>~ ThatGirlRae</p>
-            //             <div>
-            //                 <i class="bi bi-star-fill"></i>
-            //                 <i class="bi bi-star-fill"></i>
-            //                 <i class="bi bi-star-fill"></i>
-            //                 <i class="bi bi-star-fill"></i>
-            //                 <i class="bi bi-star-fill"></i>
-            //             </div>
-            //             <span>(113 reviews)</span>
+                        // <div>
+                        //     <i class="bi bi-star-fill"></i>
+                        //     <i class="bi bi-star-fill"></i>
+                        //     <i class="bi bi-star-fill"></i>
+                        //     <i class="bi bi-star-fill"></i>
+                        //     <i class="bi bi-star-fill"></i>
+                        // </div>
+                        // <span>(113 reviews)</span>
             //             <button><i class="bi bi-chat-text"></i>Chat</button>
             //         </div>
 
