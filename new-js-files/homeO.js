@@ -160,7 +160,7 @@ openDetail.forEach(d => {
                             <i class="bi bi-info-circle-fill info"></i>
                         </div>
 
-                        <p class="price"><span class="tmi">Price:</span>$${(product.priceCents / 100).toFixed(2)}</p>
+                        <p class="price">$${(product.priceCents / 100).toFixed(2)}</p>
                         
                         <div class="actions">
 
@@ -168,6 +168,8 @@ openDetail.forEach(d => {
                                 Chat vendor
                                 <i class="bi bi-chat-right-dots-fill actions-bi"></i>
                             </button>
+
+                            <p class="tmi">ThatGirlAnya</p>
 
                             <button>
                                 View vendor
