@@ -82,7 +82,7 @@ function renderFeatured() {
     })
 
     featuredProducts.forEach(f => {
-        extraFeatureCont.innerHTML += `<div class="f-product">
+        extraFeatureCont.innerHTML += `<div class="f-product" aria-hidden="true">
             <img src="${f.image}" class="detail-show" alt="" data-productId="${f.id}">
             <div class="prod-summ">
                 <div>
@@ -105,6 +105,7 @@ function renderProducts() {
     const productsCont = document.querySelector(".grid-cont");
 
     products.forEach(p => {
+        console.log(p.aesthetic)
         productsCont.innerHTML += `<div class="your-product" >
             <img src="${p.image}" class="detail-show" alt="" data-productId="${p.id}">
             <div class="prod-summ">
@@ -193,10 +194,106 @@ openDetail.forEach(d => {
 
                 <div class="more">
                     <h4>More like this</h4>
+                    
                     <div class="more-products">
-                        <div class="m-product"></div>
-                        <div class="m-product"></div>
+                    
+                        <div class="m-scroll-box">
+                    
+                            <div class="m-product">
+                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
+                                <div class="m-summ">
+                                    <div>
+                                        <h4>Beaded heels</h4>
+                                        <p>$40.00</p>
+                                    </div>
+                                    <div class="bi-cart2"></div>
+                                </div>
+                            </div>
+
+                            <div class="m-product">
+                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
+                                <div class="m-summ">
+                                    <div>
+                                        <h4>Beaded heels</h4>
+                                        <p>$40.00</p>
+                                    </div>
+                                    <div class="bi-cart2"></div>
+                                </div>
+                            </div>
+
+                            <div class="m-product">
+                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
+                                <div class="m-summ">
+                                    <div>
+                                        <h4>Beaded heels</h4>
+                                        <p>$40.00</p>
+                                    </div>
+                                    <div class="bi-cart2"></div>
+                                </div>
+                            </div>
+                        
+                            <div class="m-product">
+                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
+                                <div class="m-summ">
+                                    <div>
+                                        <h4>Beaded heels</h4>
+                                        <p>$40.00</p>
+                                    </div>
+                                    <div class="bi-cart2"></div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    
+                        <div class="m-scroll-box" aria-hidden="true" class="m-scroll-hidden">
+                    
+                            <div class="m-product">
+                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
+                                <div class="m-summ">
+                                    <div>
+                                        <h4>Beaded heels</h4>
+                                        <p>$40.00</p>
+                                    </div>
+                                    <div class="bi-cart2"></div>
+                                </div>
+                            </div>
+
+                            <div class="m-product">
+                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
+                                <div class="m-summ">
+                                    <div>
+                                        <h4>Beaded heels</h4>
+                                        <p>$40.00</p>
+                                    </div>
+                                    <div class="bi-cart2"></div>
+                                </div>
+                            </div>
+
+                            <div class="m-product">
+                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
+                                <div class="m-summ">
+                                    <div>
+                                        <h4>Beaded heels</h4>
+                                        <p>$40.00</p>
+                                    </div>
+                                    <div class="bi-cart2"></div>
+                                </div>
+                            </div>
+                        
+                            <div class="m-product">
+                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
+                                <div class="m-summ">
+                                    <div>
+                                        <h4>Beaded heels</h4>
+                                        <p>$40.00</p>
+                                    </div>
+                                    <div class="bi-cart2"></div>
+                                </div>
+                            </div>
+                        
+                        </div>
                     </div>
+                                
                 </div>
                 
             </div>
