@@ -242,10 +242,21 @@ openDetail.forEach(d => {
                                     <div class="bi-cart2"></div>
                                 </div>
                             </div>
-                        
+
+                            <div class="m-product">
+                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
+                                <div class="m-summ">
+                                    <div>
+                                        <h4>Beaded heels</h4>
+                                        <p>$40.00</p>
+                                    </div>
+                                    <div class="bi-cart2"></div>
+                                </div>
+                            </div>
+
                         </div>
                     
-                        <div class="m-scroll-box" aria-hidden="true" class="m-scroll-hidden">
+                        <div class="m-scroll-box m-scroll-hidden" aria-hidden="true">
                     
                             <div class="m-product">
                                 <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
@@ -290,7 +301,18 @@ openDetail.forEach(d => {
                                     <div class="bi-cart2"></div>
                                 </div>
                             </div>
-                        
+
+                            <div class="m-product">
+                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
+                                <div class="m-summ">
+                                    <div>
+                                        <h4>Beaded heels</h4>
+                                        <p>$40.00</p>
+                                    </div>
+                                    <div class="bi-cart2"></div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                                 
