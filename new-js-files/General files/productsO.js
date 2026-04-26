@@ -14,7 +14,12 @@ export const products = [
         "tops",
         "wrap",
         "patterned"
-        ]
+        ],
+        category: "tops",
+        aesthetic: ["Y2K", "chic", "whimsy"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
     {
         id: "11b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -31,7 +36,12 @@ export const products = [
         "heels",
         "beaded",
         "vintage"
-        ]
+        ],
+        category: "shoes",
+        aesthetic: ["whimsy", "goth", "boho"],
+        inCart: false,
+        status: "bad",
+        wrong: "Most of the beads are missing.",
     },
     {
         id: "12b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -48,7 +58,12 @@ export const products = [
         "dress",
         "halter",
         "party"
-        ]
+        ],
+        category: "dresses",
+        aesthetic: ["Y2k", "chic"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
     {
         id: "13b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -65,7 +80,12 @@ export const products = [
         "skirt",
         "handmade",
         "patterned"
-        ]
+        ],
+        category: "bottoms",
+        aesthetic: ["whimsy", "boho"],
+        inCart: false,
+        status: "bad",
+        wrong: "A whole in the skirt, nothing a patch can't fix",
     },
     {
         id: "14b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -82,7 +102,12 @@ export const products = [
         "butterfly",
         "necklace",
         "accessory"
-        ]
+        ],
+        category: "accessories",
+        aesthetic: ["whimsy", "boho", "chic", "Y2K"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
     {
         id: "15b6fc6f-338a-4ec4-896f-486349e85a3d",
@@ -99,7 +124,12 @@ export const products = [
         "tops",
         "halter",
         "patterned"
-        ]
+        ],
+        category: "tops",
+        aesthetic: ["boho", "whimsy", "Y2K"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
     {
         id: "16b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -116,7 +146,12 @@ export const products = [
         "wedges",
         "heels",
         "shoes"
-        ]
+        ],
+        category: "shoes",
+        aesthetic: ["boho", "Y2K", "whimsy"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
     {
         id: "17b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -133,7 +168,12 @@ export const products = [
         "knit",
         "dress",
         "crochet"
-        ]
+        ],
+        category: "dresses",
+        aesthetic: ["boho", "whimsy", "goth", "grunge"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
     {
         id: "18b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -150,7 +190,12 @@ export const products = [
         "summer",
         "hawaii",
         "booty"
-        ]
+        ],
+        category: "bottoms",
+        aesthetic: ["Y2K", "boho"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
     {
         id: "19b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -167,7 +212,12 @@ export const products = [
         "small",
         "bag",
         "tote"
-        ]
+        ],
+        category: "bags",
+        aesthetic: ["boho", "Y2K"],
+        inCart: false,
+        status: "bad",
+        wrong: "A hole in the back.",
     },
     {
         id: "20b6fc6f-338a-4ec4-896f-486349e85a3d",
@@ -184,7 +234,12 @@ export const products = [
         "sleeves",
         "tops",
         "neckline"
-        ]
+        ],
+        category: "tops",
+        aesthetic: ["boho", "whimsy", "chic", "Y2K"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
     {
         id: "21b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -201,9 +256,14 @@ export const products = [
         "Madden",
         "heels",
         "summer"
-        ]
+        ],
+        category: "shoes",
+        aesthetic: ["coquette", "chic", "Y2K"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
-        {
+    {
         id: "22b6fc6f-327a-4ec4-896f-486349e85a3d",
         image: "images/tops/patterned-purple-top.jpeg",
         name: "Purple patterned top",
@@ -218,7 +278,12 @@ export const products = [
         "top",
         "purple",
         "mesh"
-        ]
+        ],
+        category: "tops",
+        aesthetic: ["whimsy", "chic", "Y2K"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
     {
         id: "23b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -235,7 +300,12 @@ export const products = [
         "costume",
         "off-shoulder",
         "patterned"
-        ]
+        ],
+        category: "dresses",
+        aesthetic: ["whimsy", "boho", "coquette"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
         {
         id: "24b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -252,7 +322,12 @@ export const products = [
         "blouse",
         "cut-out",
         "black"
-        ]
+        ],
+        category: "tops",
+        aesthetic: ["goth", "whimsy", "chic"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
     {
         id: "25b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -269,7 +344,12 @@ export const products = [
         "hawaii",
         "skirt",
         "short"
-        ]
+        ],
+        category: "bottoms",
+        aesthetic: ["Y2K", "coquette"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
         {
         id: "26b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -286,7 +366,12 @@ export const products = [
         "nightset",
         "print",
         "sleep"
-        ]
+        ],
+        category: "tops",
+        aesthetic: ["chic", "Y2K"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
     {
         id: "27b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -303,7 +388,12 @@ export const products = [
         "heels",
         "beach",
         "pink"
-        ]
+        ],
+        category: "shoes",
+        aesthetic: ["chic", "Y2K"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
     {
         id: "28b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -320,7 +410,12 @@ export const products = [
         "dragon fly",
         "accessory",
         "unique"
-        ]
+        ],
+        category: "accessories",
+        aesthetic: ["whimsy", "coquette", "Y2K"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
     {
         id: "29b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -337,7 +432,12 @@ export const products = [
         "pink",
         "2000's",
         "summer"
-        ]
+        ],
+        category: "shoes",
+        aesthetic: ["Y2K", "chic", "gyaru"],
+        inCart: false,
+        status: "bad",
+        wrong: "A few chips in the wedges but overall fine",
     },
     {
         id: "30b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -354,7 +454,12 @@ export const products = [
         "dress",
         "knit",
         "crochet"
-        ]
+        ],
+        category: "dresses",
+        aesthetic: ["coquette", "chic"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
         {
         id: "31b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -371,7 +476,12 @@ export const products = [
         "Y2k",
         "jeans",
         "light"
-        ]
+        ],
+        category: "bottoms",
+        aesthetic: ["Y2K", "gyaru"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
     {
         id: "32b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -388,9 +498,14 @@ export const products = [
         "jacket",
         "biker",
         "big"
-        ]
+        ],
+        category: "accessories",
+        aesthetic: ["grunge", "chic"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
-        {
+    {
         id: "33b6fc6f-327a-4ec4-896f-486349e85a3d",
         image: "images/accessories/bag.jpeg",
         name: "Gyaru bag",
@@ -405,6 +520,11 @@ export const products = [
         "gyaru",
         "hyper-femme",
         "pink"
-        ]
+        ],
+        category: "bags",
+        aesthetic: ["coquette", "gyaru", "Y2K", "chic"],
+        inCart: false,
+        status: "good",
+        wrong: null,
     },
 ]

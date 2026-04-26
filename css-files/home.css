@@ -495,13 +495,14 @@ footer {
     width: 200px;
     height: 200px;
     border-radius: 10px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);}
+}
 
 .product-page .product-details .about-product .details-img-box img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
 .product-page .product-details .about-product .initial-info {
@@ -1219,13 +1220,14 @@ footer {
         width: 50%;
         height: 40%;
         border-radius: 10px;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);}
+    }
 
     .product-page .product-details .about-product .details-img-box img {
         height: 100%;
         width: 100%;
         object-fit: cover;
         border-radius: 10px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
     }
 
     .product-page .product-details .about-product .initial-info {
@@ -1255,6 +1257,7 @@ footer {
         display: flex; 
         gap: 10px;
         font-size: 20px;
+        font-weight: bold;
     }
 
     .product-page .product-details .about-product .initial-info .actions {
@@ -1782,13 +1785,14 @@ footer {
         width: 50%;
         height: 100%;
         border-radius: 10px;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);}
+    }
 
     .product-page .product-details .about-product .details-img-box img {
         height: 100%;
         width: 100%;
         object-fit: cover;
         border-radius: 10px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
     }
 
     .product-page .product-details .about-product .initial-info {
@@ -2087,6 +2091,7 @@ footer {
         background: #7e1036;
     }
 
+
     /*PRODUCT PAGE CODE*/
     .product-page {
         position: fixed;
@@ -2160,13 +2165,17 @@ footer {
         width: 50%;
         height: 100%;
         border-radius: 10px;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);}
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     .product-page .product-details .about-product .details-img-box img {
         height: 100%;
-        width: 100%;
+        width: 90%;
         object-fit: cover;
         border-radius: 10px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
     }
 
     .product-page .product-details .about-product .initial-info {
