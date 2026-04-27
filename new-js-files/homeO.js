@@ -1,5 +1,5 @@
 import { products } from "./General files/productsO.js";
-import { truncateText } from "./General files/utilsO.js";
+import { truncateText, randomGenerator } from "./General files/utilsO.js";
 // import { updateCartCount, featuredProducts, updateCartShove } from "./General files/utilsO.js";
 
 
@@ -55,18 +55,12 @@ category.forEach(c => {
 
 // FEATURED PRODUCTS LOGIC
 
-function featuredGenerator() {
-    const eligible = products.filter(p => p.rating.stars === 5);
-    const shuffled = eligible.sort(() => 0.5 - Math.random());
-    console.log(shuffled.slice(0, 5));
-    return shuffled.slice(0, 5);
-}
-
 const featureContainer = document.querySelector(".scroll-cont")
 const extraFeatureCont = document.querySelector(".extra-scroll-cont"); 
 
 function renderFeatured() {
-    const featuredProducts = featuredGenerator();
+    const elig = products.filter(p => p.rating.stars === 5);
+    const featuredProducts = randomGenerator(elig);
     featuredProducts.forEach(f => {
         featureContainer.innerHTML += `<div class="f-product">
                 <img src="${f.image}" class="detail-show" alt="" data-productId="${f.id}">
@@ -105,7 +99,6 @@ function renderProducts() {
     const productsCont = document.querySelector(".grid-cont");
 
     products.forEach(p => {
-        console.log(p.aesthetic)
         productsCont.innerHTML += `<div class="your-product" >
             <img src="${p.image}" class="detail-show" alt="" data-productId="${p.id}">
             <div class="prod-summ">
@@ -123,8 +116,6 @@ function renderProducts() {
 renderProducts()
 
 
-
-
 // HANDLING PRODUCT DETAILS
 
 const productPage = document.querySelector('.product-page');
@@ -132,6 +123,40 @@ const productDetails = document.querySelector('.product-details');
 
 
 const openDetail = document.querySelectorAll('.detail-show');
+
+function moreLikeThis(picked) {
+
+    const moreProducts = document.querySelector(".more-products");
+
+    const aesthetics = picked.aesthetic;
+
+    console.log(aesthetics);
+    const matchingProducts = [];
+
+    for (let i = 0; i < aesthetics.length; i++) {
+        const element = aesthetics[i];
+        products.forEach(p => {
+            p.aesthetic.includes(element) && matchingProducts.push(p);
+        }) 
+    }
+
+    const ids = matchingProducts.map(m => m.id);
+    const removedDuplicates = new Set(ids);
+    const removedDuplicatesArrayy = [...removedDuplicates]
+
+    const finalMatched = [];
+    
+    for (let i = 0; i < removedDuplicatesArrayy.length; i++) {
+        const element = removedDuplicatesArrayy[i];
+        products.forEach(p => {
+            p.id === element && element !== picked.id && finalMatched.push(p);
+        }) 
+    }
+
+    const randomMatched = randomGenerator(finalMatched);
+    console.log(randomMatched);
+    return randomMatched;
+}
 
 openDetail.forEach(d => {
 
@@ -331,6 +356,8 @@ openDetail.forEach(d => {
             productDetails.classList.remove('slide-in');
             productPage.classList.remove('show');
         })
+
+        moreLikeThis(product);
     })
 
 })

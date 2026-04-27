@@ -10,7 +10,10 @@ export function truncateText(words, count = 2) {
     return `${newText}${isTruncated ? '...' : ''}`;
 }
 
-
+export function randomGenerator(eligible) {
+    const shuffled = eligible.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 5);
+}
 
 
 
