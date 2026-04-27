@@ -224,120 +224,11 @@ openDetail.forEach(d => {
                     
                         <div class="m-scroll-box">
                     
-                            <div class="m-product">
-                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
-                                <div class="m-summ">
-                                    <div>
-                                        <h4>Beaded heels</h4>
-                                        <p>$40.00</p>
-                                    </div>
-                                    <div class="bi-cart2"></div>
-                                </div>
-                            </div>
-
-                            <div class="m-product">
-                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
-                                <div class="m-summ">
-                                    <div>
-                                        <h4>Beaded heels</h4>
-                                        <p>$40.00</p>
-                                    </div>
-                                    <div class="bi-cart2"></div>
-                                </div>
-                            </div>
-
-                            <div class="m-product">
-                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
-                                <div class="m-summ">
-                                    <div>
-                                        <h4>Beaded heels</h4>
-                                        <p>$40.00</p>
-                                    </div>
-                                    <div class="bi-cart2"></div>
-                                </div>
-                            </div>
-                        
-                            <div class="m-product">
-                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
-                                <div class="m-summ">
-                                    <div>
-                                        <h4>Beaded heels</h4>
-                                        <p>$40.00</p>
-                                    </div>
-                                    <div class="bi-cart2"></div>
-                                </div>
-                            </div>
-
-                            <div class="m-product">
-                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
-                                <div class="m-summ">
-                                    <div>
-                                        <h4>Beaded heels</h4>
-                                        <p>$40.00</p>
-                                    </div>
-                                    <div class="bi-cart2"></div>
-                                </div>
-                            </div>
-
                         </div>
                     
                         <div class="m-scroll-box m-scroll-hidden" aria-hidden="true">
                     
-                            <div class="m-product">
-                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
-                                <div class="m-summ">
-                                    <div>
-                                        <h4>Beaded heels</h4>
-                                        <p>$40.00</p>
-                                    </div>
-                                    <div class="bi-cart2"></div>
-                                </div>
-                            </div>
-
-                            <div class="m-product">
-                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
-                                <div class="m-summ">
-                                    <div>
-                                        <h4>Beaded heels</h4>
-                                        <p>$40.00</p>
-                                    </div>
-                                    <div class="bi-cart2"></div>
-                                </div>
-                            </div>
-
-                            <div class="m-product">
-                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
-                                <div class="m-summ">
-                                    <div>
-                                        <h4>Beaded heels</h4>
-                                        <p>$40.00</p>
-                                    </div>
-                                    <div class="bi-cart2"></div>
-                                </div>
-                            </div>
-                        
-                            <div class="m-product">
-                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
-                                <div class="m-summ">
-                                    <div>
-                                        <h4>Beaded heels</h4>
-                                        <p>$40.00</p>
-                                    </div>
-                                    <div class="bi-cart2"></div>
-                                </div>
-                            </div>
-
-                            <div class="m-product">
-                                <img src="images/shoes/beaded-kitten-heels.jpeg" class="more-image" alt="" data-productId="">
-                                <div class="m-summ">
-                                    <div>
-                                        <h4>Beaded heels</h4>
-                                        <p>$40.00</p>
-                                    </div>
-                                    <div class="bi-cart2"></div>
-                                </div>
-                            </div>
-
+                    
                         </div>
                     </div>
                                 
@@ -349,7 +240,44 @@ openDetail.forEach(d => {
         setTimeout(() => {
             productDetails.classList.add('slide-in');
         }, 0)
-  
+
+        
+        
+        
+        
+        const more = moreLikeThis(product);
+        const mScrollBox = document.querySelector(".m-scroll-box");
+        const mScrollHidden = document.querySelector(".m-scroll-hidden");
+
+        more.forEach(m => {
+            mScrollBox.innerHTML += `
+                <div class="m-product">
+                    <img src="${m.image}" alt="" data-productId="${m.id}">
+                    <div class="m-summ">
+                        <div>
+                            <h4>${truncateText(m.name)}</h4>
+                            <p>$${(m.priceCents / 100).toFixed(2)}</p>
+                        </div>
+                        <div class="bi-cart2"></div>
+                    </div>
+                </div>
+            `
+
+            mScrollHidden.innerHTML += `
+                <div class="m-product">
+                    <img src="${m.image}" alt="" data-productId="${m.id}">
+                    <div class="m-summ">
+                        <div>
+                            <h4>${truncateText(m.name)}</h4>
+                            <p>$${(m.priceCents / 100).toFixed(2)}</p>
+                        </div>
+                        <div class="bi-cart2"></div>
+                    </div>
+                </div>
+            `
+        })
+
+
         const closeDetail = document.querySelector('.exit-details');
 
         closeDetail.addEventListener('click', () => {
@@ -357,7 +285,6 @@ openDetail.forEach(d => {
             productPage.classList.remove('show');
         })
 
-        moreLikeThis(product);
     })
 
 })
