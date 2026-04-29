@@ -267,46 +267,49 @@ function renderProductDetail(product) {
 
 function renderMld (product) {
 
-    console.log(product)
-    // const more = moreLikeThis(product);
-    // const mScrollBox = document.querySelector(".m-scroll-box");
-    // const mScrollHidden = document.querySelector(".m-scroll-hidden");
+    const prodIdentity = product.dataset.productid;
+    const retrieveProduct = products.filter(p => p.id === prodIdentity);
+    const p = retrieveProduct[0];
 
-    // more.forEach(m => {
-    //     mScrollBox.innerHTML += `
-    //         <div class="m-product">
-    //             <img src="${m.image}" alt="" data-productId="${m.id}">
+    const more = moreLikeThis(p);
+    const mScrollBox = document.querySelector(".m-scroll-box");
+    const mScrollHidden = document.querySelector(".m-scroll-hidden");
+
+    more.forEach(m => {
+        mScrollBox.innerHTML += `
+            <div class="m-product">
+                <img src="${m.image}" alt="" data-productId="${m.id}">
                 
-    //             <div class="m-summ-cont">
-    //                 <div class="m-summ">
-    //                     <div>
-    //                         <h4>${truncateText(m.name)}</h4>
-    //                         <p>$${(m.priceCents / 100).toFixed(2)}</p>
-    //                     </div>
-    //                     <div class="bi-cart2"></div>
-    //                 </div>
-    //             </div>
+                <div class="m-summ-cont">
+                    <div class="m-summ">
+                        <div>
+                            <h4>${truncateText(m.name)}</h4>
+                            <p>$${(m.priceCents / 100).toFixed(2)}</p>
+                        </div>
+                        <div class="bi-cart2"></div>
+                    </div>
+                </div>
                 
-    //         </div>
-    //     `
+            </div>
+        `
 
-    //     mScrollHidden.innerHTML += `
-    //         <div class="m-product">
-    //             <img src="${m.image}" alt="" data-productId="${m.id}">
+        mScrollHidden.innerHTML += `
+            <div class="m-product">
+                <img src="${m.image}" alt="" data-productId="${m.id}">
 
-    //             <div class="m-summ-cont">
-    //                 <div class="m-summ">
-    //                     <div>
-    //                         <h4>${truncateText(m.name)}</h4>
-    //                         <p>$${(m.priceCents / 100).toFixed(2)}</p>
-    //                     </div>
-    //                     <div class="bi-cart2"></div>
-    //                 </div>
-    //             </div>
+                <div class="m-summ-cont">
+                    <div class="m-summ">
+                        <div>
+                            <h4>${truncateText(m.name)}</h4>
+                            <p>$${(m.priceCents / 100).toFixed(2)}</p>
+                        </div>
+                        <div class="bi-cart2"></div>
+                    </div>
+                </div>
 
-    //         </div>
-    //     `
-    // })
+            </div>
+        `
+    })
 
 
 }
