@@ -174,140 +174,149 @@ function moreLikeThis(picked) {
     return randomMatched;
 }
 
+function renderProductDetail(product) {
+
+    const prodIdentity = product.dataset.productid;
+    const retrieveProduct = products.filter(p => p.id === prodIdentity);
+    const p = retrieveProduct[0];
+
+    productPage.classList.add('show');
+
+    productDetails.innerHTML = `
+        <i class="bi bi-x-lg exit-details"></i>
+        <div class="details-box">
+            
+            <div class="about-product">
+                
+                <div class="details-img-box">
+                    <img src="${p.image}" alt="">
+                </div>
+
+                <div class="initial-info">
+                    
+                    <div class="name-info">
+                        <h3>${p.name}</h3>
+                        <i class="bi bi-info-circle-fill info"></i>
+                    </div>
+
+                    <p class="price">$${(p.priceCents / 100).toFixed(2)}</p>
+                    
+                    <div class="actions">
+
+                        <button>
+                            Chat vendor
+                            <i class="bi bi-chat-right-dots-fill actions-bi"></i>
+                        </button>
+
+                        <p class="tmi">ThatGirlAnya</p>
+
+                        <button>
+                            View vendor
+                            <i class="bi bi-eye-fill actions-bi"></i>
+                        </button>
+
+                    </div>
+
+                    <button>
+                        Add to bag
+                        <i class="bi bi-bag actions-bi"></i>
+                    </button>
+                    
+                    <div class="desc-box">
+                        <span>Description:</span>
+                        <p>This is a demo description for this. I'm only adding this for a test to see what actual descriptions will look like once a product is being displayed.</p>
+                    </div>
+                
+                </div>
+            </div>
+
+            <div class="more">
+                <h4>More like this</h4>
+                
+                <div class="more-products">
+                
+                    <div class="m-scroll-box">
+                
+                    </div>
+                
+                    <div class="m-scroll-box m-scroll-hidden" aria-hidden="true">
+                
+                
+                    </div>
+                </div>
+                            
+            </div>
+            
+        </div>
+    `
+
+    setTimeout(() => {
+        productDetails.classList.add('slide-in');
+    }, 0)
+
+
+    const closeDetail = document.querySelector('.exit-details');
+
+    closeDetail.addEventListener('click', () => {
+        productDetails.classList.remove('slide-in');
+        productPage.classList.remove('show');
+    })
+
+}
+
+
+function renderMld (product) {
+
+    console.log(product)
+    // const more = moreLikeThis(product);
+    // const mScrollBox = document.querySelector(".m-scroll-box");
+    // const mScrollHidden = document.querySelector(".m-scroll-hidden");
+
+    // more.forEach(m => {
+    //     mScrollBox.innerHTML += `
+    //         <div class="m-product">
+    //             <img src="${m.image}" alt="" data-productId="${m.id}">
+                
+    //             <div class="m-summ-cont">
+    //                 <div class="m-summ">
+    //                     <div>
+    //                         <h4>${truncateText(m.name)}</h4>
+    //                         <p>$${(m.priceCents / 100).toFixed(2)}</p>
+    //                     </div>
+    //                     <div class="bi-cart2"></div>
+    //                 </div>
+    //             </div>
+                
+    //         </div>
+    //     `
+
+    //     mScrollHidden.innerHTML += `
+    //         <div class="m-product">
+    //             <img src="${m.image}" alt="" data-productId="${m.id}">
+
+    //             <div class="m-summ-cont">
+    //                 <div class="m-summ">
+    //                     <div>
+    //                         <h4>${truncateText(m.name)}</h4>
+    //                         <p>$${(m.priceCents / 100).toFixed(2)}</p>
+    //                     </div>
+    //                     <div class="bi-cart2"></div>
+    //                 </div>
+    //             </div>
+
+    //         </div>
+    //     `
+    // })
+
+
+}
+
 openDetail.forEach(d => {
 
     d.addEventListener('click', () => {
-
         
-        const prodIdentity = d.dataset.productid;
-        const retrieveProduct = products.filter(p => p.id === prodIdentity);
-        const product = retrieveProduct[0];
-
-        productPage.classList.add('show');
-    
-        productDetails.innerHTML = `
-            <i class="bi bi-x-lg exit-details"></i>
-            <div class="details-box">
-                
-                <div class="about-product">
-                    
-                    <div class="details-img-box">
-                        <img src="${product.image}" alt="">
-                    </div>
-
-                    <div class="initial-info">
-                      
-                        <div class="name-info">
-                            <h3>${product.name}</h3>
-                            <i class="bi bi-info-circle-fill info"></i>
-                        </div>
-
-                        <p class="price">$${(product.priceCents / 100).toFixed(2)}</p>
-                        
-                        <div class="actions">
-
-                            <button>
-                                Chat vendor
-                                <i class="bi bi-chat-right-dots-fill actions-bi"></i>
-                            </button>
-
-                            <p class="tmi">ThatGirlAnya</p>
-
-                            <button>
-                                View vendor
-                                <i class="bi bi-eye-fill actions-bi"></i>
-                            </button>
-
-                        </div>
-
-                        <button>
-                            Add to bag
-                            <i class="bi bi-bag actions-bi"></i>
-                        </button>
-                        
-                        <div class="desc-box">
-                            <span>Description:</span>
-                            <p>This is a demo description for this. I'm only adding this for a test to see what actual descriptions will look like once a product is being displayed.</p>
-                        </div>
-                    
-                    </div>
-                </div>
-
-                <div class="more">
-                    <h4>More like this</h4>
-                    
-                    <div class="more-products">
-                    
-                        <div class="m-scroll-box">
-                    
-                        </div>
-                    
-                        <div class="m-scroll-box m-scroll-hidden" aria-hidden="true">
-                    
-                    
-                        </div>
-                    </div>
-                                
-                </div>
-                
-            </div>
-        `
-
-        setTimeout(() => {
-            productDetails.classList.add('slide-in');
-        }, 0)
-
-        
-        
-        
-        
-        const more = moreLikeThis(product);
-        const mScrollBox = document.querySelector(".m-scroll-box");
-        const mScrollHidden = document.querySelector(".m-scroll-hidden");
-
-        more.forEach(m => {
-            mScrollBox.innerHTML += `
-                <div class="m-product">
-                    <img src="${m.image}" alt="" data-productId="${m.id}">
-                    
-                    <div class="m-summ-cont">
-                        <div class="m-summ">
-                            <div>
-                                <h4>${truncateText(m.name)}</h4>
-                                <p>$${(m.priceCents / 100).toFixed(2)}</p>
-                            </div>
-                            <div class="bi-cart2"></div>
-                        </div>
-                    </div>
-                    
-                </div>
-            `
-
-            mScrollHidden.innerHTML += `
-                <div class="m-product">
-                    <img src="${m.image}" alt="" data-productId="${m.id}">
-
-                    <div class="m-summ-cont">
-                        <div class="m-summ">
-                            <div>
-                                <h4>${truncateText(m.name)}</h4>
-                                <p>$${(m.priceCents / 100).toFixed(2)}</p>
-                            </div>
-                            <div class="bi-cart2"></div>
-                        </div>
-                    </div>
-
-                </div>
-            `
-        })
-
-
-        const closeDetail = document.querySelector('.exit-details');
-
-        closeDetail.addEventListener('click', () => {
-            productDetails.classList.remove('slide-in');
-            productPage.classList.remove('show');
-        })
+        renderProductDetail(d);
+        renderMld(d);
 
     })
 
