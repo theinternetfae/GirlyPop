@@ -63,7 +63,29 @@ function renderFeatured() {
     const featuredProducts = randomGenerator(elig);
     featuredProducts.forEach(f => {
         featureContainer.innerHTML += `<div class="f-product">
-                <img src="${f.image}" class="detail-show" alt="" data-productId="${f.id}">
+                <img src="${f.image}" alt="">
+                <div class="prod-summ-cont detail-show" data-productId="${f.id}">
+                
+                    <div class="prod-summ detail-show">
+                        <div>
+                            <h4>${truncateText(f.name)}</h4>
+                            <p>$${(f.priceCents / 100).toFixed(2)}</p>
+                        </div>
+                        <div class="bi-cart2"></div>
+                    </div>
+                
+                </div>
+
+            </div>
+        `
+    })
+
+    featuredProducts.forEach(f => {
+        extraFeatureCont.innerHTML += `<div class="f-product" aria-hidden="true">
+            <img src="${f.image}" alt="">
+            
+            <div class="prod-summ-cont detail-show" data-productId="${f.id}">
+                
                 <div class="prod-summ">
                     <div>
                         <h4>${truncateText(f.name)}</h4>
@@ -71,20 +93,9 @@ function renderFeatured() {
                     </div>
                     <div class="bi-cart2"></div>
                 </div>
+            
             </div>
-        `
-    })
-
-    featuredProducts.forEach(f => {
-        extraFeatureCont.innerHTML += `<div class="f-product" aria-hidden="true">
-            <img src="${f.image}" class="detail-show" alt="" data-productId="${f.id}">
-            <div class="prod-summ">
-                <div>
-                    <h4>${truncateText(f.name)}</h4>
-                    <p>$${(f.priceCents / 100).toFixed(2)}</p>
-                </div>
-                <div class="bi-cart2"></div>
-            </div>
+        
         </div>
         `
     })      
@@ -100,15 +111,20 @@ function renderProducts() {
 
     products.forEach(p => {
         productsCont.innerHTML += `<div class="your-product" >
-            <img src="${p.image}" class="detail-show" alt="" data-productId="${p.id}">
-            <div class="prod-summ">
-                <div>
-                    <h4>${truncateText(p.name)}</h4>
-                    <p>$${(p.priceCents / 100).toFixed(2)}</p>
-                </div>
-                <div class="bi-cart2"></div>
+            <img src="${p.image}" alt="">
+            
+            <div class="prod-summ-cont detail-show" data-productId="${p.id}">
+                <div class="prod-summ">
+                    <div>
+                        <h4>${truncateText(p.name)}</h4>
+                        <p>$${(p.priceCents / 100).toFixed(2)}</p>
+                    </div>
+                    <div class="bi-cart2"></div>
+                    </div>
                 </div>
             </div>
+            
+        </div>
         `
     })
 }
