@@ -630,10 +630,16 @@ footer {
     object-fit: cover;
 }
 
-.product-page .product-details .details-box .more .more-products .m-product .m-summ {
+.product-page .product-details .details-box .more .more-products .m-product .m-summ-cont {
     position: absolute;
+    width: 100%;
+    height: 100%;
     z-index: 20;
-    top: 125px;
+    display: flex;
+    align-items: end;
+}
+
+.product-page .product-details .details-box .more .more-products .m-product .m-summ {
     width: 100%;
     background: white;
     height: 25%;
@@ -651,11 +657,13 @@ footer {
 
 .product-page .product-details .details-box .more .more-products .m-product .m-summ div:nth-child(1) h4 {
     font-size: 12px;
+    border: 2px solid black
 }
 
 .product-page .product-details .details-box .more .more-products .m-product .m-summ div:nth-child(1) p {
     font-size: 12px;
     color: #7e1036;
+    border: 2px solid black;
 }
 
 .product-page .product-details .details-box .more .more-products .m-product .m-summ div:nth-child(2) {
@@ -1273,11 +1281,18 @@ footer {
         object-fit: cover;
     }
 
-    .product-page .product-details .details-box .more .more-products .m-product .m-summ {
+    .product-page .product-details .details-box .more .more-products .m-product .m-summ-cont {
         position: absolute;
-        z-index: 20;
-        top: 140px;
         width: 100%;
+        height: 100%;
+        z-index: 20;
+        display: flex;
+        align-items: end;
+    }
+
+    .product-page .product-details .details-box .more .more-products .m-product .m-summ {
+        width: 100%;
+        border: 2px solid black;
         background: white;
         height: 25%;
         padding: 2px;
@@ -1903,11 +1918,18 @@ footer {
         object-fit: cover;
     }
 
-    .product-page .product-details .details-box .more .more-products .m-product .m-summ {
+    .product-page .product-details .details-box .more .more-products .m-product .m-summ-cont {
         position: absolute;
-        z-index: 20;
-        top: 102px;
         width: 100%;
+        height: 100%;
+        z-index: 20;
+        display: flex;
+        align-items: end;
+    }
+
+    .product-page .product-details .details-box .more .more-products .m-product .m-summ {
+        width: 100%;
+        border: 2px solid black;
         background: white;
         height: 25%;
         padding: 2px;
@@ -2362,11 +2384,19 @@ footer {
         object-fit: cover;
     }
 
-    .product-page .product-details .details-box .more .more-products .m-product .m-summ {
+    
+    .product-page .product-details .details-box .more .more-products .m-product .m-summ-cont {
         position: absolute;
-        z-index: 20;
-        top: 140px;
         width: 100%;
+        height: 100%;
+        z-index: 20;
+        display: flex;
+        align-items: end;
+    }
+
+    .product-page .product-details .details-box .more .more-products .m-product .m-summ {
+        width: 100%;
+        border: 2px solid black;
         background: white;
         height: 25%;
         padding: 2px;

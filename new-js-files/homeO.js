@@ -253,26 +253,34 @@ openDetail.forEach(d => {
             mScrollBox.innerHTML += `
                 <div class="m-product">
                     <img src="${m.image}" alt="" data-productId="${m.id}">
-                    <div class="m-summ">
-                        <div>
-                            <h4>${truncateText(m.name)}</h4>
-                            <p>$${(m.priceCents / 100).toFixed(2)}</p>
+                    
+                    <div class="m-summ-cont">
+                        <div class="m-summ">
+                            <div>
+                                <h4>${truncateText(m.name)}</h4>
+                                <p>$${(m.priceCents / 100).toFixed(2)}</p>
+                            </div>
+                            <div class="bi-cart2"></div>
                         </div>
-                        <div class="bi-cart2"></div>
                     </div>
+                    
                 </div>
             `
 
             mScrollHidden.innerHTML += `
                 <div class="m-product">
                     <img src="${m.image}" alt="" data-productId="${m.id}">
-                    <div class="m-summ">
-                        <div>
-                            <h4>${truncateText(m.name)}</h4>
-                            <p>$${(m.priceCents / 100).toFixed(2)}</p>
+
+                    <div class="m-summ-cont">
+                        <div class="m-summ">
+                            <div>
+                                <h4>${truncateText(m.name)}</h4>
+                                <p>$${(m.priceCents / 100).toFixed(2)}</p>
+                            </div>
+                            <div class="bi-cart2"></div>
                         </div>
-                        <div class="bi-cart2"></div>
                     </div>
+
                 </div>
             `
         })

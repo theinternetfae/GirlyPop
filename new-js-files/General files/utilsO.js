@@ -2,6 +2,7 @@
 // import { cartCountStorage, cartStorageDisplay, getSavedCartButtonState, saveCartButtonState } from "./storageO.js";
 
 export function truncateText(words, count = 2) {
+    const specialSplit = '-'
     const textArray = words.split(' ', count);
     const newText = textArray.join(' ');
 
