@@ -64,9 +64,10 @@ function renderFeatured() {
     featuredProducts.forEach(f => {
         featureContainer.innerHTML += `<div class="f-product">
                 <img src="${f.image}" alt="">
+
                 <div class="prod-summ-cont detail-show" data-productId="${f.id}">
                 
-                    <div class="prod-summ detail-show">
+                    <div class="prod-summ">
                         <div>
                             <h4>${truncateText(f.name)}</h4>
                             <p>$${(f.priceCents / 100).toFixed(2)}</p>
@@ -136,9 +137,6 @@ renderProducts()
 
 const productPage = document.querySelector('.product-page');
 const productDetails = document.querySelector('.product-details');
-
-
-const openDetail = document.querySelectorAll('.detail-show');
 
 function moreLikeThis(picked) {
 
@@ -278,9 +276,10 @@ function renderMld (product) {
     more.forEach(m => {
         mScrollBox.innerHTML += `
             <div class="m-product">
-                <img src="${m.image}" alt="" data-productId="${m.id}">
+
+                <img src="${m.image}" alt="">
                 
-                <div class="m-summ-cont">
+                <div class="m-summ-cont m-identify" data-productId="${m.id}">
                     <div class="m-summ">
                         <div>
                             <h4>${truncateText(m.name)}</h4>
@@ -295,9 +294,9 @@ function renderMld (product) {
 
         mScrollHidden.innerHTML += `
             <div class="m-product">
-                <img src="${m.image}" alt="" data-productId="${m.id}">
+                <img src="${m.image}" alt="">
 
-                <div class="m-summ-cont">
+                <div class="m-summ-cont m-identify" data-productId="${m.id}">
                     <div class="m-summ">
                         <div>
                             <h4>${truncateText(m.name)}</h4>
@@ -310,9 +309,25 @@ function renderMld (product) {
             </div>
         `
     })
+}
 
+function renderMProduct() {
+
+    const mProduct = document.querySelectorAll(".m-identify");
+
+    mProduct.forEach(m => {
+
+        m.addEventListener('click', () => {
+            renderProductDetail(m);
+            renderMld(m);
+            renderMProduct();
+        })
+
+    })
 
 }
+
+const openDetail = document.querySelectorAll('.detail-show');
 
 openDetail.forEach(d => {
 
@@ -320,7 +335,7 @@ openDetail.forEach(d => {
         
         renderProductDetail(d);
         renderMld(d);
-
+        renderMProduct();
     })
 
 })
