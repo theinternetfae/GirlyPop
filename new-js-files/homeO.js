@@ -46,12 +46,14 @@ categoryIndicator.addEventListener("click", () => {
 
 const category = document.querySelectorAll(".category");
 const categoryTitle = document.querySelector(".category-title");
+const categoryName = document.querySelector(".cat-name");
 
 category.forEach(c => {
     
     c.addEventListener('click', () => {
         categories.classList.toggle('show');
         categoryTitle.innerHTML = c.innerHTML;
+        categoryName.innerHTML = c.innerHTML;
         indicatorStat.classList.remove('bi-arrow-left-short');
         indicatorStat.classList.add('bi-x'); 
 
@@ -64,12 +66,13 @@ category.forEach(c => {
 
 
 function getCategoryPick(category) {
-    
+
     const trueCat = category.toLowerCase();
     console.log("Category Name:", trueCat);
 
     const categoryProducts = products.filter(p => p.category.toLowerCase() === trueCat);
     console.log("Category Products:", categoryProducts);
+
 
 }
 
