@@ -9,7 +9,6 @@ const navsSm = document.querySelector(".navs-sm");
 
 burger.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("Burger clicked!");
     navsSm.classList.toggle('show');
 })
 
@@ -64,15 +63,50 @@ category.forEach(c => {
 
 })
 
+const categoryGrid = document.querySelector(".category-grid");
 
 function getCategoryPick(category) {
 
+    categoryGrid.innerHTML = '';
+
     const trueCat = category.toLowerCase();
-    console.log("Category Name:", trueCat);
 
     const categoryProducts = products.filter(p => p.category.toLowerCase() === trueCat);
-    console.log("Category Products:", categoryProducts);
+    const shuffledCategory = categoryProducts.sort(() => 0.5 - Math.random());
 
+    shuffledCategory.forEach(cp => {
+
+        categoryGrid.innerHTML += `
+            <div class="category-product">
+                    
+                <img src="${cp.image}" alt="">
+                
+                <div class="prod-summ-cont cat-detail-show" data-productId="${cp.id}">
+                    <div class="prod-summ">
+                        <div>
+                            <h4>${cp.name}</h4>
+                            <p>$${(cp.priceCents / 100).toFixed(2)}</p>
+                        </div>
+                        <div class="bi-cart2"></div>
+                    </div>
+                </div>
+            
+            </div>
+        `
+
+    })
+
+    const cProduct = document.querySelectorAll(".cat-detail-show");
+
+    cProduct.forEach(c => {
+
+        c.addEventListener('click', () => {
+            renderProductDetail(c);
+            renderMld(c);
+            renderMProduct();
+        })
+
+    })
 
 }
 
@@ -167,7 +201,6 @@ function moreLikeThis(picked) {
 
     const aesthetics = picked.aesthetic;
 
-    console.log(aesthetics);
     const matchingProducts = [];
 
     for (let i = 0; i < aesthetics.length; i++) {
@@ -191,7 +224,6 @@ function moreLikeThis(picked) {
     }
 
     const randomMatched = randomGenerator(finalMatched);
-    console.log(randomMatched);
     return randomMatched;
 }
 
