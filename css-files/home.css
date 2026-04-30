@@ -198,6 +198,18 @@ nav .navigations-sm .navs-sm p {
     display: none;
 }
 
+.default.hidden {
+    display: none;
+}
+
+.category-pick {
+    border: 2px solid black;
+    margin: 10px;
+}
+
+.category-pick.hidden {
+    display: none;
+}
 
 
 
@@ -424,7 +436,7 @@ footer {
     justify-content: center;
     padding: 20px;
     gap: 20px;
-    bottom: 0;    
+    bottom: 0;
 }
 
 .contact {
@@ -884,7 +896,6 @@ footer {
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
         cursor: pointer;
     }
-
 
     /* FEATURED PRODUCTS */
 
