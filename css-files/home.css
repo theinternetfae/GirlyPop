@@ -2347,9 +2347,8 @@ footer {
     .category-pick .category-cont .category-grid {
         display: grid;
         width: 100%;
-        grid-template-columns: repeat(5, 182px);
+        grid-template-columns: repeat(5, 200px);
         gap: 15px;
-        padding: 10px;
     }
 
     .category-pick .category-cont .category-grid .category-product {
