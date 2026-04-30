@@ -57,10 +57,21 @@ category.forEach(c => {
 
         categoryLayout.classList.remove('hidden');
         defaultLayout.classList.add('hidden');
+        getCategoryPick(c.innerHTML);
     })
 
 })
 
+
+function getCategoryPick(category) {
+    
+    const trueCat = category.toLowerCase();
+    console.log("Category Name:", trueCat);
+
+    const categoryProducts = products.filter(p => p.category.toLowerCase() === trueCat);
+    console.log("Category Products:", categoryProducts);
+
+}
 
 // FEATURED PRODUCTS LOGIC
 
