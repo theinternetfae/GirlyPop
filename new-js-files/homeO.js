@@ -17,12 +17,19 @@ const categoryIndicator = document.querySelector(".category-indicator");
 const categories = document.querySelector(".categories");
 const indicatorStat = document.querySelector(".indicator-stat");
 
+const defaultLayout = document.querySelector(".default");
+const categoryLayout = document.querySelector(".category-pick");
+
 categoryIndicator.addEventListener("click", () => {
     
     if (categoryTitle.innerHTML !== "Sort") {
         categoryTitle.innerHTML = "Sort";
         indicatorStat.classList.remove('bi-x');
         indicatorStat.classList.add('bi-arrow-right-short');
+        
+        defaultLayout.classList.remove('hidden');
+        categoryLayout.classList.add('hidden');
+    
     } else {
         categories.classList.toggle('show');
         if (indicatorStat.classList.contains('bi-arrow-right-short')) {
@@ -47,10 +54,12 @@ category.forEach(c => {
         categoryTitle.innerHTML = c.innerHTML;
         indicatorStat.classList.remove('bi-arrow-left-short');
         indicatorStat.classList.add('bi-x'); 
+
+        categoryLayout.classList.remove('hidden');
+        defaultLayout.classList.add('hidden');
     })
 
 })
-
 
 
 // FEATURED PRODUCTS LOGIC
