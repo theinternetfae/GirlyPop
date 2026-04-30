@@ -203,7 +203,6 @@ nav .navigations-sm .navs-sm p {
 }
 
 .category-pick {
-    border: 2px solid black;
     margin: 10px;
 }
 
@@ -218,12 +217,11 @@ nav .navigations-sm .navs-sm p {
     flex-direction: column;
     justify-content: center;
     padding: 2px;
-    border: 2px solid black;
 }
 
 .category-pick .category-cont h3 {
-    border: 2px solid black;
     width: 100%;
+    font-size: 14px;
 }
 
 .category-pick .category-cont h3 span {
@@ -236,8 +234,7 @@ nav .navigations-sm .navs-sm p {
     justify-content: space-around;
     grid-template-columns: repeat(2, 150px);
     gap: 10px;
-    margin-top: 10px;
-    border: 2px solid black;
+    margin-top: 20px;
 }
 
 .category-pick .category-cont .category-grid .category-product {
@@ -1000,7 +997,6 @@ footer {
 
     /*CATEGORY PRODUCTS*/
     .category-pick {
-        border: 2px solid black;
         margin: 10px;
     }
 
@@ -1012,15 +1008,13 @@ footer {
         width: 100%;
         margin-top: 20px;
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        padding: 2px;
-        border: 2px solid black;
+        padding: 10px;
     }
 
     .category-pick .category-cont h3 {
-        border: 2px solid black;
         width: 100%;
+        font-size: 20px;
     }
 
     .category-pick .category-cont h3 span {
@@ -1750,7 +1744,6 @@ footer {
     /*CATEGORY PICK*/
 
     .category-pick {
-        border: 2px solid black;
         margin: 10px;
     }
 
@@ -1764,13 +1757,12 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 2px;
-        border: 2px solid black;
+        padding: 10px;
     }
 
     .category-pick .category-cont h3 {
-        border: 2px solid black;
         width: 100%;
+        font-size: 20px;
     }
 
     .category-pick .category-cont h3 span {
@@ -2327,8 +2319,7 @@ footer {
     /*CATEGORY PRODUCTS*/
 
     .category-pick {
-        border: 2px solid black;
-        margin: 10px;
+        margin: 30px;
     }
 
     .category-pick.hidden {
@@ -2341,13 +2332,12 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 2px;
-        border: 2px solid black;
+        padding: 10px;
     }
 
     .category-pick .category-cont h3 {
-        border: 2px solid black;
         width: 100%;
+        font-size: 20px;
     }
 
     .category-pick .category-cont h3 span {
@@ -2359,6 +2349,7 @@ footer {
         width: 100%;
         grid-template-columns: repeat(5, 182px);
         gap: 15px;
+        padding: 10px;
     }
 
     .category-pick .category-cont .category-grid .category-product {
