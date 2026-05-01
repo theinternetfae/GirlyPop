@@ -8,10 +8,8 @@ const searchInput = document.querySelector(".search-input");
 
 const find = document.querySelector(".find");
 
-find.addEventListener("click", () => {
-    
+function findnFilter() {
     const searchFor = searchInput.value;
-    console.log("Searching for:", searchFor);
 
     const matchingProducts = [];
 
@@ -19,22 +17,55 @@ find.addEventListener("click", () => {
         
         const element = products[i].keywords;
         const elementLowerCase = element.map(e => e.toLowerCase());
-        console.log(elementLowerCase);
 
         elementLowerCase.forEach(e => {
             searchFor.toLowerCase().includes(e) && matchingProducts.push(products[i]); 
         })
     
     }
-    
-    console.log("Matching Products:", matchingProducts);
 
+    const matchingProductsIds = matchingProducts.map(m => m.id);
+
+    const filteredMatchingIds = new Set(matchingProductsIds);
+    const filteredMatchingProducts = [];
+
+    for (let i = 0; i < products.length; i++) {
+        const element = products[i].id;
+
+        filteredMatchingIds.forEach(id => {
+            id === element && filteredMatchingProducts.push(products[i]);
+        })
+    }
+
+    console.log("Filtered Matching Products:", filteredMatchingProducts);
+
+    return filteredMatchingProducts;
+}
+
+
+function renderFind() {
+    const found = findnFilter();
     searchInput.value = '';
+    console.log("Found products:", found);
+}
+
+find.addEventListener("click", () => {
+    
+    renderFind();
 
 })
 
 
+searchInput.addEventListener("keydown", (e) => {
+    const what = e.key;
 
+    if (what === "Enter") {
+
+        renderFind();
+
+    }
+
+})
 
 
 
