@@ -3,6 +3,48 @@ import { truncateText, randomGenerator } from "./General files/utilsO.js";
 // import { updateCartCount, featuredProducts, updateCartShove } from "./General files/utilsO.js";
 
 
+//SEARCH-BOX LOGIC
+const searchInput = document.querySelector(".search-input");
+
+const find = document.querySelector(".find");
+
+find.addEventListener("click", () => {
+    
+    const searchFor = searchInput.value;
+    console.log("Searching for:", searchFor);
+
+    const matchingProducts = [];
+
+    for (let i = 0; i < products.length; i++) {
+        
+        const element = products[i].keywords;
+        const elementLowerCase = element.map(e => e.toLowerCase());
+        console.log(elementLowerCase);
+
+        elementLowerCase.forEach(e => {
+            searchFor.toLowerCase().includes(e) && matchingProducts.push(products[i]); 
+        })
+    
+    }
+    
+    console.log("Matching Products:", matchingProducts);
+
+    searchInput.value = '';
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 // TOGGLE CATEGORY LOGIC
 const burger = document.querySelector(".burger");
 const navsSm = document.querySelector(".navs-sm");
@@ -110,6 +152,14 @@ function getCategoryPick(category) {
 
 }
 
+
+
+
+
+
+
+
+
 // FEATURED PRODUCTS LOGIC
 
 const featureContainer = document.querySelector(".scroll-cont")
@@ -163,6 +213,16 @@ function renderFeatured() {
 renderFeatured();
 
 
+
+
+
+
+
+
+
+
+
+
 // FOR YOU PRODUCTS
 function renderProducts() {
     const productsCont = document.querySelector(".grid-cont");
@@ -188,6 +248,26 @@ function renderProducts() {
 }
 
 renderProducts()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // HANDLING PRODUCT DETAILS

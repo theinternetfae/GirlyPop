@@ -10,7 +10,7 @@ export const products = [
         },
         priceCents: 2095,
         keywords: [
-        "babydoll",
+        "Babydoll",
         "tops",
         "wrap",
         "patterned"
@@ -54,7 +54,7 @@ export const products = [
         },
         priceCents: 5050,
         keywords: [
-        "jean",
+        "Jean",
         "dress",
         "halter",
         "party"
