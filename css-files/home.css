@@ -650,7 +650,6 @@ footer {
     padding: 20px;
     gap: 20px;
     position: absolute;
-    position: sticky;
     width: 100%;
     z-index: 50;
     top: 100vh;
