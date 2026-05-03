@@ -127,6 +127,12 @@ function renderSearched() {
 
         })
 
+        if(found.length === 0) {
+            searchGrid.innerHTML = `
+                <img src="./images/girlypop-notfound.png" class="no-grid-img">
+            `
+        }
+
     } else {
         return;
     }
