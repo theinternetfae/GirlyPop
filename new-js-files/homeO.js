@@ -101,7 +101,9 @@ function renderSearched() {
     
     if(found) {
 
-        found.forEach(f => {
+        const shuffledFound = found.sort(() => 0.5 - Math.random());
+
+        shuffledFound.forEach(f => {
 
             searchGrid.innerHTML += `
 
