@@ -2,70 +2,119 @@ import { products } from "./General files/productsO.js";
 import { truncateText, randomGenerator } from "./General files/utilsO.js";
 // import { updateCartCount, featuredProducts, updateCartShove } from "./General files/utilsO.js";
 
-
 //SEARCH-BOX LOGIC
 const searchInput = document.querySelector(".search-input");
 
 const find = document.querySelector(".find");
 
-function findnFilter() {
-    const searchFor = searchInput.value;
+// function findnFilter() {
 
-    const matchingProducts = [];
+//     if(searchInput.value === '') {
 
-    for (let i = 0; i < products.length; i++) {
+//         return;
+
+//     } else {
+
+//         const searchFor = searchInput.value;
+
+//         const matchingProducts = [];
+
+//         for (let i = 0; i < products.length; i++) {
+            
+//             const element = products[i].keywords;
+//             const elementLowerCase = element.map(e => e.toLowerCase());
+
+//             elementLowerCase.forEach(e => {
+//                 searchFor.toLowerCase().includes(e) && matchingProducts.push(products[i]); 
+//             })
         
-        const element = products[i].keywords;
-        const elementLowerCase = element.map(e => e.toLowerCase());
+//         }
 
-        elementLowerCase.forEach(e => {
-            searchFor.toLowerCase().includes(e) && matchingProducts.push(products[i]); 
-        })
+//         const matchingProductsIds = matchingProducts.map(m => m.id);
+
+//         const filteredMatchingIds = new Set(matchingProductsIds);
+//         const filteredMatchingProducts = [];
+
+//         for (let i = 0; i < products.length; i++) {
+//             const element = products[i].id;
+
+//             filteredMatchingIds.forEach(id => {
+//                 id === element && filteredMatchingProducts.push(products[i]);
+//             })
+//         }
+
+//         console.log("Filtered Matching Products:", filteredMatchingProducts);
+
+//         return filteredMatchingProducts;
+
+//     }
+// }
+
+// window.renderFind = function () {
+//     const found = findnFilter();
+//     console.log(searchInput.value);
+//     searchInput.value = '';
+//     window.location.href = 'search.html';
+//     console.log("Found products:", found);
+// }
+
+// find.addEventListener("click", () => {
     
-    }
+//     renderFind();
 
-    const matchingProductsIds = matchingProducts.map(m => m.id);
+// })
 
-    const filteredMatchingIds = new Set(matchingProductsIds);
-    const filteredMatchingProducts = [];
 
-    for (let i = 0; i < products.length; i++) {
-        const element = products[i].id;
+// searchInput.addEventListener("keydown", (e) => {
+//     const what = e.key;
 
-        filteredMatchingIds.forEach(id => {
-            id === element && filteredMatchingProducts.push(products[i]);
-        })
-    }
+//     if (what === "Enter") {
 
-    console.log("Filtered Matching Products:", filteredMatchingProducts);
+//         renderFind();
 
-    return filteredMatchingProducts;
+//     }
+
+// })
+
+
+function testParams() {
+    const query = searchInput.value;
+
+    window.location.assign(`home.html?q=${query}`);
+
 }
 
+const params = new URLSearchParams(window.location.search);
 
-function renderFind() {
-    const found = findnFilter();
-    searchInput.value = '';
-    console.log("Found products:", found);
-}
+const search = params.get("q");
+
+console.log("Search key:", search);
+
+
 
 find.addEventListener("click", () => {
     
-    renderFind();
+    testParams();
+
 
 })
-
 
 searchInput.addEventListener("keydown", (e) => {
     const what = e.key;
 
     if (what === "Enter") {
 
-        renderFind();
+        testParams();
+
 
     }
 
 })
+
+
+
+
+
 
 
 
