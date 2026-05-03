@@ -7,89 +7,15 @@ const searchInput = document.querySelector(".search-input");
 
 const find = document.querySelector(".find");
 
-// function findnFilter() {
-
-//     if(searchInput.value === '') {
-
-//         return;
-
-//     } else {
-
-//         const searchFor = searchInput.value;
-
-//         const matchingProducts = [];
-
-//         for (let i = 0; i < products.length; i++) {
-            
-//             const element = products[i].keywords;
-//             const elementLowerCase = element.map(e => e.toLowerCase());
-
-//             elementLowerCase.forEach(e => {
-//                 searchFor.toLowerCase().includes(e) && matchingProducts.push(products[i]); 
-//             })
-        
-//         }
-
-//         const matchingProductsIds = matchingProducts.map(m => m.id);
-
-//         const filteredMatchingIds = new Set(matchingProductsIds);
-//         const filteredMatchingProducts = [];
-
-//         for (let i = 0; i < products.length; i++) {
-//             const element = products[i].id;
-
-//             filteredMatchingIds.forEach(id => {
-//                 id === element && filteredMatchingProducts.push(products[i]);
-//             })
-//         }
-
-//         console.log("Filtered Matching Products:", filteredMatchingProducts);
-
-//         return filteredMatchingProducts;
-
-//     }
-// }
-
-// window.renderFind = function () {
-//     const found = findnFilter();
-//     console.log(searchInput.value);
-//     searchInput.value = '';
-//     window.location.href = 'search.html';
-//     console.log("Found products:", found);
-// }
-
-// find.addEventListener("click", () => {
-    
-//     renderFind();
-
-// })
-
-
-// searchInput.addEventListener("keydown", (e) => {
-//     const what = e.key;
-
-//     if (what === "Enter") {
-
-//         renderFind();
-
-//     }
-
-// })
-
-
 function testParams() {
+
     const query = searchInput.value;
+
+    searchInput.value = '';
 
     window.location.assign(`home.html?q=${query}`);
 
 }
-
-const params = new URLSearchParams(window.location.search);
-
-const search = params.get("q");
-
-console.log("Search key:", search);
-
 
 
 find.addEventListener("click", () => {
@@ -110,6 +36,123 @@ searchInput.addEventListener("keydown", (e) => {
     }
 
 })
+
+const params = new URLSearchParams(window.location.search);
+
+const search = params.get("q");
+const generalBody = document.querySelector(".general");
+const specificBody = document.querySelector(".search");
+const specificPick = document.querySelector(".ser-pick");
+
+console.log("Search key:", search);
+
+function findnFilter() {
+
+    if(search === null) {
+
+        return;
+
+    } else {
+
+        generalBody.classList.add('hidden');
+        specificBody.classList.remove('hidden');
+        specificPick.innerHTML = search;
+
+        const searchFor = search;
+
+        const matchingProducts = [];
+
+        for (let i = 0; i < products.length; i++) {
+            
+            const element = products[i].keywords;
+            const elementLowerCase = element.map(e => e.toLowerCase());
+
+            elementLowerCase.forEach(e => {
+                searchFor.toLowerCase().includes(e) && matchingProducts.push(products[i]); 
+            })
+        
+        }
+
+        const matchingProductsIds = matchingProducts.map(m => m.id);
+
+        const filteredMatchingIds = new Set(matchingProductsIds);
+        const filteredMatchingProducts = [];
+
+        for (let i = 0; i < products.length; i++) {
+            const element = products[i].id;
+
+            filteredMatchingIds.forEach(id => {
+                id === element && filteredMatchingProducts.push(products[i]);
+            })
+        }
+
+        console.log("Filtered Matching Products:", filteredMatchingProducts);
+
+        return filteredMatchingProducts;
+
+    }
+}
+
+const searchGrid = document.querySelector(".search-grid");
+
+function renderSearched() {
+
+    const found = findnFilter();
+    
+    if(found) {
+
+        found.forEach(f => {
+
+            searchGrid.innerHTML += `
+
+                <div class="search-product">
+                
+                    <img src="${f.image}" alt="">
+
+                    <div class="prod-summ-cont ser-detail-show" data-productId="${f.id}">
+                        <div class="prod-summ">
+                            <div>
+                                <h4>${truncateText(f.name)}</h4>
+                                <p>$${(f.priceCents / 100).toFixed(2)}</p>
+                            </div>
+                            <div class="bi-cart2"></div>       
+                        </div>
+                    </div>
+
+                </div>
+            
+            `
+
+        })
+
+    } else {
+        return;
+    }
+}
+
+function renderSearchOpenDetail() {
+
+    const searchDetail = document.querySelectorAll('.ser-detail-show');
+
+    searchDetail.forEach(s => {
+
+        s.addEventListener('click', () => {
+            
+            renderProductDetail(s);
+            renderMld(s);
+            renderMProduct();
+        })
+
+    })
+
+}
+
+function fullSearchLogic() {
+    renderSearched();
+    renderSearchOpenDetail();
+}
+
+fullSearchLogic();
 
 
 
