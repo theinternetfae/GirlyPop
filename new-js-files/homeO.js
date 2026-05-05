@@ -128,6 +128,8 @@ function renderSearched() {
         })
 
         if(found.length === 0) {
+
+            searchGrid.classList.add('no-grid');
             searchGrid.innerHTML = `
                 <img src="./images/girlypop-notfound.png" class="no-grid-img">
             `
