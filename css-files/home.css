@@ -782,8 +782,20 @@ footer {
 
 .product-page .product-details .about-product .initial-info .name-info {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
+}
+
+.product-page .product-details .about-product .initial-info .name-info div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-page .product-details .about-product .initial-info .name-info .fault {
+    color: grey;
+    font-size: 11px;
 }
 
 .product-page .product-details .about-product .initial-info .info {
@@ -1634,6 +1646,10 @@ footer {
         align-items: center;
         gap: 10px;
         font-size: 30px;
+    }
+
+    .product-page .product-details .about-product .initial-info .name-info .fault {
+        display: none;
     }
 
     .product-page .product-details .about-product .initial-info .info {

@@ -11,14 +11,20 @@ function testParams() {
 
     const query = searchInput.value;
 
-    searchInput.value = '';
+    if(query.length === 0) {
+        return;
+    } else {
+        searchInput.value = '';
 
-    window.location.assign(`home.html?q=${query}`);
+        window.location.assign(`home.html?q=${query}`);
+
+    }
 
 }
 
 
 find.addEventListener("click", () => {
+    
     
     testParams();
 
@@ -461,8 +467,11 @@ function renderProductDetail(product) {
                 <div class="initial-info">
                     
                     <div class="name-info">
-                        <h3>${p.name}</h3>
-                        <i class="bi bi-info-circle-fill info" style="color: ${p.status === "bad" ? "orange" : "green"}" title="${p.wrong || "Item is in perfect condition!"}"></i>
+                        <div>
+                            <h3>${p.name}</h3>
+                            <i class="bi bi-info-circle-fill info" style="color: ${p.status === "bad" ? "orange" : "green"}" title="${p.wrong || "Item is in perfect condition!"}"></i>
+                        </div>
+                        <p class="fault">Fault: ${p.wrong ? p.wrong : "None"}</p>
                     </div>
 
                     <p class="price">$${(p.priceCents / 100).toFixed(2)}</p>
