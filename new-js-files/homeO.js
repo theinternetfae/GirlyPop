@@ -462,7 +462,7 @@ function renderProductDetail(product) {
                     
                     <div class="name-info">
                         <h3>${p.name}</h3>
-                        <i class="bi bi-info-circle-fill info"></i>
+                        <i class="bi bi-info-circle-fill info" style="color: ${p.status === "bad" ? "orange" : "green"}" title="${p.wrong || "Item is in perfect condition!"}"></i>
                     </div>
 
                     <p class="price">$${(p.priceCents / 100).toFixed(2)}</p>
