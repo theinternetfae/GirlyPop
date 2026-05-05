@@ -185,13 +185,6 @@ fullSearchLogic();
 
 
 // TOGGLE CATEGORY LOGIC
-const burger = document.querySelector(".burger");
-const navsSm = document.querySelector(".navs-sm");
-
-burger.addEventListener("click", (e) => {
-    e.preventDefault();
-    navsSm.classList.toggle('show');
-})
 
 const categoryIndicator = document.querySelector(".category-indicator");
 const categories = document.querySelector(".categories");
@@ -397,6 +390,14 @@ renderProducts()
 
 
 
+//SMALL SCREENS BURGER MENU
+const burger = document.querySelector(".burger");
+const navsSm = document.querySelector(".navs-sm");
+
+burger.addEventListener("click", (e) => {
+    e.preventDefault();
+    navsSm.classList.toggle('show');
+})
 
 
 

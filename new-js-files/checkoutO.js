@@ -2,6 +2,24 @@
 // import { getCartCount, getCartStorage, deleteFromCart } from "./General files/utilsO.js";
 // // import { Country, State, City } from "country-state-city";
 
+const moves = document.querySelectorAll(".moves");
+
+moves.forEach(m => {
+    m.addEventListener("click", () => {
+        moves.forEach((m) => m.classList.remove('bi-filled'));
+        m.classList.add('bi-filled');
+    })
+})
+
+//SMALL SCREENS BURGER MENU
+const burger = document.querySelector(".burger");
+const navsSm = document.querySelector(".navs-sm");
+
+burger.addEventListener("click", (e) => {
+    e.preventDefault();
+    navsSm.classList.toggle('show');
+})
+
 // const cartCount = getCartCount();
 // const cartCountText = document.querySelector('.cart-count p');
 // const pageCartCount = document.querySelector('.the-cart-text span');
