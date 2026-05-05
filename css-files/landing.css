@@ -788,6 +788,13 @@ footer {
         text-align: center;
     }
 
+    nav .small-screen-nav .small-navigations-link a {
+        border-bottom: 2px solid light-dark(#7e1036, white);
+        width: 100%;
+        text-align: center;
+        color: white;
+    }
+
     .intro-landing {
         height: 90vh;
         padding: 20px 20px 20px 20px;

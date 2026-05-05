@@ -144,7 +144,11 @@ nav .navigations-sm .navs-sm p {
     justify-content: center;
 }
 
-
+nav .navigations-sm .navs-sm a {
+    color: #7e1036;
+    text-decoration: none;
+}
+    
 .general.hidden {
     display: none;
 }
