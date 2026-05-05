@@ -3,6 +3,471 @@
 
 * {
     margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    font-family: "Lexend Deca", sans-serif;
+    background: #FAF9F6;
+}
+
+.site {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    justify-content: space-between;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+nav .logo-box {
+    width: 80px;
+    height: 80%;
+    background-image: url(../images/pink-logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;   
+}
+
+nav .search-bar {
+    width: 60%;
+    height: 60%;
+    padding: 5px;
+    border-radius: 10px;
+    background: #7e1036;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+}
+
+nav .search-bar input {
+    background: transparent;
+    width: 80%;
+    height: 100%;
+    font-size: 12px;
+    border: none;
+    color: white;
+}
+
+nav .search-bar input:focus {
+    outline: none;
+}
+
+nav .search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.808);
+}
+
+nav .search-bar .bi-search-heart {
+    font-size: 16px;
+    color: white;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+nav .search-bar .bi-search-heart:active {
+    transform: scale(.90);
+}
+
+nav .navigations {
+    display: none;
+}
+
+nav .navigations-sm {
+    width: 10%;
+    height: 60%;
+    color: #7e1036;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+nav .burger:active {
+    transform: scale(.90);
+}
+
+nav .navigations-sm .navs-sm {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: -92px;
+    flex-direction: column;
+    height: 90px;
+    background: white;
+    border-radius: 0px 0px 0 10px;
+    width: 135px;
+    font-size: 14px;
+    align-items: center;
+    justify-content: space-around;
+    border-left: 2px solid #7e1036;
+    border-bottom: 2px solid #7e1036;
+}
+
+.navs-sm.show {
+    display: block !important;
+}
+
+nav .navigations-sm .navs-sm .bi-filled {
+    background: #7e1036;
+    color: white;
+}
+
+nav .navigations-sm .navs-sm p {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    padding: 5px;
+    justify-content: center;
+}
+
+nav .navigations-sm .navs-sm a {
+    color: #7e1036;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER CODE*/
+
+footer {
+    background: #7e1036;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.contact {
+    display: flex;
+    gap: 15px;
+}
+
+.contact .bi {
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+
+    nav {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    nav .logo-box {
+        width: 110px;
+        height: 80%;
+        background-image: url(../images/pink-logo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;   
+    }
+
+    nav .search-bar {
+        width: 60%;
+        height: 60%;
+        padding: 5px;
+        border-radius: 10px;
+        background: #7e1036;
+        display: flex;
+        align-items: center;
+        color: white;
+        justify-content: space-between;
+    }
+
+    nav .search-bar input {
+        background: transparent;
+        width: 80%;
+        height: 100%;
+        font-size: 16px;
+        border: none;
+        color: white;
+    }
+
+    nav .search-bar input:focus {
+        outline: none;
+    }
+
+    nav .search-bar input::placeholder {
+        color: rgba(255, 255, 255, 0.808);
+    }
+
+    nav .search-bar .bi-search-heart {
+        font-size: 20px;
+        color: white;
+        width: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    nav .search-bar .bi-search-heart:active {
+        transform: scale(.90);
+    }
+
+    nav .navigations {
+        display: none;
+    }
+
+    nav .navigations-sm {
+        width: 10%;
+        height: 60%;
+        color: #7e1036;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    nav .navigations-sm:active {
+        transform: scale(.90);
+    }
+
+    nav .navigations-sm .navs-sm {
+        display: none;
+        position: absolute;
+        top: 46px;
+        left: -80px;
+        flex-direction: column;
+        height: 90px;
+        background: white;
+        border-radius: 0px 0px 0 10px;
+        width: 140px;
+        font-size: 16px;
+        align-items: center;
+        justify-content: space-around;
+        border-left: 2px solid #7e1036;
+        border-bottom: 2px solid #7e1036;
+    }
+
+    .navs-sm.show {
+        display: block !important;
+    }
+
+    nav .navigations-sm .navs-sm .bi-filled {
+        background: #7e1036;
+        color: white;
+    }
+
+    nav .navigations-sm .navs-sm p {
+        display: flex;
+        gap: 5px;
+        width: 100%;
+        padding: 5px;
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1024px) {
+ 
+    nav {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        padding: 0 10px;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    nav .logo-box {
+        width: 145px;
+        height: 80%;
+        background-image: url(../images/pink-logo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;   
+    }
+
+    nav .search-bar {
+        width: 60%;
+        height: 60%;
+        padding: 5px;
+        padding: 0 10px;
+        border-radius: 10px;
+        background: #7e1036;
+        display: flex;
+        align-items: center;
+        color: white;
+        justify-content: space-between;
+    }
+
+    nav .search-bar input {
+        background: transparent;
+        width: 80%;
+        height: 100%;
+        font-size: 14px;
+        border: none;
+        color: white;
+    }
+
+    nav .search-bar input:focus {
+        outline: none;
+    }
+
+    nav .search-bar input::placeholder {
+        color: rgba(255, 255, 255, 0.808);
+    }
+
+    nav .search-bar .bi-search-heart {
+        font-size: 20px;
+        color: white;
+        width: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    nav .search-bar .bi-search-heart:active {
+        transform: scale(.90);
+    }
+
+    nav .navigations {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 15%;
+        height: 80%;
+    }
+
+    nav .navigations button {
+        height: 40px;
+        width: 50px;
+        background: white;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #7e1036;
+        border: none;
+        cursor: pointer;
+        position: relative;
+    }
+
+    nav .navigations button p {
+        position: absolute;
+        top: 2px; 
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        height: 100%;
+        width: 100%;
+    }
+
+    nav .navigations .bi-filled {
+        background: #7e1036ee;
+        color: white;
+    }
+
+    nav .navigations-sm {
+        display: none;
+    }
+}
+
+/* * {
+    margin: 0;
 }
 
 body {
@@ -309,4 +774,4 @@ nav img {
 
 .checkout-btn:active {
     transform: scale(0.95);
-}
+} */

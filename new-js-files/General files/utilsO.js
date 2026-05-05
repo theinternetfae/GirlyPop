@@ -17,6 +17,17 @@ export function randomGenerator(eligible) {
 }
 
 
+//TOGGLING NAVIGATIONS DISPLAY
+const moves = document.querySelectorAll(".moves");
+
+moves.forEach(m => {
+    m.addEventListener("click", () => {
+        moves.forEach((m) => m.classList.remove('bi-filled'));
+        m.classList.add('bi-filled');
+    })
+})
+
+
 
 // export function updateCartCount() {
 //     const addBtn = document.querySelectorAll('.cart-track');
