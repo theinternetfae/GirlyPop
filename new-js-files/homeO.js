@@ -1,48 +1,11 @@
 import { products } from "./General files/productsO.js";
-import { truncateText, randomGenerator } from "./General files/utilsO.js";
+import { truncateText, randomGenerator, initializeNavBar } from "./General files/utilsO.js";
 // import { updateCartCount, featuredProducts, updateCartShove } from "./General files/utilsO.js";
 
-//SEARCH-BOX LOGIC
-const searchInput = document.querySelector(".search-input");
 
-const find = document.querySelector(".find");
+initializeNavBar();
 
-function testParams() {
-
-    const query = searchInput.value;
-
-    if(query.length === 0) {
-        return;
-    } else {
-        searchInput.value = '';
-
-        window.location.assign(`home.html?q=${query}`);
-
-    }
-
-}
-
-
-find.addEventListener("click", () => {
-    
-    
-    testParams();
-
-
-})
-
-searchInput.addEventListener("keydown", (e) => {
-    const what = e.key;
-
-    if (what === "Enter") {
-
-        testParams();
-
-
-    }
-
-})
-
+//RENDERING SEARCH FINDINGS (home)
 const params = new URLSearchParams(window.location.search);
 
 const search = params.get("q");
@@ -353,8 +316,6 @@ renderFeatured();
 
 
 
-
-
 // FOR YOU PRODUCTS
 function renderProducts() {
     const productsCont = document.querySelector(".grid-cont");
@@ -385,19 +346,6 @@ renderProducts()
 
 
 
-
-
-
-
-
-//SMALL SCREENS BURGER MENU
-const burger = document.querySelector(".burger");
-const navsSm = document.querySelector(".navs-sm");
-
-burger.addEventListener("click", (e) => {
-    e.preventDefault();
-    navsSm.classList.toggle('show');
-})
 
 
 

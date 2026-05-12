@@ -1,24 +1,20 @@
 // import { products } from "./General files/productsO.js";
 // import { getCartCount, getCartStorage, deleteFromCart } from "./General files/utilsO.js";
 // // import { Country, State, City } from "country-state-city";
+import { initializeNavBar } from "./General files/utilsO.js";
 
-const moves = document.querySelectorAll(".moves");
+initializeNavBar();
 
-moves.forEach(m => {
-    m.addEventListener("click", () => {
-        moves.forEach((m) => m.classList.remove('bi-filled'));
-        m.classList.add('bi-filled');
-    })
-})
 
-//SMALL SCREENS BURGER MENU
-const burger = document.querySelector(".burger");
-const navsSm = document.querySelector(".navs-sm");
 
-burger.addEventListener("click", (e) => {
-    e.preventDefault();
-    navsSm.classList.toggle('show');
-})
+
+
+
+
+
+
+
+
 
 // const cartCount = getCartCount();
 // const cartCountText = document.querySelector('.cart-count p');

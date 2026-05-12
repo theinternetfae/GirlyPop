@@ -1,6 +1,8 @@
 // import { products } from "./productsO.js";
 // import { cartCountStorage, cartStorageDisplay, getSavedCartButtonState, saveCartButtonState } from "./storageO.js";
 
+
+//GENERAL REUSABLE FUNCTIONS
 export function truncateText(words, count = 12) {
 
     if (words.length > count) {
@@ -17,15 +19,77 @@ export function randomGenerator(eligible) {
 }
 
 
-//TOGGLING NAVIGATIONS DISPLAY
-const moves = document.querySelectorAll(".moves");
 
-moves.forEach(m => {
-    m.addEventListener("click", () => {
-        moves.forEach((m) => m.classList.remove('bi-filled'));
-        m.classList.add('bi-filled');
+
+//GENERAL NAVIGATIONS FUNCTIONS
+export function initializeNavBar() {
+
+    
+    //TOGGLING NAVIGATIONS DISPLAY
+    const moves = document.querySelectorAll(".moves");
+
+    moves.forEach(m => {
+        m.addEventListener("click", () => {
+            moves.forEach((m) => m.classList.remove('bi-filled'));
+            m.classList.add('bi-filled');
+        })
     })
-})
+
+
+    //SMALL SCREENS BURGER MENU
+    const burger = document.querySelector(".burger");
+    const navsSm = document.querySelector(".navs-sm");
+
+    burger.addEventListener("click", (e) => {
+        e.preventDefault();
+        navsSm.classList.toggle('show');
+    })
+
+
+    //SEARCH-BOX LOGIC
+    const searchInput = document.querySelector(".search-input");
+    
+    const find = document.querySelector(".find");
+    
+    function testParams() {
+    
+        const query = searchInput.value;
+    
+        if(query.length === 0) {
+            return;
+        } else {
+            searchInput.value = '';
+    
+            window.location.assign(`home.html?q=${query}`);
+    
+        }
+    
+    }
+    
+    
+    find.addEventListener("click", () => {
+        
+        
+        testParams();
+    
+    
+    })
+    
+    searchInput.addEventListener("keydown", (e) => {
+        const what = e.key;
+    
+        if (what === "Enter") {
+    
+            testParams();
+    
+    
+        }
+    
+    })
+
+}
+
+
 
 
 
