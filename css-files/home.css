@@ -1021,6 +1021,15 @@ footer {
     background: #7e1036;
 }
 
+.product-page .product-details .details-box .more .more-products .m-product .m-summ div:nth-child(2):active {
+    transform: scale(0.90);
+}
+
+.product-page .product-details .details-box .more .more-products .m-product .m-summ .to-cart.in {
+    background: white;
+    color: #7e1036;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
+}
 
 
 

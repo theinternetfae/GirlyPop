@@ -6,7 +6,7 @@ import { truncateText, randomGenerator, initializeNavBar } from "./General files
 initializeNavBar();
 
 //RENDERING SEARCH FINDINGS (home)
-const products = getProductsStorage();
+let products = getProductsStorage();
 
 const params = new URLSearchParams(window.location.search);
 
@@ -575,29 +575,45 @@ openDetail.forEach(d => {
 })
 
 
-function initializeInCart() {
+
+
+
+//ADD TO CART TOGGLE
+
+function initializeInCart(item) {
 
     console.log("Old products list:", products);
+
+    const itemId = item.dataset.productid;
+    console.log(`Cart clciked!: ${itemId}`);
+
+    products = products.map(p => p.id === itemId ? {...p, inCart: !p.inCart} : p);
     
-    const toCart = document.querySelectorAll('.to-cart');
-
-    toCart.forEach(t => {
-        t.addEventListener('click', (e) => {
-
-            e.stopPropagation();
-            
-            const tId = t.dataset.productid;
-            console.log(`Cart clciked!: ${tId}`);
-
-            const newProductsList = products.map(p => p.id === tId ? {...p, inCart: !p.inCart} : p);
-            
-            updateProductsStorage(newProductsList);
-
-        })
-    })
-    
-    console.log("New products list:", products);
+    updateProductsStorage(products);
     
 }
 
-initializeInCart();
+function updateDisplay() {
+  
+    console.log("New products list:", products);
+    
+
+}
+
+
+const toCart = document.querySelectorAll('.to-cart');
+
+
+toCart.forEach(t => {
+
+    t.addEventListener('click', (e) => {
+        
+        e.stopPropagation();
+        
+        initializeInCart(t);
+        
+        updateDisplay();
+
+    })
+
+})
