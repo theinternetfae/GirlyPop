@@ -1,4 +1,4 @@
-import { products } from "./General files/productsO.js";
+import { getProductsStorage, updateProductsStorage } from "./General files/productsO.js";
 import { truncateText, randomGenerator, initializeNavBar } from "./General files/utilsO.js";
 // import { updateCartCount, featuredProducts, updateCartShove } from "./General files/utilsO.js";
 
@@ -6,6 +6,8 @@ import { truncateText, randomGenerator, initializeNavBar } from "./General files
 initializeNavBar();
 
 //RENDERING SEARCH FINDINGS (home)
+const products = getProductsStorage();
+
 const params = new URLSearchParams(window.location.search);
 
 const search = params.get("q");
@@ -13,9 +15,12 @@ const generalBody = document.querySelector(".general");
 const specificBody = document.querySelector(".search");
 const specificPick = document.querySelector(".ser-pick");
 
+
+
 console.log("Search key:", search);
 
 function findnFilter() {
+
 
     if(search === null) {
 
@@ -86,7 +91,7 @@ function renderSearched() {
                                 <h4>${truncateText(f.name)}</h4>
                                 <p>$${(f.priceCents / 100).toFixed(2)}</p>
                             </div>
-                            <div class="bi-cart2 to-cart" data-productId="${f.id}"></div>       
+                            <div class="to-cart ${f.inCart ? 'bi-bag-heart in' : 'bi-bag'}" data-productId="${f.id}"></div>       
                         </div>
                     </div>
 
@@ -224,7 +229,7 @@ function getCategoryPick(category) {
                             <h4>${cp.name}</h4>
                             <p>$${(cp.priceCents / 100).toFixed(2)}</p>
                         </div>
-                        <div class="bi-cart2 to-cart" data-productId="${cp.id}"></div>
+                        <div class="to-cart ${cp.inCart ? 'bi-bag-heart in' : 'bi-bag'}" data-productId="${cp.id}"></div>
                     </div>
                 </div>
             
@@ -245,7 +250,7 @@ function getCategoryPick(category) {
 
     })
 
-    initializeAddToCart();
+    initializeInCart();
 }
 
 
@@ -275,7 +280,7 @@ function renderFeatured() {
                             <h4>${truncateText(f.name)}</h4>
                             <p>$${(f.priceCents / 100).toFixed(2)}</p>
                         </div>
-                        <div class="bi-cart2 to-cart" data-productId="${f.id}"></div>
+                        <div class="to-cart ${f.inCart ? 'bi-bag-heart in' : 'bi-bag'}" data-productId="${f.id}"></div>
                     </div>
                 
                 </div>
@@ -295,7 +300,7 @@ function renderFeatured() {
                         <h4>${truncateText(f.name)}</h4>
                         <p>$${(f.priceCents / 100).toFixed(2)}</p>
                     </div>
-                    <div class="bi-cart2 to-cart" data-productId="${f.id}"></div>
+                    <div class="${f.inCart ? 'bi-bag-heart in' : 'bi-bag'} to-cart" data-productId="${f.id}"></div>
                 </div>
             
             </div>
@@ -331,7 +336,7 @@ function renderProducts() {
                         <h4>${truncateText(p.name)}</h4>
                         <p>$${(p.priceCents / 100).toFixed(2)}</p>
                     </div>
-                    <div class="bi-cart2 to-cart" data-productId="${p.id}"></div>
+                    <div class="${p.inCart ? 'bi-bag-heart in' : 'bi-bag'} to-cart" data-productId="${p.id}"></div>
                     </div>
                 </div>
             </div>
@@ -442,9 +447,9 @@ function renderProductDetail(product) {
 
                     </div>
 
-                    <button class="to-cart">
-                        Add to bag
-                        <i class="bi bi-bag actions-bi"></i>
+                    <button class="to-cart ${p.inCart ? 'in' : ''}" data-productId="${p.id}">
+                        ${p.inCart ? 'Added' : 'Add'} to bag
+                        <i class="bi ${p.inCart ? 'bi-bag-heart' : 'bi-bag'} actions-bi"></i>
                     </button>
                     
                     <div class="desc-box">
@@ -512,7 +517,7 @@ function renderMld (product) {
                             <h4>${truncateText(m.name)}</h4>
                             <p>$${(m.priceCents / 100).toFixed(2)}</p>
                         </div>
-                        <div class="bi-cart2 to-cart" data-productId="${m.id}"></div>
+                        <div class="to-cart ${m.inCart ? 'bi-bag-heart in' : 'bi-bag'}" data-productId="${m.id}"></div>
                     </div>
                 </div>
                 
@@ -529,7 +534,7 @@ function renderMld (product) {
                             <h4>${truncateText(m.name)}</h4>
                             <p>$${(m.priceCents / 100).toFixed(2)}</p>
                         </div>
-                        <div class="bi-cart2 to-cart" data-productId="${m.id}"></div>
+                        <div class="to-cart ${m.inCart ? 'bi-bag-heart in' : 'bi-bag'}" data-productId="${m.id}"></div>
                     </div>
                 </div>
 
@@ -552,7 +557,7 @@ function renderMProduct() {
 
     })
 
-    initializeAddToCart();
+    initializeInCart();
 }
 
 const openDetail = document.querySelectorAll('.detail-show');
@@ -570,20 +575,29 @@ openDetail.forEach(d => {
 })
 
 
-function initializeAddToCart() {
+function initializeInCart() {
 
+    console.log("Old products list:", products);
+    
     const toCart = document.querySelectorAll('.to-cart');
 
     toCart.forEach(t => {
         t.addEventListener('click', (e) => {
 
             e.stopPropagation();
+            
             const tId = t.dataset.productid;
             console.log(`Cart clciked!: ${tId}`);
+
+            const newProductsList = products.map(p => p.id === tId ? {...p, inCart: !p.inCart} : p);
             
+            updateProductsStorage(newProductsList);
+
         })
     })
-
+    
+    console.log("New products list:", products);
+    
 }
 
-initializeAddToCart();
+initializeInCart();
