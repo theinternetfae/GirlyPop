@@ -120,8 +120,10 @@ function renderSearchOpenDetail() {
 
     searchDetail.forEach(s => {
 
-        s.addEventListener('click', () => {
+        s.addEventListener('click', (e) => {
             
+            if (e.target.closest('.to-cart')) return;
+
             renderProductDetail(s);
             renderMld(s);
             renderMProduct();
@@ -170,7 +172,7 @@ categoryIndicator.addEventListener("click", () => {
         
         defaultLayout.classList.remove('hidden');
         categoryLayout.classList.add('hidden');
-    
+        
     } else {
         categories.classList.toggle('show');
         if (indicatorStat.classList.contains('bi-arrow-right-short')) {
@@ -242,7 +244,10 @@ function getCategoryPick(category) {
 
     cProduct.forEach(c => {
 
-        c.addEventListener('click', () => {
+        c.addEventListener('click', (e) => {
+            
+            if (e.target.closest('.to-cart')) return;
+
             renderProductDetail(c);
             renderMld(c);
             renderMProduct();
@@ -250,7 +255,6 @@ function getCategoryPick(category) {
 
     })
 
-    initializeInCart();
 }
 
 
@@ -447,7 +451,7 @@ function renderProductDetail(product) {
 
                     </div>
 
-                    <button class="to-cart ${p.inCart ? 'in' : ''}" data-productId="${p.id}">
+                    <button class="to-cart ${p.inCart ? 'in' : ''} ${p.inCart ? 'open-deets-add' : 'open-deets'} " data-productId="${p.id}">
                         ${p.inCart ? 'Added' : 'Add'} to bag
                         <i class="bi ${p.inCart ? 'bi-bag-heart' : 'bi-bag'} actions-bi"></i>
                     </button>
@@ -490,6 +494,7 @@ function renderProductDetail(product) {
     closeDetail.addEventListener('click', () => {
         productDetails.classList.remove('slide-in');
         productPage.classList.remove('show');
+        
     })
 
 }
@@ -504,6 +509,9 @@ function renderMld (product) {
     const more = moreLikeThis(p);
     const mScrollBox = document.querySelector(".m-scroll-box");
     const mScrollHidden = document.querySelector(".m-scroll-hidden");
+
+    mScrollBox.innerHTML = '';
+    mScrollHidden.innerHTML = '';
 
     more.forEach(m => {
         mScrollBox.innerHTML += `
@@ -532,7 +540,7 @@ function renderMld (product) {
                     <div class="m-summ">
                         <div>
                             <h4>${truncateText(m.name)}</h4>
-                            <p>$${(m.priceCents / 100).toFixed(2)}</p>
+                            <p >$${(m.priceCents / 100).toFixed(2)}</p>
                         </div>
                         <div class="to-cart ${m.inCart ? 'bi-bag-heart in' : 'bi-bag'}" data-productId="${m.id}"></div>
                     </div>
@@ -549,7 +557,10 @@ function renderMProduct() {
 
     mProduct.forEach(m => {
 
-        m.addEventListener('click', () => {
+        m.addEventListener('click', (e) => {
+
+            if (e.target.closest('.to-cart')) return;
+
             renderProductDetail(m);
             renderMld(m);
             renderMProduct();
@@ -557,14 +568,15 @@ function renderMProduct() {
 
     })
 
-    initializeInCart();
 }
 
 const openDetail = document.querySelectorAll('.detail-show');
 
 openDetail.forEach(d => {
 
-    d.addEventListener('click', () => {
+    d.addEventListener('click', (e) => {
+
+        if (e.target.closest('.to-cart')) return;
         
         renderProductDetail(d);
         renderMld(d);
@@ -581,23 +593,19 @@ openDetail.forEach(d => {
 
 function initializeInCart(item) {
 
-    console.log("Old products list:", products);
-
     const itemId = item.dataset.productid;
-    console.log(`Cart clciked!: ${itemId}`);
-
+    
     products = products.map(p => p.id === itemId ? {...p, inCart: !p.inCart} : p);
     
     updateProductsStorage(products);
     
 }
 
-const toCart = document.querySelectorAll('.to-cart');
 
 function updateDisplay(item) {
-  
-    console.log("New products list:", products);
-  
+
+    const toCart = document.querySelectorAll('.to-cart');
+    
     const itemId = item.dataset.productid;
 
     toCart.forEach(t => {
@@ -613,26 +621,60 @@ function updateDisplay(item) {
                 t.classList.remove('bi-bag-heart');
                 t.classList.add('bi-bag');
             }
-            
+
+            if (t.classList.contains('open-deets')) {
+
+                t.classList.remove('open-deets');
+                t.classList.add('open-deets-add');   
+
+                t.innerHTML = `Added to bag
+                        <i class="bi bi-bag-heart actions-bi"></i>
+                `
+
+            } else if (t.classList.contains('open-deets-add')) {
+
+                t.classList.remove('open-deets-add');
+                t.classList.add('open-deets');   
+
+                t.innerHTML = `Add to bag
+                        <i class="bi bi-bag actions-bi"></i>
+                `
+
+            }
         }
     })
     
-
 }
 
 
+document.addEventListener('click', (e) => {
 
+    const cartButton = e.target.closest('.to-cart');
 
-toCart.forEach(t => {
+    e.stopPropagation();
 
-    t.addEventListener('click', (e) => {
-        
-        e.stopPropagation();
-        
-        initializeInCart(t);
-        
-        updateDisplay(t);
+    if (!cartButton) return;
 
-    })
+    initializeInCart(cartButton);
+    
+    updateDisplay(cartButton);
 
 })
+
+    // const toCart = document.querySelectorAll('.to-cart');
+
+    // toCart.forEach(t => {
+
+    //     t.addEventListener('click', (e) => {
+            
+
+            
+    //         initializeInCart(t);
+            
+    //         updateDisplay(t);
+
+    //     })
+
+    // })
+
+    // console.log('Cart button initialized');
