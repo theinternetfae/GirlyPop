@@ -577,7 +577,6 @@ openDetail.forEach(d => {
 
 
 
-
 //ADD TO CART TOGGLE
 
 function initializeInCart(item) {
@@ -593,15 +592,35 @@ function initializeInCart(item) {
     
 }
 
-function updateDisplay() {
+const toCart = document.querySelectorAll('.to-cart');
+
+function updateDisplay(item) {
   
     console.log("New products list:", products);
+  
+    const itemId = item.dataset.productid;
+
+    toCart.forEach(t => {
+        const tId = t.dataset.productid;
+
+        if(tId === itemId) {
+            t.classList.toggle('in');
+
+            if (t.classList.contains('bi-bag')) {
+                t.classList.remove('bi-bag');
+                t.classList.add('bi-bag-heart');
+            } else if (t.classList.contains('bi-bag-heart')) {
+                t.classList.remove('bi-bag-heart');
+                t.classList.add('bi-bag');
+            }
+            
+        }
+    })
     
 
 }
 
 
-const toCart = document.querySelectorAll('.to-cart');
 
 
 toCart.forEach(t => {
@@ -612,7 +631,7 @@ toCart.forEach(t => {
         
         initializeInCart(t);
         
-        updateDisplay();
+        updateDisplay(t);
 
     })
 
