@@ -1,6 +1,7 @@
-// import { products } from "./productsO.js";
+import { getProductsStorage } from "./productsO.js";
 // import { cartCountStorage, cartStorageDisplay, getSavedCartButtonState, saveCartButtonState } from "./storageO.js";
 
+const products = getProductsStorage();
 
 //GENERAL REUSABLE FUNCTIONS
 export function truncateText(words, count = 12) {
@@ -18,12 +19,8 @@ export function randomGenerator(eligible) {
     return shuffled.slice(0, 5);
 }
 
-
-
-
 //GENERAL NAVIGATIONS FUNCTIONS
 export function initializeNavBar() {
-
     
     //TOGGLING NAVIGATIONS DISPLAY
     const moves = document.querySelectorAll(".moves");
@@ -35,7 +32,6 @@ export function initializeNavBar() {
         })
     })
 
-
     //SMALL SCREENS BURGER MENU
     const burger = document.querySelector(".burger");
     const navsSm = document.querySelector(".navs-sm");
@@ -44,7 +40,6 @@ export function initializeNavBar() {
         e.preventDefault();
         navsSm.classList.toggle('show');
     })
-
 
     //SEARCH-BOX LOGIC
     const searchInput = document.querySelector(".search-input");
@@ -67,27 +62,119 @@ export function initializeNavBar() {
     }
     
     
-    find.addEventListener("click", () => {
-        
+    find.addEventListener("click", () => {        
         
         testParams();
-    
     
     })
     
     searchInput.addEventListener("keydown", (e) => {
+        
         const what = e.key;
     
         if (what === "Enter") {
     
             testParams();
     
-    
         }
     
     })
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export function initializeCartCount(products) {
+
+    const cartCount = document.querySelectorAll('.cart-count');
+
+    let dynamicCartCount = JSON.parse(localStorage.getItem('dynamicCartCount')) || 0;
+    
+    localStorage.setItem('dynamicCartCount', JSON.stringify(dynamicCartCount));
+
+    const inCart = products.filter(p => p.inCart );
+
+    dynamicCartCount = inCart.length;
+
+    cartCount.forEach(c => {
+        c.innerHTML = dynamicCartCount;
+    })
+
+}
+
+initializeCartCount(products);
+
+
+
+
+
+
+
+
+
+
+
+// let dynamicCartCount = JSON.parse(localStorage.getItem('dynamicCartCount')) || 0;
+
+// export function initializeCartCount(products) {
+
+//     const cartCount = document.querySelectorAll('.cart-count');
+
+//     const dynamicCartCount = editCartCount(products);
+
+//     cartCount.forEach(c => {
+//         c.innerHTML = dynamicCartCount;
+//     })
+
+// }
+
+// function editCartCount(products) {
+
+//     localStorage.setItem('dynamicCartCount', JSON.stringify(dynamicCartCount));
+
+//     const inCart = products.filter(p => p.inCart );
+
+//     dynamicCartCount = inCart.length;
+
+//     return dynamicCartCount;
+// }
+
+// initializeCartCount(products);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

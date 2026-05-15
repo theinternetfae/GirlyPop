@@ -1,5 +1,5 @@
 import { getProductsStorage, updateProductsStorage } from "./General files/productsO.js";
-import { truncateText, randomGenerator, initializeNavBar } from "./General files/utilsO.js";
+import { truncateText, randomGenerator, initializeNavBar, initializeCartCount } from "./General files/utilsO.js";
 // import { updateCartCount, featuredProducts, updateCartShove } from "./General files/utilsO.js";
 
 
@@ -598,8 +598,10 @@ function initializeInCart(item) {
     products = products.map(p => p.id === itemId ? {...p, inCart: !p.inCart} : p);
     
     updateProductsStorage(products);
-    
+
+    initializeCartCount(products);
 }
+
 
 
 function updateDisplay(item) {
@@ -660,21 +662,3 @@ document.addEventListener('click', (e) => {
     updateDisplay(cartButton);
 
 })
-
-    // const toCart = document.querySelectorAll('.to-cart');
-
-    // toCart.forEach(t => {
-
-    //     t.addEventListener('click', (e) => {
-            
-
-            
-    //         initializeInCart(t);
-            
-    //         updateDisplay(t);
-
-    //     })
-
-    // })
-
-    // console.log('Cart button initialized');
