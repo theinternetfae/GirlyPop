@@ -2,10 +2,56 @@
 // import { getCartCount, getCartStorage, deleteFromCart } from "./General files/utilsO.js";
 // // import { Country, State, City } from "country-state-city";
 import { initializeNavBar } from "./General files/utilsO.js";
+import { getCart } from "./General files/storageO.js";
+import { getProductsStorage } from "./General files/productsO.js";
+import { removeFromCart } from "./General files/utilsO.js";
 
 initializeNavBar();
 
+const products = getProductsStorage();
 
+function renderCart() {
+
+    const inCart = getCart();
+    console.log("In the Cart:", inCart);
+
+    //Label
+    const cartLabel = document.querySelector('.cart-label');
+    cartLabel.innerHTML = `${inCart.length === 1 ? 'Item' : 'Items' }`;
+
+    const cartProductsCont = document.querySelector('.the-cart-products');
+
+
+    const inCartProducts = [];
+
+    inCart.forEach(i => {
+        products.map(p => p.id === i && inCartProducts.push(p));
+    })
+
+    console.log("cartProductsCont:", cartProductsCont);
+
+    cartProductsCont.innerHTML = '';
+
+    inCartProducts.forEach(i => {
+        cartProductsCont.innerHTML += `
+            <div class="cart-product">
+                <i class="bi bi-x-lg remove-from" data-productId="${i.id}"></i>
+
+                <div class="cart-product-info">
+                    <img src="${i.image}" alt="">
+                    <div class="cart-product-details">
+                        <p><span>Name:</span> ${i.name}</p>
+                        <p><span>Price:</span> <span class="price">$${(i.priceCents / 100).toFixed(2)}</span></p>
+                        <p><span>Fault:</span> ${i.fault || 'None'}</p>
+                    </div>
+                </div>
+            </div>
+            
+        `;
+    });
+}
+
+renderCart();
 
 
 

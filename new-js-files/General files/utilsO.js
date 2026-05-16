@@ -86,12 +86,11 @@ export function initializeNavBar() {
     const inCart = getCart();
 
     const cartCount = document.querySelectorAll('.cart-count');
-
+    
     cartCount.forEach(c => {
         c.innerHTML = inCart.length;
     });
-
-
+    
 
 
     //ALERT 

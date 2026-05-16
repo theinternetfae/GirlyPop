@@ -18,7 +18,6 @@ const specificPick = document.querySelector(".ser-pick");
 
 
 
-
 function findnFilter() {
 
 
