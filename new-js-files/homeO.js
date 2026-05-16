@@ -1,4 +1,5 @@
 import { getProductsStorage, updateProductsStorage } from "./General files/productsO.js";
+import { getCart } from "./General files/storageO.js";
 import { truncateText, randomGenerator, initializeNavBar, addToCart, removeFromCart } from "./General files/utilsO.js";
 // import { updateCartCount, featuredProducts, updateCartShove } from "./General files/utilsO.js";
 
@@ -17,7 +18,6 @@ const specificPick = document.querySelector(".ser-pick");
 
 
 
-console.log("Search key:", search);
 
 function findnFilter() {
 
@@ -60,7 +60,6 @@ function findnFilter() {
             })
         }
 
-        console.log("Filtered Matching Products:", filteredMatchingProducts);
 
         return filteredMatchingProducts;
 
@@ -593,69 +592,49 @@ openDetail.forEach(d => {
 
 function initializeInCart(item) {
 
-    const itemId = item.dataset.productid;
-    
-    products = products.map(p => p.id === itemId ? {...p, inCart: !p.inCart} : p);
+    products = products.map(p => p.id === item ? {...p, inCart: !p.inCart} : p);
     
     updateProductsStorage(products);
 
 }
 
+function updateCartUI(itemId) {
+    const buttons = document.querySelectorAll(`.to-cart[data-productid="${itemId}"]`);
 
+    buttons.forEach(b => {
+        b.classList.toggle('in');
 
-function updateDisplay(item) {
-
-    const toCart = document.querySelectorAll('.to-cart');
-    
-    const itemId = item.dataset.productid;
-
-    toCart.forEach(t => {
-        const tId = t.dataset.productid;
-
-        if(tId === itemId) {
-            // t.classList.toggle('in');
-
-            if (!t.classList.contains('in')) {    
-                t.classList.add('in');
-                addToCart(tId);
-            } else if (t.classList.contains('in')) {
-                t.classList.remove('in');
-                removeFromCart(tId);
-            }
-
-            if (t.classList.contains('bi-bag')) {
-                t.classList.remove('bi-bag');
-                t.classList.add('bi-bag-heart');
-            } else if (t.classList.contains('bi-bag-heart')) {
-                t.classList.remove('bi-bag-heart');
-                t.classList.add('bi-bag');
-            }
-
-
-            if (t.classList.contains('open-deets')) {
-
-                t.classList.remove('open-deets');
-                t.classList.add('open-deets-add');   
-
-                t.innerHTML = `Added to bag
-                        <i class="bi bi-bag-heart actions-bi"></i>
-                `
-
-            } else if (t.classList.contains('open-deets-add')) {
-
-                t.classList.remove('open-deets-add');
-                t.classList.add('open-deets');   
-
-                t.innerHTML = `Add to bag
-                        <i class="bi bi-bag actions-bi"></i>
-                `
-
-            }
+        if (b.classList.contains('bi-bag')) {
+            b.classList.remove('bi-bag');
+            b.classList.add('bi-bag-heart');
+        } else if (b.classList.contains('bi-bag-heart')) {
+            b.classList.remove('bi-bag-heart');
+            b.classList.add('bi-bag');
         }
-    })
-    
-}
 
+
+        if (b.classList.contains('open-deets')) {
+
+            b.classList.remove('open-deets');
+            b.classList.add('open-deets-add');   
+
+            b.innerHTML = `Added to bag
+                <i class="bi bi-bag-heart actions-bi"></i>
+            `
+
+        } else if (b.classList.contains('open-deets-add')) {
+
+            b.classList.remove('open-deets-add');
+            b.classList.add('open-deets');   
+
+            b.innerHTML = `Add to bag
+                <i class="bi bi-bag actions-bi"></i>
+            `
+
+        }
+
+    });
+}
 
 document.addEventListener('click', (e) => {
 
@@ -665,8 +644,17 @@ document.addEventListener('click', (e) => {
 
     if (!cartButton) return;
 
-    initializeInCart(cartButton);
-    
-    updateDisplay(cartButton);
+    const itemId = cartButton.dataset.productid;
 
+    const inCart = getCart();
+
+    if (inCart.includes(itemId)) {
+        removeFromCart(itemId);
+    } else {
+        addToCart(itemId);
+    }    
+
+    initializeInCart(itemId);
+    updateCartUI(itemId)
+  
 })

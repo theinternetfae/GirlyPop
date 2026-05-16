@@ -1,3 +1,13 @@
+export function getCart() {
+    let inCart = JSON.parse(localStorage.getItem('inCart')) || [];
+
+    return inCart;
+}
+
+export function setCart(newCart) {
+    localStorage.setItem('inCart', JSON.stringify(newCart));
+}
+
 // export function cartCountStorage() {
 //     let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
 

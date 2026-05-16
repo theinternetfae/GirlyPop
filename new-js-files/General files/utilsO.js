@@ -1,4 +1,5 @@
 import { getProductsStorage } from "./productsO.js";
+import { getCart, setCart } from "./storageO.js";
 // import { cartCountStorage, cartStorageDisplay, getSavedCartButtonState, saveCartButtonState } from "./storageO.js";
 
 const products = getProductsStorage();
@@ -82,12 +83,9 @@ export function initializeNavBar() {
 
 
     //INITIALIZING CART COUNT
-    const inCart = inCartStorage();
+    const inCart = getCart();
 
-    console.log("Default", inCart);
     const cartCount = document.querySelectorAll('.cart-count');
-
-    console.log(inCart.length);
 
     cartCount.forEach(c => {
         c.innerHTML = inCart.length;
@@ -142,50 +140,34 @@ export function initializeNavBar() {
 
 
 //CART LOGIC
-function inCartStorage() {
-    let inCart = JSON.parse(localStorage.getItem('inCart')) || [];
-
-    localStorage.setItem('inCart', JSON.stringify(inCart));
-
-    return inCart;
-}
 
 
 export function addToCart(item) {
 
-    let inCart = inCartStorage();
+    let inCart = getCart();
 
     inCart.push(item);
     
-    const removeDuplicates = new Set(inCart);
-    let newList = []
-    
-    removeDuplicates.forEach(rd => newList.push(rd))
-    
-    console.log("newList", newList);
-    localStorage.setItem('inCart', JSON.stringify(newList));
+    setCart(inCart);
 
     const cartCount = document.querySelectorAll('.cart-count');
     
-    console.log("Cart Length (Add)", newList.length);    
     cartCount.forEach(c => {
-        c.innerHTML = newList.length;
+        c.innerHTML = inCart.length;
     })
 
 }
 
-export function removeFromCart(item) {
+export function removeFromCart(itemId) {
 
-    let inCart = inCartStorage();
+    let inCart = getCart();
 
-    const cleanedCart = inCart.filter(i => i !== item);
-    console.log("After removing", cleanedCart);
+    const cleanedCart = inCart.filter(id => id !== itemId);
 
-    localStorage.setItem('inCart', JSON.stringify(cleanedCart));
+    setCart(cleanedCart);
 
     const cartCount = document.querySelectorAll('.cart-count');
-    
-    console.log("Cart Length (Remove)", cleanedCart.length);  
+      
     cartCount.forEach(c => {
         c.innerHTML = cleanedCart.length || 0;
     })
