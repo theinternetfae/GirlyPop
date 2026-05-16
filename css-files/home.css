@@ -23,6 +23,8 @@ header {
     position: sticky;
     top: 0;
     z-index: 50;
+    display: flex;
+    flex-direction: column;
 }
 
 nav {
@@ -1031,6 +1033,45 @@ footer {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
 }
 
+/*ALERT*/
+
+.alert-cont {
+    position: fixed;
+    margin-top: 80px;
+    align-self: flex-end;
+    z-index: 80;
+    width: 45%;
+    border: 4px solid #7e1036;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    transition: .5s ease-in-out;
+    font-size: 12px;
+    transform: translateX(700px);
+}
+
+.alert-cont p {
+    text-align: center;
+}
+
+.alert-cont .bi {
+    width: 15px;
+    cursor: pointer;
+    align-self: end;
+    font-weight: 900;
+    color: #7e1036;
+    text-align: end;
+}
+
+.alert .bi:active {
+    transform: scale(0.90);
+}
+
+.out {
+    transform: translateX(0);
+}
 
 
 
@@ -1889,6 +1930,43 @@ footer {
         background: #7e1036;
     }
 
+    .alert-cont {
+        position: fixed;
+        margin-top: 80px;
+        align-self: flex-end;
+        z-index: 80;
+        width: 30%;
+        border: 4px solid #7e1036;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        background: white;
+        transition: .5s ease-in-out;
+        font-size: 14px;
+        transform: translateX(700px);
+    }
+
+    .alert-cont p {
+        text-align: center;
+    }
+
+    .alert-cont .bi {
+        width: 15px;
+        cursor: pointer;
+        align-self: end;
+        font-weight: 900;
+        color: #7e1036;
+        text-align: end;
+    }
+
+    .alert .bi:active {
+        transform: scale(0.90);
+    }
+
+    .out {
+        transform: translateX(0);
+    }
 }
 
 @media (min-width: 1024px) {
@@ -2456,6 +2534,46 @@ footer {
         font-weight: bold;
         background: #7e1036;
     }
+
+
+    .alert-cont {
+        position: fixed;
+        margin-top: 80px;
+        align-self: flex-end;
+        z-index: 80;
+        width: 20%;
+        border: 4px solid #7e1036;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        background: white;
+        transition: .5s ease-in-out;
+        font-size: 14px;
+        transform: translateX(700px);
+    }
+
+    .alert-cont p {
+        text-align: center;
+    }
+
+    .alert-cont .bi {
+        width: 15px;
+        cursor: pointer;
+        align-self: end;
+        font-weight: 900;
+        color: #7e1036;
+        text-align: end;
+    }
+
+    .alert .bi:active {
+        transform: scale(0.90);
+    }
+
+    .out {
+        transform: translateX(0);
+    }
+
 }
 
 @media (min-width: 1024px) and (max-height: 600px) {
