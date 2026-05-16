@@ -1,5 +1,5 @@
 import { getProductsStorage, updateProductsStorage } from "./General files/productsO.js";
-import { truncateText, randomGenerator, initializeNavBar, initializeCartCount } from "./General files/utilsO.js";
+import { truncateText, randomGenerator, initializeNavBar, addToCart, removeFromCart } from "./General files/utilsO.js";
 // import { updateCartCount, featuredProducts, updateCartShove } from "./General files/utilsO.js";
 
 
@@ -599,7 +599,6 @@ function initializeInCart(item) {
     
     updateProductsStorage(products);
 
-    initializeCartCount(products);
 }
 
 
@@ -614,7 +613,15 @@ function updateDisplay(item) {
         const tId = t.dataset.productid;
 
         if(tId === itemId) {
-            t.classList.toggle('in');
+            // t.classList.toggle('in');
+
+            if (!t.classList.contains('in')) {    
+                t.classList.add('in');
+                addToCart(tId);
+            } else if (t.classList.contains('in')) {
+                t.classList.remove('in');
+                removeFromCart(tId);
+            }
 
             if (t.classList.contains('bi-bag')) {
                 t.classList.remove('bi-bag');
@@ -623,6 +630,7 @@ function updateDisplay(item) {
                 t.classList.remove('bi-bag-heart');
                 t.classList.add('bi-bag');
             }
+
 
             if (t.classList.contains('open-deets')) {
 
