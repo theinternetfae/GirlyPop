@@ -153,32 +153,213 @@ nav .navigations-sm .navs-sm a {
 
 
 
+
+
 main {
-    border: 2px solid black;
     margin: 10px;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-main .checkout-body {
-    border: 2px solid red;
-    padding: 2px;
+.the-cart {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-main .the-cart .the-cart-text {
+.the-cart .the-cart-text {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-main .the-cart .the-cart-text h2 {
-    font-size: 18px;
+.the-cart .the-cart-text h2 {
+    font-size: 16px;
 }
 
-main .the-cart .the-cart-text p {
+.the-cart .the-cart-text p {
     font-size: 12px;
 }
+
+.the-cart .the-cart-products {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.the-cart .cart-product {
+    border-radius: 10px;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.the-cart .cart-product .bi {
+    color: #7e1036;
+    font-weight: bold;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.the-cart .cart-product .cart-product-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.the-cart .cart-product .cart-product-info img {
+    width: 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.the-cart .cart-product .cart-product-info .cart-product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.the-cart .cart-product .cart-product-info .cart-product-details span {
+    color: grey;
+}
+
+.the-cart .cart-product .cart-product-info .cart-product-details .price {
+    color: #7e1036;
+}
+
+
+
+
+.the-receipt {
+    padding: 15px;
+}
+
+.the-receipt .receipt-body {
+    background: white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.the-receipt .receipt-body .location {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap: 10px;
+}
+
+.the-receipt .receipt-body .location h2{
+    font-size: 16px;
+}
+
+.the-receipt .receipt-body .location p{
+    font-size: 12px;
+}
+
+.the-receipt .receipt-body .location .location-deets{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.the-receipt .receipt-body .location .location-deets .loc-det{
+    background: #CCCCCC;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+}
+
+.the-receipt .receipt-body .location .location-deets .loc-det:focus{
+    outline: none;
+}
+
+.the-receipt .receipt-body .location input {
+    height: 30px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid #CCCCCC; 
+    width: 50%;
+}
+
+.the-receipt .receipt-body .location input:focus {
+    outline: none;
+}
+
+.the-receipt .receipt-body .location button {
+    height: 45px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    background: #242424;
+    color: white; 
+}
+
+.the-receipt .receipt-body .location::after {
+    content: '';
+    border: 2px solid #CCCCCC;
+    margin-top: 10px;
+}
+
+.the-receipt .receipt-body .receipt {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap: 10px;
+    background: #F8BBD0;
+    border-radius: 10px;
+}
+
+.the-receipt .receipt-body .receipt h2{
+    font-size: 16px;
+}
+
+.the-receipt .receipt-body .receipt p{
+    font-size: 14px;
+}
+
+.the-receipt .receipt-body .receipt .price-breakdown::before{
+    content: '';
+    border: 1px solid #666666;
+    margin-top: 10px;
+}
+
+.the-receipt .receipt-body .receipt .price-breakdown{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.the-receipt .receipt-body .receipt .price-breakdown .price-b{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.the-receipt .receipt-body .receipt .price-breakdown .price-total{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.the-receipt .receipt-body button {
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    background: #c14e76;
+    color: white;
+    font-weight: bold;
+}
+
+
 
 
 /* FOOTER CODE*/
