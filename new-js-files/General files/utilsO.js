@@ -126,7 +126,7 @@ function automaticClear(alert) {
     if(alert.classList.contains('out')) {
         const timer = setTimeout(() => {
             alert.classList.remove('out');
-        }, 8000)
+        }, 5000)
     
         return () => clearTimeout(timer);
     }
