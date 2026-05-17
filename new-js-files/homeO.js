@@ -601,36 +601,58 @@ function updateCartUI(itemId) {
     const buttons = document.querySelectorAll(`.to-cart[data-productid="${itemId}"]`);
 
     buttons.forEach(b => {
+
         b.classList.toggle('in');
 
-        if (b.classList.contains('bi-bag')) {
-            b.classList.remove('bi-bag');
-            b.classList.add('bi-bag-heart');
-        } else if (b.classList.contains('bi-bag-heart')) {
-            b.classList.remove('bi-bag-heart');
-            b.classList.add('bi-bag');
+        const isInCart = b.classList.contains('in');
+
+
+        if (b.classList.contains('bi-bag') || b.classList.contains('bi-bag-heart')) {
+
+            b.classList.toggle('bi-bag-heart', isInCart);
+            b.classList.toggle('bi-bag', !isInCart);
+
         }
+        
+        // if (b.classList.contains('bi-bag')) {
+        //     b.classList.remove('bi-bag');
+        //     b.classList.add('bi-bag-heart');
+        // } else if (b.classList.contains('bi-bag-heart')) {
+        //     b.classList.remove('bi-bag-heart');
+        //     b.classList.add('bi-bag');
+        // }
 
 
-        if (b.classList.contains('open-deets')) {
+        if (b.classList.contains('open-deets') || b.classList.contains('open-deets-add')) {
 
-            b.classList.remove('open-deets');
-            b.classList.add('open-deets-add');   
-
-            b.innerHTML = `Added to bag
-                <i class="bi bi-bag-heart actions-bi"></i>
-            `
-
-        } else if (b.classList.contains('open-deets-add')) {
-
-            b.classList.remove('open-deets-add');
-            b.classList.add('open-deets');   
-
-            b.innerHTML = `Add to bag
+            b.innerHTML = isInCart
+                ? `Added to bag
+                <i class="bi bi-bag-heart actions-bi"></i>`
+                : `Add to bag
                 <i class="bi bi-bag actions-bi"></i>
-            `
-
+            `;
+    
         }
+        
+        // if (b.classList.contains('open-deets')) {
+
+        //     b.classList.remove('open-deets');
+        //     b.classList.add('open-deets-add');   
+
+        //     b.innerHTML = `Added to bag
+        //         <i class="bi bi-bag-heart actions-bi"></i>
+        //     `
+
+        // } else if (b.classList.contains('open-deets-add')) {
+
+        //     b.classList.remove('open-deets-add');
+        //     b.classList.add('open-deets');   
+
+        //     b.innerHTML = `Add to bag
+        //         <i class="bi bi-bag actions-bi"></i>
+        //     `
+
+        // }
 
     });
 }
