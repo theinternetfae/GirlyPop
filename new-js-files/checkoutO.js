@@ -1,7 +1,7 @@
 // import { products } from "./General files/productsO.js";
 // import { getCartCount, getCartStorage, deleteFromCart } from "./General files/utilsO.js";
 // // import { Country, State, City } from "country-state-city";
-import { initializeNavBar } from "./General files/utilsO.js";
+import { convertPrice, initializeNavBar } from "./General files/utilsO.js";
 import { getCart } from "./General files/storageO.js";
 import { getProductsStorage, updateProductsStorage } from "./General files/productsO.js";
 import { removeFromCart } from "./General files/utilsO.js";
@@ -49,7 +49,7 @@ function renderCart() {
                     <img src="${i.image}" alt="">
                     <div class="cart-product-details">
                         <p><span>Name:</span> ${i.name}</p>
-                        <p><span>Price:</span> <span class="price">$${(i.priceCents / 100).toFixed(2)}</span></p>
+                        <p><span>Price:</span> <span class="price">${convertPrice(i.priceCents)}</span></p>
                         <p><span>Fault:</span> ${i.wrong ? i.wrong : 'None'}</p>
                     </div>
                 </div>
@@ -106,7 +106,7 @@ function renderPrice() {
         priceBreakdown.innerHTML += `
             <div class="price-b">
                 <p>${i.name}</p>
-                <p>$${(i.priceCents / 100).toFixed(2)}</p>
+                <p>${convertPrice(i.priceCents)}</p>
             </div>
         `
 
@@ -117,7 +117,7 @@ function renderPrice() {
     priceBreakdown.innerHTML += `
         <div class="price-total">
             <p>TOTAL</p>
-            <p>$${(total / 100).toFixed(2)}</p>
+            <p>${convertPrice(total)}</p>
         </div>
     `
 }

@@ -1,6 +1,6 @@
 import { getProductsStorage, updateProductsStorage } from "./General files/productsO.js";
 import { getCart } from "./General files/storageO.js";
-import { truncateText, randomGenerator, initializeNavBar, addToCart, removeFromCart } from "./General files/utilsO.js";
+import { truncateText, randomGenerator, initializeNavBar, addToCart, removeFromCart, convertPrice } from "./General files/utilsO.js";
 // import { updateCartCount, featuredProducts, updateCartShove } from "./General files/utilsO.js";
 
 
@@ -87,7 +87,7 @@ function renderSearched() {
                         <div class="prod-summ">
                             <div>
                                 <h4>${truncateText(f.name)}</h4>
-                                <p>$${(f.priceCents / 100).toFixed(2)}</p>
+                                <p>${convertPrice(f.priceCents)}</p>
                             </div>
                             <div class="to-cart ${f.inCart ? 'bi-bag-heart in' : 'bi-bag'}" data-productId="${f.id}"></div>       
                         </div>
@@ -227,7 +227,7 @@ function getCategoryPick(category) {
                     <div class="prod-summ">
                         <div>
                             <h4>${cp.name}</h4>
-                            <p>$${(cp.priceCents / 100).toFixed(2)}</p>
+                            <p>${convertPrice(cp.priceCents)}</p>
                         </div>
                         <div class="to-cart ${cp.inCart ? 'bi-bag-heart in' : 'bi-bag'}" data-productId="${cp.id}"></div>
                     </div>
@@ -280,7 +280,7 @@ function renderFeatured() {
                     <div class="prod-summ">
                         <div>
                             <h4>${truncateText(f.name)}</h4>
-                            <p>$${(f.priceCents / 100).toFixed(2)}</p>
+                            <p>${convertPrice(f.priceCents)}</p>
                         </div>
                         <div class="to-cart ${f.inCart ? 'bi-bag-heart in' : 'bi-bag'}" data-productId="${f.id}"></div>
                     </div>
@@ -300,7 +300,7 @@ function renderFeatured() {
                 <div class="prod-summ">
                     <div>
                         <h4>${truncateText(f.name)}</h4>
-                        <p>$${(f.priceCents / 100).toFixed(2)}</p>
+                        <p>${convertPrice(f.priceCents)}</p>
                     </div>
                     <div class="${f.inCart ? 'bi-bag-heart in' : 'bi-bag'} to-cart" data-productId="${f.id}"></div>
                 </div>
@@ -336,7 +336,7 @@ function renderProducts() {
                 <div class="prod-summ">
                     <div>
                         <h4>${truncateText(p.name)}</h4>
-                        <p>$${(p.priceCents / 100).toFixed(2)}</p>
+                        <p>${convertPrice(p.priceCents)}</p>
                     </div>
                     <div class="${p.inCart ? 'bi-bag-heart in' : 'bi-bag'} to-cart" data-productId="${p.id}"></div>
                     </div>
@@ -431,7 +431,7 @@ function renderProductDetail(product) {
                         <p class="fault">Fault: ${p.wrong ? p.wrong : "None"}</p>
                     </div>
 
-                    <p class="price">$${(p.priceCents / 100).toFixed(2)}</p>
+                    <p class="price">${convertPrice(p.priceCents)}</p>
                     
                     <div class="actions">
 
@@ -521,7 +521,7 @@ function renderMld (product) {
                     <div class="m-summ">
                         <div>
                             <h4>${truncateText(m.name)}</h4>
-                            <p>$${(m.priceCents / 100).toFixed(2)}</p>
+                            <p>${convertPrice(m.priceCents)}</p>
                         </div>
                         <div class="to-cart ${m.inCart ? 'bi-bag-heart in' : 'bi-bag'}" data-productId="${m.id}"></div>
                     </div>
@@ -538,7 +538,7 @@ function renderMld (product) {
                     <div class="m-summ">
                         <div>
                             <h4>${truncateText(m.name)}</h4>
-                            <p >$${(m.priceCents / 100).toFixed(2)}</p>
+                            <p >${convertPrice(m.priceCents)}</p>
                         </div>
                         <div class="to-cart ${m.inCart ? 'bi-bag-heart in' : 'bi-bag'}" data-productId="${m.id}"></div>
                     </div>
