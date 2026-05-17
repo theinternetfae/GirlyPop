@@ -86,7 +86,7 @@ export function getProductsStorage() {
             aesthetic: ["whimsy", "boho"],
             inCart: false,
             status: "bad",
-            wrong: "A whole in the skirt, nothing a patch can't fix",
+            wrong: "A hole in the skirt, nothing a patch can't fix",
         },
         {
             id: "14b6fc6f-327a-4ec4-896f-486349e85a3d",

@@ -42,7 +42,7 @@ function renderCart() {
                     <div class="cart-product-details">
                         <p><span>Name:</span> ${i.name}</p>
                         <p><span>Price:</span> <span class="price">$${(i.priceCents / 100).toFixed(2)}</span></p>
-                        <p><span>Fault:</span> ${i.fault || 'None'}</p>
+                        <p><span>Fault:</span> ${i.wrong ? i.wrong : 'None'}</p>
                     </div>
                 </div>
             </div>
