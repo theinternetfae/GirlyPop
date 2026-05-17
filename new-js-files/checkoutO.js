@@ -10,23 +10,31 @@ initializeNavBar();
 
 let products = getProductsStorage();
 
-function renderCart() {
+
+function getCartProducts() {
 
     const inCart = getCart();
+
     console.log("In the Cart:", inCart);
-
-    //Label
-    const cartLabel = document.querySelector('.cart-label');
-    cartLabel.innerHTML = `${inCart.length === 1 ? 'Item' : 'Items' }`;
-
-    const cartProductsCont = document.querySelector('.the-cart-products');
-
 
     const inCartProducts = [];
 
     inCart.forEach(i => {
         products.map(p => p.id === i && inCartProducts.push(p));
     })
+
+    return inCartProducts;
+}
+
+function renderCart() {
+
+    const inCartProducts = getCartProducts();
+
+    //Label
+    const cartLabel = document.querySelector('.cart-label');
+    cartLabel.innerHTML = `${inCartProducts.length === 1 ? 'Item' : 'Items' }`;
+
+    const cartProductsCont = document.querySelector('.the-cart-products');
 
     console.log("cartProductsCont:", cartProductsCont);
 
@@ -49,9 +57,10 @@ function renderCart() {
             
         `;
     });
+
 }
 
-renderCart();
+
 document.addEventListener('click', (e) => {
     
     const removeFrom = e.target.closest('.remove-from');
@@ -67,11 +76,12 @@ document.addEventListener('click', (e) => {
 
     products = products.map(p => p.id === itemId ? {...p, inCart: !p.inCart} : p);
         
+
     console.log("Updating products storage:", products);
     updateProductsStorage(products);
     
 
-    renderCart();
+    renderFullCart();
 })
 
 
@@ -82,94 +92,40 @@ document.addEventListener('click', (e) => {
 
 
 
-// const cartCount = getCartCount();
-// const cartCountText = document.querySelector('.cart-count p');
-// const pageCartCount = document.querySelector('.the-cart-text span');
-// cartCountText.textContent = cartCount;
-// pageCartCount.textContent = `${cartCount} item${cartCount === 1 ? '' : 's'}`;
 
-// function renderCart() {
-//     const cartStorage = getCartStorage();
-//     const itemsContainer = document.querySelector('.items-container');
-//     itemsContainer.innerHTML = '';
+function renderPrice() {
 
-//     cartStorage.forEach(item => {
-//         itemsContainer.innerHTML += `<div class="cart-item">
+    const inCartProducts = getCartProducts();
 
-//             <i class="bi bi-x-lg delete-button" data-product-id="${item.id}"></i>
+    const priceBreakdown = document.querySelector('.price-breakdown');
 
-//             <div class=cart-items-display>
-//                 <div class="product">
-//                     <img src="${item.image}" alt="">
-//                     <div class="product-info">
-//                         <h3>${item.name}</h3>
-//                         <p>Status: Perfect</p>
-//                         <p>Size: Medium</p>
-//                         <p>Location: Austen, Texas</p>
-//                         <p class="delivery-date">Delivery Date: August 20th</p>
-//                     </div>
-//                 </div>
+    let total = 0;
 
-//                 <div class="others">
-//                     <p class="price">$${(item.priceCents / 100).toFixed(2)}</p>
-//                     <p class="delivery">$5.40</p>
-//                     <p class="total" data-product-id="${item.id}">$25.90</p>
-//                 </div>
-//             </div>
+    priceBreakdown.innerHTML = '';
+    inCartProducts.forEach(i => {
+        priceBreakdown.innerHTML += `
+            <div class="price-b">
+                <p>${i.name}</p>
+                <p>$${(i.priceCents / 100).toFixed(2)}</p>
+            </div>
+        `
 
-//         </div>`;
-//     });
+        total += i.priceCents;
+    })
 
-//     const deleteItemBtn = document.querySelectorAll('.delete-button');
-
-//     deleteItemBtn.forEach(deleteBtn => {
-//         deleteBtn.addEventListener('click', () => {
-//             deleteFromCart(deleteBtn, pageCartCount);
-//             renderCart();
-//         });
-//     });
-
-//     console.log(cartStorage);
-//     totalProducts();
-// }
-
-// renderCart();
+    console.log(total)
+    priceBreakdown.innerHTML += `
+        <div class="price-total">
+            <p>TOTAL</p>
+            <p>$${(total / 100).toFixed(2)}</p>
+        </div>
+    `
+}
 
 
-// function totalProducts() {
-//     const delivery = '$5.40';
-//     const deliveryPrice = Number(delivery.replace('$', '')) * 100;
-//     const productTotal = document.querySelectorAll('.total');
-//     const theTotal = document.querySelector('.checkout-products');
-//     let testThree = 0;
-//     theTotal.innerHTML = '';
+function renderFullCart() {
+    renderCart();
+    renderPrice();
+}
 
-//     productTotal.forEach(total => {
-
-//         const productTotalId = total.dataset.productId;
-
-//         products.forEach(product => {
-
-//             if (productTotalId === product.id){
-//                 total.innerHTML = `$${((deliveryPrice + product.priceCents) / 100).toFixed(2)}`;
-
-//                 theTotal.innerHTML += `<div class="checkout-product">
-//                 <p>${product.name}</p>
-//                 <p>${total.textContent}</p>
-//                 </div>`;
-//             };
-
-//         });
-
-//         const test = total.textContent;
-//         const testTwo = Number(test.replace('$', '')) * 100;
-//         testThree += testTwo;
-//         document.querySelector('.overall-total').textContent = `$${(testThree / 100).toFixed(2)}`;
-//     });
-
-//     const cartStorage = getCartStorage();
-    
-//     if (cartStorage.length === 0) {
-//         document.querySelector('.overall-total').textContent = '$0.00';
-//     };
-// }
+renderFullCart();
