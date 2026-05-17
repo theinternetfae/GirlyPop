@@ -3,12 +3,12 @@
 // // import { Country, State, City } from "country-state-city";
 import { initializeNavBar } from "./General files/utilsO.js";
 import { getCart } from "./General files/storageO.js";
-import { getProductsStorage } from "./General files/productsO.js";
+import { getProductsStorage, updateProductsStorage } from "./General files/productsO.js";
 import { removeFromCart } from "./General files/utilsO.js";
 
 initializeNavBar();
 
-const products = getProductsStorage();
+let products = getProductsStorage();
 
 function renderCart() {
 
@@ -52,7 +52,27 @@ function renderCart() {
 }
 
 renderCart();
+document.addEventListener('click', (e) => {
+    
+    const removeFrom = e.target.closest('.remove-from');
 
+    e.stopPropagation();
+
+    if (!removeFrom) return;
+
+    const itemId = removeFrom.dataset.productid;
+
+    console.log("Removing from cart");
+    removeFromCart(itemId);
+
+    products = products.map(p => p.id === itemId ? {...p, inCart: !p.inCart} : p);
+        
+    console.log("Updating products storage:", products);
+    updateProductsStorage(products);
+    
+
+    renderCart();
+})
 
 
 
