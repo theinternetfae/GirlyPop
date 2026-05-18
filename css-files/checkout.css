@@ -786,6 +786,7 @@ footer {
 
     .checkout-body {
         width: 50%;
+        position: relative;
     }
 
     .the-cart {
@@ -873,6 +874,8 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 15px;
+        position: sticky;
+        top: 0;
     }
 
     .the-receipt .receipt-body .location {
