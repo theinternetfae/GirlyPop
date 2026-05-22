@@ -4,15 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your profile - GirlyPop</title>
+    <link rel="icon" type="image/svg+xml" href="./images/girlypop-favicon.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.4/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css-files/profile.css">
 </head>
+
 <body>
+    
+    <header>
 
-    <input type="file" accept="image">
-    <input type="text" placeholder="Name of product">
-    <input type="number" placeholder="Price">
-    <input type="text" placeholder="keywords" multiple>
+        <nav>
 
+            <div class="logo-box">
 
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search..." class="search-input" >
+                <button class="bi bi-search-heart find"></button>
+            </div>
+
+            <div class="navigations-sm">
+                <i class="bi bi-list burger"></i>
+                <div class="navs-sm"> 
+                    <p class="bi moves bi-house bi-filled">Home</p>
+                    <a href="checkout.html"><p class="bi moves bi-bag">Cart (<span class="cart-count"></span>)</p></a>
+                    <a href="profile.html"><p class="bi bi-person">Profile</p></a>
+                </div>
+            </div>
+
+            <div class="navigations">
+                
+                <a href="home.html">
+                    <button class="bi moves bi-house">
+    
+                    </button>
+                </a>
+                
+                <a href="checkout.html">
+                    <button class="bi moves bi-bag">
+                        <p class="cart-count"></p>
+                    </button>
+                </a>
+                
+                <button class="bi bi-person bi-filled">
+
+                </button>
+                
+            </div>
+        
+        </nav>
+
+        <div class="alert-cont">
+            <i class="bi bi-x-lg exit-alert"></i>
+            <p>Feature coming soon!</p>
+        </div>
+
+    </header>
 
 
 
@@ -38,4 +86,6 @@
         ] -->
     
 </body>
+
+<script type="module" src="./new-js-files/ProfileO.js"></script>
 </html>
