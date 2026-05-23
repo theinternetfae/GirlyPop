@@ -193,7 +193,6 @@ nav .navigations-sm .navs-sm a {
 
 
 main .user {
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -244,6 +243,38 @@ main .user button {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+main .route-cont {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main .route {
+    display: flex;
+    height: 70px;
+    cursor: pointer;
+    background: #CCCCCC;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    transition: .3s ease-in-out;
+}
+
+main .route:hover {
+    background: #c14e76;
+    color: white;
+}
+
+main .route-label {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 
@@ -430,6 +461,60 @@ main .user button {
 
     .out {
         transform: translateX(0);
+    }
+
+
+    main .user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    main .user .user-pic {
+        height: 200px;
+        width: 200px;
+        border-radius: 100%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    main .user .user-pic img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 100%;
+    }
+
+    main .user .user-details {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    main .user .user-details p {
+        color: grey;
+        font-size: 14px;
+    }
+
+    main .user button {
+        padding: 10px;
+        width: 50%;
+        font-weight: bold;
+        font-family: "Lexend Deca", sans-serif;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        background: #7e1036;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
     }
 
 }
