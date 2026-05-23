@@ -253,7 +253,21 @@ main .route-cont {
     gap: 10px;
 }
 
-main .route {
+main .route-cont:nth-child(3)::before {
+    content: 'Preferences';
+    color: #CCCCCC;
+    border-top: 2px solid #CCCCCC;
+    padding-top: 10px;
+}
+
+main .route-cont:nth-child(4)::before {
+    content: 'Support';
+    color: #CCCCCC;
+    border-top: 2px solid #CCCCCC;
+    padding-top: 10px;
+}
+
+main .route-cont .route {
     display: flex;
     height: 70px;
     cursor: pointer;
@@ -266,17 +280,46 @@ main .route {
     transition: .3s ease-in-out;
 }
 
-main .route:hover {
+main .route-cont .route:hover {
     background: #c14e76;
+}
+
+main .route-cont .route:hover p {
     color: white;
 }
 
-main .route-label {
+main .route-cont .route:hover .white {
+    color: white;
+}
+
+main .route-cont .route .route-label {
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
+main  .route-cont .route .mode-toggle {
+    width: 140px;
+    border-radius: 10px;
+    background: #999999;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5) inset;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+main  .route-cont .route .mode-toggle .toggle-switch {
+    height: 90%;
+    width: 30px;
+    background: white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #CB8400;
+}
 
 
 
