@@ -319,8 +319,35 @@ main  .route-cont .route .mode-toggle .toggle-switch {
     align-items: center;
     justify-content: center;
     color: #CB8400;
+    transition: .5s ease-in-out;
 }
 
+main  .route-cont .route .mode-toggle .toggle-switch.slide {
+    transform: translateX(100px);
+}
+
+
+/* FOOTER CODE*/
+
+footer {
+    background: #7e1036;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.contact {
+    display: flex;
+    gap: 15px;
+}
+
+.contact .bi {
+    cursor: pointer;
+}
 
 
 

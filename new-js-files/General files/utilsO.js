@@ -94,28 +94,30 @@ export function initializeNavBar() {
 
 
     //ALERT 
-    const soon = document.querySelectorAll(".soon");
-    const alert = document.querySelector(".alert-cont");
-    const exit = document.querySelector(".exit-alert");
+    document.addEventListener('click', (e) => {
+        const soon = e.target.closest(".soon");
 
-    soon.forEach(s => {
-        s.addEventListener("click", (e) => {
-            e.preventDefault();
-            if(alert.classList.contains('out')) {
-                return;
-            } else {
-                if(navsSm.classList.contains('show')){
-                    navsSm.classList.remove('show');
-                }
-                alert.classList.add('out');
-                automaticClear(alert);
+        if (!soon) return;
+        
+        e.preventDefault();
+        const alert = document.querySelector(".alert-cont");
+        const exit = document.querySelector(".exit-alert");
+
+        if(alert.classList.contains('out')) {
+            return;
+        } else {
+            if(navsSm.classList.contains('show')){
+                navsSm.classList.remove('show');
             }
-        })
-    })
+            alert.classList.add('out');
+            automaticClear(alert);
+        }
 
-    exit.addEventListener("click", () => {
-        console.log("Exit clicked");
-        alert.classList.remove('out');
+        exit.addEventListener("click", () => {
+            console.log("Exit clicked");
+            alert.classList.remove('out');
+        })
+
     })
 
 }
