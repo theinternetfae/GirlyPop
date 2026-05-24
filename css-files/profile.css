@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 /* font-family: "Lexend Deca", sans-serif; */
 
+:root {
+    --base-color: #7e1036;
+}
+
+.darkmode {
+    --base-color: #c14e76
+}
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -236,7 +244,7 @@ main .user button {
     color: white;
     border-radius: 10px;
     border: none;
-    background: #7e1036;
+    background: var(--base-color);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     display: flex;
     gap: 8px;
@@ -578,7 +586,7 @@ footer {
         color: white;
         border-radius: 10px;
         border: none;
-        background: #7e1036;
+        background: var(--base-color);
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
         display: flex;
         gap: 8px;
