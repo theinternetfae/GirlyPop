@@ -541,7 +541,6 @@ footer {
         transform: translateX(0);
     }
 
-
     main .user {
         display: flex;
         flex-direction: column;
