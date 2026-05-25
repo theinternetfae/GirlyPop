@@ -491,6 +491,8 @@ footer {
         justify-content: center;
     }
 
+
+    /*ALERT CODE*/
     .alert-cont {
         position: fixed;
         margin-top: 80px;

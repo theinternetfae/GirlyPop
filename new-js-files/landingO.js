@@ -1,4 +1,4 @@
-import { setTheme } from "./General files/utilsO";
+import { setTheme } from "./General files/utilsO.js";
 
 
 setTheme();

@@ -29,13 +29,9 @@ function togglingTheme() {
 
         e.stopPropagation();
 
-        console.log('Mode toggled!:', isOn);
-
         isOn = !isOn;
         setDark(isOn);
-
-        console.log('Mode toggled! New:', isOn);
-
+        
         modeSwitch.classList.toggle('slide', isOn);
 
         theBody.classList.toggle('darkmode', isOn);
