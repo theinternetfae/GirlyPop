@@ -1,5 +1,5 @@
 import { getProductsStorage } from "./productsO.js";
-import { getCart, setCart } from "./storageO.js";
+import { getCart, getDark, setCart } from "./storageO.js";
 // import { cartCountStorage, cartStorageDisplay, getSavedCartButtonState, saveCartButtonState } from "./storageO.js";
 
 const products = getProductsStorage();
@@ -144,7 +144,13 @@ export function convertPrice(price) {
 }
 
 
+export function setTheme() {
+    const isOn = getDark();
 
+    const theBody = document.querySelector('.the-body');
+
+    isOn && theBody.classList.add('darkmode');
+}
 
 
 

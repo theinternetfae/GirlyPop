@@ -1,27 +1,53 @@
-import { initializeNavBar } from "./General files/utilsO.js";
+import { getDark, setDark } from "./General files/storageO.js";
+import { initializeNavBar, setTheme } from "./General files/utilsO.js";
 
+setTheme();
 initializeNavBar();
-const modeToggle = document.querySelector('.mode-toggle');
-const modeSwitch = document.querySelector('.toggle-switch');
-const theBody = document.querySelector('.the-body');
 
-modeToggle.addEventListener('click', (e) => {
+function togglingTheme() {
 
-    modeSwitch.classList.remove('bi-brightness-high-fill');
+    let isOn = getDark();
+    const modeToggle = document.querySelector('.mode-toggle');
 
-    e.stopPropagation();
+    modeToggle.innerHTML = `<div class="toggle-switch 
+        ${isOn ? 'bi-moon-fill' : 'bi bi-brightness-high-fill'} 
+        ${isOn ? 'slide' : ''}"
+        
+        style='
+            color: ${isOn ? '#CCCCCC' : '#CB8400'};
+        '>
 
-    console.log('Mode toggled!');
-    modeSwitch.classList.toggle('slide');
+    </div>`;
 
-    const isOn = modeSwitch.classList.contains('slide');
-
-    theBody.classList.toggle('darkmode', isOn);
     
-    modeSwitch.classList.toggle('bi-moon-fill', isOn);
-    modeSwitch.classList.toggle('bi-brightness-high-fill', !isOn);
+    const modeSwitch = document.querySelector('.toggle-switch');
+    const theBody = document.querySelector('.the-body');
 
-    modeSwitch.style.color = `${isOn ? 'grey' : '#CB8400'}`
+    modeToggle.addEventListener('click', (e) => {
 
-});
+        modeSwitch.classList.remove('bi-brightness-high-fill');
 
+        e.stopPropagation();
+
+        console.log('Mode toggled!:', isOn);
+
+        isOn = !isOn;
+        setDark(isOn);
+
+        console.log('Mode toggled! New:', isOn);
+
+        modeSwitch.classList.toggle('slide', isOn);
+
+        theBody.classList.toggle('darkmode', isOn);
+
+
+        modeSwitch.classList.toggle('bi-moon-fill', isOn);
+        modeSwitch.classList.toggle('bi-brightness-high-fill', !isOn);
+
+        modeSwitch.style.color = `${isOn ? '#CCCCCC' : '#CB8400'}`
+
+    });
+
+}
+
+togglingTheme();

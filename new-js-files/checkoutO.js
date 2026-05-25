@@ -1,11 +1,12 @@
 // import { products } from "./General files/productsO.js";
 // import { getCartCount, getCartStorage, deleteFromCart } from "./General files/utilsO.js";
 // // import { Country, State, City } from "country-state-city";
-import { convertPrice, initializeNavBar } from "./General files/utilsO.js";
+import { convertPrice, initializeNavBar, setTheme } from "./General files/utilsO.js";
 import { getCart } from "./General files/storageO.js";
 import { getProductsStorage, updateProductsStorage } from "./General files/productsO.js";
 import { removeFromCart } from "./General files/utilsO.js";
 
+setTheme();
 initializeNavBar();
 
 let products = getProductsStorage();

@@ -1,7 +1,7 @@
-// import { updateCartCount, featuredProducts } from "./General files/utilsO.js";
+import { setTheme } from "./General files/utilsO";
 
-// featuredProducts();
-// updateCartCount();
+
+setTheme();
 
 const burger = document.querySelector(".burger");
 const smallNavs = document.querySelector(".small-nav-cont");

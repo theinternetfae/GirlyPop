@@ -288,18 +288,6 @@ main .route-cont .route {
     transition: .3s ease-in-out;
 }
 
-main .route-cont .route:hover {
-    background: #c14e76;
-}
-
-main .route-cont .route:hover p {
-    color: white;
-}
-
-main .route-cont .route:hover .white {
-    color: white;
-}
-
 main .route-cont .route .route-label {
     display: flex;
     gap: 10px;

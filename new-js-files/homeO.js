@@ -1,9 +1,8 @@
 import { getProductsStorage, updateProductsStorage } from "./General files/productsO.js";
 import { getCart } from "./General files/storageO.js";
-import { truncateText, randomGenerator, initializeNavBar, addToCart, removeFromCart, convertPrice } from "./General files/utilsO.js";
-// import { updateCartCount, featuredProducts, updateCartShove } from "./General files/utilsO.js";
+import { truncateText, randomGenerator, initializeNavBar, addToCart, removeFromCart, convertPrice, setTheme } from "./General files/utilsO.js";
 
-
+setTheme();
 initializeNavBar();
 
 //RENDERING SEARCH FINDINGS (home)
