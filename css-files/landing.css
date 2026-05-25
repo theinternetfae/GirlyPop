@@ -389,78 +389,144 @@ footer {
 }
 
 
-/* 
-
-.container {
-    border: 2px solid red;
-}
- */
-
 /*SECTION 1 CODE BELOW*/
 
-/* .intro-landing {
-    height: 90vh;
-    padding: 20px 20px 20px 20px;
+.intro-landing {
+    height: 100vh;
+    padding: 10px;
+    justify-content: space-around;
+    margin: 10px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .intro-landing .intro-box {
-    width: 50%;
-    padding: 20px 20px 0px 20px;
+    padding: 10px;
+    width: 100%;
 }
 
 .intro-landing .intro-box-one {
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    gap: 25px;
+    align-items: center;
+    gap: 15px;
 }
 
+
 .intro-landing .intro-box-one h1 {
-    font-size: 40px;
-    width: 80%;
+    font-size: 20px;
+    text-align: center;
 }
 
 .intro-landing .intro-box-one p {
-    font-size: 15px;
+    font-size: 12px;
+    text-align: center;
 }
 
-.intro-landing .intro-decision {
+.intro-landing .intro-box-one .intro-decision {
     display: flex;
     gap: 30px;
 }
 
-.intro-landing .intro-decision button {
+.intro-landing .intro-box-one .intro-decision button {
     display: flex;
-    height: 70px;
-    width: 200px;
+    height: 40px;
+    width: 150px;
     padding: 10px;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    font-size: 30px;
+    font-size: 15px;
     border-radius: 10px;
     border: none;
     transition: .3s ease;
     cursor: pointer;
-    border: 2px solid light-dark(#7e1036, white);
+    border: 2px solid #7e1036;
+    /* border: 2px solid light-dark(#7e1036, white); */
     box-shadow: 0 0 2px grey;
 }
 
-.intro-landing .intro-decision .button-one {
-    background: light-dark(#7e1036, white);
-    color: light-dark(white, #7e1036);
+.intro-landing .intro-box-one .intro-decision .button-one {
+    background: #7e1036;
+    /* background: light-dark(#7e1036, white); */
+    color: white;
+    /* color: light-dark(white, #7e1036); */
 }
 
-.intro-landing .intro-decision .button-two {
+.intro-landing .intro-box-one .intro-decision .button-two {
     background: transparent;
-    color: light-dark(#7e1036, white);
+    color: #7e1036;
+    /* color: light-dark(#7e1036, white); */
 }
 
-.intro-landing .intro-decision button:active {
+.intro-landing .intro-box-one .intro-decision button:active {
     scale: 0.90;
 }
 
+.intro-landing .intro-box-two {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-landing .intro-box-two .design-circle {
+    position: absolute;
+    height: 300px;
+    width: 80%;
+    border-radius: 100%;
+    background: linear-gradient(to bottom, #7e1036, #c14e76);
+    -webkit-background-composite: linear-gradient(to bottom, #7e1036, #c14e76);
+}
+
+.intro-landing .intro-box-two img {
+    height: 300px;
+    width: 200px;
+    z-index: 20;
+}
+
+.intro-landing .intro-box-two .design-writeup {
+    position: absolute;
+    z-index: 30;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.intro-landing .intro-box-two .design-writeup div {
+    display: flex;
+    width: 75%;
+    align-items: center;
+}
+
+.intro-landing .intro-box-two .design-writeup div p {
+    width: 80px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.596);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(10px);
+    font-weight: 600;
+    color: #7e1036;
+    transition: .3s ease-in-out;
+}
+
+.intro-landing .intro-box-two .design-writeup div p:hover {
+    transform: translateY(-10px);
+} 
+
+.intro-landing .intro-box-two .design-writeup .off {
+    justify-content: end;
+}
+
+/* 
 .intro-landing .intro-box-two {
     position: relative;
     display: flex;
@@ -525,6 +591,23 @@ footer {
     transform: translateY(-10px);
 } */
 
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+.container {
+    border: 2px solid red;
+}
+ */
 
 
 

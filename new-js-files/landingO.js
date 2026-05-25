@@ -12,8 +12,6 @@ burger.addEventListener("click", (e) => {
 })
 
 
-
-
 const soon = document.querySelectorAll(".soon");
 const alert = document.querySelector(".alert-cont");
 const exit = document.querySelector(".exit-alert");
