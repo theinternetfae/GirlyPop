@@ -1,6 +1,5 @@
 import { setTheme } from "./General files/utilsO.js";
 
-
 setTheme();
 
 const burger = document.querySelector(".burger");
