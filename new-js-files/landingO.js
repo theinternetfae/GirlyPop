@@ -11,7 +11,6 @@ burger.addEventListener("click", (e) => {
     smallNavs.classList.toggle('show');
 })
 
-
 const soon = document.querySelectorAll(".soon");
 const alert = document.querySelector(".alert-cont");
 const exit = document.querySelector(".exit-alert");
