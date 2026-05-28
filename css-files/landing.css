@@ -1000,6 +1000,7 @@ footer {
         display: flex;
         align-items: center;
         gap: 10px;
+        justify-content: space-around;
         background: white;
         color: #7e1036;
     }
