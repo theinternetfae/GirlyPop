@@ -3,10 +3,18 @@
 
 :root {
     --base-color: #7e1036;
+    --background-color: #FAF9F6;
+    --navbg-color: #FFFFFF; 
+    --accent-color: #CCCCCC;
+    --text-color: #000000;
 }
 
 .darkmode {
-    --base-color: #c14e76
+    --base-color: #c14e76;
+    --background-color: #121212;
+    --navbg-color: #FFFFF0;
+    --accent-color: #FFFFFF;
+    --text-color: #FFFFFF;
 }
 
 * {
@@ -17,7 +25,7 @@
 body {
     height: 100%;
     font-family: "Lexend Deca", sans-serif;
-    background: #FAF9F6;
+    background: var(--background-color);
 }
 
 .site {
@@ -40,7 +48,7 @@ nav {
     align-items: center;
     height: 50px;
     justify-content: space-between;
-    background: white;
+    background: var(--navbg-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -263,15 +271,15 @@ main .route-cont {
 
 main .route-cont:nth-child(3)::before {
     content: 'Preferences';
-    color: #CCCCCC;
-    border-top: 2px solid #CCCCCC;
+    color: var(--accent-color);
+    border-top: 2px solid var(--accent-color);
     padding-top: 10px;
 }
 
 main .route-cont:nth-child(4)::before {
     content: 'Support';
-    color: #CCCCCC;
-    border-top: 2px solid #CCCCCC;
+    color: var(--accent-color);
+    border-top: 2px solid var(--accent-color);
     padding-top: 10px;
 }
 
@@ -279,7 +287,7 @@ main .route-cont .route {
     display: flex;
     height: 70px;
     cursor: pointer;
-    background: #CCCCCC;
+    background: var(--accent-color);
     padding: 10px;
     border-radius: 10px;
     justify-content: space-between;
@@ -381,7 +389,7 @@ footer {
         position: sticky;
         top: 0;
         z-index: 50;
-        background: white;
+        background: var(--navbg-color);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
@@ -562,6 +570,10 @@ footer {
         gap: 5px;
     }
 
+    main .user .user-details h2 {
+        color: var(--text-color);
+    }
+
     main .user .user-details p {
         color: grey;
         font-size: 14px;
@@ -598,7 +610,7 @@ footer {
         top: 0;
         z-index: 50;
         padding: 0 10px;
-        background: white;
+        background: var(--navbg-color);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
