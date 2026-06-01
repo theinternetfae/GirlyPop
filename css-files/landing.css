@@ -575,6 +575,7 @@ footer {
     padding: 10px;
     background: #F48FB1;
     align-items: center;
+    font-size: 14px;
 }
 
 .testimonial-sect::-webkit-scrollbar {
@@ -585,6 +586,16 @@ footer {
     display: flex;
     gap: 10px;
     padding-right: 10px;
+    animation: spin 30s infinite linear;
+}
+
+@keyframes spin {
+    from {translate: 0;}
+    to {translate: -100%;}
+}
+
+.testimonial-sect:hover .testimonial-cont {
+    animation-play-state: paused!important;
 }
 
 .testimonial-sect .testimonial-cont .testimonial-block {
