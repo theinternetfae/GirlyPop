@@ -113,6 +113,10 @@ nav .small-screen-nav .small-navigations-link a {
     text-decoration: none;
 }
 
+nav .small-screen-nav .burger {
+    font-size: 20px;
+}
+
 
 footer {
     background: #7e1036;
@@ -474,7 +478,94 @@ footer {
     color: #7e1036;
 }
 
+.userexp-landing {
+    padding: 10px;
+    justify-content: space-around;
+    margin: 80px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.userexp-landing h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.userexp-landing .buysell-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.userexp-landing .buysell-cont .buyer-seller {
+    width: 80%;
+    border-radius: 10px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.userexp-landing .buysell-cont .buy {
+    background:  linear-gradient(to top, #F48FB1, #E91E63);
+}
+
+.userexp-landing .buysell-cont .sell {
+    background:  linear-gradient(to top, #9560D2, #7528CC);
+}
+
+.userexp-landing .buysell-cont .buyer-seller img {
+    height: 300px;
+}
+
+.userexp-landing .buysell-cont .buyer-seller .entails {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    color: white;
+    gap: 10px;
+}
+
+.userexp-landing .buysell-cont .buyer-seller .entails .entails-words {
+    width: 90%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.userexp-landing .buysell-cont .buyer-seller .entails .entails-words div {
+    width: 150px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.596);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(10px);
+    font-weight: 600;
+    color: #7e1036;
+    transition: .3s ease-in-out;
+}
+    
+
+.userexp-landing .buysell-cont .buyer-seller .entails .entails-words div:hover {
+    transform: translateY(-10px);
+}  
+
+
+.userexp-landing .buysell-cont .buyer-seller .entails .entails-words .end {
+    align-self: flex-end;
+}
 
 
 
@@ -530,8 +621,8 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
-        
     }
+    
     .intro-landing .intro-box {
         padding: 10px;
         width: 100%;
