@@ -11,9 +11,9 @@
 
 .darkmode {
     --base-color: #c14e76;
-    --background-color: #121212;
+    --background-color: #121212 ;
     --navbg-color: #FFFFF0;
-    --accent-color: #FFFFFF;
+    --accent-color: #FFFFFF;  
     --text-color: #FFFFFF;
 }
 
