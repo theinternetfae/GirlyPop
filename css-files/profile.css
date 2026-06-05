@@ -2,20 +2,58 @@
 /* font-family: "Lexend Deca", sans-serif; */
 
 :root {
-    --base-color: #7e1036;
+    --base-accent: #7e1036;
     --background-color: #FAF9F6;
     --navbg-color: #FFFFFF; 
-    --accent-color: #CCCCCC;
+    --secondary-accent: #CCCCCC;
     --text-color: #000000;
 }
 
+
 .darkmode {
-    --base-color: #c14e76;
-    --background-color: #121212 ;
-    --navbg-color: #FFFFF0;
-    --accent-color: #FFFFFF;  
-    --text-color: #FFFFFF;
+    --base-accent: #C14E76;
+    --background-color: #121015;
+    --navbg-color: #1B1820;
+    --secondary-accent: #2D2833;
+    --text-color: #F3F0F5;
 }
+
+/*DARK MODE OPTION 2*/
+/* .darkmode {
+    --base-accent: #C14E76;
+    --background-color: #151216;
+    --navbg-color: #211C22;
+    --secondary-accent: #3A313B;
+    --text-color: #F6F0F4;
+} */
+
+/*DARK MODE OPTION 3*/
+/* .darkmode {
+    --base-accent: #F472B6;
+    --background-color: #151217;
+    --navbg-color: #201A22;
+    --secondary-accent: #332A35;
+    --text-color: #FFF7FB;
+} */
+
+/*DARKMODE VENDOR EDITION (GREEN)*/
+/* .darkmode {
+    --base-accent: #6EE7B7;
+    --background-color: #0F1412;
+    --navbg-color: #18201C;
+    --secondary-accent: #28312D;
+    --text-color: #F4FFF8;
+} */
+
+/*DARKMODE VENDOR EDITION (PURPLE)*/
+/* .darkmode {
+    --base-accent: #B794F4;
+    --background-color: #111018;
+    --navbg-color: #1A1924;
+    --secondary-accent: #2A2938;
+    --text-color: #F7F5FF;
+} */
+
 
 * {
     margin: 0;
@@ -24,6 +62,7 @@
 
 body {
     height: 100%;
+    color: var(--text-color);
     font-family: "Lexend Deca", sans-serif;
     background: var(--background-color);
 }
@@ -252,7 +291,7 @@ main .user button {
     color: white;
     border-radius: 10px;
     border: none;
-    background: var(--base-color);
+    background: var(--base-accent);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     display: flex;
     gap: 8px;
@@ -271,15 +310,15 @@ main .route-cont {
 
 main .route-cont:nth-child(3)::before {
     content: 'Preferences';
-    color: var(--accent-color);
-    border-top: 2px solid var(--accent-color);
+    color: var(--secondary-accent);
+    border-top: 2px solid var(--secondary-accent);
     padding-top: 10px;
 }
 
 main .route-cont:nth-child(4)::before {
     content: 'Support';
-    color: var(--accent-color);
-    border-top: 2px solid var(--accent-color);
+    color: var(--secondary-accent);
+    border-top: 2px solid var(--secondary-accent);
     padding-top: 10px;
 }
 
@@ -287,7 +326,7 @@ main .route-cont .route {
     display: flex;
     height: 70px;
     cursor: pointer;
-    background: var(--accent-color);
+    background: var(--secondary-accent);
     padding: 10px;
     border-radius: 10px;
     justify-content: space-between;
@@ -587,7 +626,7 @@ footer {
         color: white;
         border-radius: 10px;
         border: none;
-        background: var(--base-color);
+        background: var(--base-accent);
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
         display: flex;
         gap: 8px;
