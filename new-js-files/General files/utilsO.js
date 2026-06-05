@@ -22,12 +22,7 @@ export function randomGenerator(eligible) {
 
 //GENERAL NAVIGATIONS FUNCTIONS
 export function initializeNavBar() {
-
-    const isOn = getDark();
-    //SETTING LOGO
-    const logoBox = document.querySelector('.logo-box');
-    logoBox.style.backgroundImage = `${isOn ? 'url(../images/white-logo.png)' : 'url(../images/pink-logo.png)'}`
-
+    
     //TOGGLING NAVIGATIONS DISPLAY
     const moves = document.querySelectorAll(".moves");
 
