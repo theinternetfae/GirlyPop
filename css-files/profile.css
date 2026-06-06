@@ -8,9 +8,9 @@
     --secondary-accent: #CCCCCC;
     --text-color: #000000;
     --secondarytext-color: #7e1036;
+    --blurbase-color: #7e1036f6;
     --logo-img: url(../images/pink-logo.png);
 }
-
 
 .darkmode {
     --base-accent: #C14E76;
@@ -19,6 +19,7 @@
     --secondary-accent: #2D2833;
     --text-color: #F3F0F5;
     --secondarytext-color: #FFFFFF;
+    --blurbase-color: #c14e76ef;
     --logo-img: url(../images/white-logo.png);
 }
 
@@ -157,7 +158,7 @@ nav .navigations {
 nav .navigations-sm {
     width: 10%;
     height: 60%;
-    color: #7e1036;
+    color: var(--base-accent);
     font-size: 16px;
     display: flex;
     flex-direction: column;
@@ -171,44 +172,57 @@ nav .burger:active {
     transform: scale(.90);
 }
 
-nav .navigations-sm .navs-sm {
+.navs-sm {
     display: none;
-    position: absolute;
-    top: 40px;
-    left: -92px;
     flex-direction: column;
-    height: 90px;
-    background: white;
-    border-radius: 0px 0px 0 10px;
-    width: 135px;
-    font-size: 14px;
-    align-items: center;
-    justify-content: space-around;
-    border-left: 2px solid #7e1036;
-    border-bottom: 2px solid #7e1036;
+    gap: 15px;
+    position: fixed;
+    z-index: 50;
+    width: 80%;
+    height: 100%;
+    justify-self: end;
+    padding: 20px;
+    background: var(--blurbase-color);
+    backdrop-filter: blur(2px);
+    border-radius: 10px 0 0 10px;
+    transition: .3s ease-in-out;
 }
 
-.navs-sm.show {
-    display: block !important;
-}
-
-nav .navigations-sm .navs-sm .bi-filled {
-    background: #7e1036;
+.navs-sm .bi-x-lg {
+    align-self: flex-end;
     color: white;
 }
 
-nav .navigations-sm .navs-sm p {
+.navs-sm .navs-sm-moves {
     display: flex;
-    gap: 5px;
-    width: 100%;
-    padding: 5px;
-    justify-content: center;
+    height: 30%;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-nav .navigations-sm .navs-sm a {
-    color: #7e1036;
+.navs-sm .navs-sm-moves p {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.navs-sm .navs-sm-moves a {
+    color: white;
     text-decoration: none;
 }
+
+.navs-sm .bi-filled {
+    background: #7e1036;
+    color: white;
+    background: white;
+    color: var(--base-accent);
+}
+
+.navs-sm.show {
+    display: flex;
+}
+
 
 /*ALERT*/
 
@@ -218,12 +232,12 @@ nav .navigations-sm .navs-sm a {
     align-self: flex-end;
     z-index: 80;
     width: 45%;
-    border: 4px solid #7e1036;
+    border: 4px solid var(--base-accent);
     padding: 10px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    background: white;
+    background: var(--navbg-color);
     transition: .5s ease-in-out;
     font-size: 12px;
     transform: translateX(700px);
@@ -238,7 +252,7 @@ nav .navigations-sm .navs-sm a {
     cursor: pointer;
     align-self: end;
     font-weight: 900;
-    color: #7e1036;
+    color: var(--base-accent);
     text-align: end;
 }
 
@@ -346,7 +360,7 @@ main .route-cont .route .route-label {
 }
 
 main  .route-cont .route .mode-toggle {
-    width: 140px;
+    width: 100px;
     border-radius: 10px;
     background: #999999;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.5) inset;
@@ -370,7 +384,7 @@ main  .route-cont .route .mode-toggle .toggle-switch {
 }
 
 main  .route-cont .route .mode-toggle .toggle-switch.slide {
-    transform: translateX(100px);
+    transform: translateX(60px);
 }
 
 
@@ -423,6 +437,14 @@ footer {
 
 
 @media (min-width: 768px) {
+
+    main  .route-cont .route .mode-toggle {
+        width: 140px;
+    }
+
+    main  .route-cont .route .mode-toggle .toggle-switch.slide {
+        transform: translateX(100px);
+    }
 
     nav {
         display: flex;
@@ -496,7 +518,7 @@ footer {
     nav .navigations-sm {
         width: 10%;
         height: 60%;
-        color: #7e1036;
+        color: var(--base-accent);
         font-size: 20px;
         display: flex;
         align-items: center;
@@ -507,7 +529,7 @@ footer {
     nav .navigations-sm:active {
         transform: scale(.90);
     }
-
+/* 
     nav .navigations-sm .navs-sm {
         display: none;
         position: absolute;
@@ -540,7 +562,7 @@ footer {
         width: 100%;
         padding: 5px;
         justify-content: center;
-    }
+    } */
 
 
     /*ALERT CODE*/
@@ -550,12 +572,12 @@ footer {
         align-self: flex-end;
         z-index: 80;
         width: 30%;
-        border: 4px solid #7e1036;
+        border: 4px solid var(--base-accent);
         padding: 10px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
-        background: white;
+        background: var(--navbg-color);
         transition: .5s ease-in-out;
         font-size: 14px;
         transform: translateX(700px);
@@ -570,7 +592,7 @@ footer {
         cursor: pointer;
         align-self: end;
         font-weight: 900;
-        color: #7e1036;
+        color: var(--base-accent);
         text-align: end;
     }
 

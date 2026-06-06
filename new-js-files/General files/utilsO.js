@@ -39,7 +39,14 @@ export function initializeNavBar() {
 
     burger.addEventListener("click", (e) => {
         e.preventDefault();
-        navsSm.classList.toggle('show');
+        navsSm.classList.add('show');
+    
+        const removeBurger = document.querySelector(".remove-burger");
+
+        removeBurger.addEventListener("click", (e) => {
+            e.preventDefault();
+            navsSm.classList.remove('show');
+        })
     })
 
     //SEARCH-BOX LOGIC
