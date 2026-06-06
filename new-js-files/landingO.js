@@ -3,12 +3,19 @@ import { setTheme } from "./General files/utilsO.js";
 setTheme();
 
 const burger = document.querySelector(".burger");
-const smallNavs = document.querySelector(".small-nav-cont");
+const navsSm = document.querySelector(".navs-sm");
 
 burger.addEventListener("click", (e) => {
     e.preventDefault();
     console.log("Burger clicked!");
-    smallNavs.classList.toggle('show');
+    navsSm.classList.toggle('show');
+
+    const removeBurger = document.querySelector(".remove-burger");
+
+    removeBurger.addEventListener("click", (e) => {
+        e.preventDefault();
+        navsSm.classList.remove('show');
+    })
 })
 
 const soon = document.querySelectorAll(".soon");
@@ -21,8 +28,8 @@ soon.forEach(s => {
         if(alert.classList.contains('out')) {
             return;
         } else {
-            if(smallNavs.classList.contains('show')){
-                smallNavs.classList.remove('show');
+            if(navsSm.classList.contains('show')){
+                navsSm.classList.remove('show');
             }
             alert.classList.add('out');
             automaticClear();
