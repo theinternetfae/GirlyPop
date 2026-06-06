@@ -1,65 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 /* font-family: "Lexend Deca", sans-serif; */
 
-:root {
-    --base-accent: #7e1036;
-    --background-color: #FAF9F6;
-    --navbg-color: #FFFFFF; 
-    --secondary-accent: #CCCCCC;
-    --text-color: #000000;
-    --secondarytext-color: #7e1036;
-    --blurbase-color: #7e1036f6;
-    --logo-img: url(../images/pink-logo.png);
-}
-
-.darkmode {
-    --base-accent: #C14E76;
-    --background-color: #121015;
-    --navbg-color: #1B1820;
-    --secondary-accent: #2D2833;
-    --text-color: #F3F0F5;
-    --secondarytext-color: #FFFFFF;
-    --blurbase-color: #c14e76ef;
-    --logo-img: url(../images/white-logo.png);
-}
-
-/*DARK MODE OPTION 2*/
-/* .darkmode {
-    --base-accent: #C14E76;
-    --background-color: #151216;
-    --navbg-color: #211C22;
-    --secondary-accent: #3A313B;
-    --text-color: #F6F0F4;
-} */
-
-/*DARK MODE OPTION 3*/
-/* .darkmode {
-    --base-accent: #F472B6;
-    --background-color: #151217;
-    --navbg-color: #201A22;
-    --secondary-accent: #332A35;
-    --text-color: #FFF7FB;
-} */
-
-/*DARKMODE VENDOR EDITION (GREEN)*/
-/* .darkmode {
-    --base-accent: #6EE7B7;
-    --background-color: #0F1412;
-    --navbg-color: #18201C;
-    --secondary-accent: #28312D;
-    --text-color: #F4FFF8;
-} */
-
-/*DARKMODE VENDOR EDITION (PURPLE)*/
-/* .darkmode {
-    --base-accent: #B794F4;
-    --background-color: #111018;
-    --navbg-color: #1A1924;
-    --secondary-accent: #2A2938;
-    --text-color: #F7F5FF;
-} */
-
-
 * {
     margin: 0;
     box-sizing: border-box;
@@ -213,7 +154,6 @@ nav .burger:active {
 }
 
 .navs-sm .bi-filled {
-    background: #7e1036;
     color: white;
     background: white;
     color: var(--base-accent);

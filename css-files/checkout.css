@@ -8,8 +8,9 @@
 
 body {
     height: 100%;
+    color: var(--text-color);
     font-family: "Lexend Deca", sans-serif;
-    background: #FAF9F6;
+    background: var(--background-color);
 }
 
 .site {
@@ -32,14 +33,14 @@ nav {
     align-items: center;
     height: 50px;
     justify-content: space-between;
-    background: white;
+    background: var(--navbg-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 nav .logo-box {
     width: 80px;
     height: 80%;
-    background-image: url(../images/pink-logo.png);
+    background-image: var(--logo-img);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;   
@@ -50,7 +51,7 @@ nav .search-bar {
     height: 60%;
     padding: 5px;
     border-radius: 10px;
-    background: #7e1036;
+    background: var(--base-accent);
     display: flex;
     align-items: center;
     color: white;
@@ -98,7 +99,7 @@ nav .navigations {
 nav .navigations-sm {
     width: 10%;
     height: 60%;
-    color: #7e1036;
+    color: var(--base-accent);
     font-size: 16px;
     display: flex;
     flex-direction: column;
@@ -154,7 +155,6 @@ nav .burger:active {
 }
 
 .navs-sm .bi-filled {
-    background: #7e1036;
     color: white;
     background: white;
     color: var(--base-accent);
@@ -173,12 +173,12 @@ nav .burger:active {
     align-self: flex-end;
     z-index: 80;
     width: 45%;
-    border: 4px solid #7e1036;
+    border: 4px solid var(--base-accent);
     padding: 10px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    background: white;
+    background: var(--navbg-color);
     transition: .5s ease-in-out;
     font-size: 12px;
     transform: translateX(700px);
@@ -193,7 +193,7 @@ nav .burger:active {
     cursor: pointer;
     align-self: end;
     font-weight: 900;
-    color: #7e1036;
+    color: var(--base-accent);
     text-align: end;
 }
 
@@ -245,14 +245,14 @@ main {
 .the-cart .cart-product {
     border-radius: 10px;
     padding: 10px;
-    background: white;
+    background: var(--navbg-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
 }
 
 .the-cart .cart-product .bi {
-    color: #7e1036;
+    color: var(--base-accent);
     font-weight: bold;
     align-self: flex-end;
     cursor: pointer;
@@ -282,7 +282,7 @@ main {
 }
 
 .the-cart .cart-product .cart-product-info .cart-product-details .price {
-    color: #7e1036;
+    color: var(--base-accent);
 }
 
 
@@ -293,7 +293,7 @@ main {
 }
 
 .the-receipt .receipt-body {
-    background: white;
+    background: var(--navbg-color);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 10px;
@@ -324,8 +324,9 @@ main {
 }
 
 .the-receipt .receipt-body .location .location-deets .loc-det{
-    background: #CCCCCC;
+    background: var(--secondary-accent);
     height: 45px;
+    color: var(--text-color);
     border: none;
     border-radius: 10px;
 }
@@ -338,7 +339,7 @@ main {
     height: 30px;
     padding: 5px;
     border-radius: 10px;
-    border: 2px solid #CCCCCC; 
+    border: 2px solid var(--secondary-accent); 
     width: 50%;
 }
 
@@ -352,7 +353,7 @@ main {
     padding: 5px;
     border-radius: 10px;
     border: none;
-    background: #242424;
+    background: #000000;
     color: white; 
 }
 
@@ -367,12 +368,13 @@ main {
     flex-direction: column;
     padding: 5px;
     gap: 10px;
-    background: #F8BBD0;
+    background: var(--base-accent);
     border-radius: 10px;
 }
 
 .the-receipt .receipt-body .receipt h2{
     font-size: 16px;
+    color: white;
 }
 
 .the-receipt .receipt-body .receipt p{
@@ -381,12 +383,13 @@ main {
 
 .the-receipt .receipt-body .receipt .price-breakdown::before{
     content: '';
-    border: 1px solid #666666;
+    border: 1px solid #CCCCCC;
     margin-top: 10px;
 }
 
 .the-receipt .receipt-body .receipt .price-breakdown{
     display: flex;
+    color: white;
     flex-direction: column;
     gap: 15px;
 }
@@ -407,7 +410,7 @@ main {
     height: 35px;
     border-radius: 10px;
     border: none;
-    background: #c14e76;
+    background: var(--base-accent);
     color: white;
     font-weight: bold;
 }
@@ -418,7 +421,7 @@ main {
 /* FOOTER CODE*/
 
 footer {
-    background: #7e1036;
+    background: var(--base-accent);
     color: white;
     display: flex;
     flex-direction: column;
@@ -476,14 +479,14 @@ footer {
         position: sticky;
         top: 0;
         z-index: 50;
-        background: white;
+        background: var(--navbg-color);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
     nav .logo-box {
         width: 110px;
         height: 80%;
-        background-image: url(../images/pink-logo.png);
+        background-image: var(--logo-img);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;   
@@ -494,7 +497,7 @@ footer {
         height: 60%;
         padding: 5px;
         border-radius: 10px;
-        background: #7e1036;
+        background: var(--base-accent);
         display: flex;
         align-items: center;
         color: white;
@@ -540,7 +543,6 @@ footer {
     nav .navigations-sm {
         width: 10%;
         height: 60%;
-        color: #7e1036;
         font-size: 20px;
         display: flex;
         align-items: center;
@@ -558,12 +560,12 @@ footer {
         align-self: flex-end;
         z-index: 80;
         width: 30%;
-        border: 4px solid #7e1036;
+        border: 4px solid var(--base-accent);
         padding: 10px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
-        background: white;
+        background: var(--navbg-color);
         transition: .5s ease-in-out;
         font-size: 14px;
         transform: translateX(700px);
@@ -578,7 +580,7 @@ footer {
         cursor: pointer;
         align-self: end;
         font-weight: 900;
-        color: #7e1036;
+        color: var(--base-accent);
         text-align: end;
     }
 
@@ -613,14 +615,14 @@ footer {
         top: 0;
         z-index: 50;
         padding: 0 10px;
-        background: white;
+        background: var(--navbg-color);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
     nav .logo-box {
         width: 145px;
         height: 80%;
-        background-image: url(../images/pink-logo.png);
+        background-image: var(--logo-img);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;   
@@ -632,7 +634,7 @@ footer {
         padding: 5px;
         padding: 0 10px;
         border-radius: 10px;
-        background: #7e1036;
+        background: var(--base-accent);
         display: flex;
         align-items: center;
         color: white;
@@ -682,11 +684,11 @@ footer {
     nav .navigations button {
         height: 40px;
         width: 50px;
-        background: white;
+        background: var(--navbg-color);
         border-radius: 10px;
         font-size: 20px;
         font-weight: 600;
-        color: #7e1036;
+        color: var(--secondarytext-color);
         border: none;
         cursor: pointer;
         position: relative;
@@ -705,7 +707,7 @@ footer {
     }
 
     nav .navigations .bi-filled {
-        background: #7e1036ee;
+        background: var(--base-accent);
         color: white;
     }
 
@@ -719,12 +721,12 @@ footer {
         align-self: flex-end;
         z-index: 80;
         width: 20%;
-        border: 4px solid #7e1036;
+        border: 4px solid var(--base-accent);
         padding: 10px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
-        background: white;
+        background: var(--navbg-color);
         transition: .5s ease-in-out;
         font-size: 14px;
         transform: translateX(700px);
@@ -739,7 +741,7 @@ footer {
         cursor: pointer;
         align-self: end;
         font-weight: 900;
-        color: #7e1036;
+        color: var(--base-accent);
         text-align: end;
     }
 
@@ -800,14 +802,14 @@ footer {
     .the-cart .cart-product {
         border-radius: 10px;
         padding: 10px;
-        background: white;
+        background: var(--navbg-color);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         display: flex;
         flex-direction: column;
     }
 
     .the-cart .cart-product .bi {
-        color: #7e1036;
+        color: var(--base-accent);
         font-weight: bold;
         align-self: flex-end;
         cursor: pointer;
@@ -837,7 +839,7 @@ footer {
     }
 
     .the-cart .cart-product .cart-product-info .cart-product-details .price {
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
 
@@ -848,7 +850,7 @@ footer {
     }
 
     .the-receipt .receipt-body {
-        background: white;
+        background: var(--navbg-color);
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
         padding: 10px;
@@ -881,7 +883,7 @@ footer {
     }
 
     .the-receipt .receipt-body .location .location-deets .loc-det{
-        background: #CCCCCC;
+        background: var(--secondary-accent);
         height: 45px;
         border: none;
         border-radius: 10px;
@@ -895,7 +897,7 @@ footer {
         height: 30px;
         padding: 5px;
         border-radius: 10px;
-        border: 2px solid #CCCCCC; 
+        border: 2px solid var(--secondary-accent); 
         width: 50%;
     }
 
@@ -909,7 +911,7 @@ footer {
         padding: 5px;
         border-radius: 10px;
         border: none;
-        background: #242424;
+        background: #000000;
         color: white; 
     }
 
@@ -924,7 +926,7 @@ footer {
         flex-direction: column;
         padding: 5px;
         gap: 10px;
-        background: #F8BBD0;
+        background: var(--base-accent);
         border-radius: 10px;
     }
 
@@ -964,7 +966,7 @@ footer {
         height: 35px;
         border-radius: 10px;
         border: none;
-        background: #c14e76;
+        background: var(--base-accent);
         color: white;
         font-weight: bold;
     }
