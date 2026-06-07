@@ -18,7 +18,8 @@
 body {
     height: 100%;
     font-family: "Lexend Deca", sans-serif;
-    background: #FAF9F6;
+    background: var(--background-color);
+    color: var(--text-color);
     /* background: light-dark(#FAF9F6, #171717); */
     cursor: default;
     display: flex;
@@ -45,7 +46,7 @@ nav {
     align-items: center;
     height: 50px;
     justify-content: space-between;
-    background: white;
+    background: var(--navbg-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
 }
@@ -53,7 +54,7 @@ nav {
 nav .logo-box {
     width: 100px;
     height: 80%;
-    background-image: url(../images/pink-logo.png);
+    background-image: var(--logo-img);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -70,7 +71,7 @@ nav .user-decision {
 nav .small-screen-nav {
     display: block;
     position: relative;
-    color: #c14e76;
+    color: var(--base-accent);
     /* color: light-dark(#c14e76, white); */
     font-weight: 700;
 }
@@ -90,7 +91,7 @@ nav .small-screen-nav .burger {
     height: 100%;
     justify-self: end;
     padding: 20px;
-    background: #7e1036;
+    background: var(--base-accent);
     color: white;
     backdrop-filter: blur(2px);
     border-radius: 10px 0 0 10px;
@@ -128,7 +129,7 @@ nav .small-screen-nav .burger {
 
 
 footer {
-    background: #7e1036;
+    background: var(--base-accent);
     color: white;
     display: flex;
     flex-direction: column;
@@ -156,12 +157,12 @@ footer {
     align-self: flex-end;
     z-index: 80;
     width: 45%;
-    border: 4px solid #7e1036;
+    border: 4px solid var(--base-accent);
     padding: 10px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    background: white;
+    background: var(--navbg-color);
     transition: .5s ease-in-out;
     font-size: 12px;
     transform: translateX(700px);
@@ -176,7 +177,7 @@ footer {
     cursor: pointer;
     align-self: end;
     font-weight: 900;
-    color: #7e1036;
+    color: var(--base-accent);
     text-align: end;
 }
 
@@ -246,13 +247,13 @@ footer {
     border: none;
     transition: .3s ease;
     cursor: pointer;
-    border: 2px solid #7e1036;
+    border: 2px solid var(--base-accent);
     /* border: 2px solid light-dark(#7e1036, white); */
     box-shadow: 0 0 2px grey;
 }
 
 .intro-landing .intro-box-one .intro-decision .button-one {
-    background: #7e1036;
+    background: var(--base-accent);
     /* background: light-dark(#7e1036, white); */
     color: white;
     /* color: light-dark(white, #7e1036); */
@@ -260,7 +261,7 @@ footer {
 
 .intro-landing .intro-box-one .intro-decision .button-two {
     background: transparent;
-    color: #7e1036;
+    color: var(--base-accent);
     /* color: light-dark(#7e1036, white); */
 }
 
@@ -345,15 +346,15 @@ footer {
 }
 
 .features-landing .landing-search {
-    border: 2px solid #7e1036;
+    border: 2px solid var(--base-accent);
     padding: 10px;
     width: 80%;
     border-radius: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
-    background: white;
-    color: #7e1036;
+    background: var(--navbg-color);
+    color: var(--base-accent);
 }
 
 .features-landing .landing-search input {
@@ -471,7 +472,7 @@ footer {
 .features-landing .features-cont .features-div-two .features .feature-dets {
     display: flex;
     gap: 10px;
-    border: 2px solid #7e1036;
+    border: 2px solid var(--base-accent);
     border-radius: 10px;
     font-size: 14px;
     padding: 5px;
@@ -484,7 +485,7 @@ footer {
 
 .features-landing .features-cont .features-div-two .features .feature-dets .feature-words .feature-title {
     font-weight: 600;
-    color: #7e1036;
+    color: var(--base-accent);
 }
 
 .userexp-landing {
@@ -582,7 +583,7 @@ footer {
     display: flex; 
     overflow-x: auto;
     padding: 10px;
-    background: #F48FB1;
+    background: var(--base-accent);
     align-items: center;
     font-size: 14px;
 }
@@ -608,7 +609,7 @@ footer {
 }
 
 .testimonial-sect .testimonial-cont .testimonial-block {
-    border: 2px solid #7e1036;
+    border: 2px solid var(--base-accent);
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -631,12 +632,12 @@ footer {
         align-self: flex-end;
         z-index: 80;
         width: 30%;
-        border: 4px solid #7e1036;
+        border: 4px solid var(--base-accent);
         padding: 10px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
-        background: white;
+        background: var(--navbg-color);
         transition: .5s ease-in-out;
         font-size: 14px;
         transform: translateX(700px);
@@ -651,7 +652,7 @@ footer {
         cursor: pointer;
         align-self: end;
         font-weight: 900;
-        color: #7e1036;
+        color: var(--base-accent);
         text-align: end;
     }
 
@@ -721,13 +722,13 @@ footer {
         border: none;
         transition: .3s ease;
         cursor: pointer;
-        border: 2px solid #7e1036;
+        border: 2px solid var(--base-accent);
         /* border: 2px solid light-dark(#7e1036, white); */
         box-shadow: 0 0 2px grey;
     }
 
     .intro-landing .intro-box-one .intro-decision .button-one {
-        background: #7e1036;
+        background: var(--base-accent);
         /* background: light-dark(#7e1036, white); */
         color: white;
         /* color: light-dark(white, #7e1036); */
@@ -735,7 +736,7 @@ footer {
 
     .intro-landing .intro-box-one .intro-decision .button-two {
         background: transparent;
-        color: #7e1036;
+        color: var(--base-accent);
         /* color: light-dark(#7e1036, white); */
     }
 
@@ -903,7 +904,7 @@ footer {
     nav .logo-box {
         width: 150px;
         height: 80%;
-        background-image: url(../images/pink-logo.png);
+        background-image: var(--logo-img);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -914,7 +915,8 @@ footer {
         border: 5px solid transparent;
         text-decoration: none;
         transition: .3s ease;
-        color: #c14e76;
+        color: var(--secondarytext-color);
+        
         /* color: light-dark(#c14e76, white); */
         height: 40px;
         width: 80px;
@@ -936,7 +938,6 @@ footer {
     nav .navigations {
         display: flex;
         gap: 70px;
-        color: #7e1036;
     }
 
     nav .user-decision {
@@ -956,12 +957,12 @@ footer {
         border: none;
         transition: .3s ease;
         cursor: pointer;
-        border: #7e1036;
+        border: var(--base-accent);
         /* border: 2px solid light-dark(#7e1036, white); */
     }
 
     nav .user-decision .button-one {
-        background: #7e1036;
+        background: var(--base-accent);
         /* background: light-dark(#7e1036, white); */
         color: white;
         /* color: light-dark(white, #7e1036); */
@@ -969,8 +970,8 @@ footer {
 
     nav .user-decision .button-two {
         background: transparent;
-        color: #7e1036;
-        border: 2px solid #7e1036;
+        color: var(--base-accent);
+        border: 2px solid var(--base-accent);
         /* color: light-dark(#7e1036, white); */
     }
 
@@ -988,12 +989,12 @@ footer {
         align-self: flex-end;
         z-index: 80;
         width: 30%;
-        border: 4px solid #7e1036;
+        border: 4px solid var(--base-accent);
         padding: 10px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
-        background: white;
+        background: var(--navbg-color);
         transition: .5s ease-in-out;
         font-size: 14px;
         transform: translateX(700px);
@@ -1008,7 +1009,7 @@ footer {
         cursor: pointer;
         align-self: end;
         font-weight: 900;
-        color: #7e1036;
+        color: var(--base-accent);
         text-align: end;
     }
 
@@ -1020,44 +1021,6 @@ footer {
         transform: translateX(0);
     }
 
-    .alert-cont {
-        position: fixed;
-        margin-top: 80px;
-        align-self: flex-end;
-        z-index: 80;
-        width: 20%;
-        border: 4px solid #7e1036;
-        padding: 10px;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        background: white;
-        transition: .5s ease-in-out;
-        font-size: 14px;
-        transform: translateX(700px);
-    }
-
-    .alert-cont p {
-        text-align: center;
-    }
-
-    .alert-cont .bi {
-        width: 15px;
-        cursor: pointer;
-        align-self: end;
-        font-weight: 900;
-        color: #7e1036;
-        text-align: end;
-    }
-
-    .alert .bi:active {
-        transform: scale(0.90);
-    }
-
-    .out {
-        transform: translateX(0);
-    }
-    
     .intro-landing {
         height: 85vh;
         padding: 10px;
@@ -1111,13 +1074,13 @@ footer {
         border: none;
         transition: .3s ease;
         cursor: pointer;
-        border: 2px solid #7e1036;
+        border: 2px solid var(--base-accent);
         /* border: 2px solid light-dark(#7e1036, white); */
         box-shadow: 0 0 2px grey;
     }
 
     .intro-landing .intro-box-one .intro-decision .button-one {
-        background: #7e1036;
+        background: var(--base-accent);
         /* background: light-dark(#7e1036, white); */
         color: white;
         /* color: light-dark(white, #7e1036); */
@@ -1125,7 +1088,7 @@ footer {
 
     .intro-landing .intro-box-one .intro-decision .button-two {
         background: transparent;
-        color: #7e1036;
+        color: var(--base-accent);
         /* color: light-dark(#7e1036, white); */
     }
 
@@ -1210,7 +1173,6 @@ footer {
         transform: translateY(-10px);
     }
 
-
     .features-landing {
         padding: 10px;
         justify-content: space-around;
@@ -1226,7 +1188,7 @@ footer {
     }
 
     .features-landing .landing-search {
-        border: 2px solid #7e1036;
+        border: 2px solid var(--base-accent);
         padding: 10px;
         width: 60%;
         border-radius: 10px;
@@ -1234,8 +1196,8 @@ footer {
         align-items: center;
         gap: 10px;
         justify-content: space-around;
-        background: white;
-        color: #7e1036;
+        background: var(--navbg-color);
+        color: var(--base-accent);
     }
 
     .features-landing .landing-search input {
@@ -1357,7 +1319,7 @@ footer {
     .features-landing .features-cont .features-div-two .features .feature-dets {
         display: flex;
         gap: 10px;
-        border: 2px solid #7e1036;
+        border: 2px solid var(--base-accent);
         border-radius: 10px;
         height: 15%;
         font-size: 14px;
@@ -1371,7 +1333,7 @@ footer {
 
     .features-landing .features-cont .features-div-two .features .feature-dets .feature-words .feature-title {
         font-weight: 600;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
 
