@@ -8,8 +8,9 @@
 
 body {
     height: 100%;
+    color: var(--text-color);
     font-family: "Lexend Deca", sans-serif;
-    background: #FAF9F6;
+    background: var(--background-color);
 }
 
 .site {
@@ -32,14 +33,14 @@ nav {
     align-items: center;
     height: 50px;
     justify-content: space-between;
-    background: white;
+    background: var(--navbg-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 nav .logo-box {
     width: 80px;
     height: 80%;
-    background-image: url(../images/pink-logo.png);
+    background-image: var(--logo-img);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;   
@@ -50,7 +51,7 @@ nav .search-bar {
     height: 60%;
     padding: 5px;
     border-radius: 10px;
-    background: #7e1036;
+    background: var(--base-accent);
     display: flex;
     align-items: center;
     color: white;
@@ -98,7 +99,7 @@ nav .navigations {
 nav .navigations-sm {
     width: 10%;
     height: 60%;
-    color: #7e1036;
+    color: var(--base-accent);
     font-size: 16px;
     display: flex;
     flex-direction: column;
@@ -153,7 +154,6 @@ nav .burger:active {
 }
 
 .navs-sm .bi-filled {
-    background: #7e1036;
     color: white;
     background: white;
     color: var(--base-accent);
@@ -192,7 +192,7 @@ nav .burger:active {
 }
 
 .search .search-pick h3 span {
-    color: #7e1036;
+    color: var(--base-accent);
 }
 
 .search .search-pick .search-grid {
@@ -248,8 +248,8 @@ nav .burger:active {
 
 .search .search-pick .search-grid .search-product .prod-summ-cont .prod-summ {
     width: 100%;
-    background: white;
-    height: 25%;
+    background: var(--navbg-color);
+    height: 26%;
     padding: 2px;
     border-radius: 0 0 10px 10px;
     display: flex;
@@ -270,7 +270,7 @@ nav .burger:active {
 
 .search .search-pick .search-grid .search-product .prod-summ div:nth-child(1) p {
     font-size: 12px;
-    color: #7e1036;
+    color: var(--base-accent);
 }
 
 .search .search-pick .search-grid .search-product .prod-summ div:nth-child(2) {
@@ -283,7 +283,7 @@ nav .burger:active {
     font-size: 14px;
     color: white;
     font-weight: bold;
-    background: #7e1036;
+    background: var(--base-accent);
 }
 
 .search .search-pick .search-grid .search-product .prod-summ div:nth-child(2):active {
@@ -291,8 +291,8 @@ nav .burger:active {
 }
 
 .search .search-pick .search-grid .search-product .prod-summ .to-cart.in {
-    background: white;
-    color: #7e1036;
+    background: var(--navbg-color);
+    color: var(--base-accent);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
 }
 
@@ -324,7 +324,7 @@ nav .burger:active {
     gap: 2px;
     justify-content: center;
     align-items: center;
-    background: #c14e76;
+    background: var(--base-accent);
     color: white;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     cursor: pointer;
@@ -358,7 +358,7 @@ nav .burger:active {
     border-radius: 10px;
     justify-content: center;
     align-items: center;
-    background: #c14e76;
+    background: var(--base-accent);
     color: white;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     cursor: pointer;
@@ -395,7 +395,7 @@ nav .burger:active {
 }
 
 .category-pick .category-cont h3 span {
-    color: #7e1036;
+    color: var(--base-accent);
 }
 
 .category-pick .category-cont .category-grid {
@@ -439,7 +439,7 @@ nav .burger:active {
 
 .category-pick .category-cont .category-grid .category-product .prod-summ-cont .prod-summ {
     width: 100%;
-    background: white;
+    background: var(--navbg-color);
     height: 25%;
     padding: 2px;
     border-radius: 0 0 10px 10px;
@@ -461,7 +461,7 @@ nav .burger:active {
 
 .category-pick .category-cont .category-grid .category-product .prod-summ div:nth-child(1) p {
     font-size: 12px;
-    color: #7e1036;
+    color: var(--base-accent);
 }
 
 .category-pick .category-cont .category-grid .category-product .prod-summ div:nth-child(2) {
@@ -474,7 +474,7 @@ nav .burger:active {
     font-size: 14px;
     color: white;
     font-weight: bold;
-    background: #7e1036;
+    background: var(--base-accent);
 }
 
 .category-pick .category-cont .category-grid .category-product .prod-summ div:nth-child(2):active {
@@ -482,8 +482,8 @@ nav .burger:active {
 }
 
 .category-pick .category-cont .category-grid .category-product .prod-summ .to-cart.in {
-    background: white;
-    color: #7e1036;
+    background: var(--navbg-color);
+    color: var(--base-accent);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
 }
 
@@ -566,7 +566,7 @@ nav .burger:active {
 
 .featured .featured-products .f-product .prod-summ-cont .prod-summ {
     width: 100%;
-    background: white;
+    background: var(--navbg-color);
     height: 25%;
     padding: 2px;
     border-radius: 0 0 10px 10px;
@@ -588,7 +588,7 @@ nav .burger:active {
 
 .featured .featured-products .f-product .prod-summ div:nth-child(1) p {
     font-size: 12px;
-    color: #7e1036;
+    color: var(--base-accent);
 }
 
 .featured .featured-products .f-product .prod-summ div:nth-child(2) {
@@ -601,7 +601,7 @@ nav .burger:active {
     font-size: 14px;
     color: white;
     font-weight: bold;
-    background: #7e1036;
+    background: var(--base-accent);
 }
 
 .featured .featured-products .f-product .prod-summ div:nth-child(2):active {
@@ -609,8 +609,8 @@ nav .burger:active {
 }
 
 .featured .featured-products .f-product .prod-summ .to-cart.in {
-    background: white;
-    color: #7e1036;
+    background: var(--navbg-color);
+    color: var(--base-accent);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
 }
 
@@ -674,7 +674,7 @@ nav .burger:active {
 
 .for-you .products-cont .grid-cont .your-product .prod-summ-cont .prod-summ {
     width: 100%;
-    background: white;
+    background: var(--navbg-color);
     height: 25%;
     padding: 2px;
     border-radius: 0 0 10px 10px;
@@ -696,7 +696,7 @@ nav .burger:active {
 
 .for-you .products-cont .grid-cont .your-product .prod-summ div:nth-child(1) p {
     font-size: 12px;
-    color: #7e1036;
+    color: var(--base-accent);
 }
 
 .for-you .products-cont .grid-cont .your-product .prod-summ div:nth-child(2) {
@@ -709,20 +709,7 @@ nav .burger:active {
     font-size: 14px;
     color: white;
     font-weight: bold;
-    background: #7e1036;
-}
-
-.for-you .products-cont .grid-cont .your-product .prod-summ div:nth-child(2) {
-    width: 20%;
-    display: flex;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: white;
-    font-weight: bold;
-    background: #7e1036;
+    background: var(--base-accent);
 }
 
 .for-you .products-cont .grid-cont .your-product .prod-summ div:nth-child(2):active {
@@ -730,15 +717,15 @@ nav .burger:active {
 }
 
 .for-you .products-cont .grid-cont .your-product .prod-summ .to-cart.in {
-    background: white;
-    color: #7e1036;
+    background: var(--navbg-color);
+    color: var(--base-accent);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
 }
 
 /* FOOTER CODE*/
 
 footer {
-    background: #7e1036;
+    background: var(--base-accent);
     color: white;
     display: flex;
     flex-direction: column;
@@ -778,13 +765,13 @@ footer {
 }
 
 .product-page .product-details {
-    border: 2px solid #7e1036;
+    border: 2px solid var(--base-accent);
     position: absolute;
     width: 100%;
     height: 90%;
     bottom: 0;
     border-radius: 15px 15px 0 0;
-    background: white;
+    background: var(--navbg-color);
     transition: 2s ease-in;
     transform: translateY(900px);
     display: flex;
@@ -875,7 +862,7 @@ footer {
 }
 
 .product-page .product-details .about-product .initial-info .price {
-    color: #7e1036;
+    color: var(--base-accent);
 }
 
 .product-page .product-details .about-product .initial-info .actions {
@@ -889,7 +876,7 @@ footer {
 }
 
 .product-page .product-details .about-product .initial-info .actions button {
-    background: #7e1036;
+    background: var(--base-accent);
     border: none;
     display: flex;
     gap: 10px;
@@ -907,7 +894,7 @@ footer {
 }
 
 .product-page .product-details .about-product .initial-info button {
-    background: #7e1036;
+    background: var(--base-accent);
     border: none;
     display: flex;
     gap: 10px;
@@ -926,8 +913,8 @@ footer {
 }
 
 .product-page .product-details .about-product .initial-info .to-cart.in {
-    background: white;
-    color: #7e1036;
+    background: var(--navbg-color);
+    color: var(--base-accent);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
 }
 
@@ -1001,7 +988,7 @@ footer {
 
 .product-page .product-details .details-box .more .more-products .m-product .m-summ {
     width: 100%;
-    background: white;
+    background: var(--navbg-color);
     height: 25%;
     padding: 2px;
     border-radius: 0 0 10px 10px;
@@ -1021,7 +1008,7 @@ footer {
 
 .product-page .product-details .details-box .more .more-products .m-product .m-summ div:nth-child(1) p {
     font-size: 12px;
-    color: #7e1036;
+    color: var(--base-accent);
 }
 
 .product-page .product-details .details-box .more .more-products .m-product .m-summ div:nth-child(2) {
@@ -1034,7 +1021,7 @@ footer {
     font-size: 14px;
     color: white;
     font-weight: bold;
-    background: #7e1036;
+    background: var(--base-accent);
 }
 
 .product-page .product-details .details-box .more .more-products .m-product .m-summ div:nth-child(2):active {
@@ -1042,8 +1029,8 @@ footer {
 }
 
 .product-page .product-details .details-box .more .more-products .m-product .m-summ .to-cart.in {
-    background: white;
-    color: #7e1036;
+    background: var(--navbg-color);
+    color: var(--base-accent);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
 }
 
@@ -1055,12 +1042,12 @@ footer {
     align-self: flex-end;
     z-index: 80;
     width: 45%;
-    border: 4px solid #7e1036;
+    border: 4px solid var(--base-accent);
     padding: 10px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    background: white;
+    background: var(--navbg-color);
     transition: .5s ease-in-out;
     font-size: 12px;
     transform: translateX(700px);
@@ -1075,7 +1062,7 @@ footer {
     cursor: pointer;
     align-self: end;
     font-weight: 900;
-    color: #7e1036;
+    color: var(--base-accent);
     text-align: end;
 }
 
@@ -1100,14 +1087,14 @@ footer {
         position: sticky;
         top: 0;
         z-index: 50;
-        background: white;
+        background: var(--navbg-color);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
     nav .logo-box {
         width: 110px;
         height: 80%;
-        background-image: url(../images/pink-logo.png);
+        background-image: var(--logo-img);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;   
@@ -1118,7 +1105,7 @@ footer {
         height: 60%;
         padding: 5px;
         border-radius: 10px;
-        background: #7e1036;
+        background: var(--base-accent);
         display: flex;
         align-items: center;
         color: white;
@@ -1164,7 +1151,7 @@ footer {
     nav .navigations-sm {
         width: 10%;
         height: 60%;
-        color: #7e1036;
+        color: var(--base-accent);
         font-size: 20px;
         display: flex;
         align-items: center;
@@ -1196,7 +1183,7 @@ footer {
         gap: 2px;
         justify-content: center;
         align-items: center;
-        background: #c14e76;
+        background: var(--base-accent);
         color: white;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
         cursor: pointer;
@@ -1232,7 +1219,7 @@ footer {
         border-radius: 10px;
         justify-content: center;
         align-items: center;
-        background: #c14e76;
+        background: var(--base-accent);
         color: white;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
         cursor: pointer;
@@ -1257,7 +1244,7 @@ footer {
     }
 
     .search .search-pick h3 span {
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .search .search-pick .search-grid {
@@ -1298,7 +1285,7 @@ footer {
 
     .search .search-pick .search-grid .search-product .prod-summ-cont .prod-summ {
         width: 100%;
-        background: white;
+        background: var(--navbg-color);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -1318,7 +1305,7 @@ footer {
 
     .search .search-pick .search-grid .search-product .prod-summ div:nth-child(1) p {
         font-size: 14px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .search .search-pick .search-grid .search-product .prod-summ div:nth-child(2) {
@@ -1331,7 +1318,7 @@ footer {
         font-size: 15px;
         color: white;
         font-weight: bold;
-        background: #7e1036;
+        background: var(--base-accent);
     }
 
 
@@ -1360,7 +1347,7 @@ footer {
     }
 
     .category-pick .category-cont h3 span {
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .category-pick .category-cont .category-grid {
@@ -1401,7 +1388,7 @@ footer {
 
     .category-pick .category-cont .category-grid .category-product .prod-summ-cont .prod-summ {
         width: 100%;
-        background: white;
+        background: var(--navbg-color);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -1421,7 +1408,7 @@ footer {
 
     .category-pick .category-cont .category-grid .category-product .prod-summ div:nth-child(1) p {
         font-size: 14px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .category-pick .category-cont .category-grid .category-product .prod-summ div:nth-child(2) {
@@ -1434,7 +1421,7 @@ footer {
         font-size: 15px;
         color: white;
         font-weight: bold;
-        background: #7e1036;
+        background: var(--base-accent);
     }
 
 
@@ -1506,7 +1493,7 @@ footer {
 
     .featured .featured-products .f-product .prod-summ-cont .prod-summ {
         width: 100%;
-        background: white;
+        background: var(--navbg-color);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -1526,7 +1513,7 @@ footer {
 
     .featured .featured-products .f-product .prod-summ div:nth-child(1) p {
         font-size: 12px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .featured .featured-products .f-product .prod-summ div:nth-child(2) {
@@ -1539,7 +1526,7 @@ footer {
         font-size: 14px;
         color: white;
         font-weight: bold;
-        background: #7e1036;
+        background: var(--base-accent);
     }
 
 
@@ -1600,7 +1587,7 @@ footer {
 
     .for-you .products-cont .grid-cont .your-product .prod-summ-cont .prod-summ {
         width: 100%;
-        background: white;
+        background: var(--navbg-color);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -1620,7 +1607,7 @@ footer {
 
     .for-you .products-cont .grid-cont .your-product .prod-summ div:nth-child(1) p {
         font-size: 14px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .for-you .products-cont .grid-cont .your-product .prod-summ div:nth-child(2) {
@@ -1633,7 +1620,7 @@ footer {
         font-size: 14px;
         color: white;
         font-weight: bold;
-        background: #7e1036;
+        background: var(--base-accent);
     }
 
 
@@ -1656,13 +1643,13 @@ footer {
     }
 
     .product-page .product-details {
-        border: 2px solid #7e1036;
+        border: 2px solid var(--base-accent);
         position: absolute;
         width: 100%;
         height: 90%;
         bottom: 0;
         border-radius: 15px 15px 0 0;
-        background: white;
+        background: var(--navbg-color);
         transition: 2s ease-in;
         transform: translateY(900px);
         display: flex;
@@ -1679,7 +1666,7 @@ footer {
         padding: 10px;
         font-size: 25px;
         margin: 10px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .product-page .product-details .details-box {
@@ -1749,7 +1736,7 @@ footer {
     }
 
     .product-page .product-details .about-product .initial-info .price {
-        color: #7e1036;
+        color: var(--base-accent);
         display: flex; 
         gap: 10px;
         font-size: 20px;
@@ -1772,7 +1759,7 @@ footer {
     }
 
     .product-page .product-details .about-product .initial-info .actions button {
-        background: #7e1036;
+        background: var(--base-accent);
         border: none;
         display: flex;
         gap: 10px;
@@ -1790,7 +1777,7 @@ footer {
     }
 
     .product-page .product-details .about-product .initial-info button {
-        background: #7e1036;
+        background: var(--base-accent);
         display: flex;
         gap: 10px;
         justify-content: center;
@@ -1873,7 +1860,7 @@ footer {
 
     .product-page .product-details .details-box .more .more-products .m-product .m-summ {
         width: 100%;
-        background: white;
+        background: var(--navbg-color);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -1893,7 +1880,7 @@ footer {
 
     .product-page .product-details .details-box .more .more-products .m-product .m-summ div:nth-child(1) p {
         font-size: 12px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .product-page .product-details .details-box .more .more-products .m-product .m-summ div:nth-child(2) {
@@ -1906,7 +1893,7 @@ footer {
         font-size: 14px;
         color: white;
         font-weight: bold;
-        background: #7e1036;
+        background: var(--base-accent);
     }
 
     .alert-cont {
@@ -1915,12 +1902,12 @@ footer {
         align-self: flex-end;
         z-index: 80;
         width: 30%;
-        border: 4px solid #7e1036;
+        border: 4px solid var(--base-accent);
         padding: 10px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
-        background: white;
+        background: var(--navbg-color);
         transition: .5s ease-in-out;
         font-size: 14px;
         transform: translateX(700px);
@@ -1935,7 +1922,7 @@ footer {
         cursor: pointer;
         align-self: end;
         font-weight: 900;
-        color: #7e1036;
+        color: var(--base-accent);
         text-align: end;
     }
 
@@ -1959,14 +1946,14 @@ footer {
         top: 0;
         z-index: 50;
         padding: 0 10px;
-        background: white;
+        background: var(--navbg-color);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
     nav .logo-box {
         width: 145px;
         height: 80%;
-        background-image: url(../images/pink-logo.png);
+        background-image: var(--logo-img);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;   
@@ -1978,7 +1965,7 @@ footer {
         padding: 5px;
         padding: 0 10px;
         border-radius: 10px;
-        background: #7e1036;
+        background: var(--base-accent);
         display: flex;
         align-items: center;
         color: white;
@@ -2028,11 +2015,11 @@ footer {
     nav .navigations button {
         height: 40px;
         width: 50px;
-        background: white;
+        background: var(--navbg-color);
         border-radius: 10px;
         font-size: 20px;
         font-weight: 600;
-        color: #7e1036;
+        color: var(--secondarytext-color);
         border: none;
         cursor: pointer;
         position: relative;
@@ -2051,7 +2038,7 @@ footer {
     }
 
     nav .navigations .bi-filled {
-        background: #7e1036ee;
+        background: var(--base-accent);
         color: white;
     }
 
@@ -2080,7 +2067,7 @@ footer {
         gap: 2px;
         justify-content: center;
         align-items: center;
-        background: #c14e76;
+        background: var(--base-accent);
         color: white;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
         cursor: pointer;
@@ -2116,7 +2103,7 @@ footer {
         border-radius: 10px;
         justify-content: center;
         align-items: center;
-        background: #c14e76;
+        background: var(--base-accent);
         color: white;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
         cursor: pointer;
@@ -2143,7 +2130,7 @@ footer {
     }
 
     .search .search-pick h3 span {
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .search .search-pick .search-grid {
@@ -2182,7 +2169,7 @@ footer {
 
     .search .search-pick .search-grid .search-product .prod-summ-cont .prod-summ {
         width: 100%;
-        background: white;
+        background: var(--navbg-color);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -2202,7 +2189,7 @@ footer {
 
     .search .search-pick .search-grid .search-product .prod-summ div:nth-child(1) p {
         font-size: 14px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .search .search-pick .search-grid .search-product .prod-summ div:nth-child(2) {
@@ -2215,7 +2202,7 @@ footer {
         font-size: 14px;
         color: white;
         font-weight: bold;
-        background: #7e1036;
+        background: var(--base-accent);
     }
 
 
@@ -2245,7 +2232,7 @@ footer {
     }
 
     .category-pick .category-cont h3 span {
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .category-pick .category-cont .category-grid {
@@ -2284,7 +2271,7 @@ footer {
 
     .category-pick .category-cont .category-grid .category-product .prod-summ-cont .prod-summ {
         width: 100%;
-        background: white;
+        background: var(--navbg-color);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -2304,7 +2291,7 @@ footer {
 
     .category-pick .category-cont .category-grid .category-product .prod-summ div:nth-child(1) p {
         font-size: 14px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .category-pick .category-cont .category-grid .category-product .prod-summ div:nth-child(2) {
@@ -2317,7 +2304,7 @@ footer {
         font-size: 14px;
         color: white;
         font-weight: bold;
-        background: #7e1036;
+        background: var(--base-accent);
     }
 
 
@@ -2383,7 +2370,7 @@ footer {
 
     .featured .featured-products .f-product .prod-summ-cont .prod-summ {
         width: 100%;
-        background: white;
+        background: var(--navbg-color);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -2403,7 +2390,7 @@ footer {
 
     .featured .featured-products .f-product .prod-summ div:nth-child(1) p {
         font-size: 14px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .featured .featured-products .f-product .prod-summ div:nth-child(2) {
@@ -2416,7 +2403,7 @@ footer {
         font-size: 14px;
         color: white;
         font-weight: bold;
-        background: #7e1036;
+        background: var(--base-accent);
     }
 
 
@@ -2478,7 +2465,7 @@ footer {
 
     .for-you .products-cont .grid-cont .your-product .prod-summ-cont .prod-summ {
         width: 100%;
-        background: white;
+        background: var(--navbg-color);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -2498,7 +2485,7 @@ footer {
 
     .for-you .products-cont .grid-cont .your-product .prod-summ div:nth-child(1) p {
         font-size: 14px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .for-you .products-cont .grid-cont .your-product .prod-summ div:nth-child(2) {
@@ -2511,7 +2498,7 @@ footer {
         font-size: 14px;
         color: white;
         font-weight: bold;
-        background: #7e1036;
+        background: var(--base-accent);
     }
 
 
@@ -2521,12 +2508,12 @@ footer {
         align-self: flex-end;
         z-index: 80;
         width: 20%;
-        border: 4px solid #7e1036;
+        border: 4px solid var(--base-accent);
         padding: 10px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
-        background: white;
+        background: var(--navbg-color);
         transition: .5s ease-in-out;
         font-size: 14px;
         transform: translateX(700px);
@@ -2541,7 +2528,7 @@ footer {
         cursor: pointer;
         align-self: end;
         font-weight: 900;
-        color: #7e1036;
+        color: var(--base-accent);
         text-align: end;
     }
 
@@ -2574,13 +2561,13 @@ footer {
     }
 
     .product-page .product-details {
-        border: 2px solid #7e1036;
+        border: 2px solid var(--base-accent);
         position: absolute;
         width: 100%;
         height: 90%;
         bottom: 0;
         border-radius: 15px 15px 0 0;
-        background: white;
+        background: var(--navbg-color);
         transition: 2s ease-in;
         transform: translateY(900px);
         display: flex;
@@ -2597,7 +2584,7 @@ footer {
         padding: 10px;
         font-size: 20px;
         margin: 10px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .product-page .product-details .details-box {
@@ -2664,7 +2651,7 @@ footer {
     }
 
     .product-page .product-details .about-product .initial-info .price {
-        color: #7e1036;
+        color: var(--base-accent);
         display: flex; 
         gap: 10px;
         font-size: 18px;
@@ -2686,7 +2673,7 @@ footer {
     }
 
     .product-page .product-details .about-product .initial-info .actions button {
-        background: #7e1036;
+        background: var(--base-accent);
         border: none;
         display: flex;
         gap: 10px;
@@ -2704,7 +2691,7 @@ footer {
     }
 
     .product-page .product-details .about-product .initial-info button {
-        background: #7e1036;
+        background: var(--base-accent);
         display: flex;
         gap: 10px;
         justify-content: center;
@@ -2794,7 +2781,7 @@ footer {
 
     .product-page .product-details .details-box .more .more-products .m-product .m-summ {
         width: 100%;
-        background: white;
+        background: var(--navbg-color);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -2814,7 +2801,7 @@ footer {
 
     .product-page .product-details .details-box .more .more-products .m-product .m-summ div:nth-child(1) p {
         font-size: 12px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .product-page .product-details .details-box .more .more-products .m-product .m-summ div:nth-child(2) {
@@ -2827,7 +2814,7 @@ footer {
         font-size: 14px;
         color: white;
         font-weight: bold;
-        background: #7e1036;
+        background: var(--base-accent);
     }
 
 }
@@ -2855,7 +2842,7 @@ footer {
     }
 
     .search .search-pick h3 span {
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .search .search-pick .search-grid {
@@ -2895,7 +2882,7 @@ footer {
 
     .search .search-pick .search-grid .search-product .prod-summ-cont .prod-summ {
         width: 100%;
-        background: white;
+        background: var(--base-accent);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -2915,7 +2902,7 @@ footer {
 
     .search .search-pick .search-grid .search-product .prod-summ div:nth-child(1) p {
         font-size: 14px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .search .search-pick .search-grid .search-product .prod-summ div:nth-child(2) {
@@ -2928,7 +2915,7 @@ footer {
         font-size: 14px;
         color: white;
         font-weight: bold;
-        background: #7e1036;
+        background: var(--base-accent);
     }
 
 
@@ -2958,7 +2945,7 @@ footer {
     }
 
     .category-pick .category-cont h3 span {
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .category-pick .category-cont .category-grid {
@@ -2998,7 +2985,7 @@ footer {
 
     .category-pick .category-cont .category-grid .category-product .prod-summ-cont .prod-summ {
         width: 100%;
-        background: white;
+        background: var(--navbg-color);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -3018,7 +3005,7 @@ footer {
 
     .category-pick .category-cont .category-grid .category-product .prod-summ div:nth-child(1) p {
         font-size: 14px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .category-pick .category-cont .category-grid .category-product .prod-summ div:nth-child(2) {
@@ -3031,7 +3018,7 @@ footer {
         font-size: 14px;
         color: white;
         font-weight: bold;
-        background: #7e1036;
+        background: var(--base-accent);
     }
 
     
@@ -3097,7 +3084,7 @@ footer {
 
     .featured .featured-products .f-product .prod-summ-cont .prod-summ {
         width: 100%;
-        background: white;
+        background: var(--navbg-color);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -3117,7 +3104,7 @@ footer {
 
     .featured .featured-products .f-product .prod-summ div:nth-child(1) p {
         font-size: 14px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .featured .featured-products .f-product .prod-summ div:nth-child(2) {
@@ -3130,7 +3117,7 @@ footer {
         font-size: 14px;
         color: white;
         font-weight: bold;
-        background: #7e1036;
+        background: var(--base-accent);
     }
 
 
@@ -3191,7 +3178,7 @@ footer {
 
     .for-you .products-cont .grid-cont .your-product .prod-summ-cont .prod-summ {
         width: 100%;
-        background: white;
+        background: var(--navbg-color);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -3211,7 +3198,7 @@ footer {
 
     .for-you .products-cont .grid-cont .your-product .prod-summ div:nth-child(1) p {
         font-size: 14px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .for-you .products-cont .grid-cont .your-product .prod-summ div:nth-child(2) {
@@ -3224,7 +3211,7 @@ footer {
         font-size: 14px;
         color: white;
         font-weight: bold;
-        background: #7e1036;
+        background: var(--base-accent);
     }
 
 
@@ -3246,13 +3233,13 @@ footer {
     }
 
     .product-page .product-details {
-        border: 2px solid #7e1036;
+        border: 2px solid var(--base-accent);
         position: absolute;
         width: 100%;
         height: 90%;
         bottom: 0;
         border-radius: 15px 15px 0 0;
-        background: white;
+        background: var(--navbg-color);
         transition: 2s ease-in;
         transform: translateY(900px);
         display: flex;
@@ -3269,7 +3256,7 @@ footer {
         padding: 10px;
         font-size: 20px;
         margin: 10px;
-        color: #7e1036;
+        color: var(--base-accent);
     }
 
     .product-page .product-details .details-box {
@@ -3339,7 +3326,7 @@ footer {
     }
 
     .product-page .product-details .about-product .initial-info .price {
-        color: #7e1036;
+        color: var(--base-accent);
         display: flex; 
         gap: 10px;
         font-size: 18px;
@@ -3361,7 +3348,7 @@ footer {
     }
 
     .product-page .product-details .about-product .initial-info .actions button {
-        background: #7e1036;
+        background: var(--base-accent);
         border: none;
         display: flex;
         gap: 10px;
@@ -3379,7 +3366,7 @@ footer {
     }
 
     .product-page .product-details .about-product .initial-info button {
-        background: #7e1036;
+        background: var(--base-accent);
         display: flex;
         gap: 10px;
         justify-content: center;
@@ -3472,7 +3459,7 @@ footer {
 
     .product-page .product-details .details-box .more .more-products .m-product .m-summ {
         width: 100%;
-        background: white;
+        background: var(--navbg-color);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -3492,7 +3479,7 @@ footer {
 
     .product-page .product-details .details-box .more .more-products .m-product .m-summ div:nth-child(1) p {
         font-size: 12px;
-        color: #7e1036;
+        color: var(--navbg-color);
     }
 
     .product-page .product-details .details-box .more .more-products .m-product .m-summ div:nth-child(2) {
@@ -3505,7 +3492,7 @@ footer {
         font-size: 14px;
         color: white;
         font-weight: bold;
-        background: #7e1036;
+        background: var(--base-accent);
     }
 
 }
