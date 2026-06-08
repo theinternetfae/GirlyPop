@@ -1,22 +1,16 @@
-// import { products } from "./General files/productsO.js";
-// import { getCartCount, getCartStorage, deleteFromCart } from "./General files/utilsO.js";
-// // import { Country, State, City } from "country-state-city";
-import { convertPrice, initializeNavBar, setTheme } from "./General files/utilsO.js";
+import { Country, State, City } from "https://cdn.jsdelivr.net/npm/country-state-city/+esm";
+import { convertPrice, initializeNavBar, setTheme, removeFromCart } from "./General files/utilsO.js";
 import { getCart } from "./General files/storageO.js";
 import { getProductsStorage, updateProductsStorage } from "./General files/productsO.js";
-import { removeFromCart } from "./General files/utilsO.js";
 
 setTheme();
 initializeNavBar();
 
 let products = getProductsStorage();
 
-
 function getCartProducts() {
 
     const inCart = getCart();
-
-    console.log("In the Cart:", inCart);
 
     const inCartProducts = [];
 
@@ -36,8 +30,6 @@ function renderCart() {
     cartLabel.innerHTML = `${inCartProducts.length === 1 ? 'Item' : 'Items' }`;
 
     const cartProductsCont = document.querySelector('.the-cart-products');
-
-    console.log("cartProductsCont:", cartProductsCont);
 
     cartProductsCont.innerHTML = '';
 
@@ -72,13 +64,11 @@ document.addEventListener('click', (e) => {
 
     const itemId = removeFrom.dataset.productid;
 
-    console.log("Removing from cart");
     removeFromCart(itemId);
 
     products = products.map(p => p.id === itemId ? {...p, inCart: !p.inCart} : p);
         
 
-    console.log("Updating products storage:", products);
     updateProductsStorage(products);
     
 
@@ -114,7 +104,6 @@ function renderPrice() {
         total += i.priceCents;
     })
 
-    console.log(total)
     priceBreakdown.innerHTML += `
         <div class="price-total">
             <p>TOTAL</p>
@@ -130,3 +119,61 @@ function renderFullCart() {
 }
 
 renderFullCart();
+
+
+
+
+
+
+
+
+//LOCATION CODE
+
+const countrySelect = document.querySelector(".country-select");
+const stateSelect = document.querySelector(".state-select")
+const citySelect = document.querySelector(".city-select")
+
+const country = Country.getAllCountries();
+console.log("Countries:", country);
+
+const locationDeets = document.querySelector(".location-deets");
+
+stateSelect.disabled = true;
+citySelect.disabled = true;
+
+countrySelect.innerHTML += `
+    ${
+        country.map(c => {
+            return `<option value=${c.isoCode}>${c.name}</option>`;
+        })
+    }
+`
+
+countrySelect.addEventListener('change', () => {
+    const pickedCountry = countrySelect.value;
+    
+    const state = State.getStatesOfCountry(pickedCountry.toString());
+    console.log("Picked country's state:", state);
+    stateSelect.disabled = false;
+
+    stateSelect.innerHTML += `
+        ${state.map(s => {
+            return `<option value=${s.isoCode}>${s.name}</option>`
+        })}
+    `
+})
+
+stateSelect.addEventListener('change', () => {
+    const pickedCountry = countrySelect.value;
+    const pickedState = stateSelect.value;
+
+    const city = City.getCitiesOfState(pickedCountry.toString(), pickedState.toString());
+    console.log("Picked state's city:", city);
+    citySelect.disabled = false;
+
+    citySelect.innerHTML += `
+        ${city.map(ci => {
+            return `<option value=${ci.name}>${ci.name}</option>`
+        })}
+    `
+})
