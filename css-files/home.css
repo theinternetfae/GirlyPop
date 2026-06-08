@@ -2882,7 +2882,7 @@ footer {
 
     .search .search-pick .search-grid .search-product .prod-summ-cont .prod-summ {
         width: 100%;
-        background: var(--base-accent);
+        background: var(--navbg-color);
         height: 25%;
         padding: 2px;
         border-radius: 0 0 10px 10px;
@@ -3479,7 +3479,7 @@ footer {
 
     .product-page .product-details .details-box .more .more-products .m-product .m-summ div:nth-child(1) p {
         font-size: 12px;
-        color: var(--navbg-color);
+        color: var(--base-accent);
     }
 
     .product-page .product-details .details-box .more .more-products .m-product .m-summ div:nth-child(2) {
