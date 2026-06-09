@@ -223,11 +223,12 @@ function updateLocation() {
     update.addEventListener('click', () => {
         const unchangedLocation = getLocation();
         
-        if (
-            unchangedLocation.country === location.country && 
-            unchangedLocation.state === location.state && 
-            unchangedLocation.city === location.city
-        ) return;
+        //ADD STOPPER (return)
+        // if (
+        //     unchangedLocation.country === location.country && 
+        //     unchangedLocation.state === location.state && 
+        //     unchangedLocation.city === location.city
+        // ) return;
 
         setLocation(location);
     
@@ -245,3 +246,8 @@ function resetUpdatedDisplay(update) {
         update.innerHTML = 'Update';
     }, 4000);
 }
+
+
+
+
+//CHECKOUT
