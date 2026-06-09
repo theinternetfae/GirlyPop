@@ -21,3 +21,18 @@ export function getDark() {
 export function setDark(condition) {
     localStorage.setItem('isOn', JSON.stringify(condition));
 }
+
+
+export function getLocation() {
+    const location = JSON.parse(localStorage.getItem('location')) || {
+        country: '',
+        state: '',
+        city: ''
+    };
+
+    return location;
+}
+
+export function setLocation(condition) {
+    localStorage.setItem('location', JSON.stringify(condition));
+}

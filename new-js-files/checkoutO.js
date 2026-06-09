@@ -1,6 +1,6 @@
 import { Country, State, City } from "https://cdn.jsdelivr.net/npm/country-state-city/+esm";
 import { convertPrice, initializeNavBar, setTheme, removeFromCart } from "./General files/utilsO.js";
-import { getCart } from "./General files/storageO.js";
+import { getCart, getLocation, setLocation } from "./General files/storageO.js";
 import { getProductsStorage, updateProductsStorage } from "./General files/productsO.js";
 
 setTheme();
@@ -125,18 +125,20 @@ renderFullCart();
 
 
 
-
-
 //LOCATION CODE
 
 const countrySelect = document.querySelector(".country-select");
-const stateSelect = document.querySelector(".state-select")
-const citySelect = document.querySelector(".city-select")
+const stateSelect = document.querySelector(".state-select");
+const citySelect = document.querySelector(".city-select");
 
 const country = Country.getAllCountries();
-console.log("Countries:", country);
 
 const locationDeets = document.querySelector(".location-deets");
+let location = getLocation();
+
+
+console.log("Saved Location:", location);
+
 
 stateSelect.disabled = true;
 citySelect.disabled = true;
@@ -144,7 +146,13 @@ citySelect.disabled = true;
 countrySelect.innerHTML += `
     ${
         country.map(c => {
-            return `<option value=${c.isoCode}>${c.name}</option>`;
+            const savedCountry = location.country === c.isoCode;
+            
+            return `<option value=${c.isoCode} 
+                ${savedCountry && 'selected'}
+            >
+                ${c.name}
+            </option>`;
         })
     }
 `
@@ -152,13 +160,22 @@ countrySelect.innerHTML += `
 countrySelect.addEventListener('change', () => {
     const pickedCountry = countrySelect.value;
     
+    location = {...location, country: pickedCountry};
+    console.log("Location", location);
+    
     const state = State.getStatesOfCountry(pickedCountry.toString());
     console.log("Picked country's state:", state);
     stateSelect.disabled = false;
 
     stateSelect.innerHTML += `
         ${state.map(s => {
-            return `<option value=${s.isoCode}>${s.name}</option>`
+            const savedState = location.state === s.isoCode;
+            return `<option 
+                value=${s.isoCode}
+                ${savedState && 'selected'}    
+            >
+                ${s.name}
+            </option>`
         })}
     `
 })
@@ -167,13 +184,61 @@ stateSelect.addEventListener('change', () => {
     const pickedCountry = countrySelect.value;
     const pickedState = stateSelect.value;
 
+    location = {...location, state: pickedState};
+    console.log("Location", location);
+
     const city = City.getCitiesOfState(pickedCountry.toString(), pickedState.toString());
     console.log("Picked state's city:", city);
     citySelect.disabled = false;
 
     citySelect.innerHTML += `
         ${city.map(ci => {
-            return `<option value=${ci.name}>${ci.name}</option>`
+            const savedCity = location.city === ci.isoCode;
+            return `<option 
+                value=${ci.name}
+                ${savedCity && 'selected'}
+            >
+                ${ci.name}
+            </option>`
         })}
     `
 })
+
+citySelect.addEventListener('change', () => {
+    
+    const pickedCity = citySelect.value;
+
+    location = {...location, city: pickedCity};
+
+    console.log("Location", location);
+})
+
+function updateLocation() {
+    const update = document.querySelector('.update-loc');
+
+    update.addEventListener('click', () => {
+        const unchangedLocation = getLocation();
+        
+        if (
+            unchangedLocation.country === location.country && 
+            unchangedLocation.state === location.state && 
+            unchangedLocation.city === location.city
+        ) return;
+
+        setLocation(location);
+    
+        console.log("Location saved!:", location)
+        update.innerHTML = 'Saved!'
+        stateSelect.disabled = true;
+        citySelect.disabled = true;
+        resetUpdatedDisplay(update);
+    })
+}
+
+updateLocation();
+
+function resetUpdatedDisplay(update) {
+    const updatedDisplay = setTimeout(() => {
+        update.innerHTML = 'Update';
+    }, 4000);
+}
