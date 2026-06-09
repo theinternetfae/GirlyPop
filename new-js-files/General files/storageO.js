@@ -26,7 +26,12 @@ export function setDark(condition) {
 export function getLocation() {
     const location = JSON.parse(localStorage.getItem('location')) || {
         country: '',
-        state: '',
+        
+        state: {
+            isoCode: '',
+            name: ''
+        },
+        
         city: ''
     };
 

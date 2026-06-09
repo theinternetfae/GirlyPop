@@ -135,10 +135,8 @@ const country = Country.getAllCountries();
 
 const locationDeets = document.querySelector(".location-deets");
 let location = getLocation();
-
-
-console.log("Saved Location:", location);
-
+stateSelect.innerHTML = `<option value="" selected hidden>${location.state.name || 'State'}</option>`;
+citySelect.innerHTML = `<option value="" selected hidden>${location.city || 'City'}</option>`;
 
 stateSelect.disabled = true;
 citySelect.disabled = true;
@@ -161,34 +159,38 @@ countrySelect.addEventListener('change', () => {
     const pickedCountry = countrySelect.value;
     
     location = {...location, country: pickedCountry};
-    console.log("Location", location);
     
     const state = State.getStatesOfCountry(pickedCountry.toString());
-    console.log("Picked country's state:", state);
+
     stateSelect.disabled = false;
 
     stateSelect.innerHTML += `
+
         ${state.map(s => {
             const savedState = location.state === s.isoCode;
             return `<option 
-                value=${s.isoCode}
+                value=${[s.isoCode, s.name]}
                 ${savedState && 'selected'}    
             >
                 ${s.name}
             </option>`
         })}
     `
+
+    console.log(location);
 })
 
 stateSelect.addEventListener('change', () => {
     const pickedCountry = countrySelect.value;
     const pickedState = stateSelect.value;
+    const pickedStateValues = pickedState.split(',');
 
-    location = {...location, state: pickedState};
-    console.log("Location", location);
+    location = {...location, state: {
+        isoCode: pickedStateValues[0],
+        name: pickedStateValues[1]
+    }}
 
-    const city = City.getCitiesOfState(pickedCountry.toString(), pickedState.toString());
-    console.log("Picked state's city:", city);
+    const city = City.getCitiesOfState(pickedCountry.toString(), pickedStateValues[0].toString());
     citySelect.disabled = false;
 
     citySelect.innerHTML += `
@@ -202,6 +204,8 @@ stateSelect.addEventListener('change', () => {
             </option>`
         })}
     `
+
+    console.log(location);
 })
 
 citySelect.addEventListener('change', () => {
@@ -210,7 +214,7 @@ citySelect.addEventListener('change', () => {
 
     location = {...location, city: pickedCity};
 
-    console.log("Location", location);
+    console.log(location);
 })
 
 function updateLocation() {
@@ -227,7 +231,6 @@ function updateLocation() {
 
         setLocation(location);
     
-        console.log("Location saved!:", location)
         update.innerHTML = 'Saved!'
         stateSelect.disabled = true;
         citySelect.disabled = true;
