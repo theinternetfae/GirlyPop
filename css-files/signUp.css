@@ -12,6 +12,55 @@ body {
     font-family: "Lexend Deca", sans-serif;
 }
 
+/*ALERT*/
+
+.alert-cont-before {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: end;
+}
+
+.alert-cont {  
+    width: 20%;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #c14e76e0;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: .5s ease-in-out;
+    margin-top: 10px;
+    transform: translateX(600px);
+}
+
+.alert-cont p {
+    text-align: center;
+}
+
+.alert-cont .bi {
+    width: 15px;
+    cursor: pointer;
+    align-self: end;
+    font-weight: 900;
+    color: #c14e76e0;
+    text-align: end;
+}
+
+.alert .bi:active {
+    transform: scale(0.90);
+}
+
+.out {
+    transform: translateX(0);
+}
+
+
+
+
+
 .form {
     width: 50%;
     background: #c14e76e0;
