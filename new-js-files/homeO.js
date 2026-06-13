@@ -605,7 +605,6 @@ function updateCartUI(itemId) {
 
         const isInCart = b.classList.contains('in');
 
-
         if (b.classList.contains('bi-bag') || b.classList.contains('bi-bag-heart')) {
 
             b.classList.toggle('bi-bag-heart', isInCart);
@@ -620,7 +619,6 @@ function updateCartUI(itemId) {
         //     b.classList.remove('bi-bag-heart');
         //     b.classList.add('bi-bag');
         // }
-
 
         if (b.classList.contains('open-deets') || b.classList.contains('open-deets-add')) {
 

@@ -355,6 +355,7 @@ main {
     border: none;
     background: #000000;
     color: white; 
+    cursor: pointer;
 }
 
 .the-receipt .receipt-body .location::after {
@@ -414,6 +415,7 @@ main {
     background: var(--base-accent);
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 
 
