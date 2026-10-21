@@ -12,6 +12,7 @@
     --base-bg: #F6EFE8;
     --dark-pink: #2C0714;
     --light-pink: #7E1036;
+    --special-white: #FBF6F1;
 }
 
 body {
@@ -21,8 +22,10 @@ body {
 
 header {
     height: 10svh;
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
+    left: 0;
     z-index: 50;
     background-color: var(--base-bg);
 }
@@ -88,12 +91,20 @@ main {
 
 }
 
+
+
+
+
+
+
+/*SECT ONE*/
+
 main .sect-one {
-    height: 100%;
+    height: 100svh;
 }
 
 main .sect-one .container {
-    margin: 0 9rem;
+    margin: 5svh 9rem 0 9rem;
     height: 100%;
     display: flex;
     align-items: center;
@@ -180,6 +191,122 @@ main .sect-one .offer-thread {
 
 
 
+
+
+
+
+/*SECT TWO*/
+
+main .sect-two .container {
+    margin: 0 9rem;
+    padding-top: 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+main .sect-two .container .header-navigator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .sect-two .container .header-navigator h2 {
+    font-family: "Fraunces", serif;
+    color: var(--dark-pink);
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+main .sect-two .container .header-navigator .see-all {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--light-pink);
+}
+
+main .sect-two .container .category-picker {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+main .sect-two .container .category-picker .category {
+    border: 1px solid var(--invisi-text);
+    padding: .4rem 1rem;
+    border-radius: 2rem;
+    background-color: var(--special-white);
+    font-size: small;
+    font-weight: bold;
+    color: var(--invisi-text);
+    cursor: pointer;
+}
+
+main .sect-two .container .category-picker .category:nth-child(1) {
+    color: white;
+    background-color: var(--dark-pink);
+    border: var(--dark-pink);
+}
+
+main .sect-two .container .product-display {
+    display: grid;
+    grid-template-columns: repeat(4, 18rem);
+    justify-content: space-between;
+}
+
+main .sect-two .container .product-display .product {
+    width: 18rem;
+    height: 25rem;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+main .sect-two .container .product-display .product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .sect-two .container .product-display .product .product-info {
+    background-color: var(--base-bg);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .4rem 0;
+}
+
+main .sect-two .container .product-display .product .product-info .pi-sect-one {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+main .sect-two .container .product-display .product .product-info .pi-sect-one .title {
+    font-weight: bold;
+}
+
+main .sect-two .container .product-display .product .product-info .pi-sect-one .sub-title {
+    color: var(--invisi-text);
+    font-size: .8rem;
+}
+
+main .sect-two .container .product-display .product .product-info .pi-sect-one .price {
+    color: var(--light-pink);
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+main .sect-two .container .product-display .product .product-info i {
+    font-size: 1.3rem;
+    align-self: self-start;
+    cursor: pointer;
+}
 
 
 
