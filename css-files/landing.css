@@ -8,6 +8,7 @@
 
 :root {
     --sub-text: #5C5554;
+    --invisi-text: #848685;
     --base-bg: #F6EFE8;
     --dark-pink: #2C0714;
     --light-pink: #7E1036;
@@ -15,24 +16,23 @@
 
 body {
     min-height: 100svh;
-    border: 2px solid blue;
     background-color: var(--base-bg);   
 }
 
 header {
     height: 10svh;
-    margin: 0 5rem;
     position: sticky;
     top: 0;
     z-index: 50;
+    background-color: var(--base-bg);
 }
 
 header nav {
     display: flex;
+    margin: 0 7.5rem;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
-    background-color: var(--base-bg);
 }
 
 header nav img {
@@ -83,12 +83,119 @@ header nav .navigations-logs .log-btns .sign-up {
     border-radius: .2rem;
 }
 
-
 main {
-    margin: 0 5rem;
-    border: 2px solid red;
     height: 90svh;
+
 }
+
+main .sect-one {
+    height: 100%;
+}
+
+main .sect-one .container {
+    margin: 0 9rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+main .sect-one .container .sect-one-cont {
+    width: 50%;
+    height: 100%;
+}
+
+main .sect-one .container .landing-text {
+    display: flex;
+    align-items: center;
+}
+
+main .sect-one .container .landing-text .l-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+main .sect-one .container .landing-text .l-texts h1 {
+    color: var(--dark-pink);
+    font-family: "Fraunces", serif;
+    font-size: 3rem;
+    width: 80%;
+}
+
+main .sect-one .container .landing-text .l-texts p {
+    color: var(--invisi-text);
+    font-size: 1rem;
+    width: 83%;
+}
+
+main .sect-one .container .landing-text .l-texts div {
+    display: flex;
+    gap: 2rem;
+}
+
+main .sect-one .container .landing-text .l-texts button {
+    height: 3rem;
+    width: 10rem;
+    cursor: pointer;
+}
+
+main .sect-one .container .landing-text .l-texts .cta-btns-one {
+    background-color: var(--dark-pink);
+    border-radius: 2rem;
+    border: 2px solid var(--dark-pink);
+    color: white;
+    font-weight: bold;
+}
+
+main .sect-one .container .landing-text .l-texts .cta-btns-two {
+    background: transparent;
+    border: 2px solid var(--dark-pink);
+    border-radius: .2rem;
+    color: var(--dark-pink);
+    font-weight: bold;
+}
+
+main .sect-one .container .landing-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+main .sect-one .offer-thread {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid var(--invisi-text);
+    border-bottom: 1px solid var(--invisi-text);
+    padding: 6px;
+    font-size: .9rem;
+    color: var(--invisi-text);
+    font-style: italic;
+    background-color: var(--base-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap'); */
