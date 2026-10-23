@@ -31,22 +31,15 @@
         <section class="form">
 
             <div class="nav-btns">
-                <button>Sign In</button>
-                <button>Sign Up</button>
-            </div>
-
-            <div class="names">
-
-                <div class="field">
-                    <label for="first-name">First name</label>
-                    <input name="first-name" type="text" placeholder="Reyna">
-                </div>
-
-                <div class="field">
-                    <label for="last-name">Last name</label>
-                    <input name="last-name" type="text" placeholder="Cole">
-                </div>
-
+                
+                <a class="button" href="./signIn.html">
+                    Sign In
+                </a>
+                
+                <a class="button" href="./signUp.html">
+                    Sign Up
+                </a>
+            
             </div>
 
             <div class="field">
@@ -60,8 +53,14 @@
             </div>
 
             <div class="terms">
-                <input type="checkbox">
-                <small>I agree to GirlyPop's Terms of Service and Privacy Policy, and I confirm I am 18 or older</small>
+                <div>
+                    <input type="checkbox" name="agree">
+                    <label for="agree">
+                        Stayed signed in
+                    </label>
+                </div>
+
+                <small>Forgot password?</small>
             </div>
 
             <button type="submit" class="submit">Sign In</button>
@@ -86,31 +85,17 @@
             
             </div>
 
-            <small class="other-nav">New to GirlyPop? <span>Create an account</span></small>
+            <small class="other-nav">New to GirlyPop? 
+                <span>
+                    <a href="./signUp.html">
+                        Create an account
+                    </a>
+                </span>
+            </small>
 
         </section>
     
     </main>
-
-    <!-- <section class="form">
-        <form action="">
-            <h2>SIGN IN</h2>
-            <input type="email" placeholder="E-mail" class="text">
-            <input type="password" placeholder="Password" class="text">
-            <p class="pass-redirect">Forgot Password?</p>
-            <button type="submit" class="submit soon">Submit</button>
-            <div class="somewhere">
-                <p>Don't have an account?</p>
-                <a href="signUp.html" class="button">Sign Up</a>
-            </div>
-            <div class="contact">
-                <i class="bi bi-facebook"></i>
-                <i class="bi bi-twitter-x"></i>
-                <i class="bi bi-instagram"></i>
-            </div>
-        </form>
-    </section>
-    <section class="welcome"></section> -->
 
 <script type="module" src="./new-js-files/signIn.js"></script>
 </body>

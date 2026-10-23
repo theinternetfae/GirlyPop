@@ -77,21 +77,26 @@ main .form .nav-btns {
     display: flex;
 }
 
-main .form .nav-btns button {
+main .form .nav-btns .button {
     width: 50%;
     padding: .6rem;
     cursor: pointer;
+    text-align: center;
+    font-size: .8rem;
 }
 
-main .form .nav-btns button:nth-child(1) {
+main .form .nav-btns .button:nth-child(1) {
+    border: 2px solid var(--invisi-text);
+    background-color: var(--base-bg);
+    text-decoration: none;
+    color: var(--invisi-text);
+}
+
+main .form .nav-btns .button:nth-child(2) {
     border: 2px solid var(--dark-pink);
     background-color: var(--dark-pink);
+    text-decoration: none;
     color: white;
-}
-
-main .form .nav-btns button:nth-child(2) {
-    border: 2px solid var(--invisi-text);
-    color: var(--invisi-text);
 }
 
 main .form .names {
@@ -114,6 +119,10 @@ main .form .field input {
     border: 1px solid var(--border-text);
 }
 
+main .form .field input::placeholder {
+    color: var(--border-text);
+}
+
 main .form .field input:focus {
     outline: none;
 }
@@ -134,6 +143,10 @@ main .form .names .field input {
     border: 1px solid var(--border-text);
 }
 
+main .form .names .field input::placeholder {
+    color: var(--border-text);
+}
+
 main .form .names .field input:focus {
     outline: none;
 }
@@ -149,12 +162,17 @@ main .form .terms input  {
     accent-color: var(--light-pink);
 }
 
+main .form .terms label  {
+    font-size: .8rem;
+}
+
 main .form .submit {
     width: 100%;
     padding: .6rem;
     color: white;
     background-color: var(--light-pink);
     border: var(--light-pink);
+    cursor: pointer;
 }
 
 main .form .demacator {
@@ -182,6 +200,7 @@ main .form .other-ways button {
     align-items: center;
     justify-content: center;
     gap: .2rem;
+    cursor: pointer;
 }
 
 main .form .other-nav {
@@ -189,7 +208,9 @@ main .form .other-nav {
     text-align: center;
 }
 
-main .form .other-nav span {
-    color: var(--light-pink);
+main .form .other-nav span a {
     font-weight: bold;
+    cursor: pointer;
+    color: var(--light-pink);
+    text-decoration: none;
 }

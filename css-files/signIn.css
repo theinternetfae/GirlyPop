@@ -77,27 +77,28 @@ main .form .nav-btns {
     display: flex;
 }
 
-main .form .nav-btns button {
+main .form .nav-btns .button {
     width: 50%;
     padding: .6rem;
     cursor: pointer;
+    text-align: center;
+    font-size: .8rem;
 }
 
-main .form .nav-btns button:nth-child(1) {
+main .form .nav-btns .button:nth-child(1) {
     border: 2px solid var(--dark-pink);
     background-color: var(--dark-pink);
+    text-decoration: none;
     color: white;
 }
 
-main .form .nav-btns button:nth-child(2) {
+main .form .nav-btns .button:nth-child(2) {
     border: 2px solid var(--invisi-text);
+    background-color: var(--base-bg);
+    text-decoration: none;
     color: var(--invisi-text);
 }
 
-main .form .names {
-    display: flex;
-    justify-content: space-between;
-}
 
 main .form .field {
     display: flex;
@@ -114,27 +115,11 @@ main .form .field input {
     border: 1px solid var(--border-text);
 }
 
+main .form .field input::placeholder {
+    color: var(--border-text);
+}
+
 main .form .field input:focus {
-    outline: none;
-}
-
-main .form .names .field {
-    display: flex;
-    flex-direction: column;
-    width: 48%;
-    gap: .3rem;
-}
-
-main .form .names .field label {
-    color: var(--sub-text);
-}
-
-main .form .names .field input {
-    padding: .6rem;
-    border: 1px solid var(--border-text);
-}
-
-main .form .names .field input:focus {
     outline: none;
 }
 
@@ -143,10 +128,22 @@ main .form .terms  {
     gap: .6rem;
     color: var(--invisi-text);
     align-items: start;
+    justify-content: space-between;
+}
+
+main .form .terms small  {
+    color: var(--light-pink);
+    font-weight: bold;
+    cursor: pointer;
 }
 
 main .form .terms input  {
+    cursor: pointer;
     accent-color: var(--light-pink);
+}
+
+main .form .terms label  {
+    font-size: .8rem;
 }
 
 main .form .submit {
@@ -155,6 +152,7 @@ main .form .submit {
     color: white;
     background-color: var(--light-pink);
     border: var(--light-pink);
+    cursor: pointer;
 }
 
 main .form .demacator {
@@ -182,6 +180,7 @@ main .form .other-ways button {
     align-items: center;
     justify-content: center;
     gap: .2rem;
+    cursor: pointer;
 }
 
 main .form .other-nav {
@@ -189,7 +188,9 @@ main .form .other-nav {
     text-align: center;
 }
 
-main .form .other-nav span {
+main .form .other-nav span a {
     color: var(--light-pink);
+    text-decoration: none;
+    cursor: pointer;
     font-weight: bold;
 }
