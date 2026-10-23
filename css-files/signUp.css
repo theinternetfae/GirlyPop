@@ -1,454 +1,195 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
-/* font-family: "Lexend Deca", sans-serif; */
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 * {
     margin: 0;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+    caret-color: var(--light-pink);
+    /* font-family: "Fraunces", serif; */
+}
+
+:root {
+    --sub-text: #5C5554;
+    --invisi-text: #848685;
+    --border-text: #D9D9D9;
+    --base-bg: #F6EFE8;
+    --dark-pink: #2C0714;
+    --light-pink: #7E1036;
+    --special-white: #FBF6F1;
+    --faded-pink: #DB9EAF;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    font-family: "Lexend Deca", sans-serif;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    min-height: 100svh;
+    background-color: var(--base-bg);   
 }
 
-/*ALERT*/
+main {
+    height: 100svh;
+    display: flex;
+}
 
-.alert-cont-before {
+main section {
+    width: 50%;
+}
+
+main .welcome {
+    position: relative;
+}
+
+main .welcome img {
+    height: 100%;
     width: 100%;
-    position: fixed;
-    display: flex;
-    justify-content: end;
+    object-fit: cover;
 }
 
-.alert-cont {  
-    width: 20%;
-    padding: 10px;
-    background: white;
-    border-radius: 10px;
-    border: 2px solid #c14e76e0;
-    z-index: 50;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    transition: .5s ease-in-out;
-    margin-top: 10px;
-    transform: translateX(600px);
-}
-
-.alert-cont p {
-    text-align: center;
-}
-
-.alert-cont .bi {
-    width: 15px;
-    cursor: pointer;
-    align-self: end;
-    font-weight: 900;
-    color: #c14e76e0;
-    text-align: end;
-}
-
-.alert .bi:active {
-    transform: scale(0.90);
-}
-
-.out {
-    transform: translateX(0);
-}
-
-.welcome {
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    background-image: url(../images/medium-shot-woman-wearing-hat.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.form {
+main .welcome .text {
     position: absolute;
-    width: 90%;
-    background: #c14e76e0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    margin: 0 20rem 1rem 3rem;
     display: flex;
-    border-radius: 10px;
+    flex-direction: column;
+    gap: 1rem;
+    color: white;
+    padding: 1rem;
+}
+
+main .welcome .text p:nth-child(1) {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+}
+
+main .welcome .text p:nth-child(2) {
+    font-family: "Fraunces", serif;
+    font-size: .8rem;
+}
+
+main .form {
+    padding: 0 9rem;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    gap: 1.5rem;
 }
 
-form {
-    width: 70%;
-    padding: 30px;
-    margin: 30px;
-    background: white;
-    border-radius: 5px;
+main .form .nav-btns {
+    display: flex;
+}
+
+main .form .nav-btns button {
+    width: 50%;
+    padding: .6rem;
+    cursor: pointer;
+}
+
+main .form .nav-btns button:nth-child(1) {
+    border: 2px solid var(--dark-pink);
+    background-color: var(--dark-pink);
+    color: white;
+}
+
+main .form .nav-btns button:nth-child(2) {
+    border: 2px solid var(--invisi-text);
+    color: var(--invisi-text);
+}
+
+main .form .names {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .form .field {
     display: flex;
     flex-direction: column;
+    gap: .3rem;
 }
 
-form h2 {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 20px;
-    color: #c14e76e0;
+main .form .field label {
+    color: var(--sub-text);
 }
 
-form .text {
-    margin-top: 10px;
-    padding: 10px;
-    box-shadow: 1px 1px 4px #696969;
-    border-radius: 5px;
+main .form .field input {
+    padding: .6rem;
+    border: 1px solid var(--border-text);
+}
+
+main .form .field input:focus {
     outline: none;
-    border: none;
 }
 
-form .checknews {
-    margin-top: 30px;
-    height: 10px;
-    width: 10px;
-    margin-left: 2px;
-    accent-color: #c14e76e0;
-    cursor: pointer;
-}
-
-form .checknews-label {
-    font-size: 12px;
-}
-
-.submit {
-    margin-top: 30px;
-    padding: 10px;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    background: #c14e76e0;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.submit:active {
-    transform: scale(0.95);
-}
-
-.somewhere {
-    margin-top: 30px;
+main .form .names .field {
     display: flex;
-    font-size: 12px;
+    flex-direction: column;
+    width: 48%;
+    gap: .3rem;
+}
+
+main .form .names .field label {
+    color: var(--sub-text);
+}
+
+main .form .names .field input {
+    padding: .6rem;
+    border: 1px solid var(--border-text);
+}
+
+main .form .names .field input:focus {
+    outline: none;
+}
+
+main .form .terms  {
+    display: flex;
+    gap: .6rem;
+    color: var(--invisi-text);
+    align-items: start;
+}
+
+main .form .terms input  {
+    accent-color: var(--light-pink);
+}
+
+main .form .submit {
+    width: 100%;
+    padding: .6rem;
+    color: white;
+    background-color: var(--light-pink);
+    border: var(--light-pink);
+}
+
+main .form .demacator {
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.somewhere .button {
-    background: #7e1036;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    outline: none;
-    font-size: 13.5px;
-    width: 150px;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
+main .form .demacator span {
+    border: 1px solid var(--border-text);
+    width: 35%;
+}
+
+main .form .other-ways {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .form .other-ways button {
+    border: 1px solid var(--border-text);
+    background-color: var(--special-white);
+    padding: .6rem;
+    width: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+}
+
+main .form .other-nav {
+    color: var(--invisi-text);
     text-align: center;
 }
 
-.somewhere .button:active {
-    transform: scale(0.95);
-}
-
-.contact {
-    display: flex;
-    margin-top: 50px;
-    gap: 15px;
-    justify-content: center;
-}
-
-.contact .bi {
-    cursor: pointer;
-    color: #c14e76e0;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-
-@media (min-width:768px) {
-    
-    .welcome {
-        height: 100vh;
-        width: 100%;
-        position: fixed;
-        background-image: url(../images/medium-shot-woman-wearing-hat.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .form {
-        position: absolute;
-        width: 90%;
-        height: 90%;
-        background: #c14e76e0;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        display: flex;
-        border-radius: 10px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    form {
-        width: 80%;
-        height: 80%;
-        padding: 30px;
-        margin: 30px;
-        background: white;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    form h2 {
-        text-align: center;
-        font-size: 30px;
-        color: #c14e76e0;
-    }
-
-    form .text {
-        margin-top: 20px;
-        padding: 20px;
-        width: 100%;
-        box-shadow: 1px 1px 4px #696969;
-        border-radius: 5px;
-        outline: none;
-        border: none;
-    }
-
-    form .newsletter {
-        width: 100%;
-    }
-
-    form .checknews {
-        margin-top: 30px;
-        height: 10px;
-        width: 10px;
-        margin-left: 2px;
-        accent-color: #c14e76e0;
-        cursor: pointer;
-    }
-
-    form .checknews-label {
-        font-size: 12px;
-    }
-
-    .submit {
-        width: 100%;
-        margin-top: 30px;
-        padding: 10px;
-        border-radius: 10px;
-        outline: none;
-        border: none;
-        background: #c14e76e0;
-        color: white;
-        font-weight: 600;
-        cursor: pointer;
-    }
-
-    .submit:active {
-        transform: scale(0.95);
-    }
-
-    .somewhere {
-        width: 100%;
-        margin-top: 30px;
-        display: flex;
-        font-size: 12px;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .somewhere .button {
-        background: #7e1036;
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        outline: none;
-        font-size: 13.5px;
-        width: 150px;
-        border: none;
-        font-weight: 600;
-        cursor: pointer;
-        text-align: center;
-    }
-
-    .somewhere .button:active {
-        transform: scale(0.95);
-    }
-
-    .contact {
-        display: flex;
-        margin-top: 50px;
-        gap: 15px;
-        justify-content: center;
-    }
-
-    .contact .bi {
-        cursor: pointer;
-        color: #c14e76e0;
-    }
-
-    a {
-        text-decoration: none;
-        color: white;
-    }
-}
-
-@media (min-width: 1024px) {
-    
-    body {
-        flex-direction: row;
-        align-items: start;
-        justify-content: start;   
-    }
-
-    .welcome {
-        height: 100vh;
-        width: 50%;
-        position: static;
-        background-image: url(../images/medium-shot-woman-wearing-hat.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .form {
-        position: static;
-        width: 50%;
-        height: 100vh;
-        background: #c14e76e0;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        display: flex;
-        border-radius: 10px 0 0 10px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    form {
-        width: 80%;
-        height: 80%;
-        padding: 30px;
-        margin: 20px;
-        background: white;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        flex-direction: column;
-    }
-
-    form h2 {
-        text-align: center;
-        font-size: 30px;
-        color: #c14e76e0;
-    }
-
-    form .text {
-        margin-top: 10px;
-        padding: 20px;
-        width: 100%;
-        box-shadow: 1px 1px 4px #696969;
-        border-radius: 5px;
-        outline: none;
-        border: none;
-    }
-
-    form .newsletter {
-        width: 100%;
-    }
-
-    form .checknews {
-        margin-top: 30px;
-        height: 10px;
-        width: 10px;
-        margin-left: 2px;
-        accent-color: #c14e76e0;
-        cursor: pointer;
-    }
-
-    form .checknews-label {
-        font-size: 12px;
-    }
-
-    .submit {
-        width: 100%;
-        margin-top: 30px;
-        padding: 10px;
-        border-radius: 10px;
-        outline: none;
-        border: none;
-        background: #c14e76e0;
-        color: white;
-        font-weight: 600;
-        cursor: pointer;
-    }
-
-    .submit:active {
-        transform: scale(0.95);
-    }
-
-    .somewhere {
-        width: 100%;
-        margin-top: 30px;
-        display: flex;
-        font-size: 12px;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .somewhere .button {
-        background: #7e1036;
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        outline: none;
-        font-size: 13.5px;
-        width: 150px;
-        border: none;
-        font-weight: 600;
-        cursor: pointer;
-        text-align: center;
-    }
-
-    .somewhere .button:active {
-        transform: scale(0.95);
-    }
-
-    .contact {
-        display: flex;
-        margin-top: 50px;
-        gap: 15px;
-        justify-content: center;
-    }
-
-    .contact .bi {
-        cursor: pointer;
-        color: #c14e76e0;
-    }
-
-    a {
-        text-decoration: none;
-        color: white;
-    }
+main .form .other-nav span {
+    color: var(--light-pink);
+    font-weight: bold;
 }
