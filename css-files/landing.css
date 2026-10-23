@@ -66,11 +66,12 @@ header nav .navigations-logs .log-btns {
     gap: .8rem;
 }
 
-header nav .navigations-logs .log-btns button {
+header nav .navigations-logs .log-btns .button {
     padding: .6rem;
     width: 6.5rem;
     cursor: pointer;
     text-align: center;
+    font-size: .8rem;
 }
 
 header nav .navigations-logs .log-btns .sign-in {
@@ -78,9 +79,6 @@ header nav .navigations-logs .log-btns .sign-in {
     border: 2px solid var(--dark-pink);
     font-weight: bold;
     border-radius: .2rem;
-}
-
-header nav .navigations-logs .log-btns .sign-in a {
     color: var(--dark-pink);
     text-decoration: none;
 }
@@ -91,12 +89,10 @@ header nav .navigations-logs .log-btns .sign-up {
     color: white;
     border: 2px solid var(--light-pink);
     border-radius: .2rem;
-}
-
-header nav .navigations-logs .log-btns .sign-up a { 
     text-decoration: none;
     color: white;
 }
+
 
 
 
