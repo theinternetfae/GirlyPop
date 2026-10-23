@@ -85,6 +85,15 @@ header nav .navigations {
     font-size: 1.5rem;
 }
 
+header nav .navigations a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--invisi-text);
+}
+
+
 header nav .navigations .checkout-count {
     display: flex;
     align-items: center;
