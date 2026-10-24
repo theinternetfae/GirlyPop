@@ -112,11 +112,11 @@ main .form .field label {
 
 main .form .field input {
     padding: .6rem;
-    border: 1px solid var(--border-text);
+    border: 2px solid var(--border-text);
 }
 
 main .form .field input::placeholder {
-    color: var(--border-text);
+    color: var(--invisi-text);
 }
 
 main .form .field input:focus {

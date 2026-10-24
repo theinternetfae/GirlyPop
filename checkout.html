@@ -8,135 +8,195 @@
         <link rel="stylesheet" href="./css-files/checkout.css">
         <link rel="stylesheet" href="./css-files/theme.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://use.hugeicons.com/font/icons.css">
     </head>
     <body class="the-body">
 
-        <div class="site">
-            
-            <header>
+        <header>
 
-                <nav>
-
-                    <div class="logo-box">
-
-                    </div>
-
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search..." class="search-input" >
-                        <button class="bi bi-search-heart find"></button>
-                    </div>
-
-                    <div class="navigations-sm">
-                        <i class="bi bi-list burger"></i>
-                    </div>
-
-                    <div class="navigations">
-                        <a href="home.html">
-                            <button class="bi moves bi-house">
-
-                            </button>
-                        </a>
-
-                        <button class="bi moves bi-bag bi-filled">
-                            <p class="cart-count"></p>
-                        </button>
-
-                        <a href="profile.html">
-                            <button class="bi bi-person">
-
-                            </button>
-                        </a>
-                    </div>
+            <nav>
+                <div class="us-search">
+                    <a href="./index.html">
+                        <img src="./images/Girlypop-logo-pink.png" alt="Our Logo">
+                    </a>
                 
-                </nav>
-
-                <div class="alert-cont">
-                    <i class="bi bi-x-lg exit-alert"></i>
-                    <p>Feature coming soon!</p>
+                    <div class="search-bar">
+                        <i class="hgi hgi-stroke hgi-rounded hgi-search-01"></i>
+                        <input type="text" placeholder="Search pieces, sellers, brands">
+                    </div>
                 </div>
 
-            </header>
+                <div class="navigations">
+                
+                    <a href="./home.html">
+                        <i class="hgi hgi-stroke hgi-rounded hgi-home-09 home"></i>
+                    </a>
 
-            <div class="navs-sm"> 
-                <i class="bi bi-x-lg remove-burger"></i>
-                <div class="navs-sm-moves">
-                    <a href="home.html"><p class="bi moves bi-house">Home</p></a>
-                    <p class="bi moves bi-bag bi-filled">Cart (<span class="cart-count"></span>)</p>
-                    <a href="profile.html"><p class="bi bi-person">Profile</p></a>
+                    <a href="./checkout.html">
+                        <div class="checkout-count">
+                            <i class="hgi hgi-stroke hgi-rounded hgi-shopping-bag-01"></i>
+                            <div class="counter">0</div>
+                        </div>
+                    </a>
+
+                    <a href="./profile.html">
+                        <div class="profile-border">
+                            <div class="profile">
+                                <img src="./images/medium-shot-friends-having-fun-party.jpg" alt="">
+                            </div>
+                        </div>
+                    </a>
+                    
+                
                 </div>
-            </div>
 
-            <main>
+            </nav>
 
-                <section class="checkout-body the-cart">
+        </header>
 
-                    <div class="the-cart-text">
-                        <h2>Your Cart</h2>
-                        <p>
-                            <span class="cart-count">0</span> 
-                            <span class="cart-label"></span>
-                            in your cart</p>
-                    </div>
+        <main>
+        
+            <section class="c-section checkout-details">
 
-                    <div class="the-cart-products">
+                <div class="checkout-section-one">
+                    
+                    <h2>Your Item</h2>
+                    
+                    <div class="cart">
 
+                        <div class="cart-item">
 
-                    </div>
-
-                </section>
-
-                <section class="checkout-body the-receipt">
-                    <div class="receipt-body">
-                        
-                        <div class="location">
-                            <h2>Your Location</h2>
-
-                            <div class="location-deets">
-                                <select name="" id="" class="loc-det country-select">
-                                    <option value="" selected hidden>Country</option>
-                                </select>
-                                <select name="" id="" class="loc-det state-select"> 
-                                    <option value="" selected hidden>State</option>
-                                </select>
-                                <select name="" id="" class="loc-det city-select">
-                                    <option value="" selected hidden>City</option>
-                                </select>
-                            </div>                
+                            <i class="hgi hgi-stroke hgi-rounded hgi-delete-02"></i>
                             
-                            <input type="text" placeholder="ZIP code (optional)">
+                            <div class="sect">
+                                <img src="./images/tops/black-goth-blouse.jpeg" alt="">
+                                <div class="info">
+                                    <h3>Black goth blouse</h3>
+                                    <small>size M • Sold by @reynacole</small>
+                                </div>
+                            </div>
+                            
+                            <p class="price">$38.00</p>
+                        
+                        </div>
 
-                            <button class="update-loc">Update</button>
-                        </diV>
+                    </div>
+                    
+                
+                </div>
 
-                        <div class="receipt">
-                            <h2>Your Total</h2>
+                <div class="checkout-section-two">
+                    
+                    <h2>Shipping address</h2>
 
-                            <div class="price-breakdown">
+                    <div class="field">
+                        <label for="full-name">Full name</label>
+                        <input type="text" name="full-name" placeholder="Your name">
+                    </div>
 
+                    <div class="field">
+                        <label for="address">Address</label>
+                        <input type="text" name="address" placeholder="Street address">
+                    </div>
+
+                    <div class="fields-holder">
+                
+                        <div class="field">
+                            <label for="city">City</label>
+                            <input type="text" name="city" placeholder="City">
+                        </div>
+                
+                        <div class="field">
+                            <label for="zip">Postal code</label>
+                            <input type="text" name="zip" placeholder="ZIP / postcode">
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+                <div class="checkout-section-three">
+
+                    <h2>Payment</h2>
+
+                    <label class="chosen">
+                        <input type="radio" name="pay-method" checked>
+                        Card ending in 4471
+                    </label>
+                    
+                    <label>
+                        <input type="radio" name="pay-method">
+                        Add a new card
+                    </label>
+                    
+                    <label>
+                        <input type="radio" name="pay-method">
+                        Paypal
+                    </label>
+
+                </div>
+
+                <div class="checkout-section-four">
+                    
+                    <h2>Promo code</h2>
+               
+                    <div class="enter-code">
+                        <input type="text" placeholder="Enter code">
+                        <button>Apply</button>
+                    </div>
+               
+                </div>
+
+            </section>
+            
+            <section class="c-section receipt-section">
+                
+                <div class="receipt">
+
+                    <h2>Order summary</h2>
+                
+                    <div class="pricing">
+
+                        <div class="price">
+                        
+                            <div class="price-display">
+                                <p>Item</p>
+                                <p>$38.00</p>
+                            </div>
+                        
+                            <div class="price-display">
+                                <p>Shipping</p>
+                                <p>$4.50</p>
+                            </div>
+                        
+                            <div class="price-display">
+                                <p>Buyer protection</p>
+                                <p>$1.90</p>
                             </div>
                         
                         </div>
 
-                        <a href="signUp.html">
-                            <button class="checkout">Checkout</button>
-                        </a>
+                        <div class="total">
+                            <p>Total</p>
+                            <p>$44.40</p>
+                        </div>
+                    
                     </div>
-                </section>
 
-            </main>
+                    <button class="place">Place order</button>
+                    <button class="track">Track orders</button>
 
+                    <div class="trust-quote">
+                        <i class="hgi hgi-stroke hgi-rounded hgi-shield-01"></i>
+                        <small>Covered by GirlyPop Buyer Protection - full refund if the item is not as described</small>
+                    </div>
 
-            <footer>
-                <p>© 2025 GirlyPop. All rights reserved.</p>
-                <div class="contact">
-                    <i class="bi bi-facebook"></i>
-                    <i class="bi bi-twitter-x"></i>
-                    <i class="bi bi-instagram"></i>
                 </div>
-            </footer> 
-
-        </div>
-
+            
+            </section>
+        
+        </main>
+       
     <script type="module" src="./new-js-files/checkoutO.js"></script>    
     </body>
 </html>
