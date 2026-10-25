@@ -390,3 +390,44 @@ main .sect-three .products-display .product .product-info i {
     align-self: self-start;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+
+/*FOOTER*/
+
+footer {
+    margin: 0 9rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+footer img {
+    height: 1.5rem;
+}
+
+footer .footer-sect {
+    display: flex;
+    gap: 2.5rem;
+}
+
+
+footer .footer-sect .footer-sect-cat {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+footer .footer-sect .footer-sect-cat p {
+    color: var(--invisi-text);
+    font-size: .9rem;
+    cursor: pointer;
+}
