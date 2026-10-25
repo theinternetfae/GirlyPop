@@ -184,6 +184,7 @@ main .checkout-details .checkout-section-one h2 {
     font-family: 'Fraunces', serif;
     color: var(--dark-pink);
     font-size: 1.4rem;
+    font-weight: 600;
 }
 
 main .checkout-details .checkout-section-one .cart {
@@ -260,6 +261,7 @@ main .checkout-details .checkout-section-two h2{
     font-family: "Fraunces", serif;
     color: var(--dark-pink);
     font-size: 1.4rem;
+    font-weight: 600;
 }
 
 main .checkout-details .checkout-section-two .fields-holder{
@@ -324,6 +326,7 @@ main .checkout-details .checkout-section-three h2{
     font-family: "Fraunces", serif;
     color: var(--dark-pink);
     font-size: 1.4rem;
+    font-weight: 600;
 }
 
 main .checkout-details .checkout-section-three label {
@@ -364,6 +367,7 @@ main .checkout-details .checkout-section-four h2{
     font-family: "Fraunces", serif;
     color: var(--dark-pink);
     font-size: 1.4rem;
+    font-weight: 600;
 }
 
 main .checkout-details .checkout-section-four .enter-code {
@@ -424,6 +428,7 @@ main .receipt-section .receipt h2{
     font-family: "Fraunces", serif;
     color: var(--dark-pink);
     font-size: 1.4rem;
+    font-weight: 600;
 }
 
 main .receipt-section .receipt .pricing {

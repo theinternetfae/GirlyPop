@@ -8,194 +8,244 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.4/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css-files/profile.css">
     <link rel="stylesheet" href="./css-files/theme.css">
+    <link rel="stylesheet" href="https://use.hugeicons.com/font/icons.css">
 </head>
 
 <body class="the-body">
     
-    <div class="site">
+    <header>
 
-        <header>
-
-            <nav>
-
-                <div class="logo-box">
-
-                </div>
-
+        <nav>
+            <div class="us-search">
+                <a href="./index.html">
+                    <img src="./images/Girlypop-logo-pink.png" alt="Our Logo">
+                </a>
+               
                 <div class="search-bar">
-                    <input type="text" placeholder="Search..." class="search-input" >
-                    <button class="bi bi-search-heart find"></button>
+                    <i class="hgi hgi-stroke hgi-rounded hgi-search-01"></i>
+                    <input type="text" placeholder="Search pieces, sellers, brands">
                 </div>
+            </div>
 
-                <div class="navigations-sm">
-                    <i class="bi bi-list burger"></i>
+            <div class="navigations">
+            
+                <a href="./home.html">
+                    <i class="hgi hgi-stroke hgi-rounded hgi-home-09 home"></i>
+                </a>
+
+                <a href="./checkout.html">
+                    <div class="checkout-count">
+                        <i class="hgi hgi-stroke hgi-rounded hgi-shopping-bag-01"></i>
+                        <div class="counter">0</div>
+                    </div>
+                </a>
+
+                <a href="./profile.html">
+                    <div class="profile-border">
+                        <div class="profile">
+                            <img src="./images/medium-shot-friends-having-fun-party.jpg" alt="">
+                        </div>
+                    </div>
+                </a>
+                
+            
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="sect-one">
+
+            <section class="profile-banner"></section>
+            
+            <section class="profile-info">
+                
+                <div class="pfp-name">
+                    <div class="img-border">
+                        <div class="img">
+                            <img src="./images/medium-shot-friends-having-fun-party.jpg" alt="">
+                        </div>
+                    </div>
+                
+                    <div class="name-user">
+                        <h2>Reyna Cole</h2>
+                        <p>@reynacole • Port-Harcourt</p>
+                    </div>
                 </div>
+    
+                <button>Edit profile</button>
+            
+            </section>        
 
-                <div class="navigations">
-                    
-                    <a href="home.html">
-                        <button class="bi moves bi-house">
+        </section>
+
+        <section class="sect-two">
+            
+            <div class="stats">
+
+                <div class="stat">
+                    <h2>42</h2>
+                    <p>Listings</p>
+                </div>
+                
+                <div class="stat">
+                    <h2>318</h2>
+                    <p>Sold</p>
+                </div>
+                
+                <div class="stat">
+                    <h2>1.2K</h2>
+                    <p>Followers</p>
+                </div>
+                
+                <div class="stat">
+                    <h2>186</h2>
+                    <p>Following</p>
+                </div>
+                
+                <div class="stat">
+                    <h2>
+                        4.9
+                        <i class="hgi hgi-stroke hgi-rounded hgi-star-award-02"></i>
+                    </h2>
+                    <P>Rating</P>
+                </div>
+            
+            </div>
+
+            <p class="bio">Slow closet, fast turnover, mostly tailoring and denim, a slip dress here and there. Ships within 2 days - measurements always in the listing</p>
         
-                        </button>
-                    </a>
-                    
-                    <a href="checkout.html">
-                        <button class="bi moves bi-bag">
-                            <p class="cart-count"></p>
-                        </button>
-                    </a>
-                    
-                    <button class="bi bi-person bi-filled">
+        </section>
+    
+        <section class="sect-three">
 
-                    </button>
-                    
-                </div>
-            
-            </nav>
-
-            <div class="alert-cont">
-                <i class="bi bi-x-lg exit-alert"></i>
-                <p>Feature coming soon!</p>
+            <div class="user-sort">
+                <p>Store</p>
+                <p>Sold</p>
+                <p>Reviews</p>
+                <p>About</p>
             </div>
 
-        </header>
-
-        <div class="navs-sm"> 
-            <i class="bi bi-x-lg remove-burger"></i>
-            <div class="navs-sm-moves">
-                <a href="home.html"><p class="bi moves bi-house">Home</p></a>
-                <a href="checkout.html"><p class="bi moves bi-bag">Cart (<span class="cart-count"></span>)</p></a>
-                <p class="bi bi-person bi-filled">Profile</p>
-            </div>
-        </div>
-
-
-        <main>
-
-            <section class="user">
-                <div class="user-pic">
-                    <img src="./images/diva.jpg" alt="">
+            <div class="products-display">
+                
+                <div class="add">
+                    <i class="hgi hgi-stroke hgi-rounded hgi-plus"></i>
                 </div>
 
-                <div class="user-details">
-                    <h2>Usernamegrll</h2>
-                    <p>Username Girl</p>
-                    <p>usernamegirl@gmail.com</p>
-                </div>
-
-                <button class="soon">
-                    <i class="bi bi-shop"></i> 
-                    Become a Vendor
-                </button>
-            </section>
-
-            <section class="route-cont">
-                <div class="route soon">
-                    <div class="route-label">
-                        <i class="bi bi-person-fill"></i>
-                        <p>Manage profile</p>
-                    </div>
-
-                    <i class="bi bi-arrow-right-circle-fill route-arrow"></i>
-                </div>
-
-                <div class="route soon">
-                    <div class="route-label">
-                        <i class="bi bi-key-fill"></i>
-                        <p>Password & Security</p>
-                    </div>
-
-                    <i class="bi bi-arrow-right-circle-fill route-arrow"></i>
-                </div>
-
-                <div class="route soon">
-                    <div class="route-label">
-                        <i class="bi bi-bell-fill"></i> 
-                        <p>Notifications</p>
-                    </div>
-
-                    <i class="bi bi-arrow-right-circle-fill route-arrow"></i>
-                </div>
-
-            </section>
-
-            <section class="route-cont">
-
-                <div class="route soon">
-                    <div class="route-label">
-                        <i class="bi bi-translate"></i>
-                        <p>Language</p>
-                    </div>
-
-                    <i class="bi bi-arrow-right-circle-fill route-arrow"></i>
-                </div>
-
-                <div class="route soon">
-                    <div class="route-label">
-                        <i class="bi bi-credit-card-2-back-fill"></i>
-                        <p>Credit card & Payments</p>
-                    </div>
-
-                    <i class="bi bi-arrow-right-circle-fill route-arrow"></i>
-                </div>
-
-                <div class="route soon">
-                    <div class="route-label">
-                        <i class="bi bi-brightness-high-fill"></i>
-                        <p>Light / Dark mode</p>
-                    </div>
-
-                    <div class="mode-toggle">
+                <div class="product">
+                    <img src="./images/bottoms/summer-booty-shorts.jpeg" alt="">
+                    <div class="product-info">
                         
+                        <div class="pi-sect-one">
+                            <p class="title">Crochet halter-top</p>
+                            <p class="sub-title">@reynacole Size M</p>
+                            <p class="price">$18.00</p>
+                        </div>
+
+                        <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                    
                     </div>
-                </div>        
-
-            </section>
-
-            <section class="route-cont">
-                
-                <div class="route soon">
-                    <div class="route-label">
-                        <i class="bi bi-card-heading"></i>
-                        <p>About Us</p>
-                    </div>
-
-                    <i class="bi bi-arrow-right-circle-fill route-arrow"></i>
-                </div>        
-
-                <div class="route soon">
-                    <div class="route-label">
-                        <i class="bi bi-headset"></i>
-                        <p>Help Center</p>
-                    </div>
-
-                    <i class="bi bi-arrow-right-circle-fill route-arrow"></i>
                 </div>
                 
-                <div class="route soon">
-                    <div class="route-label">
-                        <i class="bi bi-envelope-heart-fill"></i>
-                        <p>Contact Us</p>
-                    </div>
+                <div class="product">
+                    <img src="./images/accessories/butterfly-pendant.jpeg" alt="">
+                    <div class="product-info">
+                        
+                        <div class="pi-sect-one">
+                            <p class="title">Crochet halter-top</p>
+                            <p class="sub-title">@reynacole Size M</p>
+                            <p class="price">$18.00</p>
+                        </div>
 
-                    <i class="bi bi-arrow-right-circle-fill route-arrow"></i>
+                        <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                    
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="./images/shoes/flower-shoes.jpeg" alt="">
+                    <div class="product-info">
+                        
+                        <div class="pi-sect-one">
+                            <p class="title">Crochet halter-top</p>
+                            <p class="sub-title">@reynacole Size M</p>
+                            <p class="price">$18.00</p>
+                        </div>
+
+                        <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                    
+                    </div>
                 </div>
             
-            </section>
+                <div class="product">
+                    <img src="./images/accessories/bag.jpeg" alt="">
+                    <div class="product-info">
+                        
+                        <div class="pi-sect-one">
+                            <p class="title">Crochet halter-top</p>
+                            <p class="sub-title">@reynacole Size M</p>
+                            <p class="price">$18.00</p>
+                        </div>
 
-        </main>
+                        <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                    
+                    </div>
+                </div>
 
-        <footer>
-            <p>© 2025 GirlyPop. All rights reserved.</p>
-            <div class="contact">
-                <i class="bi bi-facebook"></i>
-                <i class="bi bi-twitter-x"></i>
-                <i class="bi bi-instagram"></i>
+                <div class="product">
+                    <img src="./images/tops/leopard-print-nightset.jpeg" alt="">
+                    <div class="product-info">
+                        
+                        <div class="pi-sect-one">
+                            <p class="title">Crochet halter-top</p>
+                            <p class="sub-title">@reynacole Size M</p>
+                            <p class="price">$18.00</p>
+                        </div>
+
+                        <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                    
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="./images/bottoms/summer-cotton-skirt.jpeg" alt="">
+                    <div class="product-info">
+                        
+                        <div class="pi-sect-one">
+                            <p class="title">Crochet halter-top</p>
+                            <p class="sub-title">@reynacole Size M</p>
+                            <p class="price">$18.00</p>
+                        </div>
+
+                        <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                    
+                    </div>
+                </div>
+            
+                <div class="product">
+                    <img src="./images/dresses/red-dress.jpeg" alt="">
+                    <div class="product-info">
+                        
+                        <div class="pi-sect-one">
+                            <p class="title">Crochet halter-top</p>
+                            <p class="sub-title">@reynacole Size M</p>
+                            <p class="price">$18.00</p>
+                        </div>
+
+                        <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                    
+                    </div>
+                </div>
+            
             </div>
-        </footer> 
+
+        </section>
 
 
-    </div>
+    </main>
 
 </body>
 
