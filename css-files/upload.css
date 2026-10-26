@@ -159,8 +159,7 @@ header nav .navigations .profile img {
 /*SECITON ONE*/
 
 main {
-    margin: 10svh 9rem 0 9rem;
-    border: 2px solid red;
+    margin: 10svh 9rem 2rem 9rem;
 }
 
 main .sect-one {
@@ -272,3 +271,132 @@ main .sect-one .damages input::placeholder {
 main .sect-one .damages input:focus {
     outline: none;
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SECTION TWO*/
+
+main .sect-two {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+
+main .sect-two .tag-input {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+main .sect-two .tag-input .tag-header {
+    display: flex;
+    align-items: center;
+    color: var(--sub-text);
+    justify-content: space-between;
+}
+
+main .sect-two .tag-input .tag-body {
+    display: flex;
+    align-items: center;
+    color: var(--sub-text);
+    justify-content: space-between;
+    background-color: white;
+    padding: .6rem;
+    border: 2px solid var(--border-text);
+}
+
+main .sect-two .tag-input .tag-body input {
+    width: 90%;
+    border: none;
+}
+
+main .sect-two .tag-input .tag-body input::placeholder {
+    color: var(--invisi-text);
+}
+
+main .sect-two .tag-input .tag-body input:focus {
+    outline: none;
+}
+
+main .sect-two .tag-input .tag-body i {
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+main .sect-two .tag-input .named-field {
+    padding: .4rem 0;
+    font-size: .8rem;
+}
+
+main .sect-two .tag-input .named-field p {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: .6rem;
+    border-radius: 2rem;
+    align-items: center;
+    border: 2px solid var(--invisi-text);
+    background-color: var(--special-white);
+    width: 8rem;
+    text-align: center;
+}
+
+main .sect-two .tag-input .named-field p i {
+    cursor: pointer;
+}
+
+main .sect-two .prod-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+main .sect-two .prod-desc label {
+    color: var(--sub-text);
+}
+
+main .sect-two .prod-desc textarea {
+    padding: .6rem;
+    border: 2px solid var(--border-text);
+}
+
+main .sect-two .prod-desc textarea::placeholder {
+    color: var(--invisi-text);
+}
+
+main .sect-two .prod-desc textarea:focus {
+    outline: none;
+}
+
+main button {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    background-color: var(--light-pink);
+    padding: .6rem;
+    border-radius: .2rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}
+
+main button:focus {
+    outline: none;
+}
