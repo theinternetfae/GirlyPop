@@ -145,3 +145,130 @@ header nav .navigations .profile img {
     object-fit: cover;
     border-radius: 100%;
 }
+
+
+
+
+
+
+
+
+
+
+
+/*SECITON ONE*/
+
+main {
+    margin: 10svh 9rem 0 9rem;
+    border: 2px solid red;
+}
+
+main .sect-one {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--border-text);
+}
+
+main .sect-one .initial-info {
+    display: flex;
+    margin: 0 15rem 0 15rem;
+    justify-content: space-between;
+}
+
+main .sect-one .initial-info .img-upload {
+    background-color: var(--faded-pink);
+    display: flex;
+    width: 15rem;
+    height: 18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6rem;
+    color: var(--light-pink);
+}
+
+main .sect-one .initial-info .init-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main .sect-one .initial-info .init-info .field {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+main .sect-one .initial-info .init-info .field label {
+    color: var(--sub-text);
+}
+
+main .sect-one .initial-info .init-info .field input {
+    padding: .6rem;
+    width: 30rem;
+    border: 2px solid var(--border-text);
+}
+
+main .sect-one .initial-info .init-info .field input::placeholder {
+    color: var(--invisi-text);
+}
+
+main .sect-one .initial-info .init-info .field input:focus {
+    outline: none;
+}
+
+main .sect-one .initial-info .init-info .field select {
+    padding: .6rem;
+    width: 30rem;
+    border: 2px solid var(--border-text);
+    color: var(--sub-text);
+}
+
+main .sect-one .initial-info .init-info .field select:focus {
+    outline: none;
+}
+
+main .sect-one .damages {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 15rem 0 15rem;
+    justify-content: space-between;
+}
+
+main .sect-one .damages p {
+    color: var(--sub-text);
+}
+
+main .sect-one .damages .yes-no {
+    display: flex;
+    gap: 2rem;
+}
+
+main .sect-one .damages .yes-no span {
+    padding: .6rem 1rem;
+    color: var(--invisi-text);
+    background-color: var(--special-white);
+    border-radius: 1.2rem;
+    font-size: .9rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 4rem;
+    text-align: center;
+    border: 2px solid var(--border-text);
+} 
+
+main .sect-one .damages input {
+    padding: .6rem;
+    border: 2px solid var(--border-text);
+}
+
+main .sect-one .damages input::placeholder {
+    color: var(--invisi-text);
+}
+
+main .sect-one .damages input:focus {
+    outline: none;
+} 
