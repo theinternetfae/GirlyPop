@@ -329,6 +329,7 @@ main .sect-three .products-display {
 }
 
 main .sect-three .products-display .add {
+    text-decoration: none;
     background-color: var(--faded-pink);
     cursor: pointer;
     margin-bottom: 2rem;
