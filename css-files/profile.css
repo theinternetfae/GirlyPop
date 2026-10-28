@@ -225,11 +225,15 @@ main .profile-info .pfp-name .name-user p {
     font-size: .8rem;
 }
 
-main .profile-info button {
+main .profile-info .button {
     border: 2px solid var(--dark-pink);
     background: transparent;
-    padding: .6rem;
     width: 8rem;
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     color: var(--dark-pink);
     font-weight: bold;
     border-radius: .2rem;
