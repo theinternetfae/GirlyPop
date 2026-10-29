@@ -254,3 +254,222 @@ main .profile-info .button {
     border-radius: .2rem;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SECTION TWO*/
+main .sect-two {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+main .sect-two .one-two {
+    border: 2px solid var(--border-text);
+    padding: .6rem 1.5rem;
+    border-radius: .6rem;
+    width: 50%;
+    background-color: white;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main .sect-two .one .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .sect-two .one .header h2 {
+    font-family: "Fraunces", serif;
+    color: var(--dark-pink);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+main .sect-two .one .header .button {
+    border: 3px solid var(--light-pink);
+    padding: .4rem 1.2rem;
+    border-radius: 1rem;
+    color: var(--light-pink);
+    font-weight: bold;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+main .sect-two .one .body {
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+main .sect-two .one .body .field {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+main .sect-two .one .body .field label {
+    color: var(--sub-text);
+    font-size: .9rem;
+}
+
+main .sect-two .one .body .field input {
+    padding: .6rem;
+    height: 3rem;
+    border: 2px solid var(--border-text);
+    background-color: transparent;
+}
+
+main .sect-two .one .body .field input::placeholder {
+    color: var(--invisi-text);
+}
+
+main .sect-two .one .body .field input:focus {
+    outline: none;
+}
+
+main .sect-two .two h2 {
+    font-family: "Fraunces", serif;
+    color: var(--dark-pink);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+main .sect-two .two textarea {
+    padding: .6rem;
+    border: 2px solid var(--border-text);
+    border-radius: .4rem;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SECTION THREE*/
+main .sect-three {
+    border: 2px solid var(--border-text);
+    padding: .4rem 1.2rem;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 20rem;
+    background: white;
+    border-radius: .6rem;
+}
+
+main .sect-three .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .sect-three .header h2 {
+    font-family: "Fraunces", serif;
+    color: var(--dark-pink);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+main .sect-three .header .button {
+    border: 3px solid var(--light-pink);
+    padding: .4rem 1.2rem;
+    border-radius: 1rem;
+    color: var(--light-pink);
+    font-weight: bold;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+main .sect-three .body {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    height: 80%;
+}
+
+main .sect-three .body .one-two {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main .sect-three .body .one-two .field {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+main .sect-three .body .one-two .field label {
+    color: var(--sub-text);
+    font-size: .9rem;
+}
+
+main .sect-three .body .one-two .field input {
+    padding: .6rem;
+    height: 3rem;
+    border: 2px solid var(--border-text);
+    background-color: transparent;
+}
+
+main .sect-three .body .one-two .field input::placeholder {
+    color: var(--invisi-text);
+}
+
+main .sect-three .body .one-two .field input:focus {
+    outline: none;
+}
+
+/* main .sect-two .two h2 {
+    font-family: "Fraunces", serif;
+    color: var(--dark-pink);
+    font-weight: 600;
+    font-size: 1.5rem;
+} */
