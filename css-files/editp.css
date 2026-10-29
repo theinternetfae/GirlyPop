@@ -23,7 +23,7 @@
 
 body {
     min-height: 100svh;
-    background-color: var(--base-bg);   
+    background-color: var(--base-bg);
 }
 
 header {
@@ -467,9 +467,204 @@ main .sect-three .body .one-two .field input:focus {
     outline: none;
 }
 
-/* main .sect-two .two h2 {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SECT FOUR*/
+
+main .sect-four {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+main .sect-four .one-two {
+    border: 2px solid var(--border-text);
+    padding: .6rem 1.5rem;
+    border-radius: .6rem;
+    width: 50%;
+    background-color: white;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main .sect-four .one .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .sect-four .one .header h2 {
     font-family: "Fraunces", serif;
     color: var(--dark-pink);
     font-weight: 600;
     font-size: 1.5rem;
-} */
+}
+
+main .sect-four .one .header .button {
+    border: 3px solid var(--light-pink);
+    padding: .4rem 1.2rem;
+    border-radius: 1rem;
+    color: var(--light-pink);
+    font-weight: bold;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+main .sect-four .one .body {
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+main .sect-four .one .body .field {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+main .sect-four .one .body .field label {
+    color: var(--sub-text);
+    font-size: .9rem;
+}
+
+main .sect-four .one .body .field input {
+    padding: .6rem;
+    height: 3rem;
+    border: 2px solid var(--border-text);
+    background-color: transparent;
+}
+
+main .sect-four .one .body .field input::placeholder {
+    color: var(--invisi-text);
+}
+
+main .sect-four .one .body .field input:focus {
+    outline: none;
+}
+
+main .sect-four .one .body .names {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .sect-four .one .body .names .field {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    gap: .3rem;
+}
+
+main .sect-four .one .body .names .field label {
+    color: var(--sub-text);
+}
+
+main .sect-four .one .body .names .field input {
+    padding: .6rem;
+    border: 2px solid var(--border-text);
+}
+
+main .sect-four .one .body .names .field input::placeholder {
+    color: var(--invisi-text);
+}
+
+main .sect-four .one .body .names .field input:focus {
+    outline: none;
+}
+
+
+
+main .sect-four .two h2 {
+    font-family: "Fraunces", serif;
+    color: var(--dark-pink);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+main .sect-four .two .body {
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+main .sect-four .two .body .contact-card {
+    display: flex;
+    align-items: center;
+    padding: .6rem;
+    border: 2px solid var(--border-text);
+}
+
+main .sect-four .two .body .contact-card input {
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+main .sect-four .two .body .contact-card i {
+    font-size: 1.5rem;
+    color: var(--light-pink);
+}
+
+main .more-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+}
+
+main .more-options button {
+    padding: .6rem 10rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+main .more-options .change {
+    border: 2px solid var(--dark-pink);
+    background-color: var(--dark-pink);
+    font-weight: bold;
+    color: white;
+}
+
+main .more-options .delete {
+    border: 2px solid var(--dark-pink);
+    font-weight: bold;
+    color: var(--dark-pink);
+}
+
+main .update {
+    margin: 1.5rem auto;
+    width: 70%;
+    padding: .6rem 10rem;
+    border-radius: 1rem;
+    border: 2px solid var(--light-pink);
+    background-color: var(--light-pink);
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+}
+
+main .update i {
+    font-size: 1rem;
+}

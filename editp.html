@@ -175,12 +175,12 @@
 
         </section>
 
-        <section class="sect-two">
+        <section class="sect-four">
 
             <div class="one-two one">
 
                 <div class="header">
-                    <h2>Personal Info</h2>
+                    <h2>Bank details</h2>
                     <div class="button">
                         Update
                     </div>
@@ -189,18 +189,27 @@
                 <div class="body">
 
                     <div class="field">
-                        <label for="full-name">Full name</label>
-                        <input type="text" name="full-name">
+                        <label for="card-no">Card number</label>
+                        <input type="card-no" name="full-name" placeholder="XXXXXXXXXXX">
                     </div>
 
                     <div class="field">
-                        <label for="full-name">Email</label>
-                        <input type="text" name="full-name">
+                        <label for="card-name">Card holder name</label>
+                        <input type="card-name" name="full-name" placeholder="Jane Doe">
                     </div>
 
-                    <div class="field">
-                        <label for="full-name">Username</label>
-                        <input type="text" name="full-name">
+                    <div class="names">
+
+                        <div class="field">
+                            <label for="exp-date">Exp. Date</label>
+                            <input name="exp-date" type="text" placeholder="MM/DD/YYYY">
+                        </div>
+
+                        <div class="field">
+                            <label for="security-code">Security Code</label>
+                            <input name="security-code" type="text" placeholder="XXXXX">
+                        </div>
+
                     </div>
 
                 </div>
@@ -208,13 +217,40 @@
             </div>
             
             <div class="one-two two">
-                <h2>Your bio</h2>
+                <h2>Contact Info</h2>
 
-                <textarea name="" id="" placeholder="Your bio"></textarea>
+                <div class="body">
+
+                    <div class="contact-card">
+                        <input type="text" placeholder="Your name">
+                        <i class="hgi hgi-stroke hgi-rounded hgi-instagram"></i>
+                    </div>
+
+                    <div class="contact-card">
+                        <input type="text" placeholder="Your name">
+                        <i class="hgi hgi-stroke hgi-rounded hgi-call"></i>
+                    </div>
+
+                    <div class="contact-card">
+                        <input type="text" placeholder="Your name">
+                        <i class="hgi hgi-stroke hgi-rounded hgi-facebook-02"></i>
+                    </div>
+                    
+                </div>
             </div>
 
         </section>
     
+        <section class="more-options">
+            <button class="change">Change your password</button>
+            <button class="delete">Delete your account</button>
+        </section>
+
+        <button class="update">
+            Update
+            <i class="hgi hgi-stroke hgi-rounded hgi-checkmark-circle-01"></i>
+        </button>
+
     </main>
 
 
