@@ -18,6 +18,10 @@
     --faded-pink: #DB9EAF;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     min-height: 100svh;
     background-color: var(--base-bg);   
@@ -271,7 +275,8 @@ main .sect-two .container {
     gap: 2rem;
 
     @media (max-width:768px) {
-        display: none;
+        margin: 0 1rem 0 1rem;
+        gap: .8rem;
     }
 }
 
@@ -286,6 +291,10 @@ main .sect-two .container .header-navigator h2 {
     color: var(--dark-pink);
     font-size: 2rem;
     font-weight: 600;
+
+    @media (max-width:768px) {
+        font-size: 1.4rem;
+    }
 }
 
 main .sect-two .container .header-navigator .see-all {
@@ -295,12 +304,21 @@ main .sect-two .container .header-navigator .see-all {
     cursor: pointer;
     font-weight: bold;
     color: var(--light-pink);
+
+    @media (max-width:768px) {
+        font-size: .8rem;
+    }
 }
 
 main .sect-two .container .category-picker {
     display: flex;
     gap: 2rem;
     align-items: center;
+
+    @media (max-width:768px) {
+        gap: 1rem;
+        overflow: auto;
+    }
 }
 
 main .sect-two .container .category-picker .category {
@@ -323,7 +341,11 @@ main .sect-two .container .category-picker .category:nth-child(1) {
 main .sect-two .container .product-display {
     display: grid;
     grid-template-columns: repeat(4, 18rem);
-    justify-content: space-between;
+    justify-content: space-around;
+
+    @media (max-width:768px) {
+        grid-template-columns: repeat(2, 10rem);
+    }
 }
 
 main .sect-two .container .product-display .product {
@@ -331,6 +353,11 @@ main .sect-two .container .product-display .product {
     height: 25rem;
     position: relative;
     margin-bottom: 2rem;
+
+    @media (max-width:768px) {
+       width: 10rem;
+       height: 20rem;
+    }
 }
 
 main .sect-two .container .product-display .product img {
@@ -359,23 +386,39 @@ main .sect-two .container .product-display .product .product-info .pi-sect-one {
 
 main .sect-two .container .product-display .product .product-info .pi-sect-one .title {
     font-weight: bold;
+
+    @media (max-width:768px) {
+        font-size: .8rem;
+    }
 }
 
 main .sect-two .container .product-display .product .product-info .pi-sect-one .sub-title {
     color: var(--invisi-text);
     font-size: .8rem;
+
+    @media (max-width:768px) {
+        font-size: .7rem;
+    }
 }
 
 main .sect-two .container .product-display .product .product-info .pi-sect-one .price {
     color: var(--light-pink);
     font-weight: bold;
     font-size: .8rem;
+
+    @media (max-width:768px) {
+        font-size: .7rem;
+    }
 }
 
 main .sect-two .container .product-display .product .product-info i {
     font-size: 1.3rem;
     align-self: self-start;
     cursor: pointer;
+
+    @media (max-width:768px) {
+        font-size: 1.2rem;
+    }
 }
 
 
