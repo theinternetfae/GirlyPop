@@ -11,6 +11,7 @@
 :root {
     --sub-text: #5C5554;
     --invisi-text: #848685;
+    --border-text: #D9D9D9;
     --base-bg: #F6EFE8;
     --dark-pink: #2C0714;
     --light-pink: #7E1036;
@@ -27,13 +28,74 @@ body {
     background-color: var(--base-bg);   
 }
 
+
+/*SM NAV*/
+.sm-nav {
+    z-index: 50;
+    position: fixed;
+    height: 90svh;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+
+    @media (max-width:768px) {
+        display: flex;
+    }
+}
+
+.sm-nav .sm-nav-cont {
+    border-top: 2px solid var(--border-text);
+    padding: 2rem 1rem;
+    border-radius: 0 0 1rem 1rem;
+    display: flex;
+    background-color: var(--base-bg);
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sm-nav .sm-nav-cont a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.sm-nav .sm-logs {
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.sm-nav .sm-logs button {
+    padding: .6rem;
+    width: 6.5rem;
+    border-radius: .6rem;
+}
+
+.sm-nav .sm-logs .login {
+    border: 2px solid var(--dark-pink);
+}
+
+.sm-nav .sm-logs .join {
+    border: 2px solid var(--dark-pink);
+    background-color: var(--dark-pink);
+    color: white;
+}
+
+
+
 header {
     height: 10svh;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 50;
+    z-index: 40;
     background-color: var(--base-bg);
 }
 
@@ -624,7 +686,7 @@ footer img {
     height: 1.5rem;
 
     @media (max-width:768px) {
-       width: 35%;
+       width: 8rem;
     }
 }
 
