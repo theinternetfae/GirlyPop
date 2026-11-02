@@ -689,7 +689,8 @@ footer img {
     height: 1.5rem;
 
     @media (max-width:768px) {
-       width: 8rem;
+        height: 1.2rem;
+        width: 6rem;
     }
 }
 

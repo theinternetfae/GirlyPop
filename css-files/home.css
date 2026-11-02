@@ -19,6 +19,9 @@
     --faded-pink: #DB9EAF;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
 
 body {
     min-height: 100svh;
@@ -34,6 +37,11 @@ header {
     z-index: 50;
     border-bottom: 2px solid var(--border-text);
     background-color: var(--base-bg);
+
+    @media (max-width:768px) {
+        display: flex;
+        align-items: center;
+    }
 }
 
 header nav {
@@ -42,6 +50,21 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width:768px) {
+        width: 100%;
+        margin: 0 1rem;   
+        padding: 0;
+    }
+}
+
+
+header nav .burger {
+    display: none;
+
+    @media (max-width:768px) {
+        display: block;
+    }
 }
 
 header nav .us-search {
@@ -52,6 +75,10 @@ header nav .us-search {
 
 header nav .us-search img {
     height: 25px;
+
+    @media (max-width:768px) {
+        height: 15px;
+    }
 }
 
 header nav .us-search .search-bar {
@@ -63,6 +90,11 @@ header nav .us-search .search-bar {
     gap: .4rem;
     border-radius: 5rem;
     background-color: var(--special-white);
+
+    @media (max-width:768px) {
+        width: 12rem;
+        overflow: hidden;
+    }
 }
 
 header nav .us-search .search-bar i {
@@ -83,6 +115,10 @@ header nav .navigations {
     align-items: center;
     gap: 1.2rem;
     font-size: 1.5rem;
+    
+    @media (max-width:768px) {
+        display: none;
+    }
 }
 
 header nav .navigations a {
@@ -169,6 +205,10 @@ main .sect-one .container {
     margin: 0 9rem;
     padding: 1rem 0;
     height: 100%;
+
+    @media (max-width:768px) {
+        margin: 0 1rem;
+    }
 }
 
 main .sect-one .user-sort {
@@ -183,6 +223,10 @@ main .sect-one .user-sort {
 main .sect-one .user-sort p {
     padding: .6rem;
     cursor: pointer;
+
+    @media (max-width:768px) {
+        font-size: .8rem;
+    }
 }
 
 main .sect-one .user-sort p:nth-child(1) {
@@ -193,6 +237,10 @@ main .sect-one .user-sort p:nth-child(1) {
 main .sect-one .cat-select {
     display: flex;
     gap: 2rem;
+
+    @media (max-width:768px) {
+        overflow: auto;
+    }
 }
 
 main .sect-one .cat-select p {
@@ -204,6 +252,11 @@ main .sect-one .cat-select p {
     font-weight: bold;
     cursor: pointer;
     border: 2px solid var(--border-text);
+
+    
+    @media (max-width:768px) {
+        font-size: .8rem;
+    }
 }
 
 main .sect-one .cat-select p:nth-child(1) {
@@ -250,6 +303,12 @@ main .sect-two .container {
     display: grid;
     grid-template-columns: repeat(4, 18rem);
     justify-content: space-between;
+
+    @media (max-width:768px) {
+        margin: 0 1rem;
+        grid-template-columns: repeat(2, 10rem);
+        justify-content: space-around;
+    }
 }
 
 main .sect-two .container .product {
@@ -257,6 +316,11 @@ main .sect-two .container .product {
     height: 25rem;
     position: relative;
     margin-bottom: 2rem;
+
+    @media (max-width:768px) {
+       width: 10rem;
+       height: 20rem;
+    }
 }
 
 main .sect-two .container .product img {
@@ -285,23 +349,39 @@ main .sect-two .container .product .product-info .pi-sect-one {
 
 main .sect-two .container .product .product-info .pi-sect-one .title {
     font-weight: bold;
+
+    @media (max-width:768px) {
+        font-size: .8rem;
+    }
 }
 
 main .sect-two .container .product .product-info .pi-sect-one .sub-title {
     color: var(--invisi-text);
     font-size: .8rem;
+
+    @media (max-width:768px) {
+        font-size: .7rem;
+    }
 }
 
 main .sect-two .container .product .product-info .pi-sect-one .price {
     color: var(--light-pink);
     font-weight: bold;
     font-size: .8rem;
+
+    @media (max-width:768px) {
+        font-size: .7rem;
+    }
 }
 
 main .sect-two .container .product .product-info i {
     font-size: 1.3rem;
     align-self: self-start;
     cursor: pointer;
+
+    @media (max-width:768px) {
+        font-size: 1.2rem;
+    }
 }
 
 
@@ -333,10 +413,21 @@ footer {
     display: flex;
     justify-content: space-between;
     padding: 2rem 0;
+
+    @media (max-width:768px) {
+        flex-direction: column;
+        margin: 0 1rem;
+        gap: 2.5rem;
+    }
 }
 
 footer img {
     height: 1.5rem;
+
+    @media (max-width:768px) {
+        height: 1.2rem;
+        width: 6rem;
+    }
 }
 
 footer .footer-sect {
@@ -349,6 +440,10 @@ footer .footer-sect .footer-sect-cat {
     display: flex;
     flex-direction: column;
     gap: .4rem;
+
+    @media (max-width:768px) {
+       gap: .8rem;
+    }
 }
 
 footer .footer-sect .footer-sect-cat p {
