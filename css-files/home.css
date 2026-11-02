@@ -73,6 +73,10 @@ body {
     gap: .4rem;
 }
 
+.sm-nav .sm-nav-cont a:nth-child(1) {
+    color: var(--dark-pink);
+}
+
 .sm-nav .sm-nav-cont .checkout-count {
     display: flex;
     align-items: center;
@@ -134,23 +138,13 @@ body {
     color: black;
 }
 
-/* 
 
-.sm-nav .sm-logs button {
-    padding: .6rem;
-    width: 6.5rem;
-    border-radius: .6rem;
-}
 
-.sm-nav .sm-logs .login {
-    border: 2px solid var(--dark-pink);
-}
 
-.sm-nav .sm-logs .join {
-    border: 2px solid var(--dark-pink);
-    background-color: var(--dark-pink);
-    color: white;
-} */
+
+
+
+
 
 
 
