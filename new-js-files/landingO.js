@@ -1,5 +1,6 @@
 const burger = document.querySelector('.burger');
 const smNav = document.querySelector('.sm-nav');
+const smLink = document.querySelectorAll('.sm-link');
 
 burger.addEventListener("click", () => {
 
@@ -8,8 +9,21 @@ burger.addEventListener("click", () => {
 
     smNav.classList.toggle('show');
     console.log("Clicked!");
+
 })
 
+smLink.forEach(sm => {
+
+    sm.addEventListener("click", () => {
+
+        burger.classList.remove('hgi-cancel-01')
+        burger.classList.add('hgi-menu-01')
+
+        smNav.classList.remove('show');
+
+    })
+
+})
 
 
 
