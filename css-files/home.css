@@ -28,6 +28,134 @@ body {
     background-color: var(--base-bg);   
 }
 
+
+
+/*SM NAV*/
+
+.sm-nav {
+    z-index: 50;
+    position: fixed;
+    height: 90svh;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    display: none;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .sm-nav.show {
+        display: flex;
+    }
+}
+
+.sm-nav .sm-nav-cont {
+    border-top: 2px solid var(--border-text);
+    padding: 2rem 1rem;
+    border-radius: 0 0 1rem 1rem;
+    display: flex;
+    background-color: var(--base-bg);
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sm-nav .sm-nav-cont i {
+    font-size: 1.4rem;
+}
+
+.sm-nav .sm-nav-cont a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.sm-nav .sm-nav-cont .checkout-count {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.sm-nav .sm-nav-cont .checkout-count .counter {
+    position: absolute;
+    width: 100%;
+    bottom: .1rem;
+    border-radius: 100%;
+    font-weight: bold;
+    font-size: .6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sm-nav .sm-profile .profile-border {
+    border: 2px solid var(--invisi-text);
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sm-nav .sm-profile .profile {
+    height: 2.7rem;
+    width: 2.7rem;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.sm-nav .sm-profile .profile img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.sm-nav .sm-profile {
+    padding: 2rem 1rem;
+    display: flex;
+    background-color: var(--base-bg);
+    border-radius: 1rem 1rem 0 0;
+    justify-content: center;
+}
+
+.sm-nav .sm-profile a {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: .6rem;
+    text-decoration: none;
+    color: black;
+}
+
+/* 
+
+.sm-nav .sm-logs button {
+    padding: .6rem;
+    width: 6.5rem;
+    border-radius: .6rem;
+}
+
+.sm-nav .sm-logs .login {
+    border: 2px solid var(--dark-pink);
+}
+
+.sm-nav .sm-logs .join {
+    border: 2px solid var(--dark-pink);
+    background-color: var(--dark-pink);
+    color: white;
+} */
+
+
+
+/*HEADER*/
+
 header {
     height: 10svh;
     position: fixed;
