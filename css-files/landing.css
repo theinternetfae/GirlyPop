@@ -30,6 +30,7 @@ body {
 
 
 /*SM NAV*/
+
 .sm-nav {
     z-index: 50;
     position: fixed;
@@ -41,7 +42,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
     display: none;
-
 }
 
 @media (max-width: 768px) {
@@ -74,14 +74,19 @@ body {
     justify-content: space-around;
 }
 
-.sm-nav .sm-logs button {
+.sm-nav .sm-logs .button {
     padding: .6rem;
     width: 6.5rem;
     border-radius: .6rem;
+    text-align: center;
+    font-size: .8rem;
+    text-decoration: none;
 }
 
 .sm-nav .sm-logs .login {
     border: 2px solid var(--dark-pink);
+    background-color: var(--base-bg);
+    color: black;
 }
 
 .sm-nav .sm-logs .join {

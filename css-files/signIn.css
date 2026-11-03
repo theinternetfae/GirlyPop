@@ -28,14 +28,27 @@ body {
 main {
     height: 100svh;
     display: flex;
+
+    @media (max-width:768px) {
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 main section {
     width: 50%;
+
+    @media (max-width:768px) {
+        width: 100%;
+    }
 }
 
 main .welcome {
     position: relative;
+
+    @media (max-width:768px) {
+        display: none;
+    }
 }
 
 main .welcome img {
@@ -71,10 +84,20 @@ main .form {
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem;
+
+    @media (max-width:768px) {
+        margin: 0 1rem;   
+        padding: 0;
+    }
 }
 
 main .form .nav-btns {
     display: flex;
+
+    @media (max-width:768px) {
+        width: 100%;
+        padding: 0;
+    }
 }
 
 main .form .nav-btns .button {
@@ -108,6 +131,10 @@ main .form .field {
 
 main .form .field label {
     color: var(--sub-text);
+     
+    @media (max-width:768px) {
+        font-size: .9rem;
+    }
 }
 
 main .form .field input {
@@ -127,14 +154,22 @@ main .form .terms  {
     display: flex;
     gap: .6rem;
     color: var(--invisi-text);
-    align-items: start;
+    align-items: center;
     justify-content: space-between;
+
+    @media (max-width:768px) {
+        font-size: .7rem;
+    }
 }
 
 main .form .terms small  {
     color: var(--light-pink);
     font-weight: bold;
     cursor: pointer;
+
+    @media (max-width:768px) {
+        font-size: .7rem;
+    }
 }
 
 main .form .terms input  {
@@ -159,6 +194,14 @@ main .form .demacator {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+main .form .demacator small {
+
+    @media (max-width:768px) {
+        font-size: .7rem;
+    }
+
 }
 
 main .form .demacator span {
@@ -193,4 +236,8 @@ main .form .other-nav span a {
     text-decoration: none;
     cursor: pointer;
     font-weight: bold;
+
+    @media (max-width:768px) {
+        font-size: .7rem;
+    }
 }
