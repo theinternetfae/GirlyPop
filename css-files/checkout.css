@@ -25,6 +25,148 @@ body {
     background-color: var(--base-bg);   
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SM NAV*/
+
+.sm-nav {
+    z-index: 50;
+    position: fixed;
+    height: 90svh;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    display: none;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .sm-nav.show {
+        display: flex;
+    }
+}
+
+.sm-nav .sm-nav-cont {
+    border-top: 2px solid var(--border-text);
+    padding: 2rem 1rem;
+    border-radius: 0 0 1rem 1rem;
+    display: flex;
+    background-color: var(--base-bg);
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sm-nav .sm-nav-cont i {
+    font-size: 1.4rem;
+}
+
+.sm-nav .sm-nav-cont a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.sm-nav .sm-nav-cont a:nth-child(2) {
+    color: var(--dark-pink);
+}
+
+.sm-nav .sm-nav-cont .checkout-count {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.sm-nav .sm-nav-cont .checkout-count .counter {
+    position: absolute;
+    width: 100%;
+    bottom: .1rem;
+    border-radius: 100%;
+    font-weight: bold;
+    font-size: .6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sm-nav .sm-profile .profile-border {
+    border: 2px solid var(--invisi-text);
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sm-nav .sm-profile .profile {
+    height: 2.7rem;
+    width: 2.7rem;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.sm-nav .sm-profile .profile img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.sm-nav .sm-profile {
+    padding: 2rem 1rem;
+    display: flex;
+    background-color: var(--base-bg);
+    border-radius: 1rem 1rem 0 0;
+    justify-content: center;
+}
+
+.sm-nav .sm-profile a {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: .6rem;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*HEADER*/
+
 header {
     height: 10svh;
     position: fixed;
@@ -34,6 +176,11 @@ header {
     z-index: 50;
     border-bottom: 2px solid var(--border-text);
     background-color: var(--base-bg);
+
+    @media (max-width:768px) {
+        display: flex;
+        align-items: center;
+    }
 }
 
 header nav {
@@ -42,6 +189,21 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width:768px) {
+        width: 100%;
+        margin: 0 1rem;   
+        padding: 0;
+    }
+}
+
+
+header nav .burger {
+    display: none;
+
+    @media (max-width:768px) {
+        display: block;
+    }
 }
 
 header nav .us-search {
@@ -52,6 +214,10 @@ header nav .us-search {
 
 header nav .us-search img {
     height: 25px;
+
+    @media (max-width:768px) {
+        height: 15px;
+    }
 }
 
 header nav .us-search .search-bar {
@@ -63,6 +229,11 @@ header nav .us-search .search-bar {
     gap: .4rem;
     border-radius: 5rem;
     background-color: var(--special-white);
+
+    @media (max-width:768px) {
+        width: 12rem;
+        overflow: hidden;
+    }
 }
 
 header nav .us-search .search-bar i {
@@ -83,6 +254,10 @@ header nav .navigations {
     align-items: center;
     gap: 1.2rem;
     font-size: 1.5rem;
+    
+    @media (max-width:768px) {
+        display: none;
+    }
 }
 
 header nav .navigations a {
@@ -164,6 +339,11 @@ header nav .navigations .profile img {
 main {
     margin: 10svh 9rem 0 9rem;
     display: flex;
+
+    @media (max-width:768px) {
+        margin: 8svh 1rem 1rem 1rem;
+        flex-direction: column;
+    }
 }
 
 main .c-section {
@@ -172,6 +352,10 @@ main .c-section {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+
+    @media (max-width:768px) {
+        width: 100%;
+    }
 }
 
 main .checkout-details .checkout-section-one {
@@ -185,6 +369,10 @@ main .checkout-details .checkout-section-one h2 {
     color: var(--dark-pink);
     font-size: 1.4rem;
     font-weight: 600;
+
+    @media (max-width:768px) {
+        font-size: 1.2rem;
+    }
 }
 
 main .checkout-details .checkout-section-one .cart {
@@ -208,6 +396,10 @@ main .checkout-details .checkout-section-one .cart-item i {
     font-size: 1.2rem;
     cursor: pointer;
     color: var(--invisi-text);
+
+    @media (max-width:768px) {
+        font-size: 1rem;
+    }
 }
 
 main .checkout-details .checkout-section-one .cart-item .sect {
@@ -219,15 +411,35 @@ main .checkout-details .checkout-section-one .cart-item .sect {
 main .checkout-details .checkout-section-one .cart-item .sect img {
     height: 10rem;
     width: 10rem;
+
+    @media (max-width:768px) {
+        height: 8rem;
+        width: 8rem;
+    }
+}
+
+main .checkout-details .checkout-section-one .sect .info h3 {
+    @media (max-width:768px) {
+        font-size: .9rem;
+    }
 }
 
 main .checkout-details .checkout-section-one .sect .info small {
     color: var(--invisi-text);
     font-style: italic;
+
+    @media (max-width:768px) {
+        font-size: .6rem;
+    }
 }
 
 main .checkout-details .checkout-section-one .cart-item .price {
     font-weight: bold;
+    color: var(--light-pink);
+
+    @media (max-width:768px) {
+        font-size: .8rem;
+    }
 }
 
 main .checkout-details .checkout-section-two {
@@ -262,6 +474,10 @@ main .checkout-details .checkout-section-two h2{
     color: var(--dark-pink);
     font-size: 1.4rem;
     font-weight: 600;
+
+    @media (max-width:768px) {
+        font-size: 1.2rem;
+    }
 }
 
 main .checkout-details .checkout-section-two .fields-holder{
@@ -281,12 +497,20 @@ main .checkout-details .checkout-section-two .field {
 
 main .checkout-details .checkout-section-two .field label {
     color: var(--sub-text);
+
+    @media (max-width:768px) {
+        font-size: .9rem;
+    }
 }
 
 main .checkout-details .checkout-section-two .field input {
     padding: .6rem;
     border: 2px solid var(--border-text);
     background-color: var(--special-white);
+
+    @media (max-width:768px) {
+        font-size: .8rem;
+    }
 }
 
 main .checkout-details .checkout-section-two .field input::placeholder {
@@ -327,11 +551,19 @@ main .checkout-details .checkout-section-three h2{
     color: var(--dark-pink);
     font-size: 1.4rem;
     font-weight: 600;
+
+    @media (max-width:768px) {
+        font-size: 1.2rem;
+    }
 }
 
 main .checkout-details .checkout-section-three label {
     border: 2px solid var(--border-text);
     padding: .6rem;
+
+    @media (max-width:768px) {
+        font-size: .9rem;
+    }
 }
 
 main .checkout-details .checkout-section-three .chosen {
@@ -368,6 +600,10 @@ main .checkout-details .checkout-section-four h2{
     color: var(--dark-pink);
     font-size: 1.4rem;
     font-weight: 600;
+
+    @media (max-width:768px) {
+        font-size: 1.2rem;
+    }
 }
 
 main .checkout-details .checkout-section-four .enter-code {
@@ -422,6 +658,10 @@ main .receipt-section .receipt {
     flex-direction: column;
     gap: 1rem;
     background-color: var(--special-white);
+
+    @media (max-width:768px) {
+        width: 100%;
+    }
 }
 
 main .receipt-section .receipt h2{
@@ -429,12 +669,21 @@ main .receipt-section .receipt h2{
     color: var(--dark-pink);
     font-size: 1.4rem;
     font-weight: 600;
+
+    @media (max-width:768px) {
+        font-size: 1.2rem;
+    }
 }
 
 main .receipt-section .receipt .pricing {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    @media (max-width:768px) {
+        font-size: .9rem;
+        gap: 1.2rem;
+    }
 }
 
 main .receipt-section .receipt .pricing .price {
@@ -485,4 +734,8 @@ main .receipt-section .receipt .trust-quote i {
 
 main .receipt-section .receipt .trust-quote small {
     color: var(--invisi-text);
+
+    @media (max-width:768px) {
+        font-size: .7rem;
+    }
 } 
