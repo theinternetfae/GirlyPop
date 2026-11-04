@@ -26,6 +26,155 @@ body {
     background-color: var(--base-bg);   
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SM NAV*/
+
+.sm-nav {
+    z-index: 50;
+    position: fixed;
+    height: 90svh;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    display: none;
+    justify-content: space-between;
+    border: 2px solid yellow;
+}
+
+@media (max-width: 768px) {
+    .sm-nav.show {
+        display: flex;
+    }
+}
+
+.sm-nav .sm-nav-cont {
+    border-top: 2px solid var(--border-text);
+    padding: 2rem 1rem;
+    border-radius: 0 0 1rem 1rem;
+    display: flex;
+    background-color: var(--base-bg);
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sm-nav .sm-nav-cont i {
+    font-size: 1.4rem;
+}
+
+.sm-nav .sm-nav-cont a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.sm-nav .sm-nav-cont .checkout-count {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.sm-nav .sm-nav-cont .checkout-count .counter {
+    position: absolute;
+    width: 100%;
+    bottom: .1rem;
+    border-radius: 100%;
+    font-weight: bold;
+    font-size: .6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sm-nav .sm-profile .profile-border {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sm-nav .sm-profile .profile {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.sm-nav .sm-profile .profile img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.sm-nav .sm-profile {
+    padding: 2rem 1rem;
+    display: flex;
+    background-color: var(--dark-pink);
+    border-radius: 1rem 1rem 0 0;
+    justify-content: center;
+}
+
+.sm-nav .sm-profile a {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: .6rem;
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*HEADER*/
+
 header {
     height: 10svh;
     position: fixed;
@@ -35,6 +184,11 @@ header {
     z-index: 50;
     border-bottom: 2px solid var(--border-text);
     background-color: var(--base-bg);
+
+    @media (max-width:768px) {
+        display: flex;
+        align-items: center;
+    }
 }
 
 header nav {
@@ -43,6 +197,21 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width:768px) {
+        width: 100%;
+        margin: 0 1rem;   
+        padding: 0;
+    }
+}
+
+
+header nav .burger {
+    display: none;
+
+    @media (max-width:768px) {
+        display: block;
+    }
 }
 
 header nav .us-search {
@@ -53,6 +222,10 @@ header nav .us-search {
 
 header nav .us-search img {
     height: 25px;
+
+    @media (max-width:768px) {
+        height: 15px;
+    }
 }
 
 header nav .us-search .search-bar {
@@ -64,6 +237,11 @@ header nav .us-search .search-bar {
     gap: .4rem;
     border-radius: 5rem;
     background-color: var(--special-white);
+
+    @media (max-width:768px) {
+        width: 12rem;
+        overflow: hidden;
+    }
 }
 
 header nav .us-search .search-bar i {
@@ -84,6 +262,10 @@ header nav .navigations {
     align-items: center;
     gap: 1.2rem;
     font-size: 1.5rem;
+    
+    @media (max-width:768px) {
+        display: none;
+    }
 }
 
 header nav .navigations a {
@@ -159,6 +341,10 @@ header nav .navigations .profile img {
 
 main {
     margin: 10svh 9rem 0 9rem;
+
+    @media (max-width:768px) {
+        margin: 0 1rem;
+    }
 }
 
 main .sect-one {
@@ -168,6 +354,10 @@ main .sect-one {
 main .profile-banner {
     height: 25svh;
     background: linear-gradient(to right, var(--light-pink), var(--second-gradient));
+
+    @media (max-width:768px) {
+        height: 20svh;
+    }
 }
 
 main .profile-info {
@@ -182,6 +372,11 @@ main .profile-info .pfp-name {
     justify-content: space-between;
     margin-left: 1rem;
     position: relative;
+
+    @media (max-width:768px) {
+        margin-left: .1rem;
+        width: 70%;
+    }
 }
 
 main .profile-info .pfp-name .img-border {
@@ -194,6 +389,11 @@ main .profile-info .pfp-name .img-border {
     background-color: var(--special-white);
     position: absolute;
     bottom: 0;
+
+    @media (max-width:768px) {
+        height: 5.5rem;
+        width: 5.5rem; 
+    }
 }
 
 main .profile-info .pfp-name .img-border .img {
@@ -201,6 +401,11 @@ main .profile-info .pfp-name .img-border .img {
     width: 8rem; 
     border-radius: 100%;
     background: radial-gradient(var(--faded-pink), var(--light-pink));
+
+    @media (max-width:768px) {
+        height: 5rem;
+        width: 5rem; 
+    }
 }
 
 main .profile-info .pfp-name .img-border .img img {
@@ -212,17 +417,29 @@ main .profile-info .pfp-name .img-border .img img {
 
 main .profile-info .pfp-name .name-user {
     margin-left: 8.5rem;
+    
+    @media (max-width:768px) {
+        margin-left: 5.5rem;
+    }
 }
 
 main .profile-info .pfp-name .name-user h2 { 
     font-family: 'Fraunces', serif;
     font-size: 1.5rem;
     font-weight: 600;
+
+    @media (max-width:768px) {
+        font-size: 1rem;
+    }
 }
 
 main .profile-info .pfp-name .name-user p {
     color: var(--invisi-text);
     font-size: .8rem;
+
+    @media (max-width:768px) {
+        font-size: .6rem;
+    }
 }
 
 main .profile-info .button {
@@ -238,6 +455,11 @@ main .profile-info .button {
     font-weight: bold;
     border-radius: .2rem;
     cursor: pointer;
+
+    @media (max-width:768px) {
+        width: 6rem;
+        font-size: .7rem; 
+    }
 }
 
 
@@ -260,6 +482,10 @@ main .sect-two {
 main .sect-two .stats {
     display: flex;
     gap: 3rem;
+
+    @media (max-width:768px) {
+        gap: 1.2rem;
+    }
 }
 
 main .sect-two .stats .stat {
@@ -274,6 +500,11 @@ main .sect-two .stats .stat h2 {
     display: flex;
     align-items: center;
     font-weight: 600;
+     
+    @media (max-width:768px) {
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
 }
 
 main .sect-two .stats .stat p {
@@ -285,6 +516,11 @@ main .sect-two .bio {
     color: var(--sub-text);
     width: 45%;
     font-size: .9rem;
+
+    @media (max-width:768px) {
+        font-size: .8rem;
+        width: 100%;
+    }
 }
 
 
@@ -330,6 +566,11 @@ main .sect-three .products-display {
     display: grid;
     grid-template-columns: repeat(4, 18rem);
     justify-content: space-between;
+
+    @media (max-width:768px) {
+        grid-template-columns: repeat(2, 10rem);
+        justify-content: space-around;
+    }
 }
 
 main .sect-three .products-display .add {
@@ -349,6 +590,11 @@ main .sect-three .products-display .product {
     height: 25rem;
     position: relative;
     margin-bottom: 2rem;
+
+    @media (max-width:768px) {
+       width: 10rem;
+       height: 20rem;
+    }
 }
 
 main .sect-three .products-display .product img {
@@ -413,10 +659,21 @@ footer {
     display: flex;
     justify-content: space-between;
     padding: 2rem 0;
+
+    @media (max-width:768px) {
+        flex-direction: column;
+        margin: 0 1rem;
+        gap: 2.5rem;
+    }
 }
 
 footer img {
     height: 1.5rem;
+
+    @media (max-width:768px) {
+        height: 1.2rem;
+        width: 6rem;
+    }
 }
 
 footer .footer-sect {
@@ -429,6 +686,10 @@ footer .footer-sect .footer-sect-cat {
     display: flex;
     flex-direction: column;
     gap: .4rem;
+
+    @media (max-width:768px) {
+       gap: .8rem;
+    }
 }
 
 footer .footer-sect .footer-sect-cat p {

@@ -97,9 +97,8 @@ body {
 }
 
 .sm-nav .sm-profile .profile-border {
-    border: 2px solid var(--invisi-text);
-    height: 3rem;
-    width: 3rem;
+    height: 4rem;
+    width: 4rem;
     border-radius: 100%;
     display: flex;
     align-items: center;
@@ -107,8 +106,8 @@ body {
 }
 
 .sm-nav .sm-profile .profile {
-    height: 2.7rem;
-    width: 2.7rem;
+    height: 4rem;
+    width: 4rem;
     border-radius: 100%;
     cursor: pointer;
 }
