@@ -623,23 +623,39 @@ main .sect-three .products-display .product .product-info .pi-sect-one {
 
 main .sect-three .products-display .product .product-info .pi-sect-one .title {
     font-weight: bold;
+
+    @media (max-width:768px) {
+        font-size: .8rem;
+    }
 }
 
 main .sect-three .products-display .product .product-info .pi-sect-one .sub-title {
     color: var(--invisi-text);
     font-size: .8rem;
+
+    @media (max-width:768px) {
+        font-size: .7rem;
+    }
 }
 
 main .sect-three .products-display .product .product-info .pi-sect-one .price {
     color: var(--light-pink);
     font-weight: bold;
     font-size: .8rem;
+
+    @media (max-width:768px) {
+        font-size: .7rem;
+    }
 }
 
 main .sect-three .products-display .product .product-info i {
     font-size: 1.3rem;
     align-self: self-start;
     cursor: pointer;
+
+    @media (max-width:768px) {
+        font-size: 1.2rem;
+    }
 }
 
 
