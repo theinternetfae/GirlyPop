@@ -340,6 +340,9 @@ main {
 
     @media (max-width:768px) {
         margin: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 }
 
@@ -371,14 +374,117 @@ main .small-screen .category-drop i {
     font-size: 1rem;
 }
 
+main .small-screen .personal-info {
+    border: 2px solid var(--border-text);
+    flex-direction: column;
+    display: none;
+    gap: 1rem;
+    padding: .8rem;
+    border-radius: .6rem;
+    background-color: var(--special-white);
+}
+
+main .small-screen .personal-info.show {
+    display: flex;
+}
+
+main .small-screen .personal-info .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .small-screen .personal-info .header h2 {
+    font-family: "Fraunces", serif;
+    color: var(--dark-pink);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+    
+main .small-screen .personal-info .header .button {
+    border: 3px solid var(--light-pink);
+    padding: .3rem 1.2rem;
+    border-radius: 1rem;
+    color: var(--light-pink);
+    font-weight: bold;
+    font-size: .6rem;
+    cursor: pointer;
+}
+
+main .small-screen .personal-info .body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+main .small-screen .personal-info .body .field {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+main .small-screen .personal-info .body .field {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+main .small-screen .personal-info .body .field label {
+    color: var(--sub-text);
+    font-size: .9rem;
+}
+
+main .small-screen .personal-info .body .field input {
+    padding: .6rem;
+    height: 3rem;
+    border: 2px solid var(--border-text);
+}
+
+main .small-screen .personal-info .body .field input::placeholder {
+    color: var(--invisi-text);
+}
+
+main .small-screen .personal-info .body .field input:focus {
+    outline: none;
+}
 
 
+/*BIO*/
 
+main .small-screen .bio {
+    border: 2px solid var(--border-text);
+    flex-direction: column;
+    display: none;
+    gap: 1rem;
+    padding: .8rem;
+    border-radius: .6rem;
+    background-color: var(--special-white);
+}
 
+main .small-screen .bio.show {
+    display: flex;
+}
 
+main .small-screen .bio h2 {
+    font-family: "Fraunces", serif;
+    color: var(--dark-pink);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
 
+main .small-screen .bio textarea {
+    padding: .6rem;
+    height: 3rem;
+    border: 2px solid var(--border-text);
+}
 
+main .small-screen .bio textarea::placeholder {
+    color: var(--invisi-text);
+}
 
+main .small-screen .bio textarea:focus {
+    outline: none;
+}
 
 
 
