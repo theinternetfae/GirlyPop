@@ -26,6 +26,147 @@ body {
     background-color: var(--base-bg);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SM NAV*/
+
+.sm-nav {
+    z-index: 50;
+    position: fixed;
+    top: 10svh;
+    height: 92svh;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    flex-direction: column;
+    display: none;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .sm-nav.show {
+        display: flex;
+    }
+}
+
+.sm-nav .sm-nav-cont {
+    border-top: 2px solid var(--border-text);
+    padding: 2rem 1rem;
+    border-radius: 0 0 1rem 1rem;
+    display: flex;
+    background-color: var(--base-bg);
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sm-nav .sm-nav-cont i {
+    font-size: 1.4rem;
+}
+
+.sm-nav .sm-nav-cont a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.sm-nav .sm-nav-cont .checkout-count {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.sm-nav .sm-nav-cont .checkout-count .counter {
+    position: absolute;
+    width: 100%;
+    bottom: .1rem;
+    border-radius: 100%;
+    font-weight: bold;
+    font-size: .6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sm-nav .sm-profile .profile-border {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sm-nav .sm-profile .profile {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.sm-nav .sm-profile .profile img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.sm-nav .sm-profile {
+    padding: 2rem 1rem;
+    display: flex;
+    background-color: var(--dark-pink);
+    border-radius: 1rem 1rem 0 0;
+    justify-content: center;
+}
+
+.sm-nav .sm-profile a {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: .6rem;
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*HEADER*/
 header {
     height: 10svh;
     position: fixed;
@@ -35,6 +176,12 @@ header {
     z-index: 50;
     border-bottom: 2px solid var(--border-text);
     background-color: var(--base-bg);
+
+    
+    @media (max-width:768px) {
+        display: flex;
+        align-items: center;
+    }
 }
 
 header nav {
@@ -43,7 +190,23 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width:768px) {
+        width: 100%;
+        margin: 0 1rem;   
+        padding: 0;
+    }
 }
+
+
+header nav .burger {
+    display: none;
+
+    @media (max-width:768px) {
+        display: block;
+    }
+}
+
 
 header nav .us-search {
     display: flex;
@@ -53,6 +216,10 @@ header nav .us-search {
 
 header nav .us-search img {
     height: 25px;
+
+    @media (max-width:768px) {
+        height: 15px;
+    }
 }
 
 header nav .us-search .search-bar {
@@ -64,6 +231,11 @@ header nav .us-search .search-bar {
     gap: .4rem;
     border-radius: 5rem;
     background-color: var(--special-white);
+
+    @media (max-width:768px) {
+        width: 12rem;
+        overflow: hidden;
+    }
 }
 
 header nav .us-search .search-bar i {
@@ -84,6 +256,10 @@ header nav .navigations {
     align-items: center;
     gap: 1.2rem;
     font-size: 1.5rem;
+
+    @media (max-width:768px) {
+        display: none;
+    }
 }
 
 header nav .navigations a {
@@ -161,6 +337,79 @@ header nav .navigations .profile img {
 
 main {
     margin: 10svh 9rem 0 9rem;
+
+    @media (max-width:768px) {
+        margin: 0 1rem;
+    }
+}
+
+
+.small-screen {
+    display: none;
+
+    @media (max-width:768px) {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 1.5rem;
+    }
+}
+
+
+main .small-screen .category-drop {
+    border: 2px solid var(--border-text);
+    padding: .8rem;
+    background-color: var(--special-white);
+    color: var(--invisi-text);
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .small-screen .category-drop i {
+    font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.large {
+    @media (max-width:768px) {
+        display: none;
+    }
 }
 
 main .sect-one {
@@ -176,6 +425,10 @@ main .profile-banner {
     font-size: 3rem;
     color: var(--light-pink);
     cursor: pointer;
+
+    @media (max-width:768px) {
+        height: 20svh;
+    }
 }
 
 main .profile-info {
@@ -191,6 +444,11 @@ main .profile-info .pfp-name {
     justify-content: space-between;
     margin-left: 1rem;
     position: relative;
+
+    @media (max-width:768px) {
+        margin-left: .1rem;
+        width: 70%;
+    }
 }
 
 main .profile-info .pfp-name .img-border {
@@ -203,6 +461,11 @@ main .profile-info .pfp-name .img-border {
     background-color: var(--special-white);
     position: absolute;
     bottom: 0;
+
+    @media (max-width:768px) {
+        height: 5.5rem;
+        width: 5.5rem; 
+    }
 }
 
 main .profile-info .pfp-name .img-border .img {
@@ -216,28 +479,28 @@ main .profile-info .pfp-name .img-border .img {
     font-size: 2.5rem;
     color: var(--light-pink);
     cursor: pointer;
-}
 
-main .profile-info .pfp-name .img-border .img img {
-    height: 100%;
-    width: 100%;
-    border-radius: 100%;
-    object-fit: cover;
+    @media (max-width:768px) {
+        height: 5rem;
+        width: 5rem; 
+    }
 }
 
 main .profile-info .pfp-name .name-user {
     margin-left: 8.5rem;
-}
 
-main .profile-info .pfp-name .name-user h2 { 
-    font-family: 'Fraunces', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
+    @media (max-width:768px) {
+        margin-left: 5.5rem;
+    }
 }
 
 main .profile-info .pfp-name .name-user p {
     color: var(--invisi-text);
     font-size: .8rem;
+
+    @media (max-width:768px) {
+        font-size: .6rem;
+    }
 }
 
 main .profile-info .button {
@@ -253,6 +516,11 @@ main .profile-info .button {
     font-weight: bold;
     border-radius: .2rem;
     cursor: pointer;
+
+    @media (max-width:768px) {
+        width: 6rem;
+        font-size: .7rem; 
+    }
 }
 
 
@@ -629,12 +897,21 @@ main .more-options {
     display: flex;
     justify-content: space-around;
     margin-top: 1.5rem;
+
+    @media (max-width:768px) {
+        justify-content: space-between;
+    }
 }
 
 main .more-options button {
     padding: .6rem 10rem;
     border-radius: 1rem;
     cursor: pointer;
+
+    @media (max-width:768px) {
+        padding: .4rem 1.5rem;
+        font-size: .7rem;
+    }
 }
 
 main .more-options .change {
@@ -663,6 +940,11 @@ main .update {
     align-items: center;
     justify-content: center;
     gap: .6rem;
+
+    @media (max-width:768px) {
+        padding: .4rem 2rem;
+        font-size: .7rem;
+    }
 }
 
 main .update i {
