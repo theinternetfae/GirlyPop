@@ -72,3 +72,32 @@ categoryBio.addEventListener("click", () => {
     console.log("Clicked!");
 
 })
+
+
+
+const categorylocation = document.querySelector('.category-location');
+const locationArrow = document.querySelector('.location-arrow')
+const locationText = document.querySelector('.location-text');
+const locationField = document.querySelector('.location');
+
+categorylocation.addEventListener("click", () => {
+
+    if(locationArrow.classList.contains('hgi-arrow-up-01')) {
+        
+        locationArrow.classList.replace('hgi-arrow-up-01', 'hgi-arrow-down-01');
+        locationArrow.style.color = '#7E1036';
+        locationText.style.color = '#7E1036';
+    
+    } else {
+        
+        locationArrow.classList.replace('hgi-arrow-down-01', 'hgi-arrow-up-01');
+        locationArrow.style.color = '#848685';
+        locationText.style.color = '#848685';
+        
+    }
+
+    locationField.classList.toggle('show');
+
+    console.log("Clicked!");
+
+})
