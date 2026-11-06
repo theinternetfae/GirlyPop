@@ -549,6 +549,11 @@ main .small-screen .location .body .field label {
     font-size: .9rem;
 }
 
+main .small-screen .location .body .field label span {
+    color: var(--second-gradient);
+    font-size: .8rem;
+}
+
 main .small-screen .location .body .field input {
     padding: .6rem;
     height: 3rem;
@@ -1038,6 +1043,11 @@ main .sect-three .body .one-two .field {
 main .sect-three .body .one-two .field label {
     color: var(--sub-text);
     font-size: .9rem;
+}
+
+main .sect-three .body .field label span {
+    color: var(--second-gradient);
+    font-size: .8rem;
 }
 
 main .sect-three .body .one-two .field input {
