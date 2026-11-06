@@ -75,12 +75,12 @@ categoryBio.addEventListener("click", () => {
 
 
 
-const categorylocation = document.querySelector('.category-location');
+const categoryLocation = document.querySelector('.category-location');
 const locationArrow = document.querySelector('.location-arrow')
 const locationText = document.querySelector('.location-text');
 const locationField = document.querySelector('.location');
 
-categorylocation.addEventListener("click", () => {
+categoryLocation.addEventListener("click", () => {
 
     if(locationArrow.classList.contains('hgi-arrow-up-01')) {
         
@@ -97,6 +97,36 @@ categorylocation.addEventListener("click", () => {
     }
 
     locationField.classList.toggle('show');
+
+    console.log("Clicked!");
+
+})
+
+
+
+
+const categoryBank = document.querySelector('.category-bank');
+const bankArrow = document.querySelector('.bank-arrow')
+const bankText = document.querySelector('.bank-text');
+const bankField = document.querySelector('.bank');
+
+categoryBank.addEventListener("click", () => {
+
+    if(bankArrow.classList.contains('hgi-arrow-up-01')) {
+        
+        bankArrow.classList.replace('hgi-arrow-up-01', 'hgi-arrow-down-01');
+        bankArrow.style.color = '#7E1036';
+        bankText.style.color = '#7E1036';
+    
+    } else {
+        
+        bankArrow.classList.replace('hgi-arrow-down-01', 'hgi-arrow-up-01');
+        bankArrow.style.color = '#848685';
+        bankText.style.color = '#848685';
+        
+    }
+
+    bankField.classList.toggle('show');
 
     console.log("Clicked!");
 
