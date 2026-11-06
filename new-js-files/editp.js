@@ -7,7 +7,6 @@ burger.addEventListener("click", () => {
     burger.classList.toggle('hgi-cancel-01')
 
     smNav.classList.toggle('show');
-    console.log("Clicked!");
 
 })
 
@@ -36,8 +35,6 @@ categoryPersonal.addEventListener("click", () => {
     }
 
     personalField.classList.toggle('show');
-
-    console.log("Clicked!");
 
 })
 
@@ -69,8 +66,6 @@ categoryBio.addEventListener("click", () => {
 
     bioField.classList.toggle('show');
 
-    console.log("Clicked!");
-
 })
 
 
@@ -97,8 +92,6 @@ categoryLocation.addEventListener("click", () => {
     }
 
     locationField.classList.toggle('show');
-
-    console.log("Clicked!");
 
 })
 
@@ -128,6 +121,35 @@ categoryBank.addEventListener("click", () => {
 
     bankField.classList.toggle('show');
 
-    console.log("Clicked!");
+})
+
+
+
+
+
+
+
+const categoryContact = document.querySelector('.category-contact');
+const contactArrow = document.querySelector('.contact-arrow')
+const contactText = document.querySelector('.contact-text');
+const contactField = document.querySelector('.contact');
+
+categoryContact.addEventListener("click", () => {
+
+    if(contactArrow.classList.contains('hgi-arrow-up-01')) {
+        
+        contactArrow.classList.replace('hgi-arrow-up-01', 'hgi-arrow-down-01');
+        contactArrow.style.color = '#7E1036';
+        contactText.style.color = '#7E1036';
+    
+    } else {
+        
+        contactArrow.classList.replace('hgi-arrow-down-01', 'hgi-arrow-up-01');
+        contactArrow.style.color = '#848685';
+        contactText.style.color = '#848685';
+        
+    }
+
+    contactField.classList.toggle('show');
 
 })
