@@ -118,9 +118,14 @@ header nav {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
-    height: 100%;
-
+    height: 100%;    
+    
     @media (max-width:768px) {
+        margin: 0 1rem;   
+        padding: 0;
+    }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
         margin: 0 1rem;   
         padding: 0;
     }
@@ -224,6 +229,11 @@ main .sect-one .container {
         margin: 10svh 1rem 0 1rem;
         flex-direction: column;
     }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
+        margin: 10svh 1rem 0 1rem;
+        flex-direction: column;
+    }
 }
 
 main .sect-one .container .sect-one-cont {
@@ -234,11 +244,19 @@ main .sect-one .container .sect-one-cont {
         width: 100%;
         height: 50%;
     }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
+        width: 100%;
+    }
 }
 
 main .sect-one .container .landing-text {
     display: flex;
     align-items: center;
+
+    @media (min-width: 768px) and (max-width: 1032px) {
+        height: 30%;
+    }
 }
 
 main .sect-one .container .landing-text .l-texts {
@@ -248,6 +266,11 @@ main .sect-one .container .landing-text .l-texts {
 
     @media (max-width:768px) {
         gap: .8rem;
+        align-items: center;
+    }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
+        gap: 3rem;
         align-items: center;
     }
 }
@@ -262,6 +285,10 @@ main .sect-one .container .landing-text .l-texts h1 {
         font-size: 1.8rem;
         text-align: center;
     }
+
+    @media (min-width:768px) and (max-width: 1032px) {
+        text-align: center;
+    }
 }
 
 main .sect-one .container .landing-text .l-texts p {
@@ -271,6 +298,10 @@ main .sect-one .container .landing-text .l-texts p {
 
     @media (max-width:768px) {
         font-size: .8rem;
+        text-align: center;
+    }
+
+    @media (min-width:768px) and (max-width: 1032px) {
         text-align: center;
     }
 }
@@ -306,6 +337,12 @@ main .sect-one .container .landing-text .l-texts .cta-btns-two {
     font-weight: bold;
 }
 
+main .sect-one .container .landing-img {
+    @media (min-width: 768px) and (max-width: 1032px) {
+        height: 70%;
+    }
+}
+
 main .sect-one .container .landing-img img {
     height: 100%;
     width: 100%;
@@ -330,6 +367,10 @@ main .sect-one .offer-thread {
     @media (max-width:768px) {
         display: none;
     }
+
+    @media (min-width: 769px) and (max-width: 1032px) {
+        font-size: .7rem;
+    }
 }
 
 
@@ -352,6 +393,10 @@ main .sect-two .container {
     @media (max-width:768px) {
         margin: 0 1rem 0 1rem;
         gap: .8rem;
+    }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
+        margin: 0 1rem 0 1rem;
     }
 }
 
@@ -421,6 +466,14 @@ main .sect-two .container .product-display {
     @media (max-width:768px) {
         grid-template-columns: repeat(2, 10rem);
     }
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 14rem);
+    }
+
+    @media (min-width: 769px) and (max-width: 1032px) {
+        grid-template-columns: repeat(3, 18rem);
+    }
 }
 
 main .sect-two .container .product-display .product {
@@ -433,6 +486,15 @@ main .sect-two .container .product-display .product {
        width: 10rem;
        height: 20rem;
     }
+
+    @media (min-width: 768px) {
+        width: 14rem;
+    }
+
+    @media (min-width: 769px) and (max-width: 1032px) {
+        width: 18rem;
+    }
+    
 }
 
 main .sect-two .container .product-display .product img {
@@ -509,6 +571,11 @@ main .sect-three {
     @media (max-width:768px) {
         height: auto;
     }
+
+    
+    @media (min-width: 769px) and (max-width: 1032px) {
+        height: auto;
+    }
 }
 
 main .sect-three .container {
@@ -533,6 +600,11 @@ main .sect-three .container .st-one {
     gap: 2rem;
 
     @media (max-width:768px) {
+        margin: 0 1rem 1rem 1rem;
+    }
+
+    @media (min-width: 769px) and (max-width: 1032px) {
+        height: auto;
         margin: 0 1rem 1rem 1rem;
     }
 }
@@ -605,6 +677,11 @@ main .sect-three .container .st-two {
         padding: 3rem 1rem 3rem 1rem;
         flex-direction: column;
         gap: 1rem;
+    }
+
+    @media (min-width: 769px) and (max-width: 1032px) {
+        height: auto;
+        padding: 3rem 1rem 3rem 1rem;
     }
 }
 
@@ -693,6 +770,12 @@ footer {
         margin: 0 1rem;
         gap: 2.5rem;
     }
+
+    
+    @media (min-width: 769px) and (max-width: 1032px) {
+        margin: 0 1rem;
+        gap: 2.5rem;
+    }
 }
 
 footer img {
@@ -707,6 +790,11 @@ footer img {
 footer .footer-sect {
     display: flex;
     gap: 2.5rem;
+
+    @media (max-width:768px) {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
 }
 
 
