@@ -182,6 +182,11 @@ header {
         display: flex;
         align-items: center;
     }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
+        display: flex;
+        align-items: center;
+    }
 }
 
 header nav {
@@ -192,6 +197,12 @@ header nav {
     align-items: center;
 
     @media (max-width:768px) {
+        width: 100%;
+        margin: 0 1rem;   
+        padding: 0;
+    }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
         width: 100%;
         margin: 0 1rem;   
         padding: 0;
@@ -343,6 +354,10 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+    }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
+        margin: 0 1rem;   
     }
 }
 

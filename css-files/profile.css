@@ -582,7 +582,6 @@ main .sect-three .products-display {
     display: grid;
     grid-template-columns: repeat(4, 18rem);
     justify-content: space-between;
-    border: 2px solid red;
 
     @media (max-width:768px) {
         grid-template-columns: repeat(2, 10rem);
