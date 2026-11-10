@@ -171,6 +171,11 @@ header {
         display: flex;
         align-items: center;
     }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
+        display: flex;
+        align-items: center;
+    }
 }
 
 header nav {
@@ -181,6 +186,12 @@ header nav {
     align-items: center;
 
     @media (max-width:768px) {
+        width: 100%;
+        margin: 0 1rem;   
+        padding: 0;
+    }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
         width: 100%;
         margin: 0 1rem;   
         padding: 0;
@@ -325,7 +336,11 @@ main {
     margin: 10svh 9rem 2rem 9rem;
 
     @media (max-width:768px) {
-        margin: 3rem 1rem;
+        margin: 10svh 1rem 3rem 1rem;
+    }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
+        margin: 10svh 1rem 3rem 1rem;
     }
 }
 
@@ -343,6 +358,13 @@ main .sect-one .initial-info {
     justify-content: space-between;
 
     @media (max-width:768px) {
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
         flex-direction: column;
         margin: 0;
         align-items: center;
