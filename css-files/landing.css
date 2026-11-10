@@ -467,7 +467,7 @@ main .sect-two .container .product-display {
         grid-template-columns: repeat(2, 10rem);
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (max-width: 768px) {
         grid-template-columns: repeat(3, 14rem);
     }
 
@@ -487,7 +487,7 @@ main .sect-two .container .product-display .product {
        height: 20rem;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (max-width: 768px) {
         width: 14rem;
     }
 

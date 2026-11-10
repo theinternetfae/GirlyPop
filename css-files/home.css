@@ -163,6 +163,11 @@ header {
         display: flex;
         align-items: center;
     }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
+        display: flex;
+        align-items: center;
+    }
 }
 
 header nav {
@@ -177,6 +182,13 @@ header nav {
         margin: 0 1rem;   
         padding: 0;
     }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
+        width: 100%;
+        margin: 0 1rem;   
+        padding: 0;
+    }
+
 }
 
 
@@ -330,6 +342,10 @@ main .sect-one .container {
     @media (max-width:768px) {
         margin: 0 1rem;
     }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
+        margin: 0 1rem;   
+    }
 }
 
 main .sect-one .user-sort {
@@ -430,6 +446,16 @@ main .sect-two .container {
         grid-template-columns: repeat(2, 10rem);
         justify-content: space-around;
     }
+
+    @media (min-width: 768px) and (max-width: 768px) {
+        grid-template-columns: repeat(3, 14rem);
+    }
+
+    @media (min-width: 769px) and (max-width: 1032px) {
+        margin: 0 1rem;
+        grid-template-columns: repeat(3, 18rem);
+    }
+
 }
 
 main .sect-two .container .product {
@@ -441,6 +467,14 @@ main .sect-two .container .product {
     @media (max-width:768px) {
        width: 10rem;
        height: 20rem;
+    }
+
+    @media (min-width: 768px) and (max-width: 768px) {
+        width: 14rem;
+    }
+
+    @media (min-width: 769px) and (max-width: 1032px) {
+        width: 18rem;
     }
 }
 
@@ -529,6 +563,7 @@ main .sect-two .container .product .product-info i {
 
 /*FOOTER*/
 
+
 footer {
     margin: 0 9rem;
     display: flex;
@@ -540,6 +575,16 @@ footer {
         margin: 0 1rem;
         gap: 2.5rem;
     }
+
+    @media (min-width:768px) and (max-width:1032px) {
+        flex-direction: row;
+    }
+    
+    @media (min-width: 769px) and (max-width: 1032px) {
+        margin: 0 1rem;
+        gap: 2.5rem;
+    }
+
 }
 
 footer img {
@@ -554,6 +599,15 @@ footer img {
 footer .footer-sect {
     display: flex;
     gap: 2.5rem;
+
+    @media (max-width:768px) {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    @media (min-width:768px) and (max-width:1032px) {
+        flex-direction: row;
+    }
 }
 
 
