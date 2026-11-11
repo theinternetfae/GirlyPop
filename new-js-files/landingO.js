@@ -1,3 +1,14 @@
+const header = document.getElementById('header');
+
+window.addEventListener("scroll", (event) => {
+    if(window.scrollY === 0) {
+        header.classList.remove('scrolled');
+    } else {
+        header.classList.add('scrolled');
+    }
+}) 
+
+
 const burger = document.querySelector('.burger');
 const smNav = document.querySelector('.sm-nav');
 const smLink = document.querySelectorAll('.sm-link');

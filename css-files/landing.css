@@ -17,6 +17,7 @@
     --light-pink: #7E1036;
     --special-white: #FBF6F1;
     --faded-pink: #DB9EAF;
+    --scrolled-bg: #e7c7ccc8;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -28,6 +29,28 @@ body {
     background-color: var(--base-bg);   
 }
 
+@keyframes slideUpAnimation {
+  0% { transform: translateY(100px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes wobbleAnimation {
+    0% {transform: translateX(0) rotate(0);}
+    25% {transform: translateX(-5px) rotate(-1deg);}
+    50% {transform: translateX(5px) rotate(2deg);}
+    100% {transform: translateX(0) rotate(0);}
+}
+
+@keyframes pulse {
+    0% {transform: scaleY(1) scaleX(1);}
+    50% {transform: scaleY(1.5) scaleX(1.5);}
+    0% {transform: scaleY(1) scaleX(1);}
+}
+
+@keyframes spin {
+    from {translate: 0;}
+    to {translate: -100%;}
+}
 
 /*SM NAV*/
 
@@ -110,6 +133,11 @@ header {
     left: 0;
     z-index: 40;
     background-color: var(--base-bg);
+    transition: .3s ease-in-out;
+}
+
+header.scrolled {
+    background-color: var(--scrolled-bg);
 }
 
 header nav {
@@ -167,6 +195,11 @@ header nav .navigations-logs .nav-btns a {
     text-decoration: none;
     color: var(--sub-text);
     font-size: .9rem;
+    transition: .3s ease-in-out;
+}
+
+header nav .navigations-logs .nav-btns a:hover {
+    color: var(--light-pink);
 }
 
 header nav .navigations-logs .nav-btns p {
@@ -186,6 +219,11 @@ header nav .navigations-logs .log-btns .button {
     cursor: pointer;
     text-align: center;
     font-size: .8rem;
+    transition: .3s ease-in-out;
+}
+
+header nav .navigations-logs .log-btns .button:hover {
+    transform: translateY(-.2rem);
 }
 
 header nav .navigations-logs .log-btns .sign-in {
@@ -315,10 +353,15 @@ main .sect-one .container .landing-text .l-texts button {
     height: 3rem;
     width: 10rem;
     cursor: pointer;
+    transition: .3s ease-in-out;
 
     @media (max-width:768px) {
         width: 9rem;
     }
+}
+
+main .sect-one .container .landing-text .l-texts button:hover {
+    transform: translateY(-.3rem);
 }
 
 main .sect-one .container .landing-text .l-texts .cta-btns-one {
@@ -327,6 +370,7 @@ main .sect-one .container .landing-text .l-texts .cta-btns-one {
     border: 2px solid var(--dark-pink);
     color: white;
     font-weight: bold;
+    animation: pulse 2s ease-in-out 3s 2;
 }
 
 main .sect-one .container .landing-text .l-texts .cta-btns-two {
@@ -338,6 +382,8 @@ main .sect-one .container .landing-text .l-texts .cta-btns-two {
 }
 
 main .sect-one .container .landing-img {
+    animation: slideUpAnimation 1s ease;
+
     @media (min-width: 768px) and (max-width: 1032px) {
         height: 70%;
     }
@@ -347,22 +393,31 @@ main .sect-one .container .landing-img img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    animation: wobbleAnimation 5s ease 1.5s infinite normal both;
 }
 
-main .sect-one .offer-thread {
+main .sect-one .offer-threads {
     position: absolute;
     bottom: 0;
     width: 100%;
+    display: flex;
+    overflow-x: auto;
+    color: var(--invisi-text);
+    font-style: italic;
+    background-color: var(--base-bg);
+}
+
+main .sect-one .offer-thread {
+    flex-shrink: 0;
     border-top: 1px solid var(--invisi-text);
     border-bottom: 1px solid var(--invisi-text);
     padding: 6px;
     font-size: .9rem;
-    color: var(--invisi-text);
-    font-style: italic;
-    background-color: var(--base-bg);
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    gap: 2rem;
+    padding-left: 2rem;
+    animation: spin 30s infinite linear;
 
     @media (max-width:768px) {
         display: none;
