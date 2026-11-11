@@ -29,7 +29,7 @@ main {
     height: 100svh;
     display: flex;
 
-    @media (max-width:768px) {
+    @media (max-width:1032px) {
         align-items: center;
         justify-content: center;
     }
@@ -38,7 +38,7 @@ main {
 main section {
     width: 50%;
 
-    @media (max-width:768px) {
+    @media (max-width:1032px) {
         width: 100%;
     }
 }
@@ -46,7 +46,7 @@ main section {
 main .welcome {
     position: relative;
 
-    @media (max-width:768px) {
+    @media (max-width:1032px) {
         display: none;
     }
 }
@@ -89,6 +89,11 @@ main .form {
         margin: 0 1rem;   
         padding: 0;
     }
+
+    @media (min-width:769px) and (max-width:1032px) {
+        padding: 0 9rem;
+        gap: 4rem;
+    }
 }
 
 main .form .nav-btns {
@@ -106,6 +111,10 @@ main .form .nav-btns .button {
     cursor: pointer;
     text-align: center;
     font-size: .8rem;
+
+    @media (min-width:768px) and (max-width:1032px) {
+        padding: 1rem;
+    }
 }
 
 main .form .nav-btns .button:nth-child(1) {
@@ -135,11 +144,20 @@ main .form .field label {
     @media (max-width:768px) {
         font-size: .9rem;
     }
+
+    @media (min-width:768px) and (max-width:1032px) {
+        font-size: 1.2rem;
+    }
 }
 
 main .form .field input {
     padding: .6rem;
     border: 2px solid var(--border-text);
+
+    @media (min-width:768px) and (max-width:1032px) {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
 }
 
 main .form .field input::placeholder {
@@ -170,6 +188,10 @@ main .form .terms small  {
     @media (max-width:768px) {
         font-size: .7rem;
     }
+
+    @media (min-width:768px) and (max-width:1032px) {
+        font-size: .9rem;
+    }
 }
 
 main .form .terms input  {
@@ -188,6 +210,12 @@ main .form .submit {
     background-color: var(--light-pink);
     border: var(--light-pink);
     cursor: pointer;
+    border-radius: 1rem;
+
+    @media (min-width:768px) and (max-width:1032px) {
+        padding: 1rem;
+        font-size: 1rem;
+    }
 }
 
 main .form .demacator {
@@ -224,6 +252,12 @@ main .form .other-ways button {
     justify-content: center;
     gap: .2rem;
     cursor: pointer;
+    border-radius: 1rem;
+
+    @media (min-width:768px) and (max-width:1032px) {
+        padding: 1rem;
+        font-size: 1rem;
+    }
 }
 
 main .form .other-nav {
@@ -238,6 +272,10 @@ main .form .other-nav span a {
     font-weight: bold;
 
     @media (max-width:768px) {
-        font-size: .7rem;
+        font-size: .8rem;
+    }
+
+    @media (min-width:768px) and (max-width:1032px) {
+        font-size: 1rem;
     }
 }
