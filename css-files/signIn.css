@@ -114,6 +114,7 @@ main .form .nav-btns .button {
 
     @media (min-width:768px) and (max-width:1032px) {
         padding: 1rem;
+        font-size: 1rem;
     }
 }
 
