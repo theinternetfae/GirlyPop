@@ -1,430 +1,265 @@
 import { getProductsStorage } from "./productsO.js";
-import { getCart, getDark, setCart } from "./storageO.js";
+// import { getCart, getDark, setCart } from "./storageO.js";
 // import { cartCountStorage, cartStorageDisplay, getSavedCartButtonState, saveCartButtonState } from "./storageO.js";
 
-const products = getProductsStorage();
 
-//GENERAL REUSABLE FUNCTIONS
-export function truncateText(words, count = 12) {
-
-    if (words.length > count) {
-        return words.substring(0, count) + "...";
-    }
-
-    return words;
-
+//SHUFFLE ARRAY
+export function shuffleArray(start, stop) {
+    const generalProducts = getProductsStorage();
+    const shuffled = [...generalProducts].sort(() => Math.random() - 0.5);
+    return shuffled.slice(start, stop);
 }
 
-export function randomGenerator(eligible) {
-    const shuffled = eligible.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 5);
+
+//CONVERT PRICE-CENTS
+export function convertPrice(price) {
+    return `$${(price / 100).toFixed(2)}`
 }
+
+
+
+
+
+
+
+
+
+
+// //GENERAL REUSABLE FUNCTIONS
+// export function truncateText(words, count = 12) {
+
+//     if (words.length > count) {
+//         return words.substring(0, count) + "...";
+//     }
+
+//     return words;
+
+// }
+
+
+
+
+
+
+
 
 //GENERAL NAVIGATIONS FUNCTIONS
-export function initializeNavBar() {
+// export function initializeNavBar() {
     
-    //TOGGLING NAVIGATIONS DISPLAY
-    const moves = document.querySelectorAll(".moves");
+//     //TOGGLING NAVIGATIONS DISPLAY
+//     const moves = document.querySelectorAll(".moves");
 
-    moves.forEach(m => {
-        m.addEventListener("click", () => {
-            moves.forEach((m) => m.classList.remove('bi-filled'));
-            m.classList.add('bi-filled');
-        })
-    })
+//     moves.forEach(m => {
+//         m.addEventListener("click", () => {
+//             moves.forEach((m) => m.classList.remove('bi-filled'));
+//             m.classList.add('bi-filled');
+//         })
+//     })
 
-    //SMALL SCREENS BURGER MENU
-    const burger = document.querySelector(".burger");
-    const navsSm = document.querySelector(".navs-sm");
+//     //SMALL SCREENS BURGER MENU
+//     const burger = document.querySelector(".burger");
+//     const navsSm = document.querySelector(".navs-sm");
 
-    burger.addEventListener("click", (e) => {
-        e.preventDefault();
-        navsSm.classList.add('show');
+//     burger.addEventListener("click", (e) => {
+//         e.preventDefault();
+//         navsSm.classList.add('show');
     
-        const removeBurger = document.querySelector(".remove-burger");
+//         const removeBurger = document.querySelector(".remove-burger");
 
-        removeBurger.addEventListener("click", (e) => {
-            e.preventDefault();
-            navsSm.classList.remove('show');
-        })
-    })
+//         removeBurger.addEventListener("click", (e) => {
+//             e.preventDefault();
+//             navsSm.classList.remove('show');
+//         })
+//     })
 
-    //SEARCH-BOX LOGIC
-    const searchInput = document.querySelector(".search-input");
+//     //SEARCH-BOX LOGIC
+//     const searchInput = document.querySelector(".search-input");
     
-    const find = document.querySelector(".find");
+//     const find = document.querySelector(".find");
     
-    function testParams() {
+//     function testParams() {
     
-        const query = searchInput.value;
+//         const query = searchInput.value;
     
-        if(query.length === 0) {
-            return;
-        } else {
-            searchInput.value = '';
+//         if(query.length === 0) {
+//             return;
+//         } else {
+//             searchInput.value = '';
     
-            window.location.assign(`home.html?q=${query}`);
+//             window.location.assign(`home.html?q=${query}`);
     
-        }
+//         }
     
-    }
+//     }
     
     
-    find.addEventListener("click", () => {        
+//     find.addEventListener("click", () => {        
         
-        testParams();
+//         testParams();
     
-    })
+//     })
     
-    searchInput.addEventListener("keydown", (e) => {
+//     searchInput.addEventListener("keydown", (e) => {
         
-        const what = e.key;
+//         const what = e.key;
     
-        if (what === "Enter") {
+//         if (what === "Enter") {
     
-            testParams();
+//             testParams();
     
-        }
+//         }
     
-    })
+//     })
 
 
-    //INITIALIZING CART COUNT
-    const inCart = getCart();
-
-    const cartCount = document.querySelectorAll('.cart-count');
-    
-    cartCount.forEach(c => {
-        c.innerHTML = inCart.length;
-    });
-    
-
-
-    //ALERT 
-    document.addEventListener('click', (e) => {
-        const soon = e.target.closest(".soon");
-
-        if (!soon) return;
-        
-        e.preventDefault();
-        const alert = document.querySelector(".alert-cont");
-        const exit = document.querySelector(".exit-alert");
-
-        if(alert.classList.contains('out')) {
-            return;
-        } else {
-            if(navsSm.classList.contains('show')){
-                navsSm.classList.remove('show');
-            }
-            alert.classList.add('out');
-            automaticClear(alert);
-        }
-
-        exit.addEventListener("click", () => {
-            console.log("Exit clicked");
-            alert.classList.remove('out');
-        })
-
-    })
-
-}
-
-
-function automaticClear(alert) {
-
-    if(alert.classList.contains('out')) {
-        const timer = setTimeout(() => {
-            alert.classList.remove('out');
-        }, 5000)
-    
-        return () => clearTimeout(timer);
-    }
-
-}
-
-
-
-export function convertPrice(price) {
-
-    return `$${(price / 100).toFixed(2)}`
-
-}
-
-
-export function setTheme() {
-    const isOn = getDark();
-
-    const theBody = document.querySelector('.the-body');
-
-    isOn && theBody.classList.add('darkmode');
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export function initializeCartCount(products) {
+//     //INITIALIZING CART COUNT
+//     const inCart = getCart();
 
 //     const cartCount = document.querySelectorAll('.cart-count');
-
-//     let dynamicCartCount = JSON.parse(localStorage.getItem('dynamicCartCount')) || 0;
     
-//     localStorage.setItem('dynamicCartCount', JSON.stringify(dynamicCartCount));
-
-//     const inCart = products.filter(p => p.inCart );
-
-//     dynamicCartCount = inCart.length;
-
 //     cartCount.forEach(c => {
-//         c.innerHTML = dynamicCartCount;
+//         c.innerHTML = inCart.length;
+//     });
+    
+
+
+//     //ALERT 
+//     document.addEventListener('click', (e) => {
+//         const soon = e.target.closest(".soon");
+
+//         if (!soon) return;
+        
+//         e.preventDefault();
+//         const alert = document.querySelector(".alert-cont");
+//         const exit = document.querySelector(".exit-alert");
+
+//         if(alert.classList.contains('out')) {
+//             return;
+//         } else {
+//             if(navsSm.classList.contains('show')){
+//                 navsSm.classList.remove('show');
+//             }
+//             alert.classList.add('out');
+//             automaticClear(alert);
+//         }
+
+//         exit.addEventListener("click", () => {
+//             console.log("Exit clicked");
+//             alert.classList.remove('out');
+//         })
+
 //     })
 
 // }
 
-// initializeCartCount(products);
+
+
+
+
+
+
+
+
+// //CLEAR ALERT
+// function automaticClear(alert) {
+
+//     if(alert.classList.contains('out')) {
+//         const timer = setTimeout(() => {
+//             alert.classList.remove('out');
+//         }, 5000)
+    
+//         return () => clearTimeout(timer);
+//     }
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //SET THEME
+// export function setTheme() {
+//     const isOn = getDark();
+
+//     const theBody = document.querySelector('.the-body');
+
+//     isOn && theBody.classList.add('darkmode');
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 //CART LOGIC
+// export function addToCart(item) {
 
+//     let inCart = getCart();
 
-export function addToCart(item) {
-
-    let inCart = getCart();
-
-    inCart.push(item);
+//     inCart.push(item);
     
-    setCart(inCart);
+//     setCart(inCart);
 
-    const cartCount = document.querySelectorAll('.cart-count');
+//     const cartCount = document.querySelectorAll('.cart-count');
     
-    cartCount.forEach(c => {
-        c.innerHTML = inCart.length;
-    })
-
-}
-
-export function removeFromCart(itemId) {
-
-    let inCart = getCart();
-
-    const cleanedCart = inCart.filter(id => id !== itemId);
-
-    setCart(cleanedCart);
-
-    const cartCount = document.querySelectorAll('.cart-count');
-      
-    cartCount.forEach(c => {
-        c.innerHTML = cleanedCart.length || 0;
-    })
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export function updateCartCount() {
-//     const addBtn = document.querySelectorAll('.cart-track');
-//     let cartCount = cartCountStorage();
-//     let addedToCartIds = getSavedCartButtonState();
-//     const cartCountText = document.querySelector('.cart-count p');
-//     cartCountText.textContent = cartCount;
-
-//     addBtn.forEach(btn => {
-//         const btnId = btn.dataset.productId;
-        
-//         if (addedToCartIds.includes(btnId)) {
-//             btn.classList.remove('bi-cart2');
-//             btn.classList.add('bi-cart-check');
-//         } else {
-//             btn.classList.remove('bi-cart-check');
-//             btn.classList.add('bi-cart2');
-//         }
-
-//         btn.onclick = () => {  
-//             const allMatchingIds = document.querySelectorAll(`.cart-track[data-product-id="${btnId}"]`);
-//             let cartStorage = cartStorageDisplay();
-            
-//             if(addedToCartIds.includes(btnId)) {
-
-//                 allMatchingIds.forEach(b => {
-//                     b.classList.remove('bi-cart-check');
-//                     b.classList.add('bi-cart2');
-//                 });
-                
-//                 addedToCartIds = addedToCartIds.filter(id => id !== btnId);
-//                 cartStorage = cartStorage.filter(item => item.id !== btnId);
-//                 cartCount--;
-                
-//             } else {
-//                 allMatchingIds.forEach(b => {
-//                     b.classList.remove('bi-cart2');
-//                     b.classList.add('bi-cart-check');
-//                 });
-
-//                 addedToCartIds.push(btnId);
-//                 const product = products.find(p => p.id === btnId);
-//                 if (product) {
-//                     cartStorage.push(product);
-//                 }
-
-//                 cartCount++;
-//             }
-
-//             saveCartButtonState(addedToCartIds);
-//             localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
-//             localStorage.setItem('cartCount', cartCount);
-//             cartCountText.textContent = cartCount;
-//         };
-//     });
-
-//     cartCountText.textContent = cartCount;
-// }
-
-// export function updateCartShove() {
-//     const shoving = document.querySelectorAll('.shoving');
-//     let cartCount = cartCountStorage();
-//     let addedToCartIds = getSavedCartButtonState();
-//     const cartCountText = document.querySelector('.cart-count p');
-//     cartCountText.textContent = cartCount;
-
-//     shoving.forEach(shovBtn => {
-//         const shovId = shovBtn.dataset.productId;
-
-//         if (addedToCartIds.includes(shovId)) {
-//             shovBtn.classList.remove('shove');
-//             shovBtn.classList.add('shoved');
-//             shovBtn.textContent = 'Shoved in bag';
-//         } else {
-//             shovBtn.classList.remove('shoved');
-//             shovBtn.classList.add('shove');
-//             shovBtn.textContent = 'Shove in bag';
-//         }
-
-//         shovBtn.onclick = () => {
-//             const allMatchingIdsShovIds = document.querySelectorAll(`.shoving[data-product-id="${shovId}"]`);
-//             let cartStorage = cartStorageDisplay();
-
-//             if(addedToCartIds.includes(shovId)) {
-
-//                 allMatchingIdsShovIds.forEach(a => {
-//                     a.classList.remove('shoved');
-//                     a.classList.add('shove');
-//                     shovBtn.textContent = 'Shove in bag';
-//                 });
-
-//                 addedToCartIds = addedToCartIds.filter(id => id !== shovId);
-//                 cartStorage = cartStorage.filter(item => item.id !== shovId);
-//                 cartCount--;
-
-//             } else {
-
-//                 allMatchingIdsShovIds.forEach(a => {
-//                     a.classList.remove('shove');
-//                     a.classList.add('shoved');
-//                     shovBtn.textContent = 'Shoved in bag';
-//                 })
-
-//                 addedToCartIds.push(shovId);
-//                 const product = products.find(p => p.id === shovId);
-//                 if (product) {
-//                     cartStorage.push(product);
-//                 }
-
-//                 cartCount++;
-//             }
-
-//             saveCartButtonState(addedToCartIds);
-//             localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
-//             localStorage.setItem('cartCount', cartCount);
-//             cartCountText.textContent = cartCount;
-        
-//             updateCartCount();
-//         };
-//     });
-
-//     cartCountText.textContent = cartCount;
-// }
-
-// export function deleteFromCart(uiDelete, newCartCount) {
-//     let cartCount = cartCountStorage();
-//     let addedToCartIds = getSavedCartButtonState();
-//     const cartCountText = document.querySelector('.cart-count p');
-//     cartCountText.textContent = cartCount;
-
-//     const uiDeleteId = uiDelete.dataset.productId;
-//     const updatedCart = getCartStorage().filter(item => item.id !== uiDeleteId);
-//     if (addedToCartIds.includes(uiDeleteId)) {
-//         uiDelete.classList.remove('bi-cart-check');
-//         uiDelete.classList.add('bi-cart2');
-//         cartCount--;
-//         addedToCartIds = addedToCartIds.filter(id => id !== uiDeleteId);
-//     }
-
-//     saveCartButtonState(addedToCartIds);
-//     localStorage.setItem('cartStorage', JSON.stringify(updatedCart));
-//     localStorage.setItem('cartCount', cartCount);
-//     cartCountText.textContent = cartCount;
-//     newCartCount.textContent = `${cartCount} item${cartCount === 1 ? '' : 's'}`;
-
-// }
-
-// export function getCartCount() {
-//     return parseInt(localStorage.getItem('cartCount')) || 0;
-// }
-
-// export function getCartStorage() {
-//     return JSON.parse(localStorage.getItem('cartStorage')) || [];
-// }
-
-// export function navToggle() {
-//     const moves = document.querySelectorAll('.moves');
-//     const white = document.querySelector('.cart-count p')
-
-//     moves.forEach((move) => {
-
-//         move.addEventListener('click', () => {
-            
-//             moves.forEach((m) => m.classList.remove('bi-filled'));
-
-//             move.classList.add('bi-filled');
-
-//             if(move.classList.contains('no')) {
-//                 white.style.color = '#7e1036ee';
-//             }
-    
-//         })
+//     cartCount.forEach(c => {
+//         c.innerHTML = inCart.length;
 //     })
+
+// }
+
+// export function removeFromCart(itemId) {
+
+//     let inCart = getCart();
+
+//     const cleanedCart = inCart.filter(id => id !== itemId);
+
+//     setCart(cleanedCart);
+
+//     const cartCount = document.querySelectorAll('.cart-count');
+      
+//     cartCount.forEach(c => {
+//         c.innerHTML = cleanedCart.length || 0;
+//     })
+
 // }
 
 
-// navToggle();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

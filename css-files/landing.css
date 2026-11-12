@@ -542,9 +542,6 @@ main .sect-two .container .product-display {
     display: grid;
     grid-template-columns: repeat(4, 18rem);
     justify-content: space-around;
-    animation: fade-in-up linear both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 35%;
 
 
 
@@ -567,6 +564,9 @@ main .sect-two .container .product-display .product {
     position: relative;
     margin-bottom: 2rem;
     transition: .3s ease-in-out;
+    animation: fade-in-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
 
     @media (max-width:768px) {
        width: 10rem;
@@ -724,7 +724,7 @@ main .sect-three .container .st-one h2 {
 main .sect-three .container .st-one .features {
     display: flex;
     justify-content: space-between;
-    animation: fade-in-up 5s linear both;
+    animation: fade-in-up linear both;
     animation-timeline: view();
     animation-range: entry 0% cover 35%;
 
@@ -802,9 +802,6 @@ main .sect-three .container .st-two .stats-desc {
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem;
-    animation: fade-in-up 5s 5s 1 linear both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 35%;
 }
 
 main .sect-three .container .st-two .stats-desc h2 {
@@ -837,9 +834,6 @@ main .sect-three .container .st-two .stats-desc .stats .stat p {
 main .sect-three .container .st-two .review {
     display: flex;
     align-items: center;
-    animation: fade-in-up 5s 10s 1 linear both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 35%;
 }
 
 main .sect-three .container .st-two .review p {
