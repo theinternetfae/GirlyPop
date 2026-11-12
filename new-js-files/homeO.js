@@ -1,3 +1,7 @@
+import { convertPrice, shuffleArray } from "./General files/utilsO.js";
+import { getProductsStorage } from "./General files/productsO.js";
+
+//SMALL SCREEN NAVIGATION TOGGLE
 const burger = document.querySelector('.burger');
 const smNav = document.querySelector('.sm-nav');
 
@@ -12,6 +16,31 @@ burger.addEventListener("click", () => {
 })
 
 
+
+//SHUFFLE PRODUCTS ARRAY THEN DISPLAY
+const shuffled = shuffleArray(0);
+const productDisplay = document.querySelector('.product-display');
+
+shuffled.forEach(s => {
+    productDisplay.innerHTML += `<div class="product">
+        <img src="${s.image}" alt="${s.name}">
+        <div class="product-info">
+            
+            <div class="pi-sect-one">
+                <p class="title">${s.name}</p>
+                <p class="sub-title">@reynacole Size M</p>
+                <p class="price">${convertPrice(s.priceCents)}</p>
+            </div>
+
+            <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+        
+        </div>
+    </div>`
+})
+
+
+
+//PRODUCT DISPLAY ON CLICK
 const product = document.querySelectorAll('.product');
 const productDetails = document.querySelector('.full-product-details');
 const exit = document.querySelector('.exit');
