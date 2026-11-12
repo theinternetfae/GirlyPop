@@ -477,6 +477,7 @@ main .sect-two .container .product {
     height: 25rem;
     position: relative;
     margin-bottom: 2rem;
+    transition: .3s ease-in-out;
 
     @media (max-width:768px) {
        width: 10rem;
@@ -490,6 +491,10 @@ main .sect-two .container .product {
     @media (min-width: 769px) and (max-width: 1032px) {
         width: 18rem;
     }
+}
+
+main .sect-two .container .product:hover {
+    transform: translateY(-10px);
 }
 
 main .sect-two .container .product img {
@@ -547,10 +552,19 @@ main .sect-two .container .product .product-info i {
     font-size: 1.3rem;
     align-self: self-start;
     cursor: pointer;
+    transition: .3s ease-in-out;
 
     @media (max-width:768px) {
         font-size: 1.2rem;
     }
+}
+
+main .sect-two .container .product .product-info i:hover {
+    color: var(--light-pink);
+}
+
+main .sect-two .container .product .product-info i:active {
+    transform: scale(.90);
 }
 
 

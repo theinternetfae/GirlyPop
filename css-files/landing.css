@@ -557,6 +557,7 @@ main .sect-two .container .product-display .product {
     height: 25rem;
     position: relative;
     margin-bottom: 2rem;
+    transition: .3s ease-in-out;
 
     @media (max-width:768px) {
        width: 10rem;
@@ -571,6 +572,10 @@ main .sect-two .container .product-display .product {
         width: 18rem;
     }
     
+}
+
+main .sect-two .container .product-display .product:hover {
+    transform: translateY(-10px);
 }
 
 main .sect-two .container .product-display .product img {
