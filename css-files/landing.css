@@ -360,18 +360,23 @@ main .sect-one .container .landing-text .l-texts div {
     gap: 2rem;
 }
 
-main .sect-one .container .landing-text .l-texts button {
+main .sect-one .container .landing-text .l-texts a {
     height: 3rem;
     width: 10rem;
     cursor: pointer;
     transition: .3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8rem;
+    text-decoration: none;
 
     @media (max-width:768px) {
         width: 9rem;
     }
 }
 
-main .sect-one .container .landing-text .l-texts button:hover {
+main .sect-one .container .landing-text .l-texts a:hover {
     transform: translateY(-.3rem);
 }
 
@@ -772,6 +777,9 @@ main .sect-three .container .st-two .stats-desc {
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem;
+    animation: fade-in-up 5s 5s 1 linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
 }
 
 main .sect-three .container .st-two .stats-desc h2 {
@@ -804,7 +812,7 @@ main .sect-three .container .st-two .stats-desc .stats .stat p {
 main .sect-three .container .st-two .review {
     display: flex;
     align-items: center;
-    animation: fade-in-up 5s linear both;
+    animation: fade-in-up 5s 10s 1 linear both;
     animation-timeline: view();
     animation-range: entry 0% cover 35%;
 }
