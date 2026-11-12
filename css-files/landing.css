@@ -63,6 +63,15 @@ body {
   }
 }
 
+@keyframes scroll-up {
+    from {
+        transform: translateY(80svh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 /*SM NAV*/
 
 .sm-nav {
@@ -883,6 +892,7 @@ main .full-product-details .container {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    animation: scroll-up .6s ease-in;
 }
 
 main .full-product-details .container .exit {

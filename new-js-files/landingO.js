@@ -38,8 +38,21 @@ smLink.forEach(sm => {
 
 
 
+const product = document.querySelectorAll('.product');
+const productDetails = document.querySelector('.full-product-details');
+const exit = document.querySelector('.exit');
 
+product.forEach(p => {
 
+    p.addEventListener('click', () => {
+        productDetails.classList.remove('hidden');
+    })
+
+})
+
+exit.addEventListener('click', () => {
+    productDetails.classList.add('hidden');
+})
 
 
 
