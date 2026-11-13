@@ -36,7 +36,7 @@ export function generateProductCard(relevantArray = generalProducts, displayFiel
                 
                 <div class="pi-sect-one">
                     <p class="title">${r.name}</p>
-                    <p class="sub-title">@reynacole Size M</p>
+                    <p class="sub-title">@${r.vendor} ● ${r.size}</p>
                     <p class="price">${convertPrice(r.priceCents)}</p>
                 </div>
 
@@ -76,7 +76,9 @@ export function generateDetailPage(productsSelected, displayField, relevantArray
                             
                             <div class="name">
                                 <h3>${deets.name}</h3>            
-                                <i class="hgi hgi-stroke hgi-alert-circle" title="Product is in good shape"></i>
+                                <i class="hgi hgi-stroke hgi-alert-circle" title="${deets.statusMsg ? deets.statusMsg : "Product is in good shape"}" style="
+                                    color: ${deets.status === "good" ? "green" : "#FFB000"}
+                                "></i>
                             </div>
 
                             <p class="price-size">
@@ -88,7 +90,7 @@ export function generateDetailPage(productsSelected, displayField, relevantArray
                                     View vendor
                                     <i class="hgi hgi-stroke hgi-eye"></i>
                                 </button>
-                                <p>@reynacole</p>
+                                <p>@${deets.vendor}</p>
                                 <button>
                                     Chat vendor
                                     <i class="hgi hgi-stroke hgi-chat"></i>
@@ -102,7 +104,7 @@ export function generateDetailPage(productsSelected, displayField, relevantArray
 
                             <div class="prod-description">
                                 <p>Description</p>
-                                <p>This is a demo description for this. I'm only adding this for a test to see what descriptions will look like once the product is being displayed.</p>
+                                <p>${deets.desc}</p>
                             </div>
 
                         </div>

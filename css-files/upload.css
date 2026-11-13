@@ -616,6 +616,15 @@ main .sect-two .prod-desc label {
     }
 }
 
+main .sect-two .prod-desc select {
+    padding: .6rem;
+    border: 2px solid var(--border-text);
+}
+
+main .sect-two .prod-desc select:focus {
+    outline: none;
+}
+
 main .sect-two .prod-desc textarea {
     padding: .6rem;
     border: 2px solid var(--border-text);

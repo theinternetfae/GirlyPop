@@ -662,6 +662,7 @@ main .full-product-details .container .detail-cont-one .img-holder img {
 }
 
 main .full-product-details .container .detail-cont-one .the-details {
+    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

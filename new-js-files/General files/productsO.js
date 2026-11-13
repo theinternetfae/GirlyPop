@@ -1,532 +1,364 @@
 export function getProductsStorage() {
     let products = JSON.parse(localStorage.getItem('products')) || [
         {
+            vendorId: "2c535d1a-11ad-4747-af63-e75b0d6c9947",
             id: "10b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/tops/babydoll-wrap-tops.jpeg",
             name: "Babydoll wrap top",
-            seller: "Seller 1",
-            rating: {
-            stars: 5,
-            count: 127
-            },
+            vendor: "ReynaCole",
             priceCents: 2095,
-            keywords: [
-            "Babydoll",
-            "tops",
-            "wrap",
-            "patterned"
-            ],
             category: "tops",
-            aesthetic: ["Y2K", "chic", "whimsy"],
-            inCart: false,
+            tags: ["Y2K", "chic", "whimsy", "Babydoll", "tops", "wrap", "patterned"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "I got this babydoll wrap top at a thrift store last year and totally forgot about it. I found it in my wardrobe still in perfect condition and decided to sell. Who wants it? 😆",
+            size: "Size M",
+            dateListed: "08/09/2025"
         },
         {
-            id: "11b6fc6f-327a-4ec4-896f-486349e85a3d",
+            vendorId: "",
+            id: "a1a91f0b-b4a9-405a-be2d-f11d9279c13d",
             image: "images/shoes/beaded-kitten-heels.jpeg",
             name: "Beaded kitten heels",
-            seller: "Seller 1",
-            rating: {
-            stars: 4.5,
-            count: 127
-            },
+            vendor: "NaomiMitchell",
             priceCents: 7055,
-            keywords: [
-            "kitten",
-            "heels",
-            "beaded",
-            "vintage"
-            ],
             category: "shoes",
-            aesthetic: ["whimsy", "goth", "boho"],
-            inCart: false,
+            tags: ["whimsy", "goth", "boho", "kitten", "heels", "beaded", "vintage"],
             status: "bad",
-            wrong: "Most of the beads are missing.",
+            statusMsg: "Most of the beads are missing.",
+            desc: "I got this vintage beaded heels and wore it for my best-friend's forest themed wedding. I got in about 12 good wears before a single bead fell off. Honestly, nothing a cobbler can't fix.",
+            size: "Size M",
+            dateListed: "10/02/2026"
         },
         {
+            vendorId: "bb352ac5-97f0-48cc-9ec8-86738638482b",
             id: "12b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/dresses/halter-jean-dress.jpeg",
             name: "Jean halter dress",
-            seller: "Seller 1",
-            rating: {
-            stars: 4.5,
-            count: 127
-            },
+            vendor: "KitKat",
             priceCents: 5050,
-            keywords: [
-            "Jean",
-            "dress",
-            "halter",
-            "party"
-            ],
             category: "dresses",
-            aesthetic: ["Y2k", "chic"],
-            inCart: false,
+            tags: ["Y2k", "chic", "Jean", "dress", "halter", "party"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A chic denim halter dress that's perfect for parties and nights out. It has that classic Y2K look that's easy to style with heels, boots, or your favourite accessories.",
+            size: "Size S",
+            dateListed: "04/18/2026"
         },
         {
+            vendorId: "861f76cb-861d-46c6-8289-cc021a2dfa6c",
             id: "13b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/bottoms/crochet-skirt.jpeg",
             name: "Crochet skirt",
-            seller: "Seller 1",
-            rating: {
-            stars: 4.5,
-            count: 127
-            },
+            vendor: "ThatGirlAmy",
             priceCents: 3095,
-            keywords: [
-            "crochet",
-            "skirt",
-            "handmade",
-            "patterned"
-            ],
             category: "bottoms",
-            aesthetic: ["whimsy", "boho"],
-            inCart: false,
+            tags: ["whimsy", "boho", "crochet", "skirt", "handmade", "patterned"],
             status: "bad",
-            wrong: "A hole in the skirt, nothing a patch can't fix",
+            statusMsg: "A hole in the skirt, nothing a patch can't fix",
+            desc: "A handmade crochet skirt with a whimsical, bohemian feel and a lovely patterned finish. Perfect for relaxed summer outfits, festivals, or layering with your favourite boho pieces. There's a small hole that could easily be patched.",
+            size: "Size L",
+            dateListed: "08/23/2025"
         },
         {
+            vendorId: "139c1829-8e84-4de0-80f1-d348d6b0b293",
             id: "14b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/accessories/butterfly-pendant.jpeg",
             name: "Butterfly pendant",
-            seller: "Seller 1",
-            rating: {
-            stars: 4.5,
-            count: 127
-            },
+            vendor: "JuliasDropoff",
             priceCents: 1055,
-            keywords: [
-            "pendant",
-            "butterfly",
-            "necklace",
-            "accessory"
-            ],
             category: "accessories",
-            aesthetic: ["whimsy", "boho", "chic", "Y2K"],
-            inCart: false,
+            tags: ["whimsy", "boho", "chic", "Y2K", "pendant", "butterfly", "necklace", "accessory"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A delicate butterfly pendant that adds a whimsical touch to any outfit. Its blend of boho charm and Y2K-inspired style makes it a lovely everyday accessory or a cute finishing touch for a dressed-up look.",
+            size: "Size XS",
+            dateListed: "01/12/2025"
         },
         {
+            vendorId: "cab4379f-341f-4d96-a61a-2567a009126c",
             id: "15b6fc6f-338a-4ec4-896f-486349e85a3d",
             image: "images/tops/crochet-halter-top.jpeg",
             name: "Crochet halter-top",
-            seller: "Seller 2",
-            rating: {
-            stars: 5,
-            count: 132
-            },
+            vendor: "CallMeOlivia",
             priceCents: 4590,
-            keywords: [
-            "crochet",
-            "tops",
-            "halter",
-            "patterned"
-            ],
             category: "tops",
-            aesthetic: ["boho", "whimsy", "Y2K"],
-            inCart: false,
+            tags: ["boho", "whimsy", "Y2K", "crochet", "tops", "halter", "patterned"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A pretty patterned crochet halter top with a playful mix of boho and Y2K aesthetics. Perfect for sunny days, beach outings, or pairing with denim and flowy skirts for a relaxed, whimsical look.",
+            size: "Size XL",
+            dateListed: "06/09/2026"
         },
         {
+            vendorId: "2c535d1a-11ad-4747-af63-e75b0d6c9947",
             id: "16b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/shoes/flower-shoes.jpeg",
             name: "Flower wedges",
-            seller: "Seller 1",
-            rating: {
-            stars: 5,
-            count: 127
-            },
+            vendor: "ReynaCole",
             priceCents: 12030,
-            keywords: [
-            "flower",
-            "wedges",
-            "heels",
-            "shoes"
-            ],
             category: "shoes",
-            aesthetic: ["boho", "Y2K", "whimsy"],
-            inCart: false,
+            tags: ["boho", "Y2K", "whimsy", "flower", "wedges", "heels", "shoes"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A playful pair of flower-adorned wedges that brings together whimsical charm and Y2K-inspired style. Perfect for adding a fun, bohemian touch to summer outfits, sundresses, and party looks.",
+            size: "Size M",
+            dateListed: "03/14/2026"
         },
         {
+            vendorId: "a1a91f0b-b4a9-405a-be2d-f11d9279c13d",
             id: "17b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/dresses/off-shoulder-knit-dress.jpeg",
             name: "Off-shoulder knit dress",
-            seller: "Seller 1",
-            rating: {
-            stars: 4.5,
-            count: 127
-            },
+            vendor: "NaomiMitchell",
             priceCents: 3570,
-            keywords: [
-            "off-shoulder",
-            "knit",
-            "dress",
-            "crochet"
-            ],
             category: "dresses",
-            aesthetic: ["boho", "whimsy", "goth", "grunge"],
-            inCart: false,
+            tags: ["boho", "whimsy", "goth", "grunge", "off-shoulder", "knit", "dress", "crochet"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A charming off-shoulder knit dress with a blend of bohemian and grunge-inspired aesthetics. Its crochet-like texture and relaxed silhouette make it a lovely choice for casual outings or a more whimsical, alternative look.",
+            size: "Size XS",
+            dateListed: "09/27/2025"
         },
         {
+            vendorId: "bb352ac5-97f0-48cc-9ec8-86738638482b",
             id: "18b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/bottoms/summer-booty-shorts.jpeg",
             name: "Summer booty shorts",
-            seller: "Seller 1",
-            rating: {
-            stars: 5,
-            count: 127
-            },
+            vendor: "KitKat",
             priceCents: 2750,
-            keywords: [
-            "shorts",
-            "summer",
-            "hawaii",
-            "booty"
-            ],
             category: "bottoms",
-            aesthetic: ["Y2K", "boho"],
-            inCart: false,
+            tags: ["Y2K", "boho", "shorts", "summer", "hawaii", "booty"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "Cute summer booty shorts with a playful Y2K and tropical-inspired vibe. Perfect for beach days, holidays, festivals, or putting together a relaxed summer outfit.",
+            size: "Size L",
+            dateListed: "07/06/2026"
         },
         {
+            vendorId: "861f76cb-861d-46c6-8289-cc021a2dfa6c",
             id: "19b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/accessories/jean-bag.jpeg",
             name: "Small jean bag",
-            seller: "Seller 1",
-            rating: {
-            stars: 4.5,
-            count: 127
-            },
+            vendor: "ThatGirlAmy",
             priceCents: 1550,
-            keywords: [
-            "jean",
-            "small",
-            "bag",
-            "tote"
-            ],
             category: "bags",
-            aesthetic: ["boho", "Y2K"],
-            inCart: false,
+            tags: ["boho", "Y2K", "jean", "small", "bag", "tote"],
             status: "bad",
-            wrong: "A hole in the back.",
+            statusMsg: "A hole in the back.",
+            desc: "A cute little denim bag with a nostalgic Y2K look and a relaxed bohemian feel. Its compact size makes it great for carrying everyday essentials. There's a hole at the back that may need a little repair.",
+            size: "Size S",
+            dateListed: "02/19/2025"
         },
         {
+            vendorId: "139c1829-8e84-4de0-80f1-d348d6b0b293",
             id: "20b6fc6f-338a-4ec4-896f-486349e85a3d",
             image: "images/tops/vintage-blood-red-bellsleeves.jpeg",
             name: "Red bell-sleeves",
-            seller: "Seller 4",
-            rating: {
-            stars: 5,
-            count: 191
-            },
+            vendor: "JuliasDropoff",
             priceCents: 3075,
-            keywords: [
-            "bell",
-            "sleeves",
-            "tops",
-            "neckline"
-            ],
             category: "tops",
-            aesthetic: ["boho", "whimsy", "chic", "Y2K"],
-            inCart: false,
+            tags: ["boho", "whimsy", "chic", "Y2K", "bell", "sleeves", "tops", "neckline"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A vintage-inspired red top featuring dramatic bell sleeves and a flattering neckline. Its rich colour and playful silhouette make it a statement piece that pairs beautifully with jeans, skirts, or flared trousers.",
+            size: "Size XL",
+            dateListed: "11/03/2026"
         },
         {
+            vendorId: "cab4379f-341f-4d96-a61a-2567a009126c",
             id: "21b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/shoes/pink-green-heels.jpeg",
             name: "Steve Madden shoes",
-            seller: "Seller 1",
-            rating: {
-            stars: 5,
-            count: 127
-            },
+            vendor: "CallMeOlivia",
             priceCents: 4095,
-            keywords: [
-            "Steve",
-            "Madden",
-            "heels",
-            "summer"
-            ],
             category: "shoes",
-            aesthetic: ["coquette", "chic", "Y2K"],
-            inCart: false,
+            tags: ["coquette", "chic", "Y2K", "Steve", "Madden", "heels", "summer"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A chic pair of Steve Madden heels with a playful Y2K-inspired look. Their pink and green colour combination adds a fun pop to summer outfits, while the feminine style makes them perfect for dressing up.",
+            size: "Size S",
+            dateListed: "05/21/2026"
         },
         {
+            vendorId: "2c535d1a-11ad-4747-af63-e75b0d6c9947",
             id: "22b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/tops/patterned-purple-top.jpeg",
             name: "Purple patterned top",
-            seller: "Seller 1",
-            rating: {
-            stars: 3.5,
-            count: 127
-            },
+            vendor: "ReynaCole",
             priceCents: 5075,
-            keywords: [
-            "crop",
-            "top",
-            "purple",
-            "mesh"
-            ],
             category: "tops",
-            aesthetic: ["whimsy", "chic", "Y2K"],
-            inCart: false,
+            tags: ["whimsy", "chic", "Y2K", "crop", "top", "purple", "mesh"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A whimsical purple mesh crop top featuring a playful pattern and chic Y2K-inspired aesthetic. Its eye-catching colour and lightweight look make it a lovely statement piece for casual outings or a night out.",
+            size: "Size M",
+            dateListed: "12/08/2025"
         },
         {
+            vendorId: "a1a91f0b-b4a9-405a-be2d-f11d9279c13d",
             id: "23b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/dresses/patchwork-dress.jpeg",
             name: "Patchwork dress",
-            seller: "Seller 1",
-            rating: {
-            stars: 4.5,
-            count: 127
-            },
+            vendor: "NaomiMitchell",
             priceCents: 2550,
-            keywords: [
-            "dress",
-            "costume",
-            "off-shoulder",
-            "patterned"
-            ],
             category: "dresses",
-            aesthetic: ["whimsy", "boho", "coquette"],
-            inCart: false,
+            tags: ["whimsy", "boho", "coquette", "dress", "costume", "off-shoulder", "patterned"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A charming patterned patchwork dress with a whimsical blend of bohemian and coquette aesthetics. Its off-shoulder style gives it a playful, romantic feel, making it perfect for themed parties, festivals, or creative outfit styling.",
+            size: "Size XL",
+            dateListed: "02/16/2025"
         },
-            {
+        {
+            vendorId: "bb352ac5-97f0-48cc-9ec8-86738638482b",
             id: "24b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/tops/black-goth-blouse.jpeg",
             name: "Black goth blouse",
-            seller: "Seller 1",
-            rating: {
-            stars: 5,
-            count: 127
-            },
+            vendor: "KitKat",
             priceCents: 3595,
-            keywords: [
-            "goth",
-            "blouse",
-            "cut-out",
-            "black"
-            ],
             category: "tops",
-            aesthetic: ["goth", "whimsy", "chic"],
-            inCart: false,
+            tags: ["goth", "whimsy", "chic", "goth", "blouse", "cut-out", "black"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A chic black goth blouse with distinctive cut-out details and a touch of whimsical charm. Its alternative aesthetic makes it easy to style with dark skirts, fitted trousers, or layered accessories for a bold look.",
+            size: "Size XS",
+            dateListed: "08/11/2026"
         },
         {
+            vendorId: "861f76cb-861d-46c6-8289-cc021a2dfa6c",
             id: "25b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/bottoms/summer-cotton-skirt.jpeg",
             name: "Summer cotton skirt",
-            seller: "Seller 1",
-            rating: {
-            stars: 4.5,
-            count: 127
-            },
+            vendor: "ThatGirlAmy",
             priceCents: 2595,
-            keywords: [
-            "summer",
-            "hawaii",
-            "skirt",
-            "short"
-            ],
             category: "bottoms",
-            aesthetic: ["Y2K", "coquette"],
-            inCart: false,
+            tags: ["Y2K", "coquette", "summer", "hawaii", "skirt", "short"],
             status: "good",
-            wrong: null,
-        },
-            {
+            statusMsg: null,
+            desc: "A cute short cotton skirt with a breezy summer feel and a playful Y2K-inspired style. Perfect for warm-weather outings, beach trips, and creating sweet coquette-inspired outfits.",
+            size: "Size L",
+            dateListed: "10/29/2026"
+        },        
+        {
+            vendorId: "139c1829-8e84-4de0-80f1-d348d6b0b293",
             id: "26b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/tops/leopard-print-nightset.jpeg",
             name: "Leopard print nightset",
-            seller: "Seller 1",
-            rating: {
-            stars: 5,
-            count: 127
-            },
+            vendor: "JuliasDropoff",
             priceCents: 5000,
-            keywords: [
-            "leopard",
-            "nightset",
-            "print",
-            "sleep"
-            ],
             category: "tops",
-            aesthetic: ["chic", "Y2K"],
-            inCart: false,
+            tags: ["chic", "Y2K", "leopard", "nightset", "print", "sleep"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A stylish leopard print nightset with a bold Y2K-inspired aesthetic. Its chic animal print makes it a fun addition to your sleepwear collection, perfect for lounging comfortably while keeping things fashionable.",
+            size: "Size M",
+            dateListed: "03/22/2025"
         },
         {
+            vendorId: "cab4379f-341f-4d96-a61a-2567a009126c",
             id: "27b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/shoes/pink-shoes.jpeg",
             name: "Strawberry heels",
-            seller: "Seller 1",
-            rating: {
-            stars: 5,
-            count: 127
-            },
+            vendor: "CallMeOlivia",
             priceCents: 4050,
-            keywords: [
-            "wedges",
-            "heels",
-            "beach",
-            "pink"
-            ],
             category: "shoes",
-            aesthetic: ["chic", "Y2K"],
-            inCart: false,
+            tags: ["chic", "Y2K", "wedges", "heels", "beach", "pink"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A lovely pair of pink wedge heels with a playful Y2K-inspired look. Their sweet, feminine style makes them perfect for beach outings, summer parties, and adding a pop of colour to your favourite outfits.",
+            size: "Size S",
+            dateListed: "07/17/2026"
         },
         {
+            vendorId: "2c535d1a-11ad-4747-af63-e75b0d6c9947",
             id: "28b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/accessories/dragonfly-pendant.jpeg",
             name: "Dragon-fly pendant",
-            seller: "Seller 1",
-            rating: {
-            stars: 5,
-            count: 127
-            },
+            vendor: "ReynaCole",
             priceCents: 1550,
-            keywords: [
-            "pendant",
-            "dragon fly",
-            "accessory",
-            "unique"
-            ],
             category: "accessories",
-            aesthetic: ["whimsy", "coquette", "Y2K"],
-            inCart: false,
+            tags: ["whimsy", "coquette", "Y2K", "pendant", "dragon fly", "accessory", "unique"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A unique dragonfly pendant with a whimsical blend of coquette and Y2K-inspired charm. Its delicate, nature-inspired design makes it a lovely accessory for adding a playful finishing touch to everyday outfits.",
+            size: "Size XS",
+            dateListed: "11/09/2025"
         },
         {
+            vendorId: "a1a91f0b-b4a9-405a-be2d-f11d9279c13d",
             id: "29b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/shoes/pink-wedges.jpeg",
             name: "Pink wedges",
-            seller: "Seller 1",
-            rating: {
-            stars: 4.0,
-            count: 127
-            },
+            vendor: "NaomiMitchell",
             priceCents: 4095,
-            keywords: [
-            "wedges",
-            "pink",
-            "2000's",
-            "summer"
-            ],
             category: "shoes",
-            aesthetic: ["Y2K", "chic", "gyaru"],
-            inCart: false,
+            tags: ["Y2K", "chic", "gyaru", "wedges", "pink", "2000's", "summer"],
             status: "bad",
-            wrong: "A few chips in the wedges but overall fine",
+            statusMsg: "A few chips in the wedges but overall fine",
+            desc: "A chic pair of pink wedges with a nostalgic 2000s gyaru-inspired aesthetic. Perfect for summer outfits and adding a bold feminine touch to your look. They have a few small chips on the wedges, but are otherwise in good condition.",
+            size: "Size XL",
+            dateListed: "04/05/2026"
         },
         {
+            vendorId: "bb352ac5-97f0-48cc-9ec8-86738638482b",
             id: "30b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/dresses/red-dress.jpeg",
             name: "Little red dress",
-            seller: "Seller 1",
-            rating: {
-            stars: 5,
-            count: 127
-            },
+            vendor: "KitKat",
             priceCents: 3095,
-            keywords: [
-            "red",
-            "dress",
-            "knit",
-            "crochet"
-            ],
             category: "dresses",
-            aesthetic: ["coquette", "chic"],
-            inCart: false,
+            tags: ["coquette", "chic", "red", "dress", "knit", "crochet"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A cute little red knit dress with a romantic coquette aesthetic and delicate crochet-inspired details. Its chic, feminine look makes it a lovely choice for date nights, parties, or dressing up for a special occasion.",
+            size: "Size L",
+            dateListed: "09/13/2026"
         },
-            {
+        {
+            vendorId: "861f76cb-861d-46c6-8289-cc021a2dfa6c",
             id: "31b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/bottoms/Y2k-bottoms.jpeg",
             name: "Low-rise jeans",
-            seller: "Seller 1",
-            rating: {
-            stars: 5,
-            count: 127
-            },
+            vendor: "ThatGirlAmy",
             priceCents: 7510,
-            keywords: [
-            "low-rise",
-            "Y2k",
-            "jeans",
-            "light"
-            ],
             category: "bottoms",
-            aesthetic: ["Y2K", "gyaru"],
-            inCart: false,
+            tags: ["Y2K", "gyaru", "low-rise", "jeans"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A pair of classic low-rise jeans with a nostalgic Y2K and gyaru-inspired aesthetic. Perfect for creating early 2000s outfits, pairing with fitted crop tops, baby tees, and your favourite statement accessories.",
+            size: "Size S",
+            dateListed: "06/28/2025"
         },
         {
+            vendorId: "139c1829-8e84-4de0-80f1-d348d6b0b293",
             id: "32b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/accessories/leather-jacket.jpeg",
             name: "Leather biker jacket",
-            seller: "Seller 1",
-            rating: {
-            stars: 4.5,
-            count: 127
-            },
+            vendor: "JuliasDropoff",
             priceCents: 10015,
-            keywords: [
-            "leather",
-            "jacket",
-            "biker",
-            "big"
-            ],
             category: "accessories",
-            aesthetic: ["grunge", "chic"],
-            inCart: false,
+            tags: ["grunge", "chic", "leather", "jacket", "biker", "big"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A bold oversized leather biker jacket that combines edgy grunge styling with a chic finish. Perfect for layering over casual outfits and adding a timeless, effortlessly cool touch to your wardrobe.",
+            size: "Size XL",
+            dateListed: "10/16/2026"
         },
         {
+            vendorId: "cab4379f-341f-4d96-a61a-2567a009126c",
             id: "33b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/accessories/bag.jpeg",
             name: "Gyaru bag",
-            seller: "Seller 1",
-            rating: {
-            stars: 4.0,
-            count: 127
-            },
+            vendor: "CallMeOlivia",
             priceCents: 12025,
-            keywords: [
-            "bag",
-            "gyaru",
-            "hyper-femme",
-            "pink"
-            ],
             category: "bags",
-            aesthetic: ["coquette", "gyaru", "Y2K", "chic"],
-            inCart: false,
+            tags: ["coquette", "gyaru", "Y2K", "chic", "bag", "hyper-femme", "pink"],
             status: "good",
-            wrong: null,
+            statusMsg: null,
+            desc: "A gorgeous pink bag with a bold, hyper-feminine gyaru aesthetic and playful Y2K charm. Its chic coquette-inspired style makes it a perfect statement accessory for completing sweet, glamorous, and eye-catching outfits.",
+            size: "Size M",
+            dateListed: "01/30/2026"
         },
     ]
 
