@@ -483,7 +483,7 @@ main .sect-two .product-display .product {
     height: 25rem;
     position: relative;
     margin-bottom: 2rem;
-    transition: .3s ease-in-out;
+    transition: translate .3s ease-in-out;
     animation: fade-in-up linear both;
     animation-timeline: view();
     animation-range: entry 0% cover 35%;
@@ -503,7 +503,7 @@ main .sect-two .product-display .product {
 }
 
 main .sect-two .product-display .product:hover {
-    transform: translateY(-10px);
+    translate: 0 -10px;
 }
 
 main .sect-two .product-display .product img {

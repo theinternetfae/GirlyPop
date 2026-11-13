@@ -602,9 +602,6 @@ main .sect-three .products-display {
     display: grid;
     grid-template-columns: repeat(4, 18rem);
     justify-content: space-between;
-    animation: fade-in-up linear both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 35%;
 
     @media (max-width:768px) {
         grid-template-columns: repeat(2, 10rem);
@@ -638,7 +635,10 @@ main .sect-three .products-display .product {
     height: 25rem;
     position: relative;
     margin-bottom: 2rem;
-    transition: .3s ease-in-out;
+    animation: fade-in-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+    transition: translate .3s ease-in-out;
 
     @media (max-width:768px) {
        width: 10rem;
@@ -655,7 +655,7 @@ main .sect-three .products-display .product {
 }
 
 main .sect-three .products-display .product:hover {
-    transform: translateY(-10px);
+    translate: 0 -10px;
 }
 
 main .sect-three .products-display .product img {

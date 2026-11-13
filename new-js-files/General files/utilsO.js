@@ -3,6 +3,9 @@ import { getProductsStorage } from "./productsO.js";
 // import { cartCountStorage, cartStorageDisplay, getSavedCartButtonState, saveCartButtonState } from "./storageO.js";
 
 
+
+
+
 //SHUFFLE ARRAY
 export function shuffleArray(start, stop) {
     const generalProducts = getProductsStorage();
@@ -11,9 +14,12 @@ export function shuffleArray(start, stop) {
 }
 
 
+
+
+
 //CONVERT PRICE-CENTS
 export function convertPrice(price) {
-    return `$${(price / 100).toFixed(2)}`
+    return `$${(price / 100).toFixed(2)}`;
 }
 
 
