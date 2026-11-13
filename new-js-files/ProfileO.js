@@ -1,3 +1,6 @@
+import { getProductsStorage } from "./General files/productsO.js";
+import { generateDetailPage, generateProductCard } from "./General files/utilsO.js";
+
 const burger = document.querySelector('.burger');
 const smNav = document.querySelector('.sm-nav');
 
@@ -12,21 +15,30 @@ burger.addEventListener("click", () => {
 })
 
 
+
+
+
+//GET USER PRODUCTS ARRAY THEN DISPLAY
+const generalProducts = getProductsStorage();
+const userProducts = generalProducts.filter(p => p.vendor.toLowerCase() === "reynacole");
+const productDisplay = document.querySelector('.products-display');
+
+generateProductCard(userProducts, productDisplay);
+
+
+
+
+
+//PRODUCT DETAILS DISPLAY ON CLICK
 const product = document.querySelectorAll('.product');
 const productDetails = document.querySelector('.full-product-details');
-const exit = document.querySelector('.exit');
 
-product.forEach(p => {
+generateDetailPage(product, productDetails);
 
-    p.addEventListener('click', () => {
-        productDetails.classList.remove('hidden');
-    })
 
-})
 
-exit.addEventListener('click', () => {
-    productDetails.classList.add('hidden');
-})
+
+
 
 
 

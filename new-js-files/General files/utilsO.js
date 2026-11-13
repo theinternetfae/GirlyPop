@@ -82,7 +82,7 @@ export function generateDetailPage(productsSelected, displayField, relevantArray
                             </div>
 
                             <p class="price-size">
-                                ${convertPrice(deets.priceCents)} <span>●</span> <span>Size M</span>
+                                ${convertPrice(deets.priceCents)} <span>●</span> <span>${deets.size}</span>
                             </p>
 
                             <div class="vendor-info">
@@ -136,7 +136,7 @@ export function generateDetailPage(productsSelected, displayField, relevantArray
                                     
                                     <div class="pi-sect-one">
                                         <p class="title">Crochet halter-top</p>
-                                        <p class="sub-title">@reynacole Size M</p>
+                                        <p class="sub-title">@reynacole ● Size M</p>
                                         <p class="price">$18.00</p>
                                     </div>
 
