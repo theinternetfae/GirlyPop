@@ -2,13 +2,13 @@ import { getProductsStorage } from "./productsO.js";
 // import { getCart, getDark, setCart } from "./storageO.js";
 // import { cartCountStorage, cartStorageDisplay, getSavedCartButtonState, saveCartButtonState } from "./storageO.js";
 
+const generalProducts = getProductsStorage();
 
 
 
 
 //SHUFFLE ARRAY
 export function shuffleArray(start, stop) {
-    const generalProducts = getProductsStorage();
     const shuffled = [...generalProducts].sort(() => Math.random() - 0.5);
     return shuffled.slice(start, stop);
 }
@@ -21,6 +21,180 @@ export function shuffleArray(start, stop) {
 export function convertPrice(price) {
     return `$${(price / 100).toFixed(2)}`;
 }
+
+
+
+//GENERATE DETAILS PAGE
+export function generateDetailPage(productsSelected, displayField, relevantArray = generalProducts) {
+
+    productsSelected.forEach(p => {
+
+        p.addEventListener('click', () => {
+
+            const prodIdentity = p.dataset.id;
+            const retrieveProduct = relevantArray.filter(p => p.id === prodIdentity);        
+            const deets = retrieveProduct[0];
+
+            displayField.innerHTML = `<div class="container no-scrollbar">
+
+                    <i class="hgi hgi-stroke hgi-rounded hgi-door-open exit"></i>
+                    
+                    <div class="detail-cont detail-cont-one">
+                        
+                        <div class="img-holder">
+                            <img src="${deets.image}" alt="${deets.name}">
+                        </div>
+                    
+                        <div class="the-details">
+                            
+                            <div class="name">
+                                <h3>${deets.name}</h3>            
+                                <i class="hgi hgi-stroke hgi-alert-circle" title="Product is in good shape"></i>
+                            </div>
+
+                            <p class="price-size">
+                                ${convertPrice(deets.priceCents)} <span>●</span> <span>Size M</span>
+                            </p>
+
+                            <div class="vendor-info">
+                                <button>
+                                    View vendor
+                                    <i class="hgi hgi-stroke hgi-eye"></i>
+                                </button>
+                                <p>@reynacole</p>
+                                <button>
+                                    Chat vendor
+                                    <i class="hgi hgi-stroke hgi-chat"></i>
+                                </button>
+                            </div>
+
+                            <button class="add-to-cart">
+                                Add to Cart
+                                <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                            </button>
+
+                            <div class="prod-description">
+                                <p>Description</p>
+                                <p>This is a demo description for this. I'm only adding this for a test to see what descriptions will look like once the product is being displayed.</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+                    <div class="detail-cont-two">
+                        <h3>More like this</h3>
+                        
+                        <div class="container">
+                            <div class="product">
+                                <img src="./images/tops/crochet-halter-top.jpeg" alt="">
+                                <div class="product-info">
+                                    
+                                    <div class="pi-sect-one">
+                                        <p class="title">Crochet halter-top</p>
+                                        <p class="sub-title">@reynacole Size M</p>
+                                        <p class="price">$18.00</p>
+                                    </div>
+
+                                    <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                                
+                                </div>
+                            </div>
+
+                            <div class="product">
+                                <img src="./images/bottoms/summer-booty-shorts.jpeg" alt="">
+                                <div class="product-info">
+                                    
+                                    <div class="pi-sect-one">
+                                        <p class="title">Crochet halter-top</p>
+                                        <p class="sub-title">@reynacole Size M</p>
+                                        <p class="price">$18.00</p>
+                                    </div>
+
+                                    <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                                
+                                </div>
+                            </div>
+                            
+                            <div class="product">
+                                <img src="./images/accessories/butterfly-pendant.jpeg" alt="">
+                                <div class="product-info">
+                                    
+                                    <div class="pi-sect-one">
+                                        <p class="title">Crochet halter-top</p>
+                                        <p class="sub-title">@reynacole Size M</p>
+                                        <p class="price">$18.00</p>
+                                    </div>
+
+                                    <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                                
+                                </div>
+                            </div>
+
+                            <div class="product">
+                                <img src="./images/shoes/flower-shoes.jpeg" alt="">
+                                <div class="product-info">
+                                    
+                                    <div class="pi-sect-one">
+                                        <p class="title">Crochet halter-top</p>
+                                        <p class="sub-title">@reynacole Size M</p>
+                                        <p class="price">$18.00</p>
+                                    </div>
+
+                                    <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </div>`
+
+
+            displayField.classList.remove('hidden');
+            
+            const exit = document.querySelector('.exit');
+            
+            exit.addEventListener('click', () => {
+                displayField.classList.add('hidden');
+            })
+
+        })
+
+    })
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

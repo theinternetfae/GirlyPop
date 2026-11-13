@@ -1,4 +1,4 @@
-import { convertPrice, shuffleArray } from "./General files/utilsO.js";
+import { convertPrice, generateDetailPage, shuffleArray } from "./General files/utilsO.js";
 import { getProductsStorage } from "./General files/productsO.js";
 
 //SMALL SCREEN NAVIGATION TOGGLE
@@ -22,7 +22,7 @@ const shuffled = shuffleArray(0);
 const productDisplay = document.querySelector('.product-display');
 
 shuffled.forEach(s => {
-    productDisplay.innerHTML += `<div class="product">
+    productDisplay.innerHTML += `<div class="product" data-id="${s.id}">
         <img src="${s.image}" alt="${s.name}">
         <div class="product-info">
             
@@ -40,22 +40,11 @@ shuffled.forEach(s => {
 
 
 
-//PRODUCT DISPLAY ON CLICK
+//PRODUCT DETAILS DISPLAY ON CLICK
 const product = document.querySelectorAll('.product');
 const productDetails = document.querySelector('.full-product-details');
-const exit = document.querySelector('.exit');
 
-product.forEach(p => {
-
-    p.addEventListener('click', () => {
-        productDetails.classList.remove('hidden');
-    })
-
-})
-
-exit.addEventListener('click', () => {
-    productDetails.classList.add('hidden');
-})
+generateDetailPage(product, productDetails);
 
 
 

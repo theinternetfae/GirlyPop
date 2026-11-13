@@ -1,4 +1,4 @@
-import { convertPrice, shuffleArray } from "./General files/utilsO.js";
+import { convertPrice, generateDetailPage, shuffleArray } from "./General files/utilsO.js";
 
 const header = document.getElementById('header');
 
@@ -47,7 +47,7 @@ const shuffled = shuffleArray(0, 12);
 const productDisplay = document.querySelector('.product-display');
 
 shuffled.forEach(s => {
-    productDisplay.innerHTML += `<div class="product">
+    productDisplay.innerHTML += `<div class="product" data-id="${s.id}">
         <img src="${s.image}" alt="${s.name}">
         <div class="product-info">
             
@@ -66,26 +66,13 @@ shuffled.forEach(s => {
 
 
 
-
-
-
-
 //SHOW PRODUCT DETAILS ON PRODUCT CLICK
 const products = document.querySelectorAll('.product');
 const productDetails = document.querySelector('.full-product-details');
-const exit = document.querySelector('.exit');
 
-products.forEach(p => {
+generateDetailPage(products, productDetails);
 
-    p.addEventListener('click', () => {
-        productDetails.classList.remove('hidden');
-    })
 
-})
-
-exit.addEventListener('click', () => {
-    productDetails.classList.add('hidden');
-})
 
 
 
