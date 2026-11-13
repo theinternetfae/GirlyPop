@@ -8,8 +8,8 @@ const generalProducts = getProductsStorage();
 
 
 //SHUFFLE ARRAY
-export function shuffleArray(start, stop) {
-    const shuffled = [...generalProducts].sort(() => Math.random() - 0.5);
+export function shuffleArray(start, stop, array = generalProducts) {
+    const shuffled = [...array].sort(() => Math.random() - 0.5);
     return shuffled.slice(start, stop);
 }
 
@@ -64,125 +64,106 @@ export function generateDetailPage(productsSelected, displayField, relevantArray
 
             displayField.innerHTML = `<div class="container no-scrollbar">
 
-                    <i class="hgi hgi-stroke hgi-rounded hgi-door-open exit"></i>
+                <i class="hgi hgi-stroke hgi-rounded hgi-door-open exit"></i>
+                
+                <div class="detail-cont detail-cont-one">
                     
-                    <div class="detail-cont detail-cont-one">
+                    <div class="img-holder">
+                        <img src="${deets.image}" alt="${deets.name}">
+                    </div>
+                
+                    <div class="the-details">
                         
-                        <div class="img-holder">
-                            <img src="${deets.image}" alt="${deets.name}">
+                        <div class="name">
+                            <h3>${deets.name}</h3>            
+                            <i class="hgi hgi-stroke hgi-alert-circle" title="${deets.statusMsg ? deets.statusMsg : "Product is in good shape"}" style="
+                                color: ${deets.status === "good" ? "green" : "#FFB000"}
+                            "></i>
                         </div>
-                    
-                        <div class="the-details">
-                            
-                            <div class="name">
-                                <h3>${deets.name}</h3>            
-                                <i class="hgi hgi-stroke hgi-alert-circle" title="${deets.statusMsg ? deets.statusMsg : "Product is in good shape"}" style="
-                                    color: ${deets.status === "good" ? "green" : "#FFB000"}
-                                "></i>
-                            </div>
 
-                            <p class="price-size">
-                                ${convertPrice(deets.priceCents)} <span>●</span> <span>${deets.size}</span>
-                            </p>
+                        <p class="price-size">
+                            ${convertPrice(deets.priceCents)} <span>●</span> <span>${deets.size}</span>
+                        </p>
 
-                            <div class="vendor-info">
-                                <button>
-                                    View vendor
-                                    <i class="hgi hgi-stroke hgi-eye"></i>
-                                </button>
-                                <p>@${deets.vendor}</p>
-                                <button>
-                                    Chat vendor
-                                    <i class="hgi hgi-stroke hgi-chat"></i>
-                                </button>
-                            </div>
-
-                            <button class="add-to-cart">
-                                Add to Cart
-                                <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                        <div class="vendor-info">
+                            <button>
+                                View vendor
+                                <i class="hgi hgi-stroke hgi-eye"></i>
                             </button>
+                            <p>@${deets.vendor}</p>
+                            <button>
+                                Chat vendor
+                                <i class="hgi hgi-stroke hgi-chat"></i>
+                            </button>
+                        </div>
 
-                            <div class="prod-description">
-                                <p>Description</p>
-                                <p>${deets.desc}</p>
-                            </div>
+                        <button class="add-to-cart">
+                            Add to Cart
+                            <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                        </button>
 
+                        <div class="prod-description">
+                            <p>Description</p>
+                            <p>${deets.desc}</p>
                         </div>
 
                     </div>
+
+                </div>
+                
+                <div class="detail-cont-two">
+                    <h3>More like this</h3>
                     
-                    <div class="detail-cont-two">
-                        <h3>More like this</h3>
-                        
-                        <div class="container">
-                            <div class="product">
-                                <img src="./images/tops/crochet-halter-top.jpeg" alt="">
-                                <div class="product-info">
-                                    
-                                    <div class="pi-sect-one">
-                                        <p class="title">Crochet halter-top</p>
-                                        <p class="sub-title">@reynacole Size M</p>
-                                        <p class="price">$18.00</p>
-                                    </div>
-
-                                    <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
-                                
-                                </div>
-                            </div>
-
-                            <div class="product">
-                                <img src="./images/bottoms/summer-booty-shorts.jpeg" alt="">
-                                <div class="product-info">
-                                    
-                                    <div class="pi-sect-one">
-                                        <p class="title">Crochet halter-top</p>
-                                        <p class="sub-title">@reynacole ● Size M</p>
-                                        <p class="price">$18.00</p>
-                                    </div>
-
-                                    <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
-                                
-                                </div>
-                            </div>
-                            
-                            <div class="product">
-                                <img src="./images/accessories/butterfly-pendant.jpeg" alt="">
-                                <div class="product-info">
-                                    
-                                    <div class="pi-sect-one">
-                                        <p class="title">Crochet halter-top</p>
-                                        <p class="sub-title">@reynacole Size M</p>
-                                        <p class="price">$18.00</p>
-                                    </div>
-
-                                    <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
-                                
-                                </div>
-                            </div>
-
-                            <div class="product">
-                                <img src="./images/shoes/flower-shoes.jpeg" alt="">
-                                <div class="product-info">
-                                    
-                                    <div class="pi-sect-one">
-                                        <p class="title">Crochet halter-top</p>
-                                        <p class="sub-title">@reynacole Size M</p>
-                                        <p class="price">$18.00</p>
-                                    </div>
-
-                                    <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
-                                
-                                </div>
-                            </div>
-                        </div>
-
+                    <div class="container more-cont">
                     </div>
+
+                </div>
                     
-                </div>`
+            </div>`
 
 
+            //MAKE IT DISPLAY
             displayField.classList.remove('hidden');
+
+
+
+
+
+            //SET UP 'MORE LIKE THIS' (CLEAN UP)
+            const moreContainer = document.querySelector('.more-cont');
+            const tags = deets.tags;
             
+            const matching = [];
+            const finalArray = [];
+
+            tags.forEach(t => {
+                relevantArray.forEach(r => {
+                    if(r.tags.find(r => r.toLowerCase() === t.toLowerCase())) {
+                        matching.push(r);
+                    }
+                })
+            })
+
+            const convertToId = matching.map(m => m.id);
+            const removeSelected = convertToId.filter(c => c !== deets.id);
+            const removeDuplicates = new Set(removeSelected);
+
+            const shuffled = shuffleArray(0, 4, removeDuplicates);
+            generalProducts.forEach(g => {
+                shuffled.forEach(s => {
+                    if(s === g.id) {
+                        finalArray.push(g)
+                    }
+                }) 
+            })
+            
+            generateProductCard(finalArray, moreContainer);
+            
+
+
+
+
+            //SET UP EXIT BUTTON
             const exit = document.querySelector('.exit');
             
             exit.addEventListener('click', () => {

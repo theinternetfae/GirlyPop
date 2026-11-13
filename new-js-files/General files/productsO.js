@@ -16,8 +16,8 @@ export function getProductsStorage() {
             dateListed: "08/09/2025"
         },
         {
-            vendorId: "",
-            id: "a1a91f0b-b4a9-405a-be2d-f11d9279c13d",
+            vendorId: "a1a91f0b-b4a9-405a-be2d-f11d9279c13d",
+            id: "11b6fc6f-327a-4ec4-896f-486349e85a3d",
             image: "images/shoes/beaded-kitten-heels.jpeg",
             name: "Beaded kitten heels",
             vendor: "NaomiMitchell",
