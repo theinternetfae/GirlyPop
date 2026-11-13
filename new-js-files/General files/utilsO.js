@@ -24,6 +24,33 @@ export function convertPrice(price) {
 
 
 
+
+
+//GENERATE PRODUCT CARD 
+export function generateProductCard(relevantArray = generalProducts, displayField) {
+
+    relevantArray.forEach(r => {
+        displayField.innerHTML += `<div class="product" data-id="${r.id}">
+            <img src="${r.image}" alt="${r.name}">
+            <div class="product-info">
+                
+                <div class="pi-sect-one">
+                    <p class="title">${r.name}</p>
+                    <p class="sub-title">@reynacole Size M</p>
+                    <p class="price">${convertPrice(r.priceCents)}</p>
+                </div>
+
+                <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+            
+            </div>
+        </div>`
+    })
+
+}
+
+
+
+
 //GENERATE DETAILS PAGE
 export function generateDetailPage(productsSelected, displayField, relevantArray = generalProducts) {
 
@@ -32,7 +59,7 @@ export function generateDetailPage(productsSelected, displayField, relevantArray
         p.addEventListener('click', () => {
 
             const prodIdentity = p.dataset.id;
-            const retrieveProduct = relevantArray.filter(p => p.id === prodIdentity);        
+            const retrieveProduct = relevantArray.filter(r => r.id === prodIdentity);        
             const deets = retrieveProduct[0];
 
             displayField.innerHTML = `<div class="container no-scrollbar">

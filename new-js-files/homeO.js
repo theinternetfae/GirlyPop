@@ -1,5 +1,8 @@
-import { convertPrice, generateDetailPage, shuffleArray } from "./General files/utilsO.js";
-import { getProductsStorage } from "./General files/productsO.js";
+import { generateDetailPage, generateProductCard, shuffleArray } from "./General files/utilsO.js";
+
+
+
+
 
 //SMALL SCREEN NAVIGATION TOGGLE
 const burger = document.querySelector('.burger');
@@ -17,26 +20,15 @@ burger.addEventListener("click", () => {
 
 
 
+
+
 //SHUFFLE PRODUCTS ARRAY THEN DISPLAY
 const shuffled = shuffleArray(0);
 const productDisplay = document.querySelector('.product-display');
 
-shuffled.forEach(s => {
-    productDisplay.innerHTML += `<div class="product" data-id="${s.id}">
-        <img src="${s.image}" alt="${s.name}">
-        <div class="product-info">
-            
-            <div class="pi-sect-one">
-                <p class="title">${s.name}</p>
-                <p class="sub-title">@reynacole Size M</p>
-                <p class="price">${convertPrice(s.priceCents)}</p>
-            </div>
+generateProductCard(shuffled, productDisplay);
 
-            <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
-        
-        </div>
-    </div>`
-})
+
 
 
 
