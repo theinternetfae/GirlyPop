@@ -129,33 +129,23 @@ export function generateDetailPage(productsSelected, displayField, relevantArray
 
 
 
-            //SET UP 'MORE LIKE THIS' (CLEAN UP)
-            const moreContainer = document.querySelector('.more-cont');
-            const tags = deets.tags;
+            //SET UP 'MORE LIKE THIS'
+            const moreContainer = document.querySelector('.more-cont');            
             
-            const matching = [];
-            const finalArray = [];
+            //Get selected tags and format for unintentional spacing and case mismatch
+            const selectedTags = new Set(
+                (deets.tags ?? []).map(tag => tag.trim().toLowerCase())
+            );
+            
+            const matchingProducts = relevantArray.filter(product => {
+                //Exclude selected product from matching array
+                if(product.id === deets.id) return false;
 
-            tags.forEach(t => {
-                relevantArray.forEach(r => {
-                    if(r.tags.find(r => r.toLowerCase() === t.toLowerCase())) {
-                        matching.push(r);
-                    }
-                })
+                //return any product with a matching tag
+                return product.tags?.some(tag => selectedTags.has(tag.trim().toLowerCase()));
             })
 
-            const convertToId = matching.map(m => m.id);
-            const removeSelected = convertToId.filter(c => c !== deets.id);
-            const removeDuplicates = new Set(removeSelected);
-
-            const shuffled = shuffleArray(0, 4, removeDuplicates);
-            generalProducts.forEach(g => {
-                shuffled.forEach(s => {
-                    if(s === g.id) {
-                        finalArray.push(g)
-                    }
-                }) 
-            })
+            const finalArray = shuffleArray(0, 4, matchingProducts);
             
             generateProductCard(finalArray, moreContainer);
             
