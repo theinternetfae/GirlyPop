@@ -87,12 +87,12 @@ export function generateDetailPage(productsSelected, displayField, relevantArray
 
                         <div class="vendor-info">
                             <button>
-                                View vendor
+                                <p>View vendor</p>
                                 <i class="hgi hgi-stroke hgi-eye"></i>
                             </button>
                             <p>@${deets.vendor}</p>
                             <button>
-                                Chat vendor
+                                <p>Chat vendor</p>
                                 <i class="hgi hgi-stroke hgi-chat"></i>
                             </button>
                         </div>
@@ -114,7 +114,7 @@ export function generateDetailPage(productsSelected, displayField, relevantArray
                 <div class="detail-cont-two">
                     <h3>More like this</h3>
                     
-                    <div class="container more-cont">
+                    <div class="container more-cont no-scrollbar">
                     </div>
 
                 </div>
