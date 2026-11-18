@@ -182,34 +182,8 @@ export function generateDetailPage(productsSelected, displayField, relevantArray
 
             //MAKE IT DISPLAY
             displayField.classList.remove('hidden');
-
-
-
-
-
-            //SET UP 'MORE LIKE THIS'
-            const moreContainer = document.querySelector('.more-cont');            
             
-            //Get selected tags and format for unintentional spacing and case mismatch
-            const selectedTags = new Set(
-                (deets.tags ?? []).map(tag => tag.trim().toLowerCase())
-            );
-            
-            const matchingProducts = relevantArray.filter(product => {
-                //Exclude selected product from matching array
-                if(product.id === deets.id) return false;
-
-                //return any product with a matching tag
-                return product.tags?.some(tag => selectedTags.has(tag.trim().toLowerCase()));
-            })
-
-            const finalArray = shuffleArray(0, 4, matchingProducts);
-            
-            generateProductCard(finalArray, moreContainer);
-            
-
-
-
+            generateMoreLikeThis(deets, relevantArray);
 
             //SET UP EXIT BUTTON
             const exit = document.querySelector('.exit');
@@ -225,6 +199,32 @@ export function generateDetailPage(productsSelected, displayField, relevantArray
 }
 
 
+
+
+
+function generateMoreLikeThis(deets, relevantArray) {
+
+    //SET UP 'MORE LIKE THIS'
+    const moreContainer = document.querySelector('.more-cont');            
+    
+    //Get selected tags and format for unintentional spacing and case mismatch
+    const selectedTags = new Set(
+        (deets.tags ?? []).map(tag => tag.trim().toLowerCase())
+    );
+    
+    const matchingProducts = relevantArray.filter(product => {
+        //Exclude selected product from matching array
+        if(product.id === deets.id) return false;
+
+        //return any product with a matching tag
+        return product.tags?.some(tag => selectedTags.has(tag.trim().toLowerCase()));
+    })
+
+    const finalArray = shuffleArray(0, 4, matchingProducts);
+    
+    generateProductCard(finalArray, moreContainer);
+
+}
 
 
 
