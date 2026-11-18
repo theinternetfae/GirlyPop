@@ -40,13 +40,62 @@ export function generateProductCard(relevantArray = generalProducts, displayFiel
                     <p class="price">${convertPrice(r.priceCents)}</p>
                 </div>
 
-                <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01 cart-toggle add-product" data-id="${r.id}"></i>
             
             </div>
         </div>`
     })
 
+    addRemoveCartItem();
+
 }
+
+
+
+
+
+//CART LOGIC
+let cart = [];
+
+
+console.log(cart);
+
+
+
+
+
+function addRemoveCartItem() {
+    const prod = document.querySelectorAll(".cart-toggle");
+
+    prod.forEach(p => {
+        p.addEventListener("click", (e) => {
+            e.stopPropagation();
+
+            const chosenId = p.dataset.id;
+
+            if(p.classList.contains('add-product')) {
+                
+                p.classList.replace('hgi-shopping-basket-add-01', 'hgi-shopping-basket-done-01');
+                p.classList.replace('add-product', 'remove-product');
+
+                cart.push(chosenId);
+                console.log("This is the cart", cart);
+            
+            } else if (p.classList.contains('remove-product')) {
+
+                p.classList.replace('hgi-shopping-basket-done-01', 'hgi-shopping-basket-add-01');
+                p.classList.replace('remove-product', 'add-product');
+
+                const newCart = cart.filter(c => c !== chosenId);
+                cart = newCart;
+                console.log("This is the cart", cart);
+
+            }
+
+        })
+    })
+}
+
 
 
 

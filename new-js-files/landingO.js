@@ -66,8 +66,6 @@ generateDetailPage(products, productDetails);
 
 
 
-
-
 // import { setTheme } from "./General files/utilsO.js";
 
 // setTheme();
