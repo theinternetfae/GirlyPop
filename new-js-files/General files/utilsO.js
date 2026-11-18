@@ -1,8 +1,15 @@
 import { getProductsStorage } from "./productsO.js";
+import { getCart, setCart } from "./storageO.js";
 // import { getCart, getDark, setCart } from "./storageO.js";
 // import { cartCountStorage, cartStorageDisplay, getSavedCartButtonState, saveCartButtonState } from "./storageO.js";
 
 const generalProducts = getProductsStorage();
+
+//CART LOGIC
+let cart = getCart();
+
+
+console.log(cart);
 
 
 
@@ -29,7 +36,12 @@ export function convertPrice(price) {
 //GENERATE PRODUCT CARD 
 export function generateProductCard(relevantArray = generalProducts, displayField) {
 
+    
+
     relevantArray.forEach(r => {
+      
+        const isInCart = cart.some(c => c === r.id);
+
         displayField.innerHTML += `<div class="product" data-id="${r.id}">
             <img src="${r.image}" alt="${r.name}">
             <div class="product-info">
@@ -40,10 +52,14 @@ export function generateProductCard(relevantArray = generalProducts, displayFiel
                     <p class="price">${convertPrice(r.priceCents)}</p>
                 </div>
 
-                <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01 cart-toggle add-product" data-id="${r.id}"></i>
+                <i class="hgi hgi-stroke hgi-rounded cart-toggle ${isInCart ? "hgi-shopping-basket-done-01 remove-product" : "hgi-shopping-basket-add-01 add-product"}" data-id="${r.id}" 
+                style="
+                    color: ${isInCart ? "var(--light-pink)" : "black"};
+                "></i>
             
             </div>
         </div>`
+
     })
 
     addRemoveCartItem();
@@ -54,16 +70,8 @@ export function generateProductCard(relevantArray = generalProducts, displayFiel
 
 
 
-//CART LOGIC
-let cart = [];
 
-
-console.log(cart);
-
-
-
-
-
+// ADD OR REMOVE FROM CART
 function addRemoveCartItem() {
     const prod = document.querySelectorAll(".cart-toggle");
 
@@ -77,18 +85,19 @@ function addRemoveCartItem() {
                 
                 p.classList.replace('hgi-shopping-basket-add-01', 'hgi-shopping-basket-done-01');
                 p.classList.replace('add-product', 'remove-product');
+                p.style.color = "var(--light-pink)";
 
                 cart.push(chosenId);
-                console.log("This is the cart", cart);
-            
+                setCart(cart);
+
             } else if (p.classList.contains('remove-product')) {
 
                 p.classList.replace('hgi-shopping-basket-done-01', 'hgi-shopping-basket-add-01');
                 p.classList.replace('remove-product', 'add-product');
+                p.style.color = "black";
 
-                const newCart = cart.filter(c => c !== chosenId);
-                cart = newCart;
-                console.log("This is the cart", cart);
+                cart = cart.filter(c => c !== chosenId);
+                setCart(cart);
 
             }
 
