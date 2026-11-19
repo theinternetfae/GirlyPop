@@ -1038,6 +1038,10 @@ main .full-product-details .container .detail-cont-one .the-details button {
     cursor: pointer;
 }
 
+main .full-product-details .container .detail-cont-one .the-details button:active {
+    transform: scale(.90);
+}
+
 main .full-product-details .container .detail-cont-one .the-details button i {
     font-size: 1rem;
 }

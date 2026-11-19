@@ -112,8 +112,11 @@ function addRemoveCartItem() {
 //GENERATE DETAILS PAGE
 export function generateDetailPage(productSelected, displayField, relevantArray = generalProducts) {
 
+    
     const prodIdentity = productSelected.dataset.id;
     const deets = relevantArray.find(r => r.id === prodIdentity); 
+
+    const isInCart = cart.some(c => c === deets.id);
 
     displayField.innerHTML = `<div class="container no-scrollbar">
 
@@ -150,9 +153,12 @@ export function generateDetailPage(productSelected, displayField, relevantArray 
                     </button>
                 </div>
 
-                <button class="add-to-cart">
-                    Add to Cart
-                    <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                <button class="add-to-cart" style="
+                    color: ${isInCart ? "var(--light-pink)" : "white"};
+                    background-color: ${isInCart ? "white" : "var(--light-pink)"};
+                ">
+                    <p>${isInCart ? "Remove from Cart" : "Add to Cart"}</p>
+                    <i class="hgi hgi-stroke hgi-rounded ${isInCart ? "hgi-shopping-basket-done-01" : "hgi-shopping-basket-add-01"}"></i>
                 </button>
 
                 <div class="prod-description">
