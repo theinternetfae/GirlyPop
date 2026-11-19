@@ -110,90 +110,81 @@ function addRemoveCartItem() {
 
 
 //GENERATE DETAILS PAGE
-export function generateDetailPage(productsSelected, displayField, relevantArray = generalProducts) {
+export function generateDetailPage(productSelected, displayField, relevantArray = generalProducts) {
 
-    productsSelected.forEach(p => {
+    const prodIdentity = productSelected.dataset.id;
+    const deets = relevantArray.find(r => r.id === prodIdentity); 
 
-        p.addEventListener('click', () => {
+    displayField.innerHTML = `<div class="container no-scrollbar">
 
-            const prodIdentity = p.dataset.id;
-            const retrieveProduct = relevantArray.filter(r => r.id === prodIdentity);        
-            const deets = retrieveProduct[0];
-
-            displayField.innerHTML = `<div class="container no-scrollbar">
-
-                <i class="hgi hgi-stroke hgi-rounded hgi-door-open exit"></i>
-                
-                <div class="detail-cont detail-cont-one">
-                    
-                    <div class="img-holder">
-                        <img src="${deets.image}" alt="${deets.name}">
-                    </div>
-                
-                    <div class="the-details">
-                        
-                        <div class="name">
-                            <h3>${deets.name}</h3>            
-                            <i class="hgi hgi-stroke hgi-alert-circle" title="${deets.statusMsg ? deets.statusMsg : "Product is in good shape"}" style="
-                                color: ${deets.status === "good" ? "green" : "#FFB000"}
-                            "></i>
-                        </div>
-
-                        <p class="price-size">
-                            ${convertPrice(deets.priceCents)} <span>●</span> <span>${deets.size}</span>
-                        </p>
-
-                        <div class="vendor-info">
-                            <button>
-                                <p>View vendor</p>
-                                <i class="hgi hgi-stroke hgi-eye"></i>
-                            </button>
-                            <p>@${deets.vendor}</p>
-                            <button>
-                                <p>Chat vendor</p>
-                                <i class="hgi hgi-stroke hgi-chat"></i>
-                            </button>
-                        </div>
-
-                        <button class="add-to-cart">
-                            Add to Cart
-                            <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
-                        </button>
-
-                        <div class="prod-description">
-                            <p>Description</p>
-                            <p>${deets.desc}</p>
-                        </div>
-
-                    </div>
-
-                </div>
-                
-                <div class="detail-cont-two">
-                    <h3>More like this</h3>
-                    
-                    <div class="container more-cont no-scrollbar">
-                    </div>
-
-                </div>
-                    
-            </div>`
-
-
-            //MAKE IT DISPLAY
-            displayField.classList.remove('hidden');
+        <i class="hgi hgi-stroke hgi-rounded hgi-door-open exit"></i>
+        
+        <div class="detail-cont detail-cont-one">
             
-            generateMoreLikeThis(deets, relevantArray);
+            <div class="img-holder">
+                <img src="${deets.image}" alt="${deets.name}">
+            </div>
+        
+            <div class="the-details">
+                
+                <div class="name">
+                    <h3>${deets.name}</h3>            
+                    <i class="hgi hgi-stroke hgi-alert-circle" title="${deets.statusMsg ? deets.statusMsg : "Product is in good shape"}" style="
+                        color: ${deets.status === "good" ? "green" : "#FFB000"}
+                    "></i>
+                </div>
 
-            //SET UP EXIT BUTTON
-            const exit = document.querySelector('.exit');
+                <p class="price-size">
+                    ${convertPrice(deets.priceCents)} <span>●</span> <span>${deets.size}</span>
+                </p>
+
+                <div class="vendor-info">
+                    <button>
+                        <p>View vendor</p>
+                        <i class="hgi hgi-stroke hgi-eye"></i>
+                    </button>
+                    <p>@${deets.vendor}</p>
+                    <button>
+                        <p>Chat vendor</p>
+                        <i class="hgi hgi-stroke hgi-chat"></i>
+                    </button>
+                </div>
+
+                <button class="add-to-cart">
+                    Add to Cart
+                    <i class="hgi hgi-stroke hgi-rounded hgi-shopping-basket-add-01"></i>
+                </button>
+
+                <div class="prod-description">
+                    <p>Description</p>
+                    <p>${deets.desc}</p>
+                </div>
+
+            </div>
+
+        </div>
+        
+        <div class="detail-cont-two">
+            <h3>More like this</h3>
             
-            exit.addEventListener('click', () => {
-                displayField.classList.add('hidden');
-            })
+            <div class="container more-cont no-scrollbar">
+            </div>
 
-        })
+        </div>
+            
+    </div>`
 
+
+    //MAKE IT DISPLAY
+    displayField.classList.remove('hidden');
+    
+    generateMoreLikeThis(deets, relevantArray);
+
+    //SET UP EXIT BUTTON
+    const exit = document.querySelector('.exit');
+    
+    exit.addEventListener('click', () => {
+        displayField.classList.add('hidden');
     })
 
 }

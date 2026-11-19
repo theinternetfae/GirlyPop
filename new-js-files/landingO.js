@@ -51,11 +51,16 @@ generateProductCard(shuffled, productDisplay);
 
 
 
-//SHOW PRODUCT DETAILS ON PRODUCT CLICK
-const products = document.querySelectorAll('.product');
+//PRODUCT DETAILS DISPLAY ON CLICK
 const productDetails = document.querySelector('.full-product-details');
 
-generateDetailPage(products, productDetails);
+document.addEventListener('click', (e) => {
+    const product = e.target.closest('.product');
+
+    if(!product) return;
+    
+    generateDetailPage(product, productDetails);
+})
 
 
 

@@ -30,10 +30,15 @@ generateProductCard(userProducts, productDisplay);
 
 
 //PRODUCT DETAILS DISPLAY ON CLICK
-const product = document.querySelectorAll('.product');
 const productDetails = document.querySelector('.full-product-details');
 
-generateDetailPage(product, productDetails);
+document.addEventListener('click', (e) => {
+    const product = e.target.closest('.product');
+
+    if(!product) return;
+    
+    generateDetailPage(product, productDetails);
+})
 
 
 
