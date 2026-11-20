@@ -42,8 +42,8 @@ export function generateProductCard(relevantArray = generalProducts, displayFiel
       
         const isInCart = cart.some(c => c.id === r.id);
 
-        displayField.innerHTML += `<div class="product" data-id="${r.id}">
-            <img src="${r.image}" alt="${r.name}">
+        displayField.innerHTML += `<div class="product">
+            <img src="${r.image}" alt="${r.name}" data-id="${r.id}">
             <div class="product-info">
                 
                 <div class="pi-sect-one">
@@ -61,9 +61,6 @@ export function generateProductCard(relevantArray = generalProducts, displayFiel
         </div>`
 
     })
-
-    addRemoveCartItemGen();
-
 }
 
 
@@ -73,7 +70,6 @@ export function generateProductCard(relevantArray = generalProducts, displayFiel
 //GENERATE DETAILS PAGE
 export function generateDetailPage(productSelected, displayField, relevantArray = generalProducts) {
 
-    
     const prodIdentity = productSelected.dataset.id;
     const deets = relevantArray.find(r => r.id === prodIdentity); 
 
@@ -147,7 +143,6 @@ export function generateDetailPage(productSelected, displayField, relevantArray 
     displayField.classList.remove('hidden');
     
     generateMoreLikeThis(deets, relevantArray);
-    addRemoveCartItemDeets();
 
     //SET UP EXIT BUTTON
     const exit = document.querySelector('.exit');
@@ -190,90 +185,104 @@ function generateMoreLikeThis(deets, relevantArray) {
 
 
 
-// ADD OR REMOVE FROM CART
-function addRemoveCartItemGen() {
-    const prod = document.querySelectorAll(".cart-toggle-gen");
+function addRemoveFromCart() {
+    document.addEventListener("click", (e) => {
 
-    prod.forEach(p => {
-        p.addEventListener("click", (e) => {
-            e.stopPropagation();
-
-            const chosenId = p.dataset.id;
-            const chosenProduct = generalProducts.find(g => g.id === chosenId);
-
-            if(p.classList.contains('add-product')) {
-                
-                p.classList.replace('hgi-shopping-basket-add-01', 'hgi-shopping-basket-done-01');
-                p.classList.replace('add-product', 'remove-product');
-                p.style.color = "var(--light-pink)";
-
-                cart.push(chosenProduct);
-                setCart(cart);
-
-            } else if (p.classList.contains('remove-product')) {
-
-                p.classList.replace('hgi-shopping-basket-done-01', 'hgi-shopping-basket-add-01');
-                p.classList.replace('remove-product', 'add-product');
-                p.style.color = "black";
-
-                cart = cart.filter(c => c.id !== chosenId);
-                setCart(cart);
-
-            }
-
-        })
-    })
-}
-
-
-
-
-
-
-function addRemoveCartItemDeets() {
-    const prod = document.querySelector(".cart-toggle-deets");
-    const prodText = document.querySelector(".deets-productt-text");
-    const prodIcon = document.querySelector(".deets-productt-icon");
-
-    prod.addEventListener("click", (e) => {
-    
         e.stopPropagation();
 
-        const chosenId = prod.dataset.id;
+        const p = e.target.closest('.cart-toggle-gen, .cart-toggle-deets');
+
+        if(!p)return;
+
+        const chosenId = p.dataset.id;
         const chosenProduct = generalProducts.find(g => g.id === chosenId);
+        // const isInCart = cart.some(c => c.id === chosenId);
 
-        if(prod.classList.contains('add-product')) {
-
-            prod.classList.replace('add-product', 'remove-product');
-            prod.style.color = "var(--light-pink)";
-            prod.style.backgroundColor = "white";
-            prod.style.border = "white";
-
-            prodText.innerHTML = "Remove from Cart";
-
-            prodIcon.classList.replace('hgi-shopping-basket-add-01', 'hgi-shopping-basket-done-01');
+        if(p.classList.contains('add-product')) {
 
             cart.push(chosenProduct);
             setCart(cart);
 
-        } else if(prod.classList.contains('remove-product')) {
-
-            prod.classList.replace('remove-product', 'add-product');
-            prod.style.color = "white";
-            prod.style.backgroundColor = "var(--light-pink)";
-            prod.style.backgroundColor = "var(--light-pink)";
-
-            prodText.innerHTML = "Add to Cart";
-
-            prodIcon.classList.replace('hgi-shopping-basket-done-01', 'hgi-shopping-basket-add-01');
+        } else if (p.classList.contains('remove-product')) {
 
             cart = cart.filter(c => c.id !== chosenId);
             setCart(cart);
 
         }
 
+        syncCartUI(chosenId);
+
     })
 }
+addRemoveFromCart();
+
+
+
+
+
+function syncCartUI(id) {
+    
+    const prod = document.querySelector(`.cart-toggle-gen[data-id="${id}"]`);
+    const prodOne = document.querySelector(".cart-toggle-deets");
+    const prodText = document.querySelector(".deets-productt-text");
+    const prodIcon = document.querySelector(".deets-productt-icon");
+
+
+
+
+    if (!prod) return;
+
+    const isInCart = cart.some(c => c.id === id);
+
+    if(isInCart) {
+        
+        prod.classList.replace('hgi-shopping-basket-add-01', 'hgi-shopping-basket-done-01');
+        prod.classList.replace('add-product', 'remove-product');
+        prod.style.color = "var(--light-pink)";
+
+    } else {
+
+        prod.classList.replace('hgi-shopping-basket-done-01', 'hgi-shopping-basket-add-01');
+        prod.classList.replace('remove-product', 'add-product');
+        prod.style.color = "black";
+
+    }
+
+
+
+
+
+    if (!prodOne) return;
+
+    if(isInCart) {
+
+        prodOne.classList.replace('add-product', 'remove-product');
+        prodOne.style.color = "var(--light-pink)";
+        prodOne.style.backgroundColor = "white";
+        prodOne.style.border = "white";
+
+        prodText.innerHTML = "Remove from Cart";
+
+        prodIcon.classList.replace('hgi-shopping-basket-add-01', 'hgi-shopping-basket-done-01');
+
+    } else {
+
+        prodOne.classList.replace('remove-product', 'add-product');
+        prodOne.style.color = "white";
+        prodOne.style.backgroundColor = "var(--light-pink)";
+        prodOne.style.border = "var(--light-pink)";
+
+        prodText.innerHTML = "Add to Cart";
+
+        prodIcon.classList.replace('hgi-shopping-basket-done-01', 'hgi-shopping-basket-add-01');
+
+    }
+
+}
+
+
+
+
 
 
 

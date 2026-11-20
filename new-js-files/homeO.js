@@ -36,7 +36,7 @@ generateProductCard(shuffled, productDisplay);
 const productDetails = document.querySelector('.full-product-details');
 
 document.addEventListener('click', (e) => {
-    const product = e.target.closest('.product');
+    const product = e.target.closest('.product img');
 
     if(!product) return;
     
