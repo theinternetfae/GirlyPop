@@ -40,7 +40,7 @@ export function generateProductCard(relevantArray = generalProducts, displayFiel
 
     relevantArray.forEach(r => {
       
-        const isInCart = cart.some(c => c === r.id);
+        const isInCart = cart.some(c => c.id === r.id);
 
         displayField.innerHTML += `<div class="product" data-id="${r.id}">
             <img src="${r.image}" alt="${r.name}">
@@ -80,6 +80,7 @@ function addRemoveCartItem() {
             e.stopPropagation();
 
             const chosenId = p.dataset.id;
+            const chosenProduct = generalProducts.find(g => g.id === chosenId);
 
             if(p.classList.contains('add-product')) {
                 
@@ -87,7 +88,7 @@ function addRemoveCartItem() {
                 p.classList.replace('add-product', 'remove-product');
                 p.style.color = "var(--light-pink)";
 
-                cart.push(chosenId);
+                cart.push(chosenProduct);
                 setCart(cart);
 
             } else if (p.classList.contains('remove-product')) {
@@ -96,7 +97,7 @@ function addRemoveCartItem() {
                 p.classList.replace('remove-product', 'add-product');
                 p.style.color = "black";
 
-                cart = cart.filter(c => c !== chosenId);
+                cart = cart.filter(c => c.id !== chosenId);
                 setCart(cart);
 
             }
@@ -116,7 +117,7 @@ export function generateDetailPage(productSelected, displayField, relevantArray 
     const prodIdentity = productSelected.dataset.id;
     const deets = relevantArray.find(r => r.id === prodIdentity); 
 
-    const isInCart = cart.some(c => c === deets.id);
+    const isInCart = cart.some(c => c.id === deets.id);
 
     displayField.innerHTML = `<div class="container no-scrollbar">
 
@@ -156,6 +157,7 @@ export function generateDetailPage(productSelected, displayField, relevantArray 
                 <button class="add-to-cart" style="
                     color: ${isInCart ? "var(--light-pink)" : "white"};
                     background-color: ${isInCart ? "white" : "var(--light-pink)"};
+                    border: ${isInCart ? "white" : "var(--light-pink)"};
                 ">
                     <p>${isInCart ? "Remove from Cart" : "Add to Cart"}</p>
                     <i class="hgi hgi-stroke hgi-rounded ${isInCart ? "hgi-shopping-basket-done-01" : "hgi-shopping-basket-add-01"}"></i>
