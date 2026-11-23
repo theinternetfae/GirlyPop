@@ -510,32 +510,9 @@ main .sect-two .container .header-navigator .see-all {
     }
 }
 
-main .sect-two .container .category-picker {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-
-    @media (max-width:768px) {
-        gap: 1rem;
-        overflow: auto;
-    }
-}
-
-main .sect-two .container .category-picker .category {
-    border: 1px solid var(--invisi-text);
-    padding: .4rem 1rem;
-    border-radius: 2rem;
-    background-color: var(--special-white);
-    font-size: small;
-    font-weight: bold;
-    color: var(--invisi-text);
-    cursor: pointer;
-}
-
-main .sect-two .container .category-picker .category:nth-child(1) {
-    color: white;
-    background-color: var(--dark-pink);
-    border: var(--dark-pink);
+main .sect-two .container .header-navigator .see-all a {
+    color: var(--light-pink);
+    text-decoration: none;
 }
 
 main .sect-two .container .product-display {

@@ -47,7 +47,22 @@ document.addEventListener('click', (e) => {
 
 
 
+//ITEM CATEGORY PICKER
+const category = document.querySelectorAll('.category');
 
+category.forEach(c => {
+    c.addEventListener('click', () => {
+        console.log(c.innerHTML);
+    })
+})
+
+// document.addEventListener('click', (e) => {
+//     const category = e.target.closest('.category');
+
+//     if(!category) return;
+
+//     console.log(category.innerHTML);
+// })
 
 
 
