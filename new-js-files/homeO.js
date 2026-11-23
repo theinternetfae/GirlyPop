@@ -101,6 +101,46 @@ document.addEventListener('click', (e) => {
 
 
 
+//ITEM TIME SORT (FIXXXXXXXXXXXXXXXXXXXXXXXXXX)
+const dateSorter = document.querySelector('.date-sorter');
+const dateSortValue = dateSorter.value.toLowerCase();
+
+dateSorter.addEventListener('change', () => {
+    sortProducts();
+})
+
+function sortProducts() {
+
+    if(dateSortValue === 'random') {
+       
+        const generalitems = shuffleArray(0); 
+        generateProductCard(generalitems, productDisplay);        
+    
+    } else if (dateSortValue === 'newer') {
+        
+        const sorted = [...products].sort((a, b) => parseDate(b.dateListed) - parseDate(a.dateListed));
+        generateProductCard(sorted, productDisplay);
+    
+    } else if (dateSortValue === 'older') {
+        
+        const sorted = [...products].sort((a, b) => parseDate(a.dateListed) - parseDate(b.dateListed));
+        generateProductCard(sorted, productDisplay);
+    
+    } else {
+    
+        const generalitems = shuffleArray(0); 
+        generateProductCard(generalitems, productDisplay);        
+    
+    }
+
+}
+
+
+
+
+
+
+
 
 
 
