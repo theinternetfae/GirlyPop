@@ -3,9 +3,11 @@ import { getCart, setCart } from "./storageO.js";
 // import { getCart, getDark, setCart } from "./storageO.js";
 // import { cartCountStorage, cartStorageDisplay, getSavedCartButtonState, saveCartButtonState } from "./storageO.js";
 
+
+//PRODUCTS
 const generalProducts = getProductsStorage();
 
-//CART LOGIC
+//CART
 let cart = getCart();
 
 
@@ -185,6 +187,30 @@ function generateMoreLikeThis(deets, relevantArray) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//CART LOGIC'
 function addRemoveFromCart() {
     document.addEventListener("click", (e) => {
 
@@ -197,16 +223,19 @@ function addRemoveFromCart() {
         const chosenId = p.dataset.id;
         const chosenProduct = generalProducts.find(g => g.id === chosenId);
         // const isInCart = cart.some(c => c.id === chosenId);
+        //NOTE
 
         if(p.classList.contains('add-product')) {
 
             cart.push(chosenProduct);
             setCart(cart);
+            initializeCartCount(cart);
 
         } else if (p.classList.contains('remove-product')) {
 
             cart = cart.filter(c => c.id !== chosenId);
             setCart(cart);
+            initializeCartCount(cart);
 
         }
 
@@ -281,7 +310,15 @@ function syncCartUI(id) {
 }
 
 
+function initializeCartCount(relevantCart = cart) {
+    const checkoutCount = document.querySelectorAll('.counter');
 
+    checkoutCount.forEach(c => {
+        c.innerHTML = relevantCart.length;
+    })
+}
+
+initializeCartCount();
 
 
 
