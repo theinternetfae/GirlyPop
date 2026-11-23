@@ -1,3 +1,8 @@
+import { getCart } from "./General files/storageO.js";
+import { convertPrice, removeFromCart } from "./General files/utilsO.js";
+
+let cart = getCart();
+
 const burger = document.querySelector('.burger');
 const smNav = document.querySelector('.sm-nav');
 
@@ -12,10 +17,56 @@ burger.addEventListener("click", () => {
 })
 
 
+function cartDisplay() {
+
+    const cartDisplayPlate = document.querySelector('.cart');
+
+    if (cart.length === 0) {
+
+        cartDisplayPlate.innerHTML = '<p class="empty-cart">Add items to cart!</p>';
+    
+    } else {
+
+        cartDisplayPlate.innerHTML = '';
+
+        cart.forEach(c => {
+            // console.log(c);
+            cartDisplayPlate.innerHTML += `<div class="cart-item" data-id="${c.id}">
+    
+                <i class="hgi hgi-stroke hgi-rounded hgi-delete-02 remove-item" data-id="${c.id}"></i>
+                
+                <div class="sect">
+                    <img src="${c.image}" alt="">
+                    <div class="info">
+                        <h3>${c.name}</h3>
+                        <small>${c.size} • Sold by @${c.vendor}</small>
+                    </div>
+                </div>
+                
+                <p class="price">${convertPrice(c.priceCents)}</p>
+            
+            </div>`
+        })
+
+    }
 
 
+}
+
+cartDisplay();
 
 
+document.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    const removeItem = e.target.closest('.remove-item');
+
+    if(!removeItem) return;
+
+    const removeId = removeItem.dataset.id;
+    cart = removeFromCart(removeId);
+    cartDisplay();
+})
 
 
 

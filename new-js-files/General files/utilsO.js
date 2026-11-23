@@ -11,8 +11,6 @@ const generalProducts = getProductsStorage();
 let cart = getCart();
 
 
-console.log("Cart list:", cart);
-
 
 
 
@@ -227,15 +225,11 @@ function addRemoveFromCart() {
 
         if(p.classList.contains('add-product')) {
 
-            cart.push(chosenProduct);
-            setCart(cart);
-            initializeCartCount(cart);
+            addToCart(chosenProduct)
 
         } else if (p.classList.contains('remove-product')) {
 
-            cart = cart.filter(c => c.id !== chosenId);
-            setCart(cart);
-            initializeCartCount(cart);
+            removeFromCart(chosenId);
 
         }
 
@@ -246,7 +240,19 @@ function addRemoveFromCart() {
 addRemoveFromCart();
 
 
+function addToCart(product) {
+    cart.push(product);
+    setCart(cart);
+    initializeCartCount(cart);
+}
 
+export function removeFromCart(id) {
+    cart = cart.filter(c => c.id !== id);
+    setCart(cart);
+    initializeCartCount(cart);
+
+    return cart;
+}
 
 
 function syncCartUI(id) {

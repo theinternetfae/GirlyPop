@@ -398,6 +398,12 @@ main .checkout-details .checkout-section-one .cart {
     gap: 1rem;
 }
 
+main .checkout-details .checkout-section-one .cart .empty-cart {
+    color: var(--invisi-text);
+    font-size: .8rem;
+    text-align: center;
+}
+
 main .checkout-details .checkout-section-one .cart-item {
     display: flex;
     align-items: center;
@@ -412,10 +418,19 @@ main .checkout-details .checkout-section-one .cart-item i {
     font-size: 1.2rem;
     cursor: pointer;
     color: var(--invisi-text);
+    transition: .3s ease-in-out;
 
     @media (max-width:768px) {
         font-size: 1rem;
     }
+}
+
+main .checkout-details .checkout-section-one .cart-item i:hover {
+    color: var(--light-pink);
+}
+
+main .checkout-details .checkout-section-one .cart-item i:active {
+    transform: scale(.90);
 }
 
 main .checkout-details .checkout-section-one .cart-item .sect {
