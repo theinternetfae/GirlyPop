@@ -21,13 +21,22 @@ function cartDisplay() {
 
     const cartDisplayPlate = document.querySelector('.cart');
 
+    const displayName = document.querySelector('.checkout-section-one h2');
+
+    const itemSsPrice = document.querySelector('.item-s-price');
+    const itemSsTotal = document.querySelector('.item-s-total');
+
     if (cart.length === 0) {
 
         cartDisplayPlate.innerHTML = '<p class="empty-cart">Add items to cart!</p>';
-    
+
+        itemSsPrice.innerHTML = '$0.00';
+        itemSsTotal.innerHTML = '-';
+
     } else {
 
         cartDisplayPlate.innerHTML = '';
+        let totalCartPrice = 0;
 
         cart.forEach(c => {
             // console.log(c);
@@ -46,8 +55,18 @@ function cartDisplay() {
                 <p class="price">${convertPrice(c.priceCents)}</p>
             
             </div>`
+        
+            totalCartPrice += c.priceCents; 
         })
 
+        if(cart.length > 1) {
+            displayName.innerHTML = 'Your items';
+        } else {
+            displayName.innerHTML = 'Your item';
+        }
+
+        itemSsPrice.innerHTML = convertPrice(totalCartPrice);
+        itemSsTotal.innerHTML = convertPrice(totalCartPrice + 450 + 190);
     }
 
 

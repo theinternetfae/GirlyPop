@@ -16,7 +16,7 @@ let cart = getCart();
 
 //SHUFFLE ARRAY
 export function shuffleArray(start, stop, array = generalProducts) {
-    const shuffled = [...array].sort(() => Math.random() - 0.5);
+    const shuffled = array.sort(() => Math.random() - 0.5);
     return shuffled.slice(start, stop);
 }
 
