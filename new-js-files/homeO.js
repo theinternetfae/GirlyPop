@@ -1,7 +1,8 @@
+import { getProductsStorage } from "./General files/productsO.js";
 import { generateDetailPage, generateProductCard, shuffleArray } from "./General files/utilsO.js";
 
 
-
+const products = getProductsStorage();
 
 
 //SMALL SCREEN NAVIGATION TOGGLE
@@ -48,21 +49,112 @@ document.addEventListener('click', (e) => {
 
 
 //ITEM CATEGORY PICKER
-const category = document.querySelectorAll('.category');
 
-category.forEach(c => {
-    c.addEventListener('click', () => {
-        console.log(c.innerHTML);
+const displayItemsCount = document.querySelector('.display-items-count');
+displayItemsCount.innerHTML = `${products.length} pieces`;
+
+
+function toggleCategoryUI() {
+    
+    const category = document.querySelectorAll('.category');
+    
+    category.forEach(c => {
+
+        c.classList.remove('selected');
+
     })
+
+}
+
+
+document.addEventListener('click', (e) => {
+    
+    const clickedCategory = e.target.closest('.category');
+
+    if(!clickedCategory) return;
+
+    toggleCategoryUI();   
+    
+    clickedCategory.classList.add('selected');
+
+    if(clickedCategory.innerHTML.toLowerCase() === 'all') {
+        
+        const generalitems = shuffleArray(0); 
+        generateProductCard(generalitems, productDisplay);        
+        
+        displayItemsCount.innerHTML = `${generalitems.length} pieces`;
+
+    } else {
+
+        const matchingItems = products.filter(p => p.category.toLowerCase() === clickedCategory.innerHTML.toLowerCase())
+        const shuffleMatching = shuffleArray(0, undefined, matchingItems);
+        
+        generateProductCard(shuffleMatching, productDisplay);
+
+        displayItemsCount.innerHTML = `${shuffleMatching.length} pieces`;
+
+    }
+
 })
 
-// document.addEventListener('click', (e) => {
-//     const category = e.target.closest('.category');
 
-//     if(!category) return;
 
-//     console.log(category.innerHTML);
-// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

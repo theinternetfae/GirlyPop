@@ -35,12 +35,13 @@ export function convertPrice(price) {
 
 //GENERATE PRODUCT CARD 
 export function generateProductCard(relevantArray = generalProducts, displayField) {
-
     
+    displayField.innerHTML = '';
 
     relevantArray.forEach(r => {
       
         const isInCart = cart.some(c => c.id === r.id);
+
 
         displayField.innerHTML += `<div class="product">
             <img src="${r.image}" alt="${r.name}" data-id="${r.id}">

@@ -415,7 +415,7 @@ main .sect-one .cat-select p {
     }
 }
 
-main .sect-one .cat-select p:nth-child(1) {
+main .sect-one .cat-select p.selected {
     padding: .4rem 1rem;
     color: white;
     background-color: var(--dark-pink);
