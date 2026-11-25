@@ -232,35 +232,6 @@ header nav .us-search img {
     }
 }
 
-header nav .us-search .search-bar {
-    border: 1.5px solid var(--invisi-text);
-    padding: .6rem;
-    width: 22rem;
-    display: flex;
-    align-items: center;
-    gap: .4rem;
-    border-radius: 5rem;
-    background-color: var(--special-white);
-
-    @media (max-width:768px) {
-        width: 12rem;
-        overflow: hidden;
-    }
-}
-
-header nav .us-search .search-bar i {
-    color: var(--invisi-text);
-}
-
-header nav .us-search .search-bar input {
-    background: transparent;
-    border: none;
-}
-
-header nav .us-search .search-bar input:focus {
-    outline: none;
-}
-
 header nav .navigations {
     display: flex;
     align-items: center;
