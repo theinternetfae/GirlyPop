@@ -1,5 +1,5 @@
 import { getProductsStorage } from "./General files/productsO.js";
-import { generateDetailPage, generateProductCard, shuffleArray } from "./General files/utilsO.js";
+import { generateDetailPage, generateProductCard, searchItems, shuffleArray } from "./General files/utilsO.js";
 
 
 const products = getProductsStorage();
@@ -28,6 +28,7 @@ const shuffled = shuffleArray(0);
 const productDisplay = document.querySelector('.product-display');
 
 generateProductCard(shuffled, productDisplay);
+searchItems(undefined, productDisplay, toggleCategoryUI);
 
 
 

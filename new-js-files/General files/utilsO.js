@@ -345,12 +345,40 @@ initializeCartCount();
 
 
 
+//SEARCH BAR LOGIC
 
+export function searchItems(relevantArray = generalProducts, displayField, extra) {
 
+    const searchBar = document.querySelector('.search-bar input');
+    
+    document.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter') {
+            
+            if(!searchBar.value || searchBar.value === ' ') return;
+    
+            const displayItemsCount = document.querySelector('.display-items-count');
+    
+            const searchKeys = searchBar.value.split(' ');
+            const formatedSearchKeys = new Set(searchKeys.map(t => t.trim().toLowerCase()));
+    
+            const matchingProducts = relevantArray.filter(p => {
+            
+                return p.tags?.some(tag => formatedSearchKeys.has(tag.trim().toLowerCase()));
+    
+            })
+    
+            const finalArray = shuffleArray(0, undefined, matchingProducts);
+            displayItemsCount.innerHTML = `${finalArray.length} pieces`;
+            
+            extra ? extra() : ''; 
+            searchBar.value = '';
 
+            generateProductCard(finalArray, displayField);
+    
+        }
+    })
 
-
-
+}
 
 
 
