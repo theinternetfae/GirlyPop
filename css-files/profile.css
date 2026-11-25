@@ -23,7 +23,13 @@
 
 body {
     min-height: 100svh;
-    background-color: var(--base-bg);   
+    display: flex;
+    flex-direction: column;
+    background-color: var(--base-bg);
+}
+
+main {
+    flex: 1;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -371,7 +377,7 @@ header nav .navigations .profile img {
 /*SECTION ONE PROFILE-BANNER*/
 
 main {
-    margin: 10svh 9rem 0 9rem;
+    margin: 0 9rem 0 9rem;
 
     @media (max-width:768px) {
         margin: 0 1rem;
@@ -616,6 +622,14 @@ main .sect-three .products-display {
         margin: 0 1rem;
         grid-template-columns: repeat(3, 18rem);
     }
+}
+
+main .sect-three .products-display.none {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8rem;
+    color: var(--invisi-text);
 }
 
 main .sect-three .products-display .add {

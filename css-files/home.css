@@ -25,7 +25,13 @@
 
 body {
     min-height: 100svh;
-    background-color: var(--base-bg);   
+    display: flex;
+    flex-direction: column;
+    background-color: var(--base-bg);
+}
+
+main {
+    flex: 1;
 }
 
 @keyframes fade-in-up {
@@ -476,6 +482,14 @@ main .sect-two .product-display {
         grid-template-columns: repeat(3, 18rem);
     }
 
+}
+
+main .sect-two .product-display.none {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8rem;
+    color: var(--invisi-text);
 }
 
 main .sect-two .product-display .product {

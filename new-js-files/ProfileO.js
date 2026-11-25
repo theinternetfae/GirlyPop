@@ -1,5 +1,5 @@
 import { getProductsStorage } from "./General files/productsO.js";
-import { generateDetailPage, generateProductCard } from "./General files/utilsO.js";
+import { generateDetailPage, generateProductCard, searchItems } from "./General files/utilsO.js";
 
 const burger = document.querySelector('.burger');
 const smNav = document.querySelector('.sm-nav');
@@ -24,7 +24,7 @@ const userProducts = generalProducts.filter(p => p.vendor.toLowerCase() === "rey
 const productDisplay = document.querySelector('.products-display');
 
 generateProductCard(userProducts, productDisplay);
-
+searchItems(userProducts, productDisplay, undefined);
 
 
 

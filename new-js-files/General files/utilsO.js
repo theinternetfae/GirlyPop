@@ -42,6 +42,7 @@ export function generateProductCard(relevantArray = generalProducts, displayFiel
       
         const isInCart = cart.some(c => c.id === r.id);
 
+        displayField.classList.remove('none');
 
         displayField.innerHTML += `<div class="product">
             <img src="${r.image}" alt="${r.name}" data-id="${r.id}">
@@ -368,13 +369,19 @@ export function searchItems(relevantArray = generalProducts, displayField, extra
             })
     
             const finalArray = shuffleArray(0, undefined, matchingProducts);
-            displayItemsCount.innerHTML = `${finalArray.length} pieces`;
+            
+            displayItemsCount ? displayItemsCount.innerHTML = `${finalArray.length} pieces` : '';
             
             extra ? extra() : ''; 
             searchBar.value = '';
 
-            generateProductCard(finalArray, displayField);
-    
+            if (finalArray.length === 0) {
+                displayField.classList.add('none');
+                displayField.innerHTML = 'No items match this search...';
+            } else {                
+                generateProductCard(finalArray, displayField);
+            }
+            
         }
     })
 
