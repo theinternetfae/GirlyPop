@@ -740,10 +740,17 @@ main .receipt-section .receipt .pricing .total {
 main .receipt-section .receipt button {
     padding: .6rem;
     border-radius: .2rem;
-    font-weight: bold;
     color: white;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+}
+
+main .receipt-section .receipt button i {
+    font-size: 1rem;
 }
 
 main .receipt-section .receipt .place {
