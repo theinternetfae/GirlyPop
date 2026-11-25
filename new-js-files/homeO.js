@@ -146,6 +146,20 @@ function sortProducts() {
 
 
 
+//CHAT HANDLER
+
+const chatBubble = document.querySelector('.chat-bubble');
+const chatBox = document.querySelector('.chat-box');
+
+chatBubble.addEventListener('click', () => {
+
+    chatBox.classList.toggle('hidden');
+
+})
+
+
+
+
 
 
 
