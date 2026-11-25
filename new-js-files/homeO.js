@@ -101,15 +101,21 @@ document.addEventListener('click', (e) => {
 
 
 
-//ITEM TIME SORT (FIXXXXXXXXXXXXXXXXXXXXXXXXXX)
+//ITEM TIME SORT
 const dateSorter = document.querySelector('.date-sorter');
-const dateSortValue = dateSorter.value.toLowerCase();
 
 dateSorter.addEventListener('change', () => {
     sortProducts();
 })
 
 function sortProducts() {
+
+    const dateSortValue = dateSorter.value.toLowerCase();
+
+    function parseDate(date) {
+        const result = new Date(date).getTime();
+        return result;
+    }
 
     if(dateSortValue === 'random') {
        
@@ -120,7 +126,7 @@ function sortProducts() {
         
         const sorted = [...products].sort((a, b) => parseDate(b.dateListed) - parseDate(a.dateListed));
         generateProductCard(sorted, productDisplay);
-    
+   
     } else if (dateSortValue === 'older') {
         
         const sorted = [...products].sort((a, b) => parseDate(a.dateListed) - parseDate(b.dateListed));

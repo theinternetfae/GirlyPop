@@ -13,7 +13,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "I got this babydoll wrap top at a thrift store last year and totally forgot about it. I found it in my wardrobe still in perfect condition and decided to sell. Who wants it? 😆",
             size: "Size M",
-            dateListed: "08/09/2025"
+            dateListed: "2025/08/09"
         },
         {
             vendorId: "a1a91f0b-b4a9-405a-be2d-f11d9279c13d",
@@ -28,7 +28,7 @@ export function getProductsStorage() {
             statusMsg: "Most of the beads are missing.",
             desc: "I got this vintage beaded heels and wore it for my best-friend's forest themed wedding. I got in about 12 good wears before a single bead fell off. Honestly, nothing a cobbler can't fix.",
             size: "Size M",
-            dateListed: "10/02/2026"
+            dateListed: "2026/10/02"
         },
         {
             vendorId: "bb352ac5-97f0-48cc-9ec8-86738638482b",
@@ -43,7 +43,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A chic denim halter dress that's perfect for parties and nights out. It has that classic Y2K look that's easy to style with heels, boots, or your favourite accessories.",
             size: "Size S",
-            dateListed: "04/18/2026"
+            dateListed: "2026/04/18"
         },
         {
             vendorId: "861f76cb-861d-46c6-8289-cc021a2dfa6c",
@@ -58,7 +58,7 @@ export function getProductsStorage() {
             statusMsg: "A hole in the skirt, nothing a patch can't fix",
             desc: "A handmade crochet skirt with a whimsical, bohemian feel and a lovely patterned finish. Perfect for relaxed summer outfits, festivals, or layering with your favourite boho pieces. There's a small hole that could easily be patched.",
             size: "Size L",
-            dateListed: "08/23/2025"
+            dateListed: "2025/08/23"
         },
         {
             vendorId: "139c1829-8e84-4de0-80f1-d348d6b0b293",
@@ -73,7 +73,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A delicate butterfly pendant that adds a whimsical touch to any outfit. Its blend of boho charm and Y2K-inspired style makes it a lovely everyday accessory or a cute finishing touch for a dressed-up look.",
             size: "Size XS",
-            dateListed: "01/12/2025"
+            dateListed: "2025/01/12"
         },
         {
             vendorId: "cab4379f-341f-4d96-a61a-2567a009126c",
@@ -88,7 +88,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A pretty patterned crochet halter top with a playful mix of boho and Y2K aesthetics. Perfect for sunny days, beach outings, or pairing with denim and flowy skirts for a relaxed, whimsical look.",
             size: "Size XL",
-            dateListed: "06/09/2026"
+            dateListed: "2026/06/09"
         },
         {
             vendorId: "2c535d1a-11ad-4747-af63-e75b0d6c9947",
@@ -103,7 +103,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A playful pair of flower-adorned wedges that brings together whimsical charm and Y2K-inspired style. Perfect for adding a fun, bohemian touch to summer outfits, sundresses, and party looks.",
             size: "Size M",
-            dateListed: "03/14/2026"
+            dateListed: "2026/03/14"
         },
         {
             vendorId: "a1a91f0b-b4a9-405a-be2d-f11d9279c13d",
@@ -118,7 +118,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A charming off-shoulder knit dress with a blend of bohemian and grunge-inspired aesthetics. Its crochet-like texture and relaxed silhouette make it a lovely choice for casual outings or a more whimsical, alternative look.",
             size: "Size XS",
-            dateListed: "09/27/2025"
+            dateListed: "2025/09/27"
         },
         {
             vendorId: "bb352ac5-97f0-48cc-9ec8-86738638482b",
@@ -133,7 +133,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "Cute summer booty shorts with a playful Y2K and tropical-inspired vibe. Perfect for beach days, holidays, festivals, or putting together a relaxed summer outfit.",
             size: "Size L",
-            dateListed: "07/06/2026"
+            dateListed: "2026/07/06"
         },
         {
             vendorId: "861f76cb-861d-46c6-8289-cc021a2dfa6c",
@@ -148,7 +148,7 @@ export function getProductsStorage() {
             statusMsg: "A hole in the back.",
             desc: "A cute little denim bag with a nostalgic Y2K look and a relaxed bohemian feel. Its compact size makes it great for carrying everyday essentials. There's a hole at the back that may need a little repair.",
             size: "Size S",
-            dateListed: "02/19/2025"
+            dateListed: "2025/02/19"
         },
         {
             vendorId: "139c1829-8e84-4de0-80f1-d348d6b0b293",
@@ -163,7 +163,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A vintage-inspired red top featuring dramatic bell sleeves and a flattering neckline. Its rich colour and playful silhouette make it a statement piece that pairs beautifully with jeans, skirts, or flared trousers.",
             size: "Size XL",
-            dateListed: "11/03/2026"
+            dateListed: "2026/11/03"
         },
         {
             vendorId: "cab4379f-341f-4d96-a61a-2567a009126c",
@@ -178,7 +178,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A chic pair of Steve Madden heels with a playful Y2K-inspired look. Their pink and green colour combination adds a fun pop to summer outfits, while the feminine style makes them perfect for dressing up.",
             size: "Size S",
-            dateListed: "05/21/2026"
+            dateListed: "2026/05/21"
         },
         {
             vendorId: "2c535d1a-11ad-4747-af63-e75b0d6c9947",
@@ -193,7 +193,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A whimsical purple mesh crop top featuring a playful pattern and chic Y2K-inspired aesthetic. Its eye-catching colour and lightweight look make it a lovely statement piece for casual outings or a night out.",
             size: "Size M",
-            dateListed: "12/08/2025"
+            dateListed: "2025/12/08"
         },
         {
             vendorId: "a1a91f0b-b4a9-405a-be2d-f11d9279c13d",
@@ -208,7 +208,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A charming patterned patchwork dress with a whimsical blend of bohemian and coquette aesthetics. Its off-shoulder style gives it a playful, romantic feel, making it perfect for themed parties, festivals, or creative outfit styling.",
             size: "Size XL",
-            dateListed: "02/16/2025"
+            dateListed: "2025/02/16"
         },
         {
             vendorId: "bb352ac5-97f0-48cc-9ec8-86738638482b",
@@ -223,7 +223,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A chic black goth blouse with distinctive cut-out details and a touch of whimsical charm. Its alternative aesthetic makes it easy to style with dark skirts, fitted trousers, or layered accessories for a bold look.",
             size: "Size XS",
-            dateListed: "08/11/2026"
+            dateListed: "2026/08/11"
         },
         {
             vendorId: "861f76cb-861d-46c6-8289-cc021a2dfa6c",
@@ -238,7 +238,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A cute short cotton skirt with a breezy summer feel and a playful Y2K-inspired style. Perfect for warm-weather outings, beach trips, and creating sweet coquette-inspired outfits.",
             size: "Size L",
-            dateListed: "10/29/2026"
+            dateListed: "2026/10/29"
         },        
         {
             vendorId: "139c1829-8e84-4de0-80f1-d348d6b0b293",
@@ -253,7 +253,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A stylish leopard print nightset with a bold Y2K-inspired aesthetic. Its chic animal print makes it a fun addition to your sleepwear collection, perfect for lounging comfortably while keeping things fashionable.",
             size: "Size M",
-            dateListed: "03/22/2025"
+            dateListed: "2025/03/22"
         },
         {
             vendorId: "cab4379f-341f-4d96-a61a-2567a009126c",
@@ -268,7 +268,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A lovely pair of pink wedge heels with a playful Y2K-inspired look. Their sweet, feminine style makes them perfect for beach outings, summer parties, and adding a pop of colour to your favourite outfits.",
             size: "Size S",
-            dateListed: "07/17/2026"
+            dateListed: "2026/07/17"
         },
         {
             vendorId: "2c535d1a-11ad-4747-af63-e75b0d6c9947",
@@ -283,7 +283,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A unique dragonfly pendant with a whimsical blend of coquette and Y2K-inspired charm. Its delicate, nature-inspired design makes it a lovely accessory for adding a playful finishing touch to everyday outfits.",
             size: "Size XS",
-            dateListed: "11/09/2025"
+            dateListed: "2025/11/09"
         },
         {
             vendorId: "a1a91f0b-b4a9-405a-be2d-f11d9279c13d",
@@ -298,7 +298,7 @@ export function getProductsStorage() {
             statusMsg: "A few chips in the wedges but overall fine",
             desc: "A chic pair of pink wedges with a nostalgic 2000s gyaru-inspired aesthetic. Perfect for summer outfits and adding a bold feminine touch to your look. They have a few small chips on the wedges, but are otherwise in good condition.",
             size: "Size XL",
-            dateListed: "04/05/2026"
+            dateListed: "2026/04/05"
         },
         {
             vendorId: "bb352ac5-97f0-48cc-9ec8-86738638482b",
@@ -313,7 +313,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A cute little red knit dress with a romantic coquette aesthetic and delicate crochet-inspired details. Its chic, feminine look makes it a lovely choice for date nights, parties, or dressing up for a special occasion.",
             size: "Size L",
-            dateListed: "09/13/2026"
+            dateListed: "2026/09/13"
         },
         {
             vendorId: "861f76cb-861d-46c6-8289-cc021a2dfa6c",
@@ -328,7 +328,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A pair of classic low-rise jeans with a nostalgic Y2K and gyaru-inspired aesthetic. Perfect for creating early 2000s outfits, pairing with fitted crop tops, baby tees, and your favourite statement accessories.",
             size: "Size S",
-            dateListed: "06/28/2025"
+            dateListed: "2025/06/28"
         },
         {
             vendorId: "139c1829-8e84-4de0-80f1-d348d6b0b293",
@@ -343,7 +343,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A bold oversized leather biker jacket that combines edgy grunge styling with a chic finish. Perfect for layering over casual outfits and adding a timeless, effortlessly cool touch to your wardrobe.",
             size: "Size XL",
-            dateListed: "10/16/2026"
+            dateListed: "2026/10/16"
         },
         {
             vendorId: "cab4379f-341f-4d96-a61a-2567a009126c",
@@ -358,7 +358,7 @@ export function getProductsStorage() {
             statusMsg: null,
             desc: "A gorgeous pink bag with a bold, hyper-feminine gyaru aesthetic and playful Y2K charm. Its chic coquette-inspired style makes it a perfect statement accessory for completing sweet, glamorous, and eye-catching outfits.",
             size: "Size M",
-            dateListed: "01/30/2026"
+            dateListed: "2026/01/30"
         },
     ]
 
