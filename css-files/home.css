@@ -61,6 +61,7 @@ main {
     z-index: 50;
     position: fixed;
     height: 90svh;
+    margin-top: 10svh;
     width: 100%;
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.1);
@@ -947,7 +948,7 @@ main .full-product-details .container .detail-cont-two .container .product .prod
 
 main .chat-section {
     position: fixed;
-    z-index: 60;
+    z-index: 40;
     width: auto;
     bottom: 0;
     right: 0;
