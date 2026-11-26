@@ -1173,6 +1173,52 @@ main .full-product-details .container .detail-cont-two .container .product .prod
 
 
 
+/*CTA CHECKOUT*/
+
+main .checkout {
+    position: fixed;
+    z-index: 60;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    padding-bottom: 1rem;
+    transform: translateY(4rem);
+    transition: .3s ease-in-out;
+}
+
+main .checkout.view {
+    transform: translateY(0);
+}
+
+main .checkout a {
+    text-decoration: none;
+}
+
+main .checkout a button {
+    cursor: pointer;
+    border: 2px solid var(--light-pink);
+    background-color: var(--light-pink);
+    color: white;
+    padding: .6rem;
+    border-radius: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: .3rem;
+    font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
 
 
 

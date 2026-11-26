@@ -1,3 +1,4 @@
+import { getCart } from "./General files/storageO.js";
 import { generateDetailPage, generateProductCard, shuffleArray } from "./General files/utilsO.js";
 
 const header = document.getElementById('header');
@@ -64,6 +65,24 @@ document.addEventListener('click', (e) => {
 
 
 
+
+
+// const cart = getCart();
+
+// const checkoutSect = document.querySelector('.checkout');
+// const checkoutBtn = document.querySelector('.checkout a');
+
+// if(cart.legth > 0) {
+
+//     checkoutSect.classList.remove('hidden');
+//     checkoutBtn.classList.remove('view');
+
+// } else {
+
+//     checkoutSect.classList.remove('hidden');
+//     checkoutBtn.classList.remove('view');
+
+// }
 
 
 

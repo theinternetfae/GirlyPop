@@ -246,12 +246,37 @@ function addToCart(product) {
     cart.push(product);
     setCart(cart);
     initializeCartCount(cart);
+
+
+    const checkoutSect = document.querySelector('.checkout');
+
+    if(checkoutSect) {
+
+        if(cart.length > 0) {
+
+            checkoutSect.classList.add('view');
+    
+        } 
+
+    }
 }
 
 export function removeFromCart(id) {
     cart = cart.filter(c => c.id !== id);
     setCart(cart);
     initializeCartCount(cart);
+
+    const checkoutSect = document.querySelector('.checkout');
+
+    if(checkoutSect) {
+
+        if(cart.length === 0) {
+    
+            checkoutSect.classList.remove('view');
+            
+        } 
+
+    }
 
     return cart;
 }
