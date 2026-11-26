@@ -169,7 +169,6 @@ document.addEventListener('click', (e) => {
 
     if (!chat) return;
 
-    console.log("chat clicked");
     generalChatBody.classList.add('hidden');
     individualChat.classList.remove('hidden');
 
