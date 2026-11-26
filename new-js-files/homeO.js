@@ -1,5 +1,5 @@
 import { getProductsStorage } from "./General files/productsO.js";
-import { generateDetailPage, generateProductCard, searchItems, shuffleArray } from "./General files/utilsO.js";
+import { generateDetailPage, generateProductCard, handleChatSection, searchItems, shuffleArray } from "./General files/utilsO.js";
 
 
 const products = getProductsStorage();
@@ -148,44 +148,7 @@ function sortProducts() {
 
 //CHAT HANDLER
 
-const chatBubble = document.querySelector('.chat-bubble');
-const chatBox = document.querySelector('.chat-box');
-
-chatBubble.addEventListener('click', () => {
-
-    chatBox.classList.toggle('hidden');
-
-})
-
-
-const generalChatBody = document.querySelector('.general-chat-body');
-const individualChat = document.querySelector('.individual-chat');
-const backArrow = document.querySelector('.individual-chat .back-arrow');
-const chatBoxHeader = document.querySelector('.chat-box-header');
-
-document.addEventListener('click', (e) => {
-
-    const chat = e.target.closest('.chats');
-
-    if (!chat) return;
-
-    generalChatBody.classList.add('hidden');
-    individualChat.classList.remove('hidden');
-
-    chatBoxHeader.innerHTML = 'ThatGirlNatalie';
-
-
-})
-
-backArrow.addEventListener('click', () => {
-
-    individualChat.classList.add('hidden');
-    generalChatBody.classList.remove('hidden');
-
-    chatBoxHeader.innerHTML = 'Messages';
-
-})
-
+handleChatSection();
 
 
 

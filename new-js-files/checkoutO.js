@@ -1,5 +1,5 @@
 import { getCart } from "./General files/storageO.js";
-import { convertPrice, removeFromCart } from "./General files/utilsO.js";
+import { convertPrice, handleChatSection, removeFromCart } from "./General files/utilsO.js";
 
 let cart = getCart();
 
@@ -93,7 +93,8 @@ document.addEventListener('click', (e) => {
 
 
 
-
+//CHAT SECTION
+handleChatSection();
 
 
 

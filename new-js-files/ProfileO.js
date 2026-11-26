@@ -1,5 +1,5 @@
 import { getProductsStorage } from "./General files/productsO.js";
-import { generateDetailPage, generateProductCard, searchItems } from "./General files/utilsO.js";
+import { generateDetailPage, generateProductCard, handleChatSection, searchItems } from "./General files/utilsO.js";
 
 const burger = document.querySelector('.burger');
 const smNav = document.querySelector('.sm-nav');
@@ -40,6 +40,9 @@ document.addEventListener('click', (e) => {
     generateDetailPage(product, productDetails);
 })
 
+
+//CHAT SECTION
+handleChatSection();
 
 
 
