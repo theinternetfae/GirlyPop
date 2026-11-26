@@ -157,6 +157,12 @@ chatBubble.addEventListener('click', () => {
 
 })
 
+
+const generalChatBody = document.querySelector('.general-chat-body');
+const individualChat = document.querySelector('.individual-chat');
+const backArrow = document.querySelector('.individual-chat .back-arrow');
+const chatBoxHeader = document.querySelector('.chat-box-header');
+
 document.addEventListener('click', (e) => {
 
     const chat = e.target.closest('.chats');
@@ -164,10 +170,22 @@ document.addEventListener('click', (e) => {
     if (!chat) return;
 
     console.log("chat clicked");
+    generalChatBody.classList.add('hidden');
+    individualChat.classList.remove('hidden');
+
+    chatBoxHeader.innerHTML = 'ThatGirlNatalie';
+
 
 })
 
+backArrow.addEventListener('click', () => {
 
+    individualChat.classList.add('hidden');
+    generalChatBody.classList.remove('hidden');
+
+    chatBoxHeader.innerHTML = 'Messages';
+
+})
 
 
 
