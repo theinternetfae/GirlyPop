@@ -157,6 +157,15 @@ chatBubble.addEventListener('click', () => {
 
 })
 
+document.addEventListener('click', (e) => {
+
+    const chat = e.target.closest('.chats');
+
+    if (!chat) return;
+
+    console.log("chat clicked");
+
+})
 
 
 

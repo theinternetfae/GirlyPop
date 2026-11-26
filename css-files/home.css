@@ -959,10 +959,18 @@ main .chat-section {
 
 main .chat-section .chat-box {
     border: 2px solid var(--dark-pink);
-    flex: 1;
+    width: 30svw;
     height: 70svh;
     background-color: var(--base-bg);
     border-radius: 1rem;
+
+    @media (max-width:768px) {
+        width: 80svw;
+    }
+
+    @media (min-width: 768px) and (max-width: 1032px) {
+        width: 50svw;
+    }
 }
 
 main .chat-section .chat-box.hidden {
@@ -977,7 +985,6 @@ main .chat-section .chat-box .chat-box-header {
     border-radius: .8rem .8rem 0 0;
     font-weight: bold;
     text-align: center;
-
 }
 
 main .chat-section .chat-box .body {
@@ -1113,6 +1120,11 @@ main .chat-section .chat-bubble {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width:768px) {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 }
 
 main .chat-section .chat-bubble .notification {
@@ -1122,6 +1134,11 @@ main .chat-section .chat-bubble .notification {
     display: flex;
     justify-content: end;
     align-items: start;
+
+    @media (max-width:768px) {
+        width: 4rem;
+        height: 4rem;
+    }
 }
 
 main .chat-section .chat-bubble .notification span {
@@ -1136,6 +1153,8 @@ main .chat-section .chat-bubble .notification span {
     color: white;
     font-size: .8rem;
 }
+
+
 
 /* main .chat-section .chat-bubble .notification span.hidden {
     display: none;
