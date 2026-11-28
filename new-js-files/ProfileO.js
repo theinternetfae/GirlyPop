@@ -1,8 +1,12 @@
 import { getProductsStorage } from "./General files/productsO.js";
+import { getUser } from "./General files/storageO.js";
 import { generateDetailPage, generateProductCard, handleChatSection, searchItems } from "./General files/utilsO.js";
 
 const burger = document.querySelector('.burger');
 const smNav = document.querySelector('.sm-nav');
+
+const currentUser = getUser();
+console.log("Current user", currentUser);
 
 burger.addEventListener("click", () => {
 
@@ -17,13 +21,90 @@ burger.addEventListener("click", () => {
 
 
 
+//GET PROFILE LAYOUT + USER DETAILS INTEGRATED
+function getLayout() {
+
+    const sectOne = document.querySelector('.sect-one');
+    const sectTwo = document.querySelector('.sect-two');
+
+    sectOne.innerHTML=`<section class="profile-banner">
+            <img src="${currentUser.banner}" alt="banner-img">
+        </section>
+        
+        <section class="profile-info">
+            
+            <div class="pfp-name">
+                <div class="img-border">
+                    <div class="img">
+                        <img src="${currentUser.pfp}" alt="pfp-img">
+                    </div>
+                </div>
+            
+                <div class="name-user">
+                    <h2>${currentUser.fullName}</h2>
+                    <p>@${currentUser.username} • ${currentUser.location}</p>
+                </div>
+            </div>
+            
+            <a href="./editp.html" class="button"> ${currentUser.defaultUser ? 'Edit profile' : 'Follow'} </a>
+        
+        </section>        
+    `
+
+    sectTwo.innerHTML=`<div class="stats">
+            <div class="stat">
+                <h2>42</h2>
+                <p>Listings</p>
+            </div>
+            
+            <div class="stat">
+                <h2>318</h2>
+                <p>Sold</p>
+            </div>
+            
+            <div class="stat">
+                <h2>1.2K</h2>
+                <p>Followers</p>
+            </div>
+            
+            <div class="stat">
+                <h2>186</h2>
+                <p>Following</p>
+            </div>
+            
+            <div class="stat">
+                <h2>
+                    4.9
+                    <i class="hgi hgi-stroke hgi-rounded hgi-star-award-02"></i>
+                </h2>
+                <P>Rating</P>
+            </div>
+        
+        </div>
+
+        <p class="bio">${currentUser.about}</p>
+    `
+
+}
+
+getLayout();
+
+
+
+
+
+
+
+
+
+
 
 //GET USER PRODUCTS ARRAY THEN DISPLAY
 const generalProducts = getProductsStorage();
 const userProducts = generalProducts.filter(p => p.vendor.toLowerCase() === "reynacole");
 const productDisplay = document.querySelector('.products-display');
 
-generateProductCard(userProducts, productDisplay);
+generateProductCard(userProducts, productDisplay, currentUser.defaultUser);
 searchItems(userProducts, productDisplay, undefined);
 
 

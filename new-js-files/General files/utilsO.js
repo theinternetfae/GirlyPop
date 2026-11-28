@@ -35,9 +35,15 @@ export function convertPrice(price) {
 
 
 //GENERATE PRODUCT CARD 
-export function generateProductCard(relevantArray = generalProducts, displayField) {
+export function generateProductCard(relevantArray = generalProducts, displayField, user) {
     
     displayField.innerHTML = '';
+
+    if(user) {
+        displayField.innerHTML +=`<a href="./upload.html" class="add" >
+            <i class="hgi hgi-stroke hgi-rounded hgi-plus"></i>
+        </a>`;
+    }
 
     relevantArray.forEach(r => {
       
