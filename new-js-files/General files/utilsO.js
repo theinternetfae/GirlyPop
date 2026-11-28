@@ -1,4 +1,5 @@
 import { getProductsStorage } from "./productsO.js";
+import { getUsers } from "./proxyUsers.js";
 import { getCart, setCart } from "./storageO.js";
 // import { getCart, getDark, setCart } from "./storageO.js";
 // import { cartCountStorage, cartStorageDisplay, getSavedCartButtonState, saveCartButtonState } from "./storageO.js";
@@ -10,7 +11,7 @@ const generalProducts = getProductsStorage();
 //CART
 let cart = getCart();
 
-
+const users = getUsers();
 
 
 
@@ -101,7 +102,7 @@ export function generateDetailPage(productSelected, displayField, relevantArray 
                 </p>
 
                 <div class="vendor-info">
-                    <button>
+                    <button class="view-vendor" data-vendor="${deets.vendorId}">
                         <p>View vendor</p>
                         <i class="hgi hgi-stroke hgi-eye"></i>
                     </button>
@@ -140,6 +141,12 @@ export function generateDetailPage(productSelected, displayField, relevantArray 
             
     </div>`
 
+
+    const viewVendor = document.querySelector('.view-vendor');
+    viewVendor.addEventListener('click', () => {
+        console.log('View vendor button clicked.');
+        
+    })
 
     //MAKE IT DISPLAY
     displayField.classList.remove('hidden');

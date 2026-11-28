@@ -402,6 +402,12 @@ main .profile-banner {
     }
 }
 
+main .profile-banner img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 main .profile-info {
     margin-top: .4rem;
     display: flex;

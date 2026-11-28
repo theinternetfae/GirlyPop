@@ -8,6 +8,22 @@ export function setCart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+export function getUser() {
+    let user = JSON.parse(localStorage.getItem('user')) || {
+        id: "2c535d1a-11ad-4747-af63-e75b0d6c9947",
+        username: "ReynaCole",
+        about: "I'm just a girl, selling on an online store, waiting... to be rich.",
+        pfp: "images/medium-shot-friends-having-fun-party.jpg",
+        banner: "images/two-pair-heart-shaped-sunglasses.jpg",
+        defaultUser: true
+    };
+
+    return user;
+}
+
+export function setUser(user) {
+    localStorage.setItem('user', JSON.stringify(user));
+}
 
 
 
