@@ -1,6 +1,6 @@
 import { getProductsStorage } from "./productsO.js";
 import { getUsers } from "./proxyUsers.js";
-import { getCart, setCart } from "./storageO.js";
+import { getCart, setCart, setUser } from "./storageO.js";
 // import { getCart, getDark, setCart } from "./storageO.js";
 // import { cartCountStorage, cartStorageDisplay, getSavedCartButtonState, saveCartButtonState } from "./storageO.js";
 
@@ -150,8 +150,14 @@ export function generateDetailPage(productSelected, displayField, relevantArray 
 
     const viewVendor = document.querySelector('.view-vendor');
     viewVendor.addEventListener('click', () => {
-        console.log('View vendor button clicked.');
+
+        const vendorId = viewVendor.dataset.vendor;
+        const vendor = users.find(u => u.id === vendorId);
+        console.log("The vendor:", vendor);
         
+        setUser(vendor);
+        window.location.assign('profile.html');
+
     })
 
     //MAKE IT DISPLAY
